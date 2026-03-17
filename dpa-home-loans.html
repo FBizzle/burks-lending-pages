@@ -483,45 +483,18 @@
           <label>Email Address</label>
           <input type="email" placeholder="marcus@email.com">
         </div>
-        <div class="form-group">
-          <label>Estimated Credit Score</label>
-          <select>
-            <option value="" disabled selected>Select a range</option>
-            <option>740+ (Excellent)</option>
-            <option>700–739 (Very Good)</option>
-            <option>660–699 (Good)</option>
-            <option>620–659 (Fair)</option>
-            <option>580–619 (Minimum for DPA)</option>
-            <option>Below 580</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Are you currently employed?</label>
-          <select>
-            <option value="" disabled selected>Select one</option>
-            <option>Yes — W-2 Employee</option>
-            <option>Yes — Self-Employed</option>
-            <option>Yes — Both W-2 and Self-Employed</option>
-            <option>Not currently employed</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Where are you in the process?</label>
-          <select>
-            <option value="" disabled selected>Select one</option>
-            <option>Just starting to explore</option>
-            <option>Actively looking at homes</option>
-            <option>Ready to make an offer</option>
-            <option>Already have a home under contract</option>
-          </select>
-        </div>
-        <button type="button" class="form-submit" onclick="window.open('https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415','_blank')">Check My Eligibility — It's Free →</button>
+        <button type="button" class="form-submit" onclick="handleFormSubmit()">Check My Eligibility — It's Free →</button>
       </form>
 
       <div class="success-state" id="successState" style="display:none">
         <div class="success-icon">🏡</div>
-        <h3>You're on the list!</h3>
-        <p>Opening your pre-approval form now...</p>
+        <h3>You're Almost There!</h3>
+        <p>Complete your eligibility check below — takes less than 2 minutes.</p>
+        <p style="margin-top:12px"><a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here if you are not redirected →</a></p>
+        <div style="margin-top:20px;padding:16px;background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.3);border-radius:8px;">
+          <p style="font-size:12px;color:#4a5568;margin-bottom:8px;font-weight:700;">🎁 YOUR FREE HOMEBUYER GUIDE IS ON ITS WAY!</p>
+          <p style="font-size:12px;color:#4a5568;">Check your email — we're sending your <strong>First-Time Homebuyer Guide</strong> with everything you need to know about buying a home in Middle Tennessee.</p>
+        </div>
       </div>
 
       <p class="form-privacy">🔒 Your information is private. No spam, ever. <a href="#">Privacy Policy</a></p>
@@ -822,9 +795,15 @@
 </div>
 
 <script>
-// Form submission
-// Form no longer needed for submission — button is direct link
-// Keeping form for lead capture display only
+  function handleFormSubmit() {
+    var form = document.getElementById('leadForm');
+    var success = document.getElementById('successState');
+    if (form) form.style.display = 'none';
+    if (success) success.style.display = 'block';
+    setTimeout(function() {
+      window.open('https://www.theburkslendinggroup.com/home-purchase', '_blank');
+    }, 1500);
+  }
 
 // Scroll animations
 const observer = new IntersectionObserver((entries) => {

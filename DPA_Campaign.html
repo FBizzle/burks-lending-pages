@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPA Program — 101.5% CLTV — The Burks Lending Group</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#0a0a0a;color:#fff;min-height:100vh}
+.header{background:linear-gradient(135deg,#0f1923,#1a2a1a);border-bottom:1px solid #222;padding:32px 24px 24px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,215,0,0.07) 0%,transparent 70%);pointer-events:none}
+.header-label{font-size:10px;letter-spacing:.3em;color:#FFD700;text-transform:uppercase;margin-bottom:8px;position:relative}
+.header h1{font-size:clamp(20px,4vw,34px);font-weight:700;margin:0 0 6px;color:#fff;position:relative}
+.header-sub{color:#FFD700;font-size:11px;margin:0 0 4px;letter-spacing:.1em;position:relative}
+.header-count{color:#556;font-size:11px;margin:0;position:relative}
+.platform-tabs{display:flex;border-bottom:1px solid #1e1e1e;background:#111;overflow-x:auto}
+.platform-tab{flex:1;min-width:90px;padding:13px 8px;background:transparent;color:#555;border:none;cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.05em;font-family:Georgia,serif;transition:all .2s}
+.platform-tab.active{color:#fff}
+.post-tabs{display:flex;gap:8px;padding:14px 18px;background:#0f0f0f;border-bottom:1px solid #1a1a1a;overflow-x:auto;flex-wrap:wrap}
+.post-tab{padding:6px 13px;border-radius:20px;border:1px solid #333;background:transparent;color:#666;cursor:pointer;font-size:10px;font-weight:700;letter-spacing:.08em;white-space:nowrap;font-family:Georgia,serif;transition:all .2s}
+.post-tab.active{color:#fff}
+.content{max-width:760px;margin:0 auto;padding:24px 18px 48px}
+.hook-box{background:#111111;border:2px solid #FFD700;border-radius:12px;padding:20px 22px;margin-bottom:18px}
+.box-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.hook-text{font-size:15px;line-height:1.75;white-space:pre-line;font-weight:600;color:#fff}
+.body-box{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:20px 22px;margin-bottom:18px}
+.body-text{font-size:14px;line-height:1.9;white-space:pre-line;color:#cccccc}
+.cta-box{background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.3);border-radius:12px;padding:18px 22px}
+.cta-text{font-size:14px;line-height:1.75;white-space:pre-line;font-weight:500;color:#FFD700}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
+.nav-btn{padding:10px 20px;background:#111111;border:1px solid #2a2a2a;color:#666;border-radius:8px;cursor:pointer;font-size:12px;font-family:Georgia,serif}
+.nav-btn:hover{color:#aaa;border-color:#555}
+.nav-info{color:#444;font-size:11px;text-align:center;letter-spacing:.1em}
+.footer{border-top:1px solid #1a1a1a;padding:18px 24px;text-align:center;color:#333;font-size:11px;letter-spacing:.12em}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-label">The Burks Lending Group · Content Campaign</div>
+  <h1>DPA Program — 101.5% CLTV</h1>
+  <p class="header-sub">FHA DOWN PAYMENT ASSISTANCE · 580 FICO · NO INCOME CAP · 101.5% CLTV</p>
+  <p class="header-count">4 Facebook · 4 Instagram · 2 LinkedIn · 2 Blog Posts</p>
+</div>
+<div class="platform-tabs" id="platformTabs"></div>
+<div class="post-tabs" id="postTabs"></div>
+<div class="content" id="postContent"></div>
+<div class="footer">THE BURKS LENDING GROUP · EMPOWERED BY NEXA MORTGAGE · SMYRNA, TN<br><span style="color:#222;font-size:10px">DPA · FHA 101.5% CLTV · OPEN MORTGAGE WHOLESALE</span></div>
+<script>
+const ACCENT = '#FFD700';
+const sections = [{label:'📘 FACEBOOK',color:'#1877F2',posts:[{tag:'BUYER · POST 1',hook:`🚨 WAIT. You might already qualify to buy a home — even if you have ZERO saved for a down payment.`,body:`Here's something most people don't know:
+
+There's a program right now that covers 3.5% to 5% of your down payment — and you don't have to be a first-time homebuyer to use it.
+
+No income cap. No max DTI. You just need a 580 credit score and a dream.
+
+✅ FHA loan with up to 101.5% financing
+✅ Forgivable AND repayable options available
+✅ Seller can contribute up to 6% toward closing costs
+✅ Gift funds allowed
+✅ 2/1 Buydowns available to lower your rate
+✅ Non-occupant co-borrowers welcome
+✅ Manufactured housing? Yep, that too.
+
+The door to homeownership is wide open. The only question is — are you walking through it?
+
+<a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">✅ Qualify Today</a>
+
+`,cta:`👇 Drop "DPA" in the comments or send me a message — let's run your numbers for FREE.`},{tag:'BUYER · POST 2',hook:`❌ "I can't buy a home because I don't have enough saved."
+
+I hear this every week. And every week, I have to tell people the same thing:
+
+That's not a fact. That's a limiting belief.`,body:`We have a Down Payment Assistance program that puts 3.5–5% toward your purchase — and here's what makes it different:
+
+💡 NO first-time homebuyer requirement
+💡 NO income limits
+💡 580 FICO minimum (Manual underwrite at 600)
+💡 25-year term available
+💡 Approved DU? You're in the game.
+
+Whether you're buying your first place or your fifth investment property — this program doesn't care how many times you've owned before. It cares that you're ready NOW.
+
+The people who build generational wealth through real estate didn't wait until they had everything figured out. They found the right team and took the first step.
+
+Let me be that team.
+
+<a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">✅ Qualify Today</a>
+
+`,cta:`📩 Message me directly or comment below. Let's talk about getting you home.`},{tag:'REALTOR · POST 1 (Referral Partner)',hook:`🏡 Attention Realtors: Your buyers aren't out of options. They're just talking to the wrong lender.`,body:`I want to be your go-to lender for every deal you thought was dead on arrival.
+
+Our FHA 101.5% CLTV Down Payment Assistance program is built for the clients most lenders turn away:
+
+🔑 580 FICO minimum — DU Approved
+🔑 No income cap — no DTI max
+🔑 No first-time homebuyer requirement
+🔑 3.5% or 5% assistance available
+🔑 Seller contributions up to 6%
+🔑 Non-occupant co-borrowers allowed
+🔑 Manufactured housing eligible
+🔑 2/1 Buydowns available
+
+When your buyer says "I can't afford the down payment" — I want to be the name you call.
+
+I close deals. I protect your commission. I make you look like a hero to your clients.
+
+<a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">✅ Qualify Today</a>
+
+`,cta:`📲 DM me or drop your contact below — let's set up a quick 15-minute call and talk about how we can work together.`},{tag:'REALTOR · POST 2 (Co-Marketing)',hook:`What if your next open house came with a built-in financing solution that made every buyer feel like they could actually afford the home?`,body:`Let's co-market together.
+
+I'm a Certified Mortgage Advisor with The Burks Lending Group, and I partner with agents who want MORE than a lender — they want a marketing ally.
+
+Here's what I bring to the table when we co-market:
+
+✅ Custom buyer-facing content for YOUR listing
+✅ DPA program education so buyers show up pre-informed
+✅ Open house flyers that highlight financing options
+✅ Social media content featuring your properties
+✅ A lender who answers the phone
+
+Our 101.5% CLTV DPA program turns "I'm not sure I can afford this" into a signed contract. Together, we close more deals and build a referral engine that feeds itself.
+
+Your listings deserve a financing partner, not just a lender.
+
+<a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">✅ Qualify Today</a>
+
+`,cta:`💬 Let's connect. Drop a 🏡 in the comments or DM me — I'd love to co-market your next listing.`}]},{label:'📸 INSTAGRAM',color:'#E1306C',posts:[{tag:'BUYER · POST 1',hook:`Down payment = the #1 reason people think they can't buy. Here's why that excuse just expired. 👇`,body:`Our FHA 101.5% CLTV Down Payment Assistance program is built for REAL people in REAL situations.
+
+🏠 3.5% or 5% assistance available
+🏠 580 FICO minimum
+🏠 No first-time buyer requirement
+🏠 No income cap
+🏠 Seller covers up to 6% in closing costs
+🏠 Forgivable AND repayable options
+🏠 2/1 Buydown eligible
+🏠 Manufactured housing included
+
+You've been renting long enough. Let's change that.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`💬 Drop your city below or DM me "READY" — I'll reach out within 24 hours.
+
+#DownPaymentAssistance #BurksLendingGroup #DPA #HomeBuyingTips #TennesseeRealEstate #FHALoan #HomeOwnership`},{tag:'BUYER · POST 2',hook:`POV: You thought you needed $15,000 saved to buy a home.
+You didn't. 🤯`,body:`Let me introduce you to our Down Payment Assistance program — where the math actually works in YOUR favor.
+
+580 credit score? ✅
+No first-time buyer requirement? ✅
+Up to 101.5% financing? ✅
+No income cap? ✅
+
+This is the program that turns "someday" into a closing date.
+
+The only thing standing between you and homeownership is a 10-minute conversation.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`🔑 DM me "HOME" and let's start that conversation today.
+
+#MortgageAdvisor #Nashville #Smyrna #Tennessee #HomeBuyers #WealthBuilding #FHALoan #DownPaymentHelp #BurksLendingGroup`},{tag:'REALTOR · POST 1 (Referral Partner)',hook:`Realtors — save this post. Your next 'I can't afford the down payment' client just became a buyer. 📌`,body:`Our DPA program handles the down payment so you can focus on closing the deal.
+
+📋 What your buyers get:
+→ 3.5–5% down payment covered
+→ 580 FICO minimum
+→ No income limits
+→ No max DTI
+→ Seller contributions up to 6%
+→ 2/1 Buydowns available
+
+📋 What YOU get:
+→ A lender who converts your leads
+→ Someone who answers the phone
+→ More closings. More commission. Period.
+
+I'm not just a lender. I'm your deal-saving partner.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`📲 Tag a fellow agent who needs this or DM me to get connected.
+
+#RealtorPartner #MortgageLender #DPA #NashvilleRealEstate #TennesseeRealtor #BurksLendingGroup #ReferralPartner`},{tag:'REALTOR · POST 2 (Co-Marketing)',hook:`Imagine marketing your listing with financing already figured out for the buyer. That's what we do together. 🤝`,body:`Co-marketing with The Burks Lending Group means your listings get:
+
+📣 Custom social content
+📣 DPA program education baked in
+📣 Buyer-ready financing solutions on day one
+📣 A mortgage advisor who shows up for open houses
+📣 Shared content that grows BOTH our brands
+
+More informed buyers = faster closings.
+Faster closings = happier clients.
+Happier clients = referrals for both of us.
+
+This is how we build something bigger than a transaction.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`💼 DM me 'PARTNER' and let's build a co-marketing plan around your next listing.
+
+#CoMarketing #RealtorLife #MortgagePartner #NashvilleHomes #ListingAgent #BurksLendingGroup #RealEstateMarketing`}]},{label:'💼 LINKEDIN',color:'#0A66C2',posts:[{tag:'BUYER-FACING',hook:`The #1 barrier to homeownership in America isn't credit. It isn't income. It's a myth about down payments — and it's costing people years of wealth-building.`,body:`I work with buyers every week who are shocked to discover they were closer to owning a home than they ever imagined.
+
+Our FHA 101.5% CLTV Down Payment Assistance program addresses the single biggest obstacle head-on:
+
+• 3.5% or 5% down payment assistance available
+• 580 minimum FICO score (DU Approved) | 600 for manual underwrite
+• No first-time homebuyer requirement
+• No income cap on qualifying income
+• No maximum DTI (with DU Approval)
+• Seller contributions up to 6%
+• Gift funds permitted
+• Non-occupant co-borrowers allowed
+• 25-year term available through Open Mortgage Wholesale
+• Forgivable and repayable assistance options
+
+Homeownership is one of the most powerful vehicles for building generational wealth in this country. The gap between renting and owning is often smaller than people believe — sometimes it's just a conversation away.
+
+If you or someone you know has been sitting on the sidelines waiting for the "right time" or the "right savings," I'd welcome a no-pressure conversation about what's actually possible today.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`📩 Connect with me here or visit our website to start the conversation. The Burks Lending Group — empowered by NEXA Mortgage. Let's build wealth together.`},{tag:'REALTOR-FACING',hook:`To every real estate professional in my network: the lending partner you choose directly impacts how many deals you close. Choose deliberately.`,body:`In this market, agents who win consistently aren't just great at finding homes — they're partnered with lenders who can actually get deals to the closing table.
+
+At The Burks Lending Group, I bring two things to every agent relationship:
+
+1. PROGRAMS THAT CONVERT
+Our FHA 101.5% CLTV DPA program captures buyers most lenders turn away — 580 FICO, no income caps, no DTI ceiling, 3.5–5% assistance, seller contributions up to 6%. These aren't edge cases. These are your buyers.
+
+2. CO-MARKETING THAT GROWS YOUR BUSINESS
+I partner with agents on listing content, open house materials, social media strategy, and buyer education — because when your pipeline grows, mine does too.
+
+I'm not interested in transactional relationships. I'm interested in building referral partnerships that generate consistent business for both sides.
+
+If you're a high-performing agent in the Nashville/Middle Tennessee area looking for a lending partner who shows up — let's talk.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`📅 DM me to schedule a 20-minute intro call. Let's talk numbers, programs, and what a real partnership looks like. — Frank Burks, Certified Mortgage Advisor | The Burks Lending Group | Empowered by NEXA Mortgage | Smyrna, TN`}]},{label:'✍️ BLOG',color:'#2D8A4E',posts:[{tag:'BUYER-FACING BLOG',hook:`You Don't Need $20,000 Saved to Buy a Home — Here's the Program Nobody Told You About`,body:`If you've been putting off buying a home because you can't figure out how to come up with the down payment, this might be the most important thing you read this week.
+
+There's a Down Payment Assistance (DPA) program available right now that covers 3.5% to 5% of your home purchase — and most people have never heard of it.
+
+What Is the 101.5% CLTV DPA Program?
+
+This is an FHA-backed loan program that allows you to finance up to 101.5% of your home's purchase price — meaning the down payment assistance actually covers your required 3.5% down and then some.
+
+• No first-time homebuyer requirement
+• No income cap
+• No maximum DTI (with DU Approval)
+• 580 minimum FICO score
+• 600 minimum for manual underwriting
+• 25-year term available
+• Seller can contribute up to 6% toward closing costs
+• Gift funds allowed
+• Non-occupant co-borrowers permitted
+• 2/1 Buydown available
+• Manufactured housing eligible
+
+Forgivable vs. Repayable: At the 3.5% level, both options are available. Forgivable converts to a grant over time. Repayable functions like a second loan. Your advisor will walk you through which fits your goals.
+
+Who Is This For?
+
+• You're paying rent every month and want to build YOUR equity
+• You have solid income but savings haven't caught up yet
+• You've been told "not yet" by another lender
+• You're ready to stop waiting and start building
+
+Every month you wait is a month someone else builds equity in a home you could be owning.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`📲 Contact The Burks Lending Group today. Call, text, or visit our website to get pre-qualified. Frank Burks | Certified Mortgage Advisor | The Burks Lending Group | Empowered by NEXA Mortgage | Smyrna, TN`},{tag:'REALTOR-FACING BLOG',hook:`The Program That Turns Your Dead Leads Into Closings — What Every Nashville Area Agent Needs to Know About DPA`,body:`You know that buyer who went quiet after the pre-approval conversation? The one with decent income but not enough saved for a traditional down payment?
+
+There's a program that could have closed that deal.
+
+The 101.5% CLTV DPA Program — A Lender's Tool That Becomes Your Competitive Edge
+
+At The Burks Lending Group, we offer an FHA Down Payment Assistance program with up to 101.5% Combined Loan-to-Value financing. We cover the down payment so your buyer doesn't have to.
+
+• 3.5% or 5% down payment assistance
+• 580 FICO minimum with DU Approval | 600 for manual underwrite
+• No income cap on qualifying income
+• No maximum DTI (DU Approval required)
+• No first-time homebuyer requirement
+• Seller contributions up to 6%
+• Gift funds allowed
+• Non-occupant co-borrowers permitted
+• 2/1 Buydowns available
+• 25-year term available
+• Manufactured housing eligible
+• Forgivable and repayable options
+
+Why This Matters for Your Business:
+Every agent has a pipeline of buyers who stalled over the down payment conversation. This program reopens that pipeline.
+
+The Co-Marketing Opportunity:
+I help you market your listings, educate your sphere, and create content that positions both of us as the go-to team in the market.
+
+I bring the program knowledge. You bring the listings. Together, we close more deals.
+
+<a href="https://www.theburkslendinggroup.com/dpa-home-loans" target="_blank" style="display:inline-block;margin-top:10px;padding:7px 16px;background:#C8973A;color:#0A1628;font-weight:700;font-size:12px;border-radius:4px;text-decoration:none;letter-spacing:.06em;">🔗 Program Info</a>
+
+`,cta:`📅 Reach out to schedule a 20-minute partnership call. Frank Burks | Certified Mortgage Advisor | The Burks Lending Group | Empowered by NEXA Mortgage | Smyrna, TN`}]}];
+let activeSec = 0, activePost = 0;
+
+function nl2br(s){return s.replace(/\n/g,'<br>')}
+
+function render(){
+  const sec = sections[activeSec];
+  const post = sec.posts[activePost];
+  const total = sections.reduce((a,s)=>a+s.posts.length,0);
+  const curr = sections.slice(0,activeSec).reduce((a,s)=>a+s.posts.length,0)+activePost+1;
+
+  // Platform tabs
+  document.getElementById('platformTabs').innerHTML = sections.map((s,i)=>
+    `<button class="platform-tab${i===activeSec?' active':''}" style="${i===activeSec?'background:'+s.color:''}" onclick="setSec(${i})">${s.label}</button>`
+  ).join('');
+
+  // Post tabs
+  document.getElementById('postTabs').innerHTML = sec.posts.map((p,i)=>
+    `<button class="post-tab${i===activePost?' active':''}" style="${i===activePost?'border-color:'+ACCENT+';background:rgba(255,215,0,.12)':''}" onclick="setPost(${i})">${p.tag}</button>`
+  ).join('');
+
+  // Content
+  document.getElementById('postContent').innerHTML = `
+    <div class="hook-box">
+      <div class="box-label" style="color:${ACCENT}">🎣 Scroll-Stopping Hook</div>
+      <div class="hook-text">${nl2br(post.hook)}</div>
+    </div>
+    <div class="body-box">
+      <div class="box-label" style="color:#666">📝 Post Body</div>
+      <div class="body-text">${nl2br(post.body)}</div>
+    </div>
+    <div class="cta-box">
+      <div class="box-label" style="color:${ACCENT}">📣 Call to Action</div>
+      <div class="cta-text">${nl2br(post.cta)}</div>
+    </div>
+    <div class="nav">
+      <button class="nav-btn" onclick="prev()">← Previous</button>
+      <div class="nav-info">${sec.label} · Post ${activePost+1} of ${sec.posts.length}<br><span style="color:#333;font-size:10px">Post ${curr} of ${total}</span></div>
+      <button class="nav-btn" onclick="next()">Next →</button>
+    </div>`;
+}
+
+function setSec(i){activeSec=i;activePost=0;render()}
+function setPost(i){activePost=i;render()}
+function prev(){
+  if(activePost>0){activePost--;}
+  else if(activeSec>0){activeSec--;activePost=sections[activeSec].posts.length-1;}
+  render();
+}
+function next(){
+  if(activePost<sections[activeSec].posts.length-1){activePost++;}
+  else if(activeSec<sections.length-1){activeSec++;activePost=0;}
+  render();
+}
+render();
+</script>
+</body>
+</html>

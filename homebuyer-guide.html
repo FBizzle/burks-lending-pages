@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete First-Time Homebuyer Guide · The Burks Lending Group · Middle Tennessee</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1628;--navy-mid:#0F2040;--gold:#C8973A;--gold-light:#E8B455;--gold-pale:#FDF3E3;--carolina:#4A9EFF;--white:#FFFFFF;--off-white:#F7F5F0;--text-dark:#0A1628;--text-mid:#4a5568;--text-light:#8a9ab5;--green:#2D7D4F;--green-light:#E8F5EE;--red:#C53030;--red-light:#FEF2F2;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);}
+nav{background:rgba(10,22,40,0.97);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(200,151,58,0.2);}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:15px;font-weight:700;}.nav-logo span{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);font-size:12px;font-weight:700;padding:9px 20px;border-radius:4px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+.guide-hero{background:linear-gradient(150deg,var(--navy) 0%,#0F2040 100%);padding:80px 32px 60px;text-align:center;position:relative;overflow:hidden;}
+.guide-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(200,151,58,0.12) 0%,transparent 60%);}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(200,151,58,0.15);border:1px solid rgba(200,151,58,0.3);border-radius:100px;padding:6px 16px;margin-bottom:24px;}
+.hero-eyebrow span{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
+.guide-hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,52px);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:8px;}
+.guide-hero h1 em{color:var(--gold);font-style:normal;}
+.guide-hero .motto{font-size:15px;color:var(--gold-light);font-style:italic;margin-bottom:20px;}
+.guide-hero p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:560px;margin:0 auto 28px;}
+.hero-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.hero-badge{background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.25);border-radius:6px;padding:7px 12px;font-size:11px;color:rgba(255,255,255,0.75);font-weight:500;}
+.gold-bar{height:5px;background:linear-gradient(90deg,var(--gold),var(--gold-light));}
+.toc-section{background:var(--white);padding:56px 32px;}.toc-inner{max-width:860px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:700;color:var(--navy);margin-bottom:24px;line-height:1.2;}
+.toc-list{display:flex;flex-direction:column;gap:0;}
+.toc-item{display:grid;grid-template-columns:56px 1fr;gap:0;border-bottom:1px solid #f0f4ff;text-decoration:none;transition:background .15s;}
+.toc-item:hover{background:var(--off-white);}
+.toc-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);padding:14px 0 14px 8px;}
+.toc-text{padding:14px 0 14px 16px;}.toc-title{font-size:13px;font-weight:700;color:var(--navy);}.toc-desc{font-size:11px;color:var(--text-mid);margin-top:2px;}
+.guide-section{padding:56px 32px;}.guide-section:nth-child(odd){background:var(--white);}.guide-inner{max-width:860px;margin:0 auto;}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid var(--gold);}
+.section-num{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-mid));border:2.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);flex-shrink:0;}
+.section-head-text h2{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,28px);font-weight:700;color:var(--navy);line-height:1.2;}
+.section-head-text p{font-size:12px;color:var(--text-mid);margin-top:4px;}
+.sub-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin:24px 0 6px;}
+.sub-title{font-family:'Playfair Display',serif;font-size:clamp(16px,2.5vw,22px);font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.body-text{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+.gold-box{background:var(--gold-pale);border:2px solid var(--gold);border-radius:10px;padding:24px 28px;margin:16px 0;text-align:center;}
+.gold-box p{font-size:15px;color:var(--navy);font-style:italic;line-height:1.6;}
+.tip-box{background:#EEF2FF;border:1.5px solid var(--carolina);border-radius:10px;padding:16px 20px;margin:16px 0;}
+.tip-box p{font-size:13px;color:var(--navy);line-height:1.6;font-style:italic;}
+.tip-box.gold-tip{background:var(--gold-pale);border-color:var(--gold);}
+.tip-box.warn{background:var(--red-light);border-color:var(--red);}
+.data-rows{display:flex;flex-direction:column;gap:0;margin:8px 0;}
+.data-row{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #f0f4ff;}
+.data-label{font-size:13px;font-weight:700;color:var(--navy);}.data-value{font-size:13px;color:var(--text-mid);line-height:1.6;}
+.data-label.green{color:var(--green);}.data-label.red{color:var(--red);}.data-label.gold{color:var(--gold);}
+.guide-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px;}
+.guide-table th{background:var(--navy);color:var(--white);padding:10px 12px;text-align:left;font-size:10px;letter-spacing:.08em;font-weight:700;text-transform:uppercase;}
+.guide-table td{padding:10px 12px;border-bottom:1px solid #e8edf5;color:var(--text-mid);line-height:1.5;}
+.guide-table tr:nth-child(even) td{background:var(--off-white);}
+.guide-table td:first-child{font-weight:700;color:var(--navy);}.gold-top{border-top:3px solid var(--gold);}
+.steps-list{display:flex;flex-direction:column;gap:10px;margin:8px 0;}
+.step-item{display:grid;grid-template-columns:64px 1fr;gap:0;align-items:start;}
+.step-bubble{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-mid));border:2.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);flex-shrink:0;}
+.step-content{padding:8px 0 8px 12px;border-bottom:1px solid #f0f4ff;}
+.step-content h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.step-content p{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0;}
+.grid-card{border-radius:10px;padding:18px;border:1.5px solid #e8edf5;}
+.grid-card.green{background:var(--green-light);border-color:var(--green);}
+.grid-card h3{font-size:12px;font-weight:700;margin-bottom:6px;}
+.grid-card.green h3{color:var(--green);}
+.grid-card p{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0;}
+.benefit-card{background:var(--off-white);border:1.5px solid #e8edf5;border-radius:10px;padding:20px;transition:border-color .2s,transform .2s;}
+.benefit-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+.benefit-icon{font-size:28px;margin-bottom:10px;}
+.benefit-card h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.benefit-card p{font-size:12px;color:var(--text-mid);line-height:1.5;}
+.cta-section{background:var(--gold);padding:72px 32px;text-align:center;}
+.cta-inner{max-width:700px;margin:0 auto;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);font-weight:900;color:var(--navy);margin-bottom:8px;}
+.cta-section p{font-size:15px;color:rgba(10,22,40,0.7);margin-bottom:28px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-dark{background:var(--navy);color:var(--white);padding:15px 32px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:13px 32px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;}
+footer{background:#060e1a;padding:28px 32px;text-align:center;}footer p{font-size:11px;color:#3a4a5a;line-height:1.8;}footer a{color:#4a6a8a;text-decoration:none;}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:200;transition:width .1s;}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@media(max-width:700px){.two-col,.benefits-grid{grid-template-columns:1fr;}.data-row{grid-template-columns:1fr;gap:4px;}.step-item{grid-template-columns:56px 1fr;}nav{padding:12px 20px;}.guide-section{padding:40px 20px;}.toc-section{padding:40px 20px;}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <div class="nav-logo">The Burks Lending Group <span>empowered by NEXA Lending</span></div>
+  <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="nav-cta">Get Pre-Approved →</a>
+</nav>
+<div class="guide-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span>🎁 Free Resource · The Burks Lending Group · Middle Tennessee</span></div>
+    <h1>Your Complete<br><em>First-Time Homebuyer</em><br>Guide</h1>
+    <p class="motto">"Everybody Deserves a Key."</p>
+    <p>Everything you need to know about buying your first home in Middle Tennessee — from credit scores to closing day. Real talk. Real programs. Real results.</p>
+    <div class="hero-badges">
+      <div class="hero-badge">📋 10 Sections</div><div class="hero-badge">💳 Credit Deep Dive</div>
+      <div class="hero-badge">🏠 All Loan Programs</div><div class="hero-badge">📝 Making an Offer</div>
+      <div class="hero-badge">🔑 Closing Day</div><div class="hero-badge">❌ What NOT to Do</div>
+    </div>
+  </div>
+</div>
+<div class="gold-bar"></div>
+<section class="toc-section">
+  <div class="toc-inner">
+    <div class="eyebrow">What's Inside</div>
+    <h2 class="section-title">10 Sections. Everything You Need.</h2>
+    <div class="toc-list">
+      <a href="#s1" class="toc-item"><div class="toc-num">01</div><div class="toc-text"><div class="toc-title">Why Homeownership Changes Everything</div><div class="toc-desc">Benefits, equity, and why waiting costs you</div></div></a>
+      <a href="#s2" class="toc-item"><div class="toc-num">02</div><div class="toc-text"><div class="toc-title">Are You Ready? The Real Requirements</div><div class="toc-desc">Credit, income, DTI, down payment explained</div></div></a>
+      <a href="#s3" class="toc-item"><div class="toc-num">03</div><div class="toc-text"><div class="toc-title">Understanding Your Credit</div><div class="toc-desc">Reports, scores, protecting and repairing your credit</div></div></a>
+      <a href="#s4" class="toc-item"><div class="toc-num">04</div><div class="toc-text"><div class="toc-title">Saving, Budgeting & Getting Pre-Approved</div><div class="toc-desc">Build the financial foundation that gets you to the table</div></div></a>
+      <a href="#s5" class="toc-item"><div class="toc-num">05</div><div class="toc-text"><div class="toc-title">Loan Programs Built for YOU</div><div class="toc-desc">FHA, VA, Conventional, DPA, ITIN and more</div></div></a>
+      <a href="#s6" class="toc-item"><div class="toc-num">06</div><div class="toc-text"><div class="toc-title">Finding Your Home & Your Realtor</div><div class="toc-desc">What to look for, how agents work, house hunting smart</div></div></a>
+      <a href="#s7" class="toc-item"><div class="toc-num">07</div><div class="toc-text"><div class="toc-title">Making an Offer the Right Way</div><div class="toc-desc">Contingencies, earnest money, inspection, negotiation</div></div></a>
+      <a href="#s8" class="toc-item"><div class="toc-num">08</div><div class="toc-text"><div class="toc-title">The Mortgage Process A to Z</div><div class="toc-desc">Application to underwriting to Commitment Letter</div></div></a>
+      <a href="#s9" class="toc-item"><div class="toc-num">09</div><div class="toc-text"><div class="toc-title">Closing Day — What to Expect</div><div class="toc-desc">Documents, costs, keys, and life as a homeowner</div></div></a>
+      <a href="#s10" class="toc-item"><div class="toc-num">10</div><div class="toc-text"><div class="toc-title">Don't Mess Up a Good Thing</div><div class="toc-desc">What to NEVER do after applying — and final tips</div></div></a>
+    </div>
+  </div>
+</section>
+<section class="guide-section" id="s1"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">1</div><div class="section-head-text"><h2>Why Homeownership Changes Everything</h2><p>The financial and personal case for owning your home</p></div></div>
+  <div class="gold-box"><p>"Everybody Deserves a Key." — Frank Burks, The Burks Lending Group</p></div>
+  <div class="sub-eyebrow">The Case for Buying</div><h3 class="sub-title">More Than Just a Mortgage Payment</h3>
+  <p class="body-text">Homeownership provides security, stability, and a sense of achievement that renting simply cannot replicate. Many homeowners report feelings of pride, gratitude, and emotional stability from owning their home. And with the rise of remote work, having a stable, comfortable home workspace adds even more value to the equation.</p>
+  <div class="benefits-grid">
+    <div class="benefit-card"><div class="benefit-icon">🏠</div><h3>Building Equity</h3><p>Every mortgage payment builds ownership in an asset that belongs to YOU. Renters build zero equity no matter how long they stay.</p></div>
+    <div class="benefit-card"><div class="benefit-icon">📈</div><h3>Appreciation</h3><p>Home values have historically increased over time. Buy now and your home's value grows while your mortgage balance shrinks.</p></div>
+    <div class="benefit-card"><div class="benefit-icon">💰</div><h3>Stable Payment</h3><p>A fixed-rate mortgage locks in your payment for decades. Rents increase every year with no ceiling. No surprises.</p></div>
+    <div class="benefit-card"><div class="benefit-icon">🏛️</div><h3>Tax Benefits</h3><p>Mortgage interest and property taxes may be deductible. Consult your tax advisor for details specific to your situation.</p></div>
+    <div class="benefit-card"><div class="benefit-icon">👨‍👩‍👧</div><h3>Generational Wealth</h3><p>A paid-off home is one of the most powerful assets you can pass to your children. Homeownership builds family wealth across generations.</p></div>
+    <div class="benefit-card"><div class="benefit-icon">🌳</div><h3>Community Roots</h3><p>Stability, belonging, and pride in your neighborhood. Homeowners invest in their communities in ways renters simply can't.</p></div>
+  </div>
+  <div class="sub-eyebrow">The Rate Reality</div><h3 class="sub-title">Stop Waiting for Rates to Drop</h3>
+  <p class="body-text">Mortgage rates fluctuate and always will. But here's what history tells us: home prices continue rising regardless of rate movement. Buying sooner means your home's value appreciates while you build equity — and you lock in a stable payment before prices climb higher. The longer you wait, the more your dream home costs.</p>
+  <div class="tip-box"><p>💡 <strong>Frank's Truth:</strong> Every month you rent is a month you're paying someone else's mortgage. Your payment history builds their wealth, not yours. Let's change that — call <strong>(615) 768-9424</strong> for a free eligibility review.</p></div>
+</div></section>
+<section class="guide-section" id="s2"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">2</div><div class="section-head-text"><h2>Are You Ready? The Real Requirements</h2><p>What lenders actually look at — and what surprises most buyers</p></div></div>
+  <p class="body-text">Most people wait years longer than they need to because nobody sat down and walked them through the real requirements. Here is the honest breakdown of what it takes to buy a home today — and why you may be closer than you think.</p>
+  <div class="sub-eyebrow">The 4 Things Lenders Look At</div><h3 class="sub-title">Know Your Numbers Before You Apply</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">1. Credit Score</div><div class="data-value">580+ FHA · 620+ Conventional · 640+ USDA · 660+ ITIN Non-QM. Lower scores still have options. Don't count yourself out before you call.</div></div>
+    <div class="data-row"><div class="data-label">2. Income</div><div class="data-value">Stable, verifiable income. W-2, self-employed, 1099, bank statements, P&L — you don't need a traditional 9-to-5. You need documented, consistent income.</div></div>
+    <div class="data-row"><div class="data-label">3. DTI Ratio</div><div class="data-value">Your total monthly debts divided by gross monthly income. Most programs allow up to 43-50% DTI. Higher than that? We still have options.</div></div>
+    <div class="data-row"><div class="data-label">4. Down Payment</div><div class="data-value">FHA: 3.5% · Conventional: 3-5% · VA & USDA: 0% · DPA programs can cover FHA's requirement entirely. You may need less than you think.</div></div>
+  </div>
+  <div class="sub-eyebrow">Pre-Qualification vs. Pre-Approval</div><h3 class="sub-title">Know the Difference — It Matters</h3>
+  <table class="guide-table gold-top"><thead><tr><th></th><th>Pre-Qualification</th><th>Pre-Approval</th></tr></thead><tbody>
+    <tr><td>What it is</td><td>Estimate based on self-reported info</td><td>Verified review of credit, income & assets</td></tr>
+    <tr><td>Credit pull</td><td>Usually no hard pull</td><td>Hard credit pull required</td></tr>
+    <tr><td>Strength with sellers</td><td>Conversation starter</td><td>Serious buyer signal</td></tr>
+    <tr><td>Frank recommends</td><td>Good first step</td><td>Do this BEFORE you shop</td></tr>
+  </tbody></table>
+  <div class="sub-eyebrow">Your Roadmap</div><h3 class="sub-title">Milestones to Homeownership</h3>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-bubble">1</div><div class="step-content"><h3>Find a Trusted Mortgage Advisor</h3><p>Build your homebuying team first. Frank Burks · (615) 768-9424 · www.theburkslendinggroup.com</p></div></div>
+    <div class="step-item"><div class="step-bubble">2</div><div class="step-content"><h3>Check Your Credit</h3><p>Know your score. Identify what needs work. Make a plan before you apply.</p></div></div>
+    <div class="step-item"><div class="step-bubble">3</div><div class="step-content"><h3>Review Savings & Down Payment Options</h3><p>More programs exist than you think. You may need far less than you expect.</p></div></div>
+    <div class="step-item"><div class="step-bubble">4</div><div class="step-content"><h3>Get Pre-Approved</h3><p>Lock in your budget. Get your letter. Shop with confidence and credibility.</p></div></div>
+    <div class="step-item"><div class="step-bubble">5</div><div class="step-content"><h3>Begin House Shopping</h3><p>Tour homes with your buyer's agent. Know your non-negotiables going in.</p></div></div>
+    <div class="step-item"><div class="step-bubble">6</div><div class="step-content"><h3>Make an Offer</h3><p>Your agent drafts it. Your pre-approval letter makes it credible. Negotiate smart.</p></div></div>
+    <div class="step-item"><div class="step-bubble">7</div><div class="step-content"><h3>Inspection & Appraisal</h3><p>Professionals verify condition and market value. Never skip the inspection.</p></div></div>
+    <div class="step-item"><div class="step-bubble">8</div><div class="step-content"><h3>Closing Day 🏡</h3><p>Sign documents, pay costs (or have them covered), and get your keys.</p></div></div>
+  </div>
+  <div class="tip-box"><p>💡 <strong>Frank's Tip:</strong> Don't assume you're not ready. Call or text <strong>(615) 768-9424</strong> for a free 10-minute eligibility review before you decide homeownership isn't possible for you.</p></div>
+</div></section>
+<section class="guide-section" id="s3"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">3</div><div class="section-head-text"><h2>Understanding Your Credit</h2><p>Reports, scores, protecting and repairing your credit history</p></div></div>
+  <p class="body-text">Your credit standing is the single most important factor in your mortgage approval AND your interest rate. Understanding how it works — and how to improve it — is one of the most valuable things you can do before you apply.</p>
+  <div class="sub-eyebrow">What's on Your Credit Report</div><h3 class="sub-title">The 4 Types of Information</h3>
+  <p class="body-text">The three major credit bureaus — <strong>Experian, Equifax, and TransUnion</strong> — each compile their own report:</p>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Identifying Info</div><div class="data-value">Name, nicknames, addresses, Social Security number, year of birth, employers, and spouse's name if applicable.</div></div>
+    <div class="data-row"><div class="data-label">Credit Info</div><div class="data-value">All accounts — type, date opened, credit limit, balance, and 2-year payment history. Notes any co-signers.</div></div>
+    <div class="data-row"><div class="data-label">Public Records</div><div class="data-value">Court records related to bankruptcies, tax liens, or monetary judgments. Some states include overdue child support.</div></div>
+    <div class="data-row"><div class="data-label">Inquiries</div><div class="data-value">Every creditor or employer who accessed your report in the past 2 years. Hard inquiries from applications temporarily lower your score.</div></div>
+  </div>
+  <div class="tip-box warn"><p>⚠️ <strong>Important:</strong> Your credit report does NOT include race, religion, medical history, lifestyle, political preference, or criminal record. If anyone implies otherwise — that's a red flag.</p></div>
+  <div class="sub-eyebrow">Your FICO Score</div><h3 class="sub-title">How Your Number Is Calculated</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Factor</th><th>Weight</th><th>What It Means</th></tr></thead><tbody>
+    <tr><td>Payment History</td><td>35%</td><td>On-time payments are the biggest single factor. One late payment can drop your score significantly.</td></tr>
+    <tr><td>Credit Utilization</td><td>30%</td><td>Balances vs. limits. Keep card balances below 30% of limit. Below 10% is the sweet spot.</td></tr>
+    <tr><td>Length of History</td><td>15%</td><td>How long accounts have been open. Older accounts help your average age — don't close them.</td></tr>
+    <tr><td>Credit Mix</td><td>10%</td><td>Variety of account types — cards, loans, mortgage. Diversity helps your score.</td></tr>
+    <tr><td>New Credit</td><td>10%</td><td>Recent applications and new accounts. Too many hard inquiries in a short period hurts your score.</td></tr>
+  </tbody></table>
+  <div class="sub-eyebrow">Frank's Credit Tips</div><h3 class="sub-title">6 Moves That Actually Move the Needle</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label green">✅ Pay On Time</div><div class="data-value">Set up autopay for every account minimum. One late payment — even $5 — can hurt your history for a year or more.</div></div>
+    <div class="data-row"><div class="data-label green">✅ Stay Below 30%</div><div class="data-value">Keep card balances below 30% of your limit. $1,000 limit? Stay under $300. Below 10% is even better.</div></div>
+    <div class="data-row"><div class="data-label green">✅ Keep Old Accounts Open</div><div class="data-value">Don't close old cards even if unused. They help your average account age and available credit.</div></div>
+    <div class="data-row"><div class="data-label green">✅ No New Credit</div><div class="data-value">Once you're in the mortgage process — no new cards, car loans, or any new credit lines. Hard inquiries drop your score.</div></div>
+    <div class="data-row"><div class="data-label green">✅ Dispute Errors</div><div class="data-value">Pull your free report at annualcreditreport.com. Errors are common. Dispute directly with each bureau online.</div></div>
+    <div class="data-row"><div class="data-label green">✅ Become Authorized User</div><div class="data-value">Ask a family member with excellent credit to add you to their card. Their positive history can boost YOUR score.</div></div>
+  </div>
+  <p class="body-text">Bad credit is not a life sentence. Once you start making regular, on-time payments and build positive history, your score will improve. If you need help building a credit improvement plan — call Frank directly. That conversation costs nothing.</p>
+</div></section>
+<section class="guide-section" id="s4"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">4</div><div class="section-head-text"><h2>Saving, Budgeting & Getting Pre-Approved</h2><p>Build the financial foundation that gets you to the closing table</p></div></div>
+  <p class="body-text">A budget is simply a plan that lays out your income and expenses as precisely as possible. It helps you build savings, use credit wisely, and meet your goals — including your down payment. Without one, most people have no idea where their money actually goes.</p>
+  <div class="sub-eyebrow">7 Rules for Successful Budgeting</div><h3 class="sub-title">A Budget That Works FOR You, Not Against You</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Be Collaborative</div><div class="data-value">If others share your household, get everyone on board with the goal. A financial plan is also a financial partnership.</div></div>
+    <div class="data-row"><div class="data-label">Be Specific</div><div class="data-value">Vague goals produce vague results. Know exactly how much you need to save and by when.</div></div>
+    <div class="data-row"><div class="data-label">Be Realistic</div><div class="data-value">If your budget is too restrictive, you'll abandon it. Build room for life while making steady progress.</div></div>
+    <div class="data-row"><div class="data-label">Track Everything</div><div class="data-value">Coffee, parking, streaming services — all of it. You cannot manage what you do not measure.</div></div>
+    <div class="data-row"><div class="data-label">Make Small Changes</div><div class="data-value">One fewer takeout trip per week, cutting one subscription — small sacrifices compound into significant savings over time.</div></div>
+    <div class="data-row"><div class="data-label">Stay Flexible</div><div class="data-value">Your life evolves. Your budget should too. Revisit and adjust every few months.</div></div>
+    <div class="data-row"><div class="data-label">Keep Good Records</div><div class="data-value">You cannot "set and forget" a budget. Continue tracking so you can see if you're on pace to hit your goals.</div></div>
+  </div>
+  <div class="sub-eyebrow">Documents to Gather Now</div><h3 class="sub-title">Get These Ready Before You Apply</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Income Type</th><th>Documents Needed</th></tr></thead><tbody>
+    <tr><td>W-2 Employee</td><td>Last 2 years W-2s, last 30 days pay stubs, last 2 months bank statements, government-issued ID</td></tr>
+    <tr><td>Self-Employed</td><td>Last 2 years tax returns (personal & business), YTD P&L statement, last 3 months bank statements</td></tr>
+    <tr><td>1099 / Contract</td><td>Last 2 years 1099s, last 2 years tax returns, last 3 months bank statements</td></tr>
+    <tr><td>All Borrowers</td><td>Social Security number (or ITIN), rental history if applicable, gift letter if using gift funds, bankruptcy/divorce docs if applicable</td></tr>
+  </tbody></table>
+  <div class="sub-eyebrow">Down Payment Options</div><h3 class="sub-title">How Much Do You Actually Need?</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Program</th><th>Down Payment</th><th>Min FICO</th><th>Notes</th></tr></thead><tbody>
+    <tr><td>FHA Loan</td><td>3.5%</td><td>580+</td><td>Most flexible credit requirements. Most popular first-time buyer program.</td></tr>
+    <tr><td>Conventional</td><td>3-5%</td><td>620+</td><td>PMI cancellable at 20% equity. No upfront MI premium.</td></tr>
+    <tr><td>VA Loan</td><td>0%</td><td>None</td><td>Veterans & active military only. Zero down, no PMI.</td></tr>
+    <tr><td>USDA Loan</td><td>0%</td><td>640+</td><td>Rural & suburban areas. Zero down. Income limits apply.</td></tr>
+    <tr><td>DPA Programs</td><td>0% Out of Pocket</td><td>580+</td><td>Multiple programs covering your required down payment. Forgivable options available.</td></tr>
+    <tr><td>ITIN Non-QM</td><td>15%</td><td>660+</td><td>No SSN required — up to 85% LTV.</td></tr>
+  </tbody></table>
+  <div class="tip-box gold-tip"><p>💡 <strong>Frank's Tip:</strong> In many cases we can structure your loan so the seller covers closing costs AND a DPA program covers your down payment — meaning you could buy with little to zero out of pocket. Let's run your numbers: <strong>(615) 768-9424</strong></p></div>
+</div></section>
+<section class="guide-section" id="s5"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">5</div><div class="section-head-text"><h2>Loan Programs Built for YOU</h2><p>Every program available — and which one fits your situation</p></div></div>
+  <p class="body-text">At The Burks Lending Group, empowered by NEXA Lending, we have access to programs that most lenders don't offer — or don't even know about. Here's your complete guide to what's available right now.</p>
+  <div class="sub-eyebrow">The Full Program Lineup</div><h3 class="sub-title">Find Your Fit</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Program</th><th>FICO</th><th>Down</th><th>Best For</th></tr></thead><tbody>
+    <tr><td>FHA Loan</td><td>580+</td><td>3.5%</td><td>Lower credit, limited savings. Government-backed, flexible guidelines. Most popular first-time buyer program.</td></tr>
+    <tr><td>Conventional 97</td><td>620+</td><td>3%</td><td>Strong credit buyers. PMI cancellable at 20% equity. No upfront MI premium.</td></tr>
+    <tr><td>Conventional 95</td><td>620+</td><td>5%</td><td>Lower monthly MI. Great for buyers with stronger credit profiles.</td></tr>
+    <tr><td>VA Loan</td><td>None</td><td>0%</td><td>Veterans and active military only. Zero down, no PMI, competitive rates. One of the best programs available.</td></tr>
+    <tr><td>USDA Loan</td><td>640+</td><td>0%</td><td>Rural and suburban properties. Zero down. Income limits apply. Check eligibility by address.</td></tr>
+    <tr><td>DPA Programs</td><td>580+</td><td>0% OOP</td><td>Multiple programs available covering 3.5-5% of loan amount. Forgivable options. No first-time buyer requirement.</td></tr>
+    <tr><td>ITIN Non-QM</td><td>660+</td><td>15%</td><td>No SSN required. ITIN borrowers qualify. Up to $2M loan. Multiple income doc types. 100% gift funds OK.</td></tr>
+  </tbody></table>
+  <div class="sub-eyebrow">Rate Options</div><h3 class="sub-title">Fixed Rate vs. Adjustable Rate</h3>
+  <div class="two-col">
+    <div class="grid-card green"><h3>Fixed-Rate Mortgage</h3><p>Your interest rate never changes for the life of the loan. Monthly P&I stays exactly the same — year 1 through year 30. Best for: most buyers, stable income, long-term ownership plans.</p></div>
+    <div class="grid-card" style="border-color:var(--carolina);background:#EEF2FF"><h3 style="color:var(--carolina)">Adjustable-Rate (ARM)</h3><p>Fixed for an intro period (1-10 years), then adjusts periodically. Lower initial rate — but payment can increase. Best for: buyers who plan to sell within the fixed period.</p></div>
+  </div>
+  <div class="sub-eyebrow">Mortgage Insurance</div><h3 class="sub-title">PMI vs. FHA MIP — The Real Difference</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Private MI (PMI)</div><div class="data-value">Required on Conventional loans under 20% down. CAN be cancelled once your balance reaches 80% of original value. Lower cost than FHA MIP for 680+ credit borrowers.</div></div>
+    <div class="data-row"><div class="data-label">FHA MIP</div><div class="data-value">Required on ALL FHA loans. On loans with less than 10% down and terms over 15 years, MIP CANNOT be cancelled — you'd need to refinance to remove it.</div></div>
+    <div class="data-row"><div class="data-label">VA & USDA</div><div class="data-value">No monthly mortgage insurance on VA loans. USDA has a small annual fee that IS cancellable once you reach 20% equity.</div></div>
+  </div>
+  <div class="tip-box"><p>💡 <strong>Frank's Tip:</strong> Don't let mortgage insurance scare you away from buying. For most buyers, the cost of PMI or MIP is far less than the equity you'd build waiting to save 20%. Let's run your actual numbers — <strong>(615) 768-9424</strong></p></div>
+</div></section>
+<section class="guide-section" id="s6"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">6</div><div class="section-head-text"><h2>Finding Your Home & Your Realtor</h2><p>What to look for, how agents work, and how to shop smart</p></div></div>
+  <p class="body-text">Once your pre-approval is in hand, it's time to start looking. Knowing what to look for — and how to work with the right people — makes the difference between a smooth purchase and a costly mistake.</p>
+  <div class="sub-eyebrow">What to Look For</div><h3 class="sub-title">Location First. House Second.</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label gold">LOCATION</div><div class="data-value">Neighborhood safety, distance to work, school district quality, proximity to shopping and medical services, public transportation, HOA restrictions, flood zone status</div></div>
+    <div class="data-row"><div class="data-label gold">THE HOUSE</div><div class="data-value">Sales price vs. comparable homes, bedrooms and bathrooms, closets and storage, condition of electrical/plumbing/HVAC, roof age, foundation condition, lot size</div></div>
+    <div class="data-row"><div class="data-label gold">COSTS TO CALCULATE</div><div class="data-value">Property taxes (varies significantly by county in Middle Tennessee), HOA fees, estimated utilities, cost of any immediate repairs or renovations</div></div>
+  </div>
+  <div class="sub-eyebrow">Narrow Your Search</div><h3 class="sub-title">3 Steps to Find Your Non-Negotiables</h3>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-bubble">1</div><div class="step-content"><h3>Make a Complete List</h3><p>Write down everything you want. If multiple people are deciding, have each person make their own list independently first.</p></div></div>
+    <div class="step-item"><div class="step-bubble">2</div><div class="step-content"><h3>Find the Overlap</h3><p>Compare lists and combine shared requirements into one focused, narrower list.</p></div></div>
+    <div class="step-item"><div class="step-bubble">3</div><div class="step-content"><h3>Apply the Compromise Test</h3><p>"If I found an amazing home that lacked this — would I still buy it?" If yes, it's a nice-to-have, not a requirement.</p></div></div>
+  </div>
+  <div class="sub-eyebrow">Working with Agents</div><h3 class="sub-title">Buyer's Agent vs. Seller's Agent</h3>
+  <table class="guide-table gold-top"><thead><tr><th></th><th>Seller's Agent</th><th>Buyer's Agent</th></tr></thead><tbody>
+    <tr><td>Represents</td><td>The seller — period</td><td>YOU, the buyer</td></tr>
+    <tr><td>Their obligation</td><td>Best deal for the seller</td><td>Best deal for YOU</td></tr>
+    <tr><td>Who pays</td><td>Seller pays commission</td><td>Seller pays commission</td></tr>
+    <tr><td>Cost to you</td><td>None</td><td>None — completely free to you</td></tr>
+  </tbody></table>
+  <div class="tip-box"><p>💡 <strong>Frank's Tip:</strong> The agent you meet at an open house works for the SELLER — not you. Always have your own buyer's agent representation. It costs you nothing and protects everything.</p></div>
+</div></section>
+<section class="guide-section" id="s7"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">7</div><div class="section-head-text"><h2>Making an Offer the Right Way</h2><p>Contingencies, earnest money, inspection, and negotiation</p></div></div>
+  <p class="body-text">You've found the home. Now comes one of the most important decisions in the entire process — your offer. Getting this right protects your money, your interests, and your ability to walk away if something goes wrong.</p>
+  <div class="sub-eyebrow">Components of an Offer</div><h3 class="sub-title">What Goes Into an Offer to Purchase</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Purchase Price</div><div class="data-value">Influenced by: what you can afford, comparable sales, seller motivation, and condition of the property. Research before you write a number.</div></div>
+    <div class="data-row"><div class="data-label">Earnest Money</div><div class="data-value">Typically $500-$2,000 — shows the seller you're serious. Applied to closing costs if the sale closes. Returned if a contingency is not met.</div></div>
+    <div class="data-row"><div class="data-label">Contingencies</div><div class="data-value">Conditions that must be met or you can walk away and get your earnest money back. These are your primary protection as a buyer.</div></div>
+    <div class="data-row"><div class="data-label">Closing Date</div><div class="data-value">Typically 21-45 days from accepted offer depending on loan type. Some DPA programs can close in under 30 days.</div></div>
+    <div class="data-row"><div class="data-label">Personal Property</div><div class="data-value">Any appliances or fixtures you want included must be specifically listed. If it's not in the contract, the seller can take it.</div></div>
+  </div>
+  <div class="sub-eyebrow">Contingencies — Your Protection Clauses</div><h3 class="sub-title">Never Waive These Without Fully Understanding Them</h3>
+  <div class="two-col">
+    <div class="grid-card green"><h3>✅ Financing Contingency</h3><p>If you can't secure financing, you walk away and get your earnest money back. NEVER skip this one.</p></div>
+    <div class="grid-card green"><h3>✅ Home Inspection</h3><p>Right to inspect and negotiate repairs — or walk if major problems are found. Always include this.</p></div>
+    <div class="grid-card green"><h3>✅ Appraisal Contingency</h3><p>If the home appraises below your offer price, you can renegotiate or walk. Protects you from overpaying.</p></div>
+    <div class="grid-card green"><h3>✅ Title Review</h3><p>Ensures the seller has clear ownership rights to sell. No hidden liens or prior claims.</p></div>
+  </div>
+  <div class="sub-eyebrow">Home Inspection</div><h3 class="sub-title">Always Get One. No Exceptions.</h3>
+  <p class="body-text">A home inspection is NOT the same as an appraisal. An appraisal estimates value. An inspection examines condition. A qualified inspector covers: foundation and basement, roof and gutters, electrical systems, plumbing, HVAC, insulation, windows and doors, and structural components. Average cost: $300-$500. Time: 2-3 hours. Worth every penny every single time.</p>
+  <p class="body-text"><strong>Go WITH your inspector during the inspection.</strong> Ask questions. Learn about the home's systems. Get repair estimates in real time.</p>
+  <div class="tip-box warn"><p>⚠️ <strong>Frank's Warning:</strong> In competitive markets, some buyers waive inspections to win. Think carefully before doing this. Waiving could cost you tens of thousands in hidden repairs. Know the full risk before you sign.</p></div>
+</div></section>
+<section class="guide-section" id="s8"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">8</div><div class="section-head-text"><h2>The Mortgage Process A to Z</h2><p>From application to underwriting to your Commitment Letter</p></div></div>
+  <p class="body-text">The mortgage process can feel overwhelming — but it is simply a series of checkpoints. A good lender walks you through every single one. That is exactly what we do at The Burks Lending Group.</p>
+  <div class="sub-eyebrow">Step by Step</div><h3 class="sub-title">Application to Clear to Close</h3>
+  <div class="steps-list">
+    <div class="step-item"><div class="step-bubble">1</div><div class="step-content"><h3>Application</h3><p>Complete the loan application with your lender. Bring all income docs, bank statements, tax returns, and ID. The more organized you are, the faster it moves.</p></div></div>
+    <div class="step-item"><div class="step-bubble">2</div><div class="step-content"><h3>Loan Estimate (LE)</h3><p>Within 3 business days, your lender issues a Loan Estimate showing estimated closing costs, interest rate, monthly payment, and loan terms. Review it carefully.</p></div></div>
+    <div class="step-item"><div class="step-bubble">3</div><div class="step-content"><h3>Documents Ordered</h3><p>Your lender orders the property appraisal and pulls your full credit report. Your loan amount cannot exceed the appraised value.</p></div></div>
+    <div class="step-item"><div class="step-bubble">4</div><div class="step-content"><h3>Processing</h3><p>Your processor assembles your complete file — income, assets, employment, appraisal, credit, title, and insurance. All pieces come together here.</p></div></div>
+    <div class="step-item"><div class="step-bubble">5</div><div class="step-content"><h3>Underwriting</h3><p>The underwriter reviews everything and makes the final approval decision. They may issue conditional approval requiring additional documents. Respond IMMEDIATELY.</p></div></div>
+    <div class="step-item"><div class="step-bubble">6</div><div class="step-content"><h3>Commitment Letter</h3><p>A formal promise from the lender to fund your loan. Major milestone. Review all terms carefully.</p></div></div>
+    <div class="step-item"><div class="step-bubble">7</div><div class="step-content"><h3>Pre-Closing</h3><p>Title insurance ordered, conditions cleared, closing scheduled. Order homeowners insurance and prepare your certified check.</p></div></div>
+    <div class="step-item"><div class="step-bubble">8</div><div class="step-content"><h3>Clear to Close 🏡</h3><p>Every condition is met. Every document verified. You are cleared to close. Our two favorite words in the business.</p></div></div>
+  </div>
+  <div class="sub-eyebrow">Mortgage Glossary</div><h3 class="sub-title">Key Terms — Defined Plainly</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Term</th><th>Plain English Definition</th></tr></thead><tbody>
+    <tr><td>Down Payment</td><td>The percentage of purchase price you pay out of pocket. Ranges from 0% (VA/USDA) to 20%+ depending on the program.</td></tr>
+    <tr><td>Mortgage Rate</td><td>The interest rate you pay to borrow money. Affects your monthly payment and total cost of the loan.</td></tr>
+    <tr><td>APR</td><td>Annual Percentage Rate — includes the interest rate PLUS lender fees. A better comparison tool than rate alone.</td></tr>
+    <tr><td>Credit Score</td><td>A 3-digit number from 300-850 representing creditworthiness. Higher is always better.</td></tr>
+    <tr><td>DTI</td><td>Debt-to-Income ratio. Total monthly debt payments divided by gross monthly income.</td></tr>
+    <tr><td>Closing Costs</td><td>Fees to complete the transaction. Typically 2-5% of loan amount. Can often be covered by seller concessions.</td></tr>
+    <tr><td>Appraisal</td><td>A licensed third-party estimate of the home's market value. Your lender won't loan more than this number.</td></tr>
+    <tr><td>Pre-Approval Letter</td><td>Your lender's written statement of your approved loan amount and terms. Your shopping credential.</td></tr>
+    <tr><td>Equity</td><td>Your home's market value minus what you owe. Grows as you pay down debt and values rise.</td></tr>
+    <tr><td>Escrow</td><td>Account held by lender to collect and pay property taxes and insurance on your behalf monthly.</td></tr>
+    <tr><td>Title Insurance</td><td>Protects your legal ownership against prior claims, liens, or errors in public records.</td></tr>
+    <tr><td>PMI / MIP</td><td>Mortgage insurance required when down payment is under 20%. Protects the lender, not you.</td></tr>
+  </tbody></table>
+</div></section>
+<section class="guide-section" id="s9"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">9</div><div class="section-head-text"><h2>Closing Day — What to Expect</h2><p>Documents, costs, keys, and life as a homeowner</p></div></div>
+  <p class="body-text">You toured, you offered, you waited, you inspected, you underwrote — and now you can feel those phantom keys sliding into your hand. There is one final step before you become a homeowner: the closing.</p>
+  <div class="sub-eyebrow">What to Bring</div><h3 class="sub-title">Come Prepared — Don't Leave Anything Behind</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">🪪 Photo ID</div><div class="data-value">Government-issued ID — driver's license, passport, or state ID. Bring two forms to be safe.</div></div>
+    <div class="data-row"><div class="data-label">📄 Insurance Binder</div><div class="data-value">Proof of homeowners insurance in place. Your lender will not release funds without this. Obtain before closing day.</div></div>
+    <div class="data-row"><div class="data-label">💰 Certified Check</div><div class="data-value">For your down payment and closing costs. Contact your lender 1-2 days before for the exact amount. Personal checks are NOT accepted.</div></div>
+    <div class="data-row"><div class="data-label">📋 Pending Documents</div><div class="data-value">Any remaining conditions from underwriting. Respond immediately if anything is still outstanding.</div></div>
+  </div>
+  <div class="sub-eyebrow">Documents You'll Sign</div><h3 class="sub-title">Yes, There Are a Lot. Here's What Each One Means.</h3>
+  <table class="guide-table gold-top"><thead><tr><th>Document</th><th>What It Does</th></tr></thead><tbody>
+    <tr><td>The Mortgage</td><td>Pledges your home as security for the loan. In some states called a Deed of Trust.</td></tr>
+    <tr><td>The Mortgage Note</td><td>Your promise to repay the loan. Specifies rate, payment, length, and late payment penalties.</td></tr>
+    <tr><td>Closing Disclosure (CD)</td><td>Final itemized breakdown of all loan terms and closing costs. You receive this 3 days before closing — review it carefully.</td></tr>
+    <tr><td>The Deed</td><td>Legal document transferring ownership from seller to you. Any errors must be corrected before you close.</td></tr>
+    <tr><td>Title Insurance Commitment</td><td>Guarantees your title policy will be issued. Protects your legal ownership against prior claims or errors.</td></tr>
+  </tbody></table>
+  <div class="sub-eyebrow">Being a Successful Homeowner</div><h3 class="sub-title">The Work Doesn't Stop at Closing</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Build a Reserve</div><div class="data-value">Experts recommend 3-6 months of living expenses in reserve. Unexpected repairs, job loss, or illness can happen to anyone. Build this fund as soon as possible after closing.</div></div>
+    <div class="data-row"><div class="data-label">Budget for Maintenance</div><div class="data-value">Plan to spend 1-2% of your home's value annually on maintenance. A $250,000 home = $2,500-5,000/year. Budget monthly so it doesn't surprise you.</div></div>
+    <div class="data-row"><div class="data-label">Review Insurance Annually</div><div class="data-value">Make sure your coverage keeps pace with your home's value. Under-insuring is a costly mistake many homeowners discover too late.</div></div>
+    <div class="data-row"><div class="data-label">Prioritize Smart Improvements</div><div class="data-value">Protect value first — roof, HVAC, plumbing — before cosmetic upgrades. Function before fashion.</div></div>
+    <div class="data-row"><div class="data-label">Monitor Your Equity</div><div class="data-value">As your home appreciates and your balance decreases, equity grows. When the time is right, equity can fund major expenses, renovations, or investment.</div></div>
+  </div>
+  <div class="gold-box"><p>Take a deep breath. Pat yourself on the back. Raise a toast. You are now officially a homeowner! 🏡</p></div>
+</div></section>
+<section class="guide-section" id="s10"><div class="guide-inner fade-up">
+  <div class="section-header"><div class="section-num">10</div><div class="section-head-text"><h2>Don't Mess Up a Good Thing</h2><p>What to NEVER do after applying — and your final prep checklist</p></div></div>
+  <p class="body-text">You're in the process. Your application is submitted. Your pre-approval is in hand. This is not the time to get careless. One wrong move between application and closing can derail your loan, delay your closing, or cost you your dream home.</p>
+  <div class="sub-eyebrow">NEVER Do These After Applying</div><h3 class="sub-title">Protect Your Approval Like It's Your Last Dollar</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label red">❌ Apply for New Credit</div><div class="data-value">No new credit cards, store cards, car loans, or personal loans. Every hard inquiry drops your score. Every new account changes your DTI.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Close Credit Accounts</div><div class="data-value">Closing accounts raises your utilization ratio and shortens your credit history. Both hurt your score mid-process.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Make Large Purchases</div><div class="data-value">No new furniture, appliances, or vehicles — even to use in your new home. This changes your DTI and asset picture dramatically.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Change Bank Accounts</div><div class="data-value">Your lender is tracking assets and deposit patterns. Switching banks mid-process creates unexplainable gaps in your statements.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Co-Sign on Other Loans</div><div class="data-value">Co-signing adds that debt to YOUR DTI even if you never make a payment. It can push your ratios out of approval range.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Large Cash Deposits</div><div class="data-value">Large unexplained deposits trigger underwriting questions. Every deposit must be sourced and documented. Talk to Frank BEFORE depositing anything large.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Change or Quit Your Job</div><div class="data-value">Lenders need stable employment. Changing jobs mid-process — especially going W-2 to self-employed — can reset your entire qualification.</div></div>
+    <div class="data-row"><div class="data-label red">❌ Miss Any Payments</div><div class="data-value">Keep paying everything on time. One late payment on any account during the process can kill your approval outright.</div></div>
+  </div>
+  <div class="sub-eyebrow">Final Tips</div><h3 class="sub-title">Your Pre-Game Checklist</h3>
+  <div class="data-rows">
+    <div class="data-row"><div class="data-label">Make Your List</div><div class="data-value">Write 3-5 non-negotiables BEFORE you start shopping. Keeps emotions from driving decisions you'll regret.</div></div>
+    <div class="data-row"><div class="data-label">Stick to Your Budget</div><div class="data-value">Buying a home is emotional. Don't let excitement push you above what you can comfortably afford. A stretched payment creates financial stress for years.</div></div>
+    <div class="data-row"><div class="data-label">Gather Documents Now</div><div class="data-value">Don't wait until you apply. Collect 2 years tax returns, 30 days pay stubs, 2 months bank statements, and your ID now. Being organized saves weeks.</div></div>
+    <div class="data-row"><div class="data-label">Review Your Spending</div><div class="data-value">Know exactly what you spend monthly. This tells you what you can realistically allocate to a mortgage payment.</div></div>
+    <div class="data-row"><div class="data-label">Talk to Frank First</div><div class="data-value">Before you talk to a Realtor, see a house, or make any financial moves — get your pre-approval. It changes everything about how you shop and how sellers see you.</div></div>
+  </div>
+  <div class="tip-box gold-tip"><p>💡 <strong>Frank's Final Word:</strong> You don't have to go at it alone. Today's market is competitive — the buyers who win are the ones with the right team and the right preparation. Let's build yours. <strong>(615) 768-9424</strong> · <strong>www.theburkslendinggroup.com</strong></p></div>
+</div></section>
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to Make Your Move?</h2>
+    <p>Clear to Close Starts Here. Your journey to homeownership starts with one conversation — no pressure, no obligation, just real answers about what's possible for your situation.</p>
+    <div class="cta-btns">
+      <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="btn-dark">🏠 Check My Eligibility →</a>
+      <a href="https://calendly.com/fburks" target="_blank" class="btn-outline">📅 Book a Free Call</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2025 The Burks Lending Group · empowered by NEXA Lending · Smyrna, TN<br>
+  Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
+  NEXA Lending · NMLS #1660690 · Equal Housing Lender · 538 Johnstown Dr., Smyrna, TN 37167<br>
+  <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Disclosures</a> · <a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a><br>
+  <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a> · <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank">LinkedIn</a> · <a href="https://calendly.com/fburks" target="_blank">Book a Call</a><br><br>
+  This is not a commitment to lend. All loans subject to credit approval. Program availability and terms subject to change without notice. This guide is for informational purposes only and does not constitute financial, legal, or tax advice.</p>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{const w=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=(w/h)*100+'%';});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

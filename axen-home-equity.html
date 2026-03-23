@@ -1,24 +1,559 @@
-<!doctype html><html data-build-id="dbd8ed0f31" data-git-hash="bb597a89c8d1093f93aa4a7a04757ddbd8ed0f31" data-build-timestamp="1774145663" data-version="1.0.0" data-env="" lang="en" data-theme="claude" data-mode="light" data-p4n="true" class="h-screen antialiased scroll-smooth"><head data-ion-ip-country="US">
-  
-<link rel="preconnect" href="https://assets-proxy.anthropic.com" crossorigin><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Claude</title><meta name="description" content="Claude is Anthropic's AI, built for problem solvers. Tackle complex challenges, analyze data, write code, and think through your hardest work."><meta name="apple-itunes-app" content="app-id=6473753684"><meta property="og:type" content="website"><meta property="og:site_name" content="Claude"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg"><link rel="icon" type="image/png" sizes="32x32" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce67964e7-CAX1bqSh.png"><link rel="icon" type="image/png" sizes="16x16" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e51811-DebilQLI.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-jJjJELY8.png"><link rel="apple-touch-startup-image" href="/images/claude_app_icon.png"><link rel="manifest" href="/manifest.json"><meta name="mobile-web-app-capable" content="yes"><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-CFxw3nG7.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-C-BHYa_K.woff2" as="font" type="font/woff2" crossorigin><script nonce="9PFmxunqkNyP8rzzpEsLpA==">void 0===globalThis.process&&(globalThis.process={env:{},cwd:function(){return"/"}}),void 0===globalThis.global&&(globalThis.global=globalThis)</script><script type="application/ld+json" nonce="9PFmxunqkNyP8rzzpEsLpA==">{
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "name": "Claude",
-            "alternateName": ["Claude.ai", "Claude by Anthropic"],
-            "url": "https://claude.com"
-          },
-          {
-            "@type": "Organization",
-            "name": "Anthropic",
-            "url": "https://www.anthropic.com",
-            "logo": "https://claude.ai/images/claude_ogimage.png",
-            "sameAs": [
-              "https://x.com/AnthropicAI",
-              "https://www.linkedin.com/company/anthropic",
-              "https://www.youtube.com/@anthropic-ai"
-            ]
-          }
-        ]
-      }</script><script nonce="9PFmxunqkNyP8rzzpEsLpA==">!function(){try{performance.mark?.("rq_cache:preload_start");const e="keyval-store",o="keyval",r="react-query-cache",t=new Promise(t=>{if(!window.indexedDB)return void t(void 0);const c=indexedDB.open(e);c.onupgradeneeded=()=>{c.transaction?.abort()},c.onerror=()=>t(void 0),c.onsuccess=()=>{const a=c.result;if(!a.objectStoreNames.contains(o))return a.close(),indexedDB.deleteDatabase(e),void t(void 0);try{const e=a.transaction(o,"readonly").objectStore(o).get(r);e.onerror=()=>{a.close(),t(void 0)},e.onsuccess=()=>{a.close(),window.__PRELOADED_IDB_CACHE_RESULT__=e.result,t(e.result)}}catch{a.close(),t(void 0)}}});window.__PRELOADED_IDB_CACHE__=t,performance.measure?.("rq_cache:preload_exec",{start:"rq_cache:preload_start"})}catch{}}()</script><script type="module" crossorigin src="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/index-DcrCrePJ.js"></script><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-Vyn28asx.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/tree-sitter-CxtuNIRw.js"><link rel="stylesheet" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-MdCYKnmO.css"></head><body class="bg-bg-100 text-text-100 font-ui min-h-screen"><div id="root"></div><script nonce="9PFmxunqkNyP8rzzpEsLpA==">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='9PFmxunqkNyP8rzzpEsLpA==';d.innerHTML="window.__CF$cv$params={r:'9e0e3612ba947826',t:'MTc3NDI3NzAzNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='9PFmxunqkNyP8rzzpEsLpA==';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed-Rate Home Equity Line | Funded in 5 Days | The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#0A0F1E;
+  --dark:#111827;
+  --slate:#1E293B;
+  --amber:#D97706;
+  --amber-light:#F59E0B;
+  --amber-pale:#FEF3C7;
+  --sky:#0EA5E9;
+  --sky-light:#38BDF8;
+  --sky-pale:#E0F2FE;
+  --white:#FFFFFF;
+  --off:#F8FAFC;
+  --text-dark:#0F172A;
+  --text-mid:#475569;
+  --text-light:#94A3B8;
+  --green:#059669;
+  --green-light:#D1FAE5;
+  --red:#DC2626;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--off);color:var(--text-dark);}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--amber),var(--amber-light));z-index:600;transition:width .1s;}
+
+/* NAV */
+nav{background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);padding:15px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;border-bottom:1px solid rgba(217,119,6,0.2);}
+.nav-brand{display:flex;flex-direction:column;}
+.nav-name{font-family:'DM Serif Display',serif;color:var(--white);font-size:17px;letter-spacing:.01em;}
+.nav-name span{color:var(--amber-light);}
+.nav-sub{color:rgba(255,255,255,0.4);font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.nav-pill{background:var(--amber);color:var(--white);font-size:11px;font-weight:700;padding:10px 22px;border-radius:100px;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .2s;}
+.nav-pill:hover{background:var(--amber-light);transform:translateY(-1px);}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--midnight);display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(217,119,6,0.12),transparent 65%),radial-gradient(ellipse 50% 50% at 15% 70%,rgba(14,165,233,0.06),transparent 55%);}
+.hero-dots{position:absolute;inset:0;opacity:.025;background-image:radial-gradient(circle,rgba(255,255,255,1) 1px,transparent 1px);background-size:32px 32px;}
+.hero-left{padding:80px 60px 80px 80px;position:relative;z-index:2;}
+.speed-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(217,119,6,0.15);border:1px solid rgba(217,119,6,0.4);color:var(--amber-light);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:9px 18px;border-radius:100px;margin-bottom:28px;}
+.speed-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber-light);animation:blink 1.8s infinite;}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.7);}}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,5.5vw,72px);line-height:1.02;color:var(--white);margin-bottom:20px;}
+.hero-h1 em{color:var(--amber-light);font-style:italic;}
+.hero-sub{color:rgba(255,255,255,0.6);font-size:17px;line-height:1.7;margin-bottom:36px;font-weight:300;max-width:480px;}
+.hero-sub strong{color:var(--white);font-weight:600;}
+.hero-quick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0;}
+.hq-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:12px;}
+.hq-icon{font-size:22px;}
+.hq-text{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.4;}
+.hq-text strong{color:var(--white);display:block;font-size:14px;font-weight:700;}
+
+/* FORM */
+.hero-right{padding:80px 80px 80px 40px;position:relative;z-index:2;}
+.form-wrap{background:var(--white);border-radius:20px;padding:40px;box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 0 1px rgba(217,119,6,0.12);}
+.form-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;}
+.form-heading{font-family:'DM Serif Display',serif;font-size:26px;color:var(--text-dark);margin-bottom:6px;line-height:1.2;}
+.form-sub{font-size:13px;color:var(--text-light);margin-bottom:26px;line-height:1.5;}
+.fgroup{margin-bottom:14px;}
+.fgroup label{display:block;font-size:11px;font-weight:700;color:var(--text-mid);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase;}
+.fgroup input,.fgroup select{width:100%;padding:13px 16px;border:1.5px solid #E2E8F0;border-radius:9px;font-size:14px;font-family:'Outfit',sans-serif;color:var(--text-dark);background:var(--white);outline:none;transition:border-color .2s,box-shadow .2s;}
+.fgroup input:focus,.fgroup select:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(217,119,6,0.12);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fsub{width:100%;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);font-size:15px;font-weight:700;padding:16px;border:none;border-radius:10px;cursor:pointer;margin-top:8px;font-family:'Outfit',sans-serif;letter-spacing:.04em;transition:opacity .2s,transform .2s;}
+.fsub:hover{opacity:.9;transform:translateY(-1px);}
+.fdisclaim{font-size:10px;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.5;}
+#successMsg{display:none;text-align:center;padding:16px 0;}
+#successMsg .ck{width:60px;height:60px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 14px;}
+#successMsg h3{font-family:'DM Serif Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:8px;}
+#successMsg p{font-size:13px;color:var(--text-mid);line-height:1.6;}
+
+/* TRUST BAR */
+.trust{background:var(--slate);padding:16px 40px;border-top:1px solid rgba(217,119,6,0.15);border-bottom:1px solid rgba(255,255,255,0.05);}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
+.ti{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,0.55);font-size:12px;font-weight:500;}
+.ti span{font-size:16px;}
+.tdiv{width:1px;height:18px;background:rgba(255,255,255,0.08);}
+
+/* SECTION BASE */
+section{padding:80px 40px;}
+.si{max-width:1100px;margin:0 auto;}
+.sec-tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.sec-h{font-family:'DM Serif Display',serif;font-size:clamp(34px,4vw,52px);line-height:1.08;color:var(--text-dark);margin-bottom:14px;}
+.sec-h em{color:var(--amber);font-style:italic;}
+.sec-p{font-size:17px;color:var(--text-mid);line-height:1.7;max-width:600px;font-weight:300;}
+
+/* WHAT MAKES IT DIFFERENT */
+.diff-section{background:var(--white);}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:52px;}
+.diff-cards{display:flex;flex-direction:column;gap:16px;}
+.dc{background:var(--off);border:1.5px solid #E2E8F0;border-radius:14px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start;transition:border-color .2s,box-shadow .2s;}
+.dc:hover{border-color:var(--amber);box-shadow:0 8px 28px rgba(217,119,6,0.08);}
+.dc-icon{width:46px;height:46px;background:var(--amber-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.dc-body h4{font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:5px;}
+.dc-body p{font-size:13px;color:var(--text-mid);line-height:1.55;}
+
+/* VS BLOCK */
+.vs-block{background:var(--midnight);border-radius:20px;padding:40px;border:1px solid rgba(217,119,6,0.2);}
+.vs-title{font-family:'DM Serif Display',serif;font-size:24px;color:var(--white);margin-bottom:24px;text-align:center;}
+.vs-title em{color:var(--amber-light);font-style:italic;}
+.vs-row{display:flex;flex-direction:column;gap:12px;}
+.vs-item{background:rgba(255,255,255,0.04);border-radius:10px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr 1fr;gap:16px;align-items:center;}
+.vs-label{font-size:12px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:.04em;min-width:120px;}
+.vs-bad{font-size:13px;color:rgba(255,100,100,0.8);display:flex;align-items:center;gap:6px;}
+.vs-bad::before{content:'✗';font-weight:700;}
+.vs-good{font-size:13px;color:#6EE7B7;font-weight:600;display:flex;align-items:center;gap:6px;}
+.vs-good::before{content:'✓';font-weight:700;}
+
+/* QUALIFY */
+.qual-section{background:linear-gradient(135deg,var(--midnight),var(--dark));}
+.qual-inner{max-width:960px;margin:0 auto;text-align:center;}
+.qual-inner .sec-h{color:var(--white);}
+.qual-inner .sec-p{margin:0 auto 48px;color:rgba(255,255,255,0.6);}
+.qual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;}
+.qc{background:rgba(255,255,255,0.04);border:1px solid rgba(217,119,6,0.2);border-radius:14px;padding:28px 22px;text-align:left;}
+.qc-icon{font-size:30px;margin-bottom:12px;}
+.qc h4{font-size:14px;font-weight:700;color:var(--amber-light);margin-bottom:8px;letter-spacing:.04em;}
+.qc p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;}
+.qc strong{color:var(--white);}
+.qual-cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);font-size:15px;font-weight:700;padding:18px 44px;border-radius:100px;text-decoration:none;letter-spacing:.04em;transition:opacity .2s,transform .2s;}
+.qual-cta:hover{opacity:.9;transform:translateY(-2px);}
+
+/* HOW FAST */
+.fast-section{background:var(--off);}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:52px;position:relative;}
+.steps::before{content:'';position:absolute;top:38px;left:5%;right:5%;height:2px;background:linear-gradient(90deg,var(--amber-pale),var(--amber),var(--amber-pale));z-index:0;}
+.step{text-align:center;position:relative;z-index:1;}
+.step-n{width:78px;height:78px;background:var(--midnight);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'DM Serif Display',serif;font-size:30px;color:var(--amber-light);border:3px solid var(--amber);box-shadow:0 0 0 6px rgba(217,119,6,0.08);}
+.step h4{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px;}
+.step p{font-size:12px;color:var(--text-mid);line-height:1.5;}
+
+/* TERMS */
+.terms-section{background:var(--white);}
+.terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.tc{border-radius:16px;padding:32px 28px;border:1.5px solid #E2E8F0;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.tc:hover{box-shadow:0 16px 48px rgba(0,0,0,0.07);transform:translateY(-3px);}
+.tc.featured{background:var(--midnight);border-color:var(--amber);}
+.tc.featured::after{content:'MOST FLEXIBLE';position:absolute;top:14px;right:14px;background:var(--amber);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.12em;padding:4px 10px;border-radius:100px;}
+.tc-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+.tc.featured .tc-tag{color:var(--amber-light);}
+.tc:not(.featured) .tc-tag{color:var(--amber);}
+.tc-title{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:8px;}
+.tc.featured .tc-title{color:var(--white);}
+.tc:not(.featured) .tc-title{color:var(--text-dark);}
+.tc-rate{font-family:'DM Serif Display',serif;font-size:42px;line-height:1;margin-bottom:6px;}
+.tc.featured .tc-rate{color:var(--amber-light);}
+.tc:not(.featured) .tc-rate{color:var(--amber);}
+.tc-note{font-size:12px;margin-bottom:24px;}
+.tc.featured .tc-note{color:rgba(255,255,255,0.4);}
+.tc:not(.featured) .tc-note{color:var(--text-light);}
+.tc-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.tc-list li{display:flex;gap:10px;font-size:13px;}
+.tc-list li::before{content:'✓';color:var(--amber-light);font-weight:700;flex-shrink:0;}
+.tc.featured .tc-list li{color:rgba(255,255,255,0.7);}
+.tc:not(.featured) .tc-list li{color:var(--text-mid);}
+.terms-note{margin-top:28px;font-size:12px;color:var(--text-light);text-align:center;line-height:1.7;}
+
+/* USE OF FUNDS */
+.use-section{background:var(--slate);padding:80px 40px;}
+.use-inner{max-width:1100px;margin:0 auto;}
+.use-inner .sec-h{color:var(--white);}
+.use-inner .sec-p{color:rgba(255,255,255,0.55);}
+.use-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;}
+.uc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:26px 20px;text-align:center;transition:border-color .2s,background .2s;}
+.uc:hover{border-color:var(--amber);background:rgba(217,119,6,0.08);}
+.uc-icon{font-size:34px;margin-bottom:12px;}
+.uc h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:5px;}
+.uc p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5;}
+
+/* TESTIMONIALS */
+.testi{background:var(--off);}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+.tt{background:var(--white);border-radius:16px;padding:32px;border:1.5px solid #E2E8F0;}
+.tq{font-size:44px;color:#FEF3C7;font-family:'DM Serif Display',serif;line-height:1;margin-bottom:10px;}
+.tx{font-size:14px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;font-style:italic;}
+.ts{color:var(--amber-light);font-size:13px;margin-bottom:10px;letter-spacing:2px;}
+.ta{font-size:13px;font-weight:700;color:var(--text-dark);}
+.tl{font-size:11px;color:var(--text-light);margin-top:2px;}
+
+/* BIO */
+.bio-section{background:var(--white);}
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.bio-visual{background:linear-gradient(135deg,var(--midnight),var(--dark));border-radius:20px;height:420px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(217,119,6,0.2);position:relative;overflow:hidden;}
+.bio-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(217,119,6,0.15),transparent 55%);}
+.bio-initials{font-family:'DM Serif Display',serif;font-size:110px;font-weight:400;color:rgba(217,119,6,0.2);position:relative;z-index:1;}
+.bio-content .sec-tag{margin-bottom:8px;}
+.bio-content .sec-h{margin-bottom:14px;}
+.bio-content p{font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;}
+.bio-quote{background:var(--amber-pale);border-left:3px solid var(--amber);padding:14px 20px;border-radius:0 8px 8px 0;font-family:'DM Serif Display',serif;font-size:20px;color:var(--amber);font-style:italic;margin-bottom:26px;}
+.bio-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.bio-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:opacity .2s;}
+.bio-btn.a{background:var(--amber);color:var(--white);}
+.bio-btn.b{background:var(--off);color:var(--text-dark);border:1.5px solid #E2E8F0;}
+.bio-btn:hover{opacity:.85;}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--midnight),var(--dark));padding:100px 40px;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 50% 50%,rgba(217,119,6,0.12),transparent 65%);}
+.cta-inner{max-width:680px;margin:0 auto;position:relative;z-index:1;}
+.cta-tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-light);margin-bottom:16px;}
+.cta-h{font-family:'DM Serif Display',serif;font-size:clamp(38px,5vw,62px);color:var(--white);font-weight:400;line-height:1.08;margin-bottom:16px;}
+.cta-h em{color:var(--amber-light);font-style:italic;}
+.cta-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;font-weight:300;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.cb{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.04em;transition:opacity .2s,transform .2s;}
+.cb:hover{opacity:.9;transform:translateY(-2px);}
+.cb.p{background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);}
+.cb.s{background:rgba(255,255,255,0.07);color:var(--white);border:1.5px solid rgba(255,255,255,0.18);}
+
+/* FOOTER */
+footer{background:var(--midnight);padding:40px;text-align:center;border-top:1px solid rgba(217,119,6,0.12);}
+.footer-brand{font-family:'DM Serif Display',serif;color:var(--white);font-size:19px;margin-bottom:8px;}
+.footer-brand span{color:var(--amber-light);}
+.footer-nmls{color:rgba(255,255,255,0.35);font-size:12px;margin-bottom:14px;}
+.footer-legal{color:rgba(255,255,255,0.2);font-size:11px;line-height:1.75;max-width:820px;margin:0 auto;}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(10,15,30,0.97);backdrop-filter:blur(10px);border-top:1px solid rgba(217,119,6,0.25);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;z-index:400;transform:translateY(100%);transition:transform .3s;}
+.sticky.on{transform:translateY(0);}
+.sticky-txt{color:rgba(255,255,255,0.65);font-size:13px;}
+.sticky-txt strong{color:var(--white);}
+.sticky-btn{background:linear-gradient(135deg,var(--amber),var(--amber-light));color:var(--white);font-size:13px;font-weight:700;padding:11px 28px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:opacity .2s;}
+.sticky-btn:hover{opacity:.9;}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+.fade.on{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:56px 28px 28px;}
+  .hero-right{padding:0 28px 56px;}
+  .hero-quick{grid-template-columns:1fr;}
+  .diff-grid,.bio-grid{grid-template-columns:1fr;}
+  .bio-visual{height:220px;}
+  .steps{grid-template-columns:1fr 1fr;gap:28px;}
+  .steps::before{display:none;}
+  .qual-grid,.terms-grid,.tg,.use-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .trust-inner{gap:18px;}
+  .tdiv{display:none;}
+  .cta-btns,.bio-btns{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-name">The Burks <span>Lending Group</span></div>
+    <div class="nav-sub">Empowered by NEXA Lending &bull; NMLS #841644</div>
+  </div>
+  <a href="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" target="_blank" class="nav-pill">Get My Rate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="speed-badge"><div class="dot"></div>Fixed Rate &bull; Funded in 5 Days</div>
+    <h1 class="hero-h1">Your Equity.<br><em>Fixed Rate.</em><br>Five Days.</h1>
+    <p class="hero-sub">Most HELOCs are variable. This one is <strong>fixed from day one</strong>, fully funded upfront, and can close in as few as five business days. No appraisal. No piles of paperwork. 100% online.</p>
+    <div class="hero-quick">
+      <div class="hq-item"><div class="hq-icon">📊</div><div class="hq-text"><strong>620+ FICO</strong>Primary residences</div></div>
+      <div class="hq-item"><div class="hq-icon">🏠</div><div class="hq-text"><strong>Up to 85% CLTV</strong>Owner occupied</div></div>
+      <div class="hq-item"><div class="hq-icon">💵</div><div class="hq-text"><strong>$25K to $400K</strong>Lines available</div></div>
+      <div class="hq-item"><div class="hq-icon">⚡</div><div class="hq-text"><strong>5-Day Funding</strong>Once approved</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right" id="start">
+    <div class="form-wrap">
+      <div class="form-eyebrow">Free Rate Check</div>
+      <h2 class="form-heading">Find Your Fixed Rate in Minutes</h2>
+      <p class="form-sub">Soft pull only. No credit impact. No obligation.</p>
+      <form id="leadForm" action="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" method="GET">
+        <div class="frow">
+          <div class="fgroup"><label>First Name</label><input type="text" name="first_name" placeholder="Marcus" required></div>
+          <div class="fgroup"><label>Last Name</label><input type="text" name="last_name" placeholder="Johnson" required></div>
+        </div>
+        <div class="fgroup"><label>Phone Number</label><input type="tel" name="phone" placeholder="(615) 555-0100" required></div>
+        <div class="fgroup"><label>Email Address</label><input type="email" name="email" placeholder="marcus@email.com" required></div>
+        <div class="fgroup">
+          <label>Estimated Home Value</label>
+          <select name="home_value" required>
+            <option value="">Select a range...</option>
+            <option>$100K - $200K</option>
+            <option>$200K - $350K</option>
+            <option>$350K - $500K</option>
+            <option>$500K - $750K</option>
+            <option>$750K+</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label>Property Type</label>
+          <select name="property_type" required>
+            <option value="">Select...</option>
+            <option>Primary Residence</option>
+            <option>Second Home</option>
+            <option>Investment Property</option>
+          </select>
+        </div>
+        <button type="submit" class="fsub">Check My Fixed Rate &rarr;</button>
+        <p class="fdisclaim">Soft pull only. Your score is protected. By submitting, you agree to be contacted by The Burks Lending Group.</p>
+      </form>
+      <div id="successMsg">
+        <div class="ck">✓</div>
+        <h3>You're all set!</h3>
+        <p>Frank will be in touch within one business day. Watch your phone and inbox for next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="ti"><span>🏅</span>25 Years in Mortgage</div>
+    <div class="tdiv"></div>
+    <div class="ti"><span>🔒</span>Soft Pull to Start</div>
+    <div class="tdiv"></div>
+    <div class="ti"><span>📋</span>Fixed Rate for Life of Loan</div>
+    <div class="tdiv"></div>
+    <div class="ti"><span>⚡</span>100% Online Application</div>
+    <div class="tdiv"></div>
+    <div class="ti"><span>📞</span>(615) 768-9424</div>
+  </div>
+</div>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section class="diff-section">
+  <div class="si">
+    <div class="diff-grid">
+      <div class="fade">
+        <div class="sec-tag">Why This Product Stands Out</div>
+        <h2 class="sec-h">Not Your Average <em>HELOC</em></h2>
+        <p class="sec-p">Most home equity lines are variable rate — your payment moves every time Prime moves. This product locks in a fixed rate at origination, giving you the predictability of a traditional loan with the flexibility of a line of credit.</p>
+      </div>
+      <div class="diff-cards fade">
+        <div class="dc"><div class="dc-icon">🔒</div><div class="dc-body"><h4>Fixed Rate — Locked In</h4><p>Your initial rate is fixed and fully amortizing. When rates drop, your payment on the original draw doesn't drop with them — but neither does it spike. You know exactly what you owe.</p></div></div>
+        <div class="dc"><div class="dc-icon">💵</div><div class="dc-body"><h4>Full Amount Funded at Closing</h4><p>Unlike traditional draw HELOCs, this line is fully disbursed at origination. The cash hits your account. You're not waiting to pull from a line — it's already yours.</p></div></div>
+        <div class="dc"><div class="dc-icon">🔄</div><div class="dc-body"><h4>Redraw as You Pay Down</h4><p>As you pay back the balance, you can redraw up to 100% of your credit limit during the draw period. The flexibility of a revolving line with the stability of a fixed rate.</p></div></div>
+        <div class="dc"><div class="dc-icon">📄</div><div class="dc-body"><h4>No Appraisal Required</h4><p>AVM-based valuation. Completed in seconds. No appraiser. No scheduling. No waiting weeks for a value. That's how this closes in as few as five business days.</p></div></div>
+      </div>
+    </div>
+
+    <div class="vs-block fade" style="margin-top:56px;">
+      <div class="vs-title">This vs. <em>Traditional HELOC</em></div>
+      <div class="vs-row">
+        <div class="vs-item"><div class="vs-label">Rate Type</div><div class="vs-bad">Variable — moves with Prime</div><div class="vs-good">Fixed at origination</div></div>
+        <div class="vs-item"><div class="vs-label">Funding</div><div class="vs-bad">Draw as needed over time</div><div class="vs-good">Full amount funded at close</div></div>
+        <div class="vs-item"><div class="vs-label">Appraisal</div><div class="vs-bad">Often required</div><div class="vs-good">AVM only — no appraisal</div></div>
+        <div class="vs-item"><div class="vs-label">Timeline</div><div class="vs-bad">Weeks to close</div><div class="vs-good">As few as 5 business days</div></div>
+        <div class="vs-item"><div class="vs-label">Payment Certainty</div><div class="vs-bad">Changes with rate moves</div><div class="vs-good">Predictable fixed payment</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFY -->
+<section class="qual-section">
+  <div class="qual-inner">
+    <div class="sec-tag" style="color:var(--amber-light);">Do You Qualify?</div>
+    <h2 class="sec-h" style="color:var(--white);margin-bottom:12px;">Here's What We Look For</h2>
+    <p class="sec-p">Tennessee homeowners have strong equity positions. If you've owned your home for a few years, there's a real chance you qualify right now.</p>
+    <div class="qual-grid fade">
+      <div class="qc"><div class="qc-icon">📊</div><h4>Credit Score</h4><p>Primary residence minimum is <strong>620 FICO</strong>. Secondary and investment properties require <strong>680+</strong>. Higher score = better rate and higher CLTV access.</p></div>
+      <div class="qc"><div class="qc-icon">🏠</div><h4>Home Equity</h4><p>Up to <strong>85% CLTV</strong> on primary residences for qualifying scores (660+). Up to 70% on secondary and investment properties.</p></div>
+      <div class="qc"><div class="qc-icon">💰</div><h4>Income</h4><p>W2, self-employed, rental income, retirement, and SSA all accepted. Max <strong>50% DTI</strong>. Income verified automatically through linked accounts.</p></div>
+      <div class="qc"><div class="qc-icon">📋</div><h4>Loan Amount</h4><p>Lines from <strong>$25,000 to $400,000</strong>. Terms of 5, 10, 15, or 30 years. The full amount is funded at closing, not drawn over time.</p></div>
+      <div class="qc"><div class="qc-icon">🏡</div><h4>Property Types</h4><p>Single family, townhomes, condos, PUDs. Primary, second home, and investment properties. Must not have been purchased within the last <strong>90 days</strong>.</p></div>
+      <div class="qc"><div class="qc-icon">⏱️</div><h4>How Fast</h4><p>Application approval in about <strong>5 minutes</strong>. Funding in as few as <strong>5 business days</strong> for primary residences after the 3-day rescission period.</p></div>
+    </div>
+    <a href="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" target="_blank" class="qual-cta">Check My Rate Free &rarr;</a>
+  </div>
+</section>
+
+<!-- HOW FAST -->
+<section class="fast-section">
+  <div class="si">
+    <div class="fade" style="text-align:center;">
+      <div class="sec-tag">The Process</div>
+      <h2 class="sec-h" style="text-align:center;">From Application to <em>Funded</em> Faster Than Most Close</h2>
+    </div>
+    <div class="steps fade">
+      <div class="step"><div class="step-n">1</div><h4>Apply Online</h4><p>5-minute application. Soft pull to check your rate. No credit impact at this stage.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Select Your Offer</h4><p>Choose your line amount, term (5, 10, 15, or 30 years), and origination fee structure.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Verify Income</h4><p>Link your bank, payroll, or tax accounts. Automated. No paperwork stacks required.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Sign Digitally</h4><p>eNotary session for eligible counties. About 10 minutes. Done from your couch.</p></div>
+      <div class="step"><div class="step-n">5</div><h4>Get Funded</h4><p>After the 3-day rescission period, full amount hits your bank via ACH. Done.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="terms-section">
+  <div class="si">
+    <div class="fade">
+      <div class="sec-tag">Term Options</div>
+      <h2 class="sec-h">Choose the Term That Fits <em>Your Life</em></h2>
+      <p class="sec-p">Four fixed terms. Each one comes with a draw period so you can redraw as you pay down. You pick what works for your budget and timeline.</p>
+    </div>
+    <div class="terms-grid fade">
+      <div class="tc">
+        <div class="tc-tag">Short Term</div>
+        <div class="tc-title">5 or 10 Year</div>
+        <div class="tc-rate">5-10 yr</div>
+        <div class="tc-note">2-year draw (5yr) or 3-year draw (10yr)</div>
+        <ul class="tc-list">
+          <li>Shortest payoff timeline</li>
+          <li>Lower total interest paid</li>
+          <li>Higher monthly payment</li>
+          <li>Best for focused payoff goals</li>
+        </ul>
+      </div>
+      <div class="tc featured">
+        <div class="tc-tag">Most Popular</div>
+        <div class="tc-title">15 Year</div>
+        <div class="tc-rate">15 yr</div>
+        <div class="tc-note">4-year draw period</div>
+        <ul class="tc-list">
+          <li>Balanced payment and payoff</li>
+          <li>4-year window to redraw</li>
+          <li>Strong middle ground for most homeowners</li>
+          <li>Fixed rate stays locked the full term</li>
+        </ul>
+      </div>
+      <div class="tc">
+        <div class="tc-tag">Maximum Flexibility</div>
+        <div class="tc-title">30 Year</div>
+        <div class="tc-rate">30 yr</div>
+        <div class="tc-note">5-year draw period</div>
+        <ul class="tc-list">
+          <li>Lowest monthly payment option</li>
+          <li>Longest draw access window</li>
+          <li>More cash flow each month</li>
+          <li>Good for long-horizon strategies</li>
+        </ul>
+      </div>
+    </div>
+    <p class="terms-note">Rates are fixed at the initial draw. Additional draws during the draw period are set at the rate in effect at time of the draw. No prepayment penalties. 0.25% autopay discount available.</p>
+  </div>
+</section>
+
+<!-- USE OF FUNDS -->
+<section class="use-section">
+  <div class="use-inner">
+    <div class="fade" style="text-align:center;">
+      <div class="sec-tag" style="color:var(--amber-light);">What Can You Use It For?</div>
+      <h2 class="sec-h" style="color:var(--white);text-align:center;">Your Equity, <em>Your Strategy</em></h2>
+      <p class="sec-p" style="margin:0 auto 0;color:rgba(255,255,255,0.55);">The full amount is yours at closing. Put it to work however your goals demand.</p>
+    </div>
+    <div class="use-grid fade">
+      <div class="uc"><div class="uc-icon">🔨</div><h4>Home Renovations</h4><p>Kitchen, bath, addition, or roof. Build value while you spend equity.</p></div>
+      <div class="uc"><div class="uc-icon">💳</div><h4>Debt Consolidation</h4><p>Pay off high-interest cards and personal loans at a far better rate.</p></div>
+      <div class="uc"><div class="uc-icon">📈</div><h4>Down Payment</h4><p>Use your primary home's equity as a down payment on your next property.</p></div>
+      <div class="uc"><div class="uc-icon">🎓</div><h4>Education</h4><p>College tuition, trade school, or certification costs handled.</p></div>
+      <div class="uc"><div class="uc-icon">🚨</div><h4>Emergency Reserve</h4><p>Cash in hand before you need it. No scrambling in a crisis.</p></div>
+      <div class="uc"><div class="uc-icon">💼</div><h4>Business Capital</h4><p>Fund equipment, inventory, or operations with home equity capital.</p></div>
+      <div class="uc"><div class="uc-icon">🌴</div><h4>Life Goals</h4><p>Wedding, medical costs, family plans. Life doesn't wait on savings.</p></div>
+      <div class="uc"><div class="uc-icon">🔁</div><h4>Bridge Financing</h4><p>Bridge the gap between selling your current home and buying the next one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="si">
+    <div class="fade" style="text-align:center;">
+      <div class="sec-tag">Real Results</div>
+      <h2 class="sec-h" style="text-align:center;">Tennessee Homeowners Who <em>Made Their Move</em></h2>
+    </div>
+    <div class="tg fade">
+      <div class="tt"><div class="tq">"</div><p class="tx">I needed cash fast and I did not want a variable rate. Frank showed me this fixed-rate option and we closed in less than two weeks. Easiest financial transaction I've ever done.</p><div class="ts">★★★★★</div><div class="ta">J. Patterson</div><div class="tl">Smyrna, Tennessee</div></div>
+      <div class="tt"><div class="tq">"</div><p class="tx">The 100% online process was smooth from start to finish. I signed everything on my laptop, connected my bank account, and the money hit my account five days later. No appraisal, no hassle.</p><div class="ts">★★★★★</div><div class="ta">R. &amp; M. Brooks</div><div class="tl">Murfreesboro, Tennessee</div></div>
+      <div class="tt"><div class="tq">"</div><p class="tx">I used the line to pay off three credit cards and fund a rental property down payment. Frank laid out the strategy clearly and the whole thing came together faster than I expected.</p><div class="ts">★★★★★</div><div class="ta">D. Washington</div><div class="tl">LaVergne, Tennessee</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio-section">
+  <div class="si">
+    <div class="bio-grid fade">
+      <div class="bio-visual"><div class="bio-initials">FB</div></div>
+      <div class="bio-content">
+        <div class="sec-tag">Your Advisor</div>
+        <h2 class="sec-h">Frank Burks II, CMA</h2>
+        <p>With 25 years in mortgage and deep roots in Middle Tennessee, our team has spent careers helping homeowners find the right tool for the right moment. A fixed-rate home equity line is one of the most powerful tools in the box when the timing is right.</p>
+        <p>We walk every client through their numbers before recommending a path. When speed, certainty, and simplicity all matter, this is often the answer.</p>
+        <div class="bio-quote">"Clear to Close Starts Here."</div>
+        <div class="bio-btns">
+          <a href="tel:6157689424" class="bio-btn a">📞 (615) 768-9424</a>
+          <a href="https://calendly.com/fburks" target="_blank" class="bio-btn b">📅 Schedule a Call</a>
+          <a href="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" target="_blank" class="bio-btn b">🏠 Get My Rate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner fade">
+    <div class="cta-tag">Ready to Move?</div>
+    <h2 class="cta-h">Fixed Rate. <em>Fast Funding.</em> Your Terms.</h2>
+    <p class="cta-sub">A free rate check takes about five minutes. Soft pull only, no credit impact, no commitment. Find out what your equity can do right now.</p>
+    <div class="cta-btns">
+      <a href="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" target="_blank" class="cb p">Get My Fixed Rate &rarr;</a>
+      <a href="tel:6157689424" class="cb s">📞 Call Frank Directly</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">The Burks <span>Lending Group</span></div>
+  <div class="footer-nmls">Frank Burks II &bull; NMLS #841644 &bull; Empowered by NEXA Lending &bull; (615) 768-9424</div>
+  <p class="footer-legal">This is not a commitment to lend. All loans subject to credit approval and underwriting guidelines. Home equity line products are subject to program eligibility requirements. This product is not available in Delaware, Kentucky, Maryland, New York, Texas, or West Virginia. 90-day seasoning required from date of purchase. Rate is fixed for initial draw; additional draws are set at rate in effect at time of draw. No prepayment penalties. Equal Housing Lender.</p>
+</footer>
+
+<div class="sticky" id="stickyBar">
+  <div class="sticky-txt"><strong>Fixed rate. Funded in 5 days.</strong> Find out what you qualify for today.</div>
+  <a href="https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583" target="_blank" class="sticky-btn">Get My Rate &rarr;</a>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100;
+  document.getElementById('progress').style.width=pct+'%';
+  document.getElementById('stickyBar').classList.toggle('on',d.scrollTop>500);
+});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const href=this.getAttribute('href');
+    if(href==='#'||href==='')return;
+    const t=document.querySelector(href);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+document.getElementById('leadForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  window.location.href='https://axenmortgageheloc.com/account/heloc/register?referrer=9d422295-8691-40a1-b325-b1ee5754a583';
+});
+</script>
+</body>
+</html>

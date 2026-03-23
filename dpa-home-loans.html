@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do You Qualify? Down Payment Assistance · The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #0F2040;
+    --navy-light: #162d52;
+    --gold: #C8973A;
+    --gold-light: #E8B455;
+    --gold-pale: #F5E6CC;
+    --white: #FFFFFF;
+    --off-white: #F7F4EF;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a5568;
+    --text-light: #8a9ab5;
+    --green: #2D7D4F;
+    --green-light: #E8F5EE;
+    --red-light: #FEF2F2;
+    --red: #C53030;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 22, 40, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: .04em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    font-size: 12px; font-weight: 600; letter-spacing: .08em;
+    padding: 9px 20px; border-radius: 4px; text-decoration: none;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 50%, #0d2847 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 120px 32px 80px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(200,151,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 10% 80%, rgba(74,158,255,0.08) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: .04;
+    background-image: linear-gradient(rgba(200,151,58,.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,151,58,.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,151,58,0.15); border: 1px solid rgba(200,151,58,0.35);
+    border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
+  }
+  .hero-eyebrow-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .hero-eyebrow span { color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 900; line-height: 1.1;
+    color: var(--white); margin-bottom: 24px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+
+  .hero-sub {
+    font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.7);
+    margin-bottom: 36px; max-width: 520px;
+  }
+
+  .hero-stats {
+    display: flex; gap: 32px; margin-bottom: 40px; flex-wrap: wrap;
+  }
+  .hero-stat { }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: var(--gold); line-height: 1;
+  }
+  .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: .05em; }
+
+  .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero-badge {
+    background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.25);
+    border-radius: 6px; padding: 8px 14px;
+    font-size: 12px; color: rgba(255,255,255,0.75); font-weight: 500;
+  }
+  .hero-badge strong { color: var(--white); }
+
+  /* ── LEAD FORM CARD ──────────────────────────────────── */
+  .form-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,151,58,0.2);
+    position: relative;
+  }
+  .form-card::before {
+    content: '';
+    position: absolute; top: 0; left: 32px; right: 32px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 0 0 3px 3px;
+  }
+  .form-card-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .2em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px; line-height: 1.3;
+  }
+  .form-card-sub { font-size: 13px; color: var(--text-mid); margin-bottom: 24px; }
+
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 11px; font-weight: 600; color: var(--text-mid); margin-bottom: 5px; letter-spacing: .05em; text-transform: uppercase; }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid #e2e8f0; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-dark);
+    background: var(--white); transition: border-color .2s, box-shadow .2s;
+    appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none; border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,151,58,0.12);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .form-submit {
+    width: 100%; padding: 15px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--navy); font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: .06em;
+    border: none; border-radius: 8px; cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+    margin-top: 6px;
+  }
+  .form-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(200,151,58,0.4); }
+  .form-submit:active { transform: translateY(0); }
+
+  .form-privacy { font-size: 11px; color: #9aa5b4; text-align: center; margin-top: 12px; }
+  .form-privacy a { color: var(--gold); text-decoration: none; }
+
+  /* ── SUCCESS STATE ───────────────────────────────────── */
+  .success-state { display: none; text-align: center; padding: 20px 0; }
+  .success-icon { font-size: 48px; margin-bottom: 16px; }
+  .success-state h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); margin-bottom: 8px; }
+  .success-state p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── TRUST BAR ───────────────────────────────────────── */
+  .trust-bar {
+    background: var(--navy);
+    padding: 20px 32px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 40px; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(200,151,58,0.2);
+  }
+  .trust-item { display: flex; align-items: center; gap: 10px; }
+  .trust-icon { font-size: 18px; }
+  .trust-text { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: .04em; }
+  .trust-text strong { color: var(--white); }
+
+  /* ── SECTIONS ────────────────────────────────────────── */
+  section { padding: 80px 32px; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: .2em;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px); font-weight: 700;
+    color: var(--navy); line-height: 1.2; margin-bottom: 16px;
+  }
+  .section-sub { font-size: 16px; color: var(--text-mid); line-height: 1.7; max-width: 560px; }
+
+  /* ── CHECKLIST SECTION ───────────────────────────────── */
+  .checklist-section { background: var(--white); }
+  .checklist-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px;
+  }
+  .check-card {
+    border: 1.5px solid #e8edf5; border-radius: 12px; padding: 24px;
+    transition: border-color .2s, box-shadow .2s; cursor: pointer;
+    position: relative; overflow: hidden;
+  }
+  .check-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(200,151,58,0.1); }
+  .check-card.yes { border-color: #2D7D4F; background: var(--green-light); }
+  .check-card.no { border-color: var(--red); background: var(--red-light); }
+  .check-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .check-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .check-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+  .check-badge {
+    position: absolute; top: 16px; right: 16px;
+    font-size: 10px; font-weight: 700; letter-spacing: .1em;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .check-badge.yes { background: var(--green); color: white; }
+  .check-badge.no { background: var(--red); color: white; }
+
+  /* ── PROGRAM DETAILS ─────────────────────────────────── */
+  .program-section { background: var(--navy); }
+  .program-section .section-title { color: var(--white); }
+  .program-section .section-sub { color: rgba(255,255,255,0.6); }
+  .program-section .section-eyebrow { color: var(--gold); }
+
+  .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .program-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(74,158,255,0.2);
+    border-radius: 12px; padding: 28px;
+    transition: background .2s, border-color .2s;
+  }
+  .program-card:hover { background: rgba(74,158,255,0.08); border-color: rgba(74,158,255,0.4); }
+  .program-card-icon { font-size: 32px; margin-bottom: 16px; }
+  .program-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+  .program-card-value { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .program-card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  /* ── HOW IT WORKS ────────────────────────────────────── */
+  .steps-section { background: var(--off-white); }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; position: relative; }
+  .steps-grid::before {
+    content: '';
+    position: absolute; top: 32px; left: 12.5%; right: 12.5%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    z-index: 0;
+  }
+  .step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+  .step-num {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--navy); border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+    color: var(--gold); margin: 0 auto 20px;
+  }
+  .step h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .step p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ── TESTIMONIAL / SOCIAL PROOF ──────────────────────── */
+  .proof-section { background: var(--off-white); }
+  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .proof-card {
+    border: 1.5px solid #e8edf5; border-radius: 12px; padding: 28px;
+    position: relative;
+  }
+  .proof-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif; font-size: 80px; line-height: .8;
+    color: var(--gold); opacity: .2;
+    position: absolute; top: 16px; left: 20px;
+  }
+  .proof-text { font-size: 14px; line-height: 1.75; color: var(--text-mid); margin-bottom: 20px; padding-top: 20px; }
+  .proof-author { display: flex; align-items: center; gap: 12px; }
+  .proof-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .proof-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .proof-detail { font-size: 12px; color: var(--text-light); }
+  .proof-stars { color: var(--gold); font-size: 13px; margin-bottom: 2px; }
+
+  /* ── FRANK BIO ───────────────────────────────────────── */
+  .bio-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    position: relative; overflow: hidden;
+  }
+  .bio-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 90% 50%, rgba(200,151,58,0.08) 0%, transparent 60%);
+  }
+  .bio-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+  .bio-text .section-title { color: var(--white); }
+  .bio-text .section-sub { color: rgba(255,255,255,0.65); margin-bottom: 28px; }
+  .bio-credentials { display: flex; flex-direction: column; gap: 12px; }
+  .bio-cred { display: flex; align-items: center; gap: 12px; }
+  .bio-cred-icon { font-size: 18px; }
+  .bio-cred-text { font-size: 14px; color: rgba(255,255,255,0.7); }
+  .bio-cred-text strong { color: var(--white); }
+  .bio-visual {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(200,151,58,0.25);
+    border-radius: 16px; padding: 40px; text-align: center;
+  }
+  .bio-initials {
+    width: 100px; height: 100px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700;
+    color: var(--navy); margin: 0 auto 20px;
+  }
+  .bio-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--white); }
+  .bio-title-text { font-size: 13px; color: var(--gold); margin-top: 4px; }
+  .bio-company { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 6px; }
+  .bio-divider { width: 40px; height: 2px; background: var(--gold); margin: 20px auto; }
+  .bio-phone { font-size: 14px; color: rgba(255,255,255,0.6); }
+  .bio-phone a { color: var(--gold-light); text-decoration: none; font-weight: 600; }
+
+  /* ── BOTTOM CTA ──────────────────────────────────────── */
+  .bottom-cta {
+    background: var(--gold);
+    padding: 80px 32px; text-align: center;
+  }
+  .bottom-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px); font-weight: 900;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .bottom-cta p { font-size: 16px; color: rgba(10,22,40,0.7); margin-bottom: 32px; }
+  .bottom-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-dark {
+    background: var(--navy); color: var(--white);
+    padding: 16px 36px; border-radius: 8px; text-decoration: none;
+    font-size: 14px; font-weight: 700; letter-spacing: .06em;
+    transition: background .2s;
+  }
+  .btn-dark:hover { background: var(--navy-mid); }
+  .btn-outline {
+    background: transparent; color: var(--navy);
+    border: 2px solid var(--navy); padding: 14px 36px;
+    border-radius: 8px; text-decoration: none;
+    font-size: 14px; font-weight: 700; letter-spacing: .06em;
+    transition: background .2s;
+  }
+  .btn-outline:hover { background: rgba(10,22,40,0.08); }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  footer {
+    background: #060e1a;
+    padding: 32px;
+    text-align: center;
+  }
+  footer p { font-size: 11px; color: #3a4a5a; line-height: 1.8; }
+  footer a { color: #4a6a8a; text-decoration: none; }
+
+  /* ── STICKY MOBILE CTA ───────────────────────────────── */
+  .sticky-cta {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+    background: var(--navy); border-top: 2px solid var(--gold);
+    padding: 14px 20px;
+    flex-direction: column; gap: 8px; align-items: center;
+  }
+  .sticky-cta-text { font-size: 12px; color: rgba(255,255,255,0.6); text-align: center; }
+  .sticky-cta-btn {
+    width: 100%; background: var(--gold); color: var(--navy);
+    border: none; padding: 13px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700;
+    cursor: pointer; letter-spacing: .04em;
+  }
+
+  /* ── ANIMATIONS ──────────────────────────────────────── */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .form-card { max-width: 480px; }
+    .checklist-grid { grid-template-columns: 1fr; }
+    .program-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .steps-grid::before { display: none; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .bio-inner { grid-template-columns: 1fr; }
+    .sticky-cta { display: flex; }
+    body { padding-bottom: 90px; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 12px 20px; }
+    section { padding: 60px 20px; }
+    .program-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 100px 20px 60px; }
+    .trust-bar { gap: 20px; padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The Burks Lending Group <span>empowered by NEXA Lending</span></div>
+  <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="nav-cta">Check My Eligibility →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-content fade-up">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>FHA Down Payment Assistance · Up To 101.5% CLTV</span>
+      </div>
+      <h1>You Might Already<br>Qualify to Buy<br>a Home <em>Today.</em></h1>
+      <p class="hero-sub">A down payment assistance program that covers 3.5% to 5% of your purchase — with no income cap, no first-time buyer requirement, and a 580 FICO minimum. The only question is: are you ready?</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">580</div>
+          <div class="hero-stat-label">Minimum FICO Score</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">5%</div>
+          <div class="hero-stat-label">Max Down Payment Help</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">$0</div>
+          <div class="hero-stat-label">Income Cap</div>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><strong>✓</strong> Forgivable Options</div>
+        <div class="hero-badge"><strong>✓</strong> Gift Funds Allowed</div>
+        <div class="hero-badge"><strong>✓</strong> Seller Pays Up to 6%</div>
+        <div class="hero-badge"><strong>✓</strong> 2/1 Buydown Available</div>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="form-card fade-up" id="get-started" style="transition-delay:.2s">
+      <div class="form-card-label">Free · No Obligation</div>
+      <h2>Check Your Eligibility in 60 Seconds</h2>
+      <p class="form-card-sub">Tell us a little about your situation — Frank will reach out personally within 24 hours.</p>
+
+      <form id="leadForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Marcus">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Johnson">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(615) 364-5700">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="marcus@email.com">
+        </div>
+        <button type="button" class="form-submit" onclick="handleFormSubmit()">Check My Eligibility — It's Free →</button>
+      </form>
+
+      <div class="success-state" id="successState" style="display:none">
+        <div class="success-icon">🏡</div>
+        <h3>You're Almost There!</h3>
+        <p>Complete your eligibility check below — takes less than 2 minutes.</p>
+        <p style="margin-top:12px"><a href="https://go.theburkslendinggroup.com/homebuyer-guide" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here to get your free guide →</a></p>
+        <div style="margin-top:20px;padding:16px;background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.3);border-radius:8px;">
+          <p style="font-size:12px;color:#4a5568;margin-bottom:8px;font-weight:700;">🎁 YOUR FREE HOMEBUYER GUIDE IS ON ITS WAY!</p>
+          <p style="font-size:12px;color:#4a5568;">Check your email — we're sending your <strong>First-Time Homebuyer Guide</strong> with everything you need to know about buying a home in Middle Tennessee.</p>
+        </div>
+      </div>
+
+      <p class="form-privacy">🔒 Your information is private. No spam, ever. <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🏦</div>
+    <div class="trust-text"><strong>NEXA Lending</strong> · Licensed Lender</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">📋</div>
+    <div class="trust-text"><strong>Certified</strong> Mortgage Advisor</div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⚡</div>
+    <div class="trust-text"><strong>24-Hour</strong> Response Guarantee</div>
+  </div>
+</div>
+
+<!-- QUALIFICATION CHECKLIST -->
+<section class="checklist-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">The Quick Checklist</div>
+      <h2 class="section-title">Do You Qualify for Down<br>Payment Assistance?</h2>
+      <p class="section-sub">Here's what actually matters — and what doesn't. Most people are surprised by how much is in their favor.</p>
+    </div>
+    <div class="checklist-grid">
+      <div class="check-card yes fade-up">
+        <span class="check-badge yes">✓ YOU QUALIFY</span>
+        <div class="check-card-icon">📊</div>
+        <h3>580+ Credit Score</h3>
+        <p>A 580 FICO qualifies with DU Approval. Manual underwrite at 600. You don't need perfect credit — you need a plan.</p>
+      </div>
+      <div class="check-card yes fade-up" style="transition-delay:.1s">
+        <span class="check-badge yes">✓ YOU QUALIFY</span>
+        <div class="check-card-icon">💼</div>
+        <h3>Any Income Level</h3>
+        <p>There is no income cap on this program. Whether you earn $35K or $135K a year, the door is open.</p>
+      </div>
+      <div class="check-card yes fade-up" style="transition-delay:.15s">
+        <span class="check-badge yes">✓ YOU QUALIFY</span>
+        <div class="check-card-icon">🏠</div>
+        <h3>Owned a Home Before</h3>
+        <p>No first-time homebuyer requirement. If you owned years ago or are buying again — this program doesn't care. It cares that you're ready now.</p>
+      </div>
+      <div class="check-card yes fade-up" style="transition-delay:.2s">
+        <span class="check-badge yes">✓ YOU QUALIFY</span>
+        <div class="check-card-icon">👨‍👩‍👧</div>
+        <h3>Non-Occupant Co-Borrower</h3>
+        <p>A family member who doesn't live in the home can co-sign and help you qualify. Parents, siblings — it's allowed.</p>
+      </div>
+      <div class="check-card yes fade-up" style="transition-delay:.25s">
+        <span class="check-badge yes">✓ YOU QUALIFY</span>
+        <div class="check-card-icon">🎁</div>
+        <h3>Using Gift Money</h3>
+        <p>100% of your down payment and closing costs can come from a gift. Your family can help you get into a home.</p>
+      </div>
+      <div class="check-card no fade-up" style="transition-delay:.3s">
+        <span class="check-badge no">✗ DOESN'T QUALIFY</span>
+        <div class="check-card-icon">🏗️</div>
+        <h3>Investment Property</h3>
+        <p>This specific DPA program is for primary residences only. Investors — we have a separate program built just for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM DETAILS -->
+<section class="program-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Program Details</div>
+      <h2 class="section-title" style="color:var(--white)">Everything This Program<br>Puts in Your Corner</h2>
+      <p class="section-sub"></p>
+    </div>
+    <div class="program-grid">
+      <div class="program-card fade-up">
+        <div class="program-card-icon">🎯</div>
+        <h3>Down Payment Help</h3>
+        <div class="program-card-value">3.5–5%</div>
+        <p>Assistance covers your entire required down payment and can go beyond it.</p>
+      </div>
+      <div class="program-card fade-up" style="transition-delay:.08s">
+        <div class="program-card-icon">📈</div>
+        <h3>Financing Up To</h3>
+        <div class="program-card-value">101.5%</div>
+        <p>Combined Loan-to-Value — including the down payment assistance layer.</p>
+      </div>
+      <div class="program-card fade-up" style="transition-delay:.12s">
+        <div class="program-card-icon">🔢</div>
+        <h3>Minimum FICO</h3>
+        <div class="program-card-value">580</div>
+        <p>DU Approved. Manual underwrite at 600. Real qualification for real people.</p>
+      </div>
+      <div class="program-card fade-up" style="transition-delay:.16s">
+        <div class="program-card-icon">🤝</div>
+        <h3>Seller Contribution</h3>
+        <div class="program-card-value">Up to 6%</div>
+        <p>The seller can cover up to 6% of your closing costs. Reducing cash needed to close.</p>
+      </div>
+      <div class="program-card fade-up" style="transition-delay:.2s">
+        <div class="program-card-icon">📅</div>
+        <h3>Loan Term</h3>
+        <div class="program-card-value">25–30 Yr</div>
+        <p>25-year term available for lower total interest paid.</p>
+      </div>
+      <div class="program-card fade-up" style="transition-delay:.24s">
+        <div class="program-card-icon">💰</div>
+        <h3>2/1 Buydown</h3>
+        <div class="program-card-value">Available</div>
+        <p>Reduce your rate 2% in year one, 1% in year two. Lower payments when you need it most.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;background:rgba(200,151,58,0.08);border:1px solid rgba(200,151,58,0.25);border-radius:12px;padding:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;" class="fade-up">
+      <div style="text-align:center">
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase">Assistance Type</div>
+        <div style="color:var(--gold);font-weight:700;font-size:15px">Forgivable OR Repayable</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase">Property Types</div>
+        <div style="color:var(--gold);font-weight:700;font-size:15px">SFR · Manufactured · Doublewide</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase">First-Time Buyer Required</div>
+        <div style="color:var(--gold);font-weight:700;font-size:15px">No — Anyone Can Apply</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center">
+      <div class="section-eyebrow" style="text-align:center">The Process</div>
+      <h2 class="section-title" style="text-align:center;max-width:500px;margin:0 auto 8px">Four Steps From<br>Here to Home</h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto">No mystery, no runaround. Here's exactly what happens after you reach out.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <h3>Submit Your Info</h3>
+        <p>Fill out the quick form above. Takes about 60 seconds — no credit pull yet.</p>
+      </div>
+      <div class="step fade-up" style="transition-delay:.1s">
+        <div class="step-num">2</div>
+        <h3>Frank Calls You</h3>
+        <p>Personal call within 24 hours to review your situation and run your numbers.</p>
+      </div>
+      <div class="step fade-up" style="transition-delay:.2s">
+        <div class="step-num">3</div>
+        <h3>Get Pre-Approved</h3>
+        <p>We pull your credit, confirm your income, and issue your pre-approval letter.</p>
+      </div>
+      <div class="step fade-up" style="transition-delay:.3s">
+        <div class="step-num">4</div>
+        <h3>Find Your Home</h3>
+        <p>Shop with confidence. Your agent knows you're qualified and your financing is handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Real Results</div>
+      <h2 class="section-title" style="white-space:nowrap">Buyers Who Said "I Didn't Think I Could"</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card fade-up">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">Can't say anything except Wow. The most easiest process ever. They helped and answered all the questions, stayed in communication through the whole process. They made buying a home so worth it. Thank you Frank! You made it happen for us!</p>
+        <div class="proof-author">
+          <div class="proof-avatar">🏠</div>
+          <div>
+            <div class="proof-name">A. Sneed</div>
+            <div class="proof-detail">Verified Client · The Burks Lending Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card fade-up" style="transition-delay:.1s">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">The most professional person. He says what he means and means what he says. I will not work with anyone else — he has my business for life. Smooth easy process.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">🔑</div>
+          <div>
+            <div class="proof-name">D. Ursery</div>
+            <div class="proof-detail">Verified Client · The Burks Lending Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-card fade-up" style="transition-delay:.2s">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-text">This man is Phenomenal! I can't thank him enough for making this new home a reality for my family. The hard work and consistency he put in is definitely the reason why I would recommend him for anyone! If you're looking for someone night and day, Mr. Frank is certainly your man!</p>
+        <div class="proof-author">
+          <div class="proof-avatar">🏡</div>
+          <div>
+            <div class="proof-name">J. Howard</div>
+            <div class="proof-detail">Verified Client · The Burks Lending Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANK BIO -->
+<section class="bio-section">
+  <div class="section-inner">
+    <div class="bio-inner">
+      <div class="bio-text">
+        <div class="section-eyebrow">Your Advisor</div>
+        <h2 class="section-title">Clear to Close Starts Here.</h2>
+        <p class="section-sub">At The Burks Lending Group, empowered by NEXA Lending, we provide personalized mortgage solutions for homebuyers, homeowners, and investors across Middle Tennessee. Whether you're purchasing a home, refinancing, or investing in property, we're here to make the process easy, affordable, and tailored to your goals.</p>
+        <div class="bio-credentials">
+          <div class="bio-cred">
+            <div class="bio-cred-icon">🎓</div>
+            <div class="bio-cred-text"><strong>Certified Mortgage Advisor</strong> · NEXA Lending</div>
+          </div>
+          <div class="bio-cred">
+            <div class="bio-cred-icon">📍</div>
+            <div class="bio-cred-text"><strong>Smyrna, TN</strong> · Your Middle Tennessee Mortgage Advisor</div>
+          </div>
+          <div class="bio-cred">
+            <div class="bio-cred-icon">🏦</div>
+            <div class="bio-cred-text"><strong>Access to 200+ Lenders</strong> · Best Rate, Best Program</div>
+          </div>
+          <div class="bio-cred">
+            <div class="bio-cred-icon">💬</div>
+            <div class="bio-cred-text"><strong>Personal Follow-Up</strong> · No bots, no runaround</div>
+          </div>
+        </div>
+      </div>
+      <div class="bio-visual">
+        <div class="bio-initials">FB</div>
+        <div class="bio-name">Frank Burks · NMLS #841644</div>
+        <div class="bio-title-text">Certified Mortgage Advisor · NEXA Lending</div>
+        <div class="bio-company">The Burks Lending Group · empowered by NEXA Lending</div>
+        <div class="bio-company" style="margin-top:4px">Branch NMLS #2064382</div>
+        <div class="bio-divider"></div>
+        <div class="bio-phone">Questions? Call or text us directly:<br><a href="tel:+16157689424">(615) 768-9424</a></div>
+        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="https://www.instagram.com/mtgman365/" target="_blank" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px 14px;text-decoration:none;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;transition:all .2s;" onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/mrclear2close" target="_blank" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px 14px;text-decoration:none;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;transition:all .2s;" onmouseover="this.style.borderColor='#1877F2';this.style.color='#1877F2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank" style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:8px 14px;text-decoration:none;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;transition:all .2s;" onmouseover="this.style.borderColor='#0A66C2';this.style.color='#0A66C2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://calendly.com/fburks" target="_blank" style="display:flex;align-items:center;gap:6px;background:rgba(200,151,58,0.2);border:1px solid rgba(200,151,58,0.4);border-radius:8px;padding:8px 14px;text-decoration:none;color:var(--gold);font-size:12px;font-weight:700;transition:all .2s;" onmouseover="this.style.background='rgba(200,151,58,0.35)'" onmouseout="this.style.background='rgba(200,151,58,0.2)'">
+            📅 Book a Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Every Month You Wait Is<br>a Month Someone Else<br>Builds Your Equity.</h2>
+  <p>The down payment isn't the obstacle you think it is. Let's find out what's actually possible — today.</p>
+  <div class="bottom-cta-btns">
+    <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="btn-dark">Check My Eligibility — Free →</a>
+    <a href="tel:+16157689424" class="btn-outline">📞 Call Us Directly</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2025 The Burks Lending Group · Empowered by NEXA Lending · Smyrna, TN<br>
+    Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
+    NEXA Lending · NMLS #1660690 · Equal Housing Lender<br>
+    <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Disclosures</a><br>
+    <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a> · <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank">LinkedIn</a><br><br>
+    This is not a commitment to lend. All loans subject to credit approval. Program availability and terms subject to change. FHA loan products are subject to FHA guidelines. Down payment assistance programs subject to program eligibility requirements.
+  </p>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <div class="sticky-cta-text">Down payment covered. 580 FICO minimum. No income cap.</div>
+  <button class="sticky-cta-btn" onclick="window.open('https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415','_blank')">Check My Eligibility — Free →</button>
+</div>
+
+<script>
+  function handleFormSubmit() {
+    var form = document.getElementById('leadForm');
+    var success = document.getElementById('successState');
+    if (form) form.style.display = 'none';
+    if (success) success.style.display = 'block';
+    setTimeout(function() {
+      window.open('https://go.theburkslendinggroup.com/homebuyer-guide', '_blank');
+    }, 1500);
+  }
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FHA Home Loans · The Burks Lending Group · Smyrna, TN</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1628;--navy-mid:#0F2040;--navy-light:#132550;
+  --gold:#C8973A;--gold-light:#E8B455;--gold-pale:#FDF3E3;
+  --green:#2D7D4F;--green-light:#1A6B3A;
+  --white:#FFFFFF;--off-white:#F7F5F0;--text-dark:#0A1628;
+  --text-mid:#4a5568;--text-light:#8a9ab5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--green),var(--gold));z-index:300;transition:width .1s;}
+nav{background:rgba(10,22,40,0.97);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(200,151,58,0.2);}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:15px;font-weight:700;line-height:1.2;}
+.nav-logo span{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);font-size:12px;font-weight:700;padding:10px 22px;border-radius:4px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+.hero{background:linear-gradient(150deg,#060D1A 0%,#0A1A0F 50%,#0A1628 100%);padding:80px 32px 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,rgba(45,125,79,0.15) 0%,transparent 55%),radial-gradient(ellipse at 15% 75%,rgba(200,151,58,0.08) 0%,transparent 45%);}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(45,125,79,0.15);border:1px solid rgba(45,125,79,0.3);border-radius:100px;padding:6px 16px;margin-bottom:20px;}
+.hero-eyebrow span{color:#4ACA7A;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:16px;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:28px;max-width:520px;}
+.hero-stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
+.hero-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(200,151,58,0.2);border-radius:10px;padding:14px 20px;text-align:center;}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);line-height:1;}
+.hero-stat-label{font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.hero-badge{background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.25);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.75);font-weight:500;}
+.form-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:0 24px 64px rgba(0,0,0,0.4);border:1px solid rgba(200,151,58,0.15);position:relative;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:16px 16px 0 0;}
+.form-label{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.form-card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.2;}
+.form-card-sub{font-size:13px;color:var(--text-mid);margin-bottom:22px;line-height:1.5;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;}
+.form-group input{width:100%;padding:11px 14px;border:1.5px solid #e0e8f0;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--off-white);transition:border-color .2s;}
+.form-group input:focus{outline:none;border-color:var(--gold);background:var(--white);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s;text-transform:uppercase;}
+.form-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,125,79,0.4);}
+.form-privacy{font-size:11px;color:#9aa5b4;text-align:center;margin-top:12px;}
+.form-privacy a{color:var(--gold);text-decoration:none;}
+.gold-bar{height:5px;background:linear-gradient(90deg,var(--green),var(--gold),var(--green));}
+.section{padding:64px 32px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section.white{background:var(--white);}
+.section.tinted{background:var(--off-white);}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,38px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2;}
+.section-desc{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:640px;margin-bottom:40px;}
+.callout-box{background:linear-gradient(135deg,var(--navy),var(--navy-light));border:2px solid var(--gold);border-radius:16px;padding:40px;text-align:center;position:relative;overflow:hidden;margin:32px 0;}
+.callout-box h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,36px);font-weight:900;color:var(--white);margin-bottom:12px;position:relative;z-index:1;}
+.callout-box h2 em{color:var(--gold);font-style:normal;}
+.callout-box p{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:600px;margin:0 auto;position:relative;z-index:1;}
+.callout-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1;}
+.callout-tag{background:rgba(200,151,58,0.15);border:1px solid rgba(200,151,58,0.3);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--white);}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.feature-card{background:var(--white);border:1.5px solid #e8edf8;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.feature-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(200,151,58,0.12);}
+.feature-card.featured{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-color:var(--gold);}
+.feature-icon{font-size:32px;margin-bottom:14px;}
+.feature-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+.feature-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.feature-card.featured h3{color:var(--white);}
+.feature-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
+.feature-card.featured p{color:rgba(255,255,255,0.65);}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.program-card{border-radius:14px;padding:28px;border:2px solid;}
+.program-card.purchase{background:linear-gradient(135deg,#EEF6FF,#E6F0FF);border-color:#4A9EFF;}
+.program-card.streamline{background:linear-gradient(135deg,#EEF6F0,#E6F3EC);border-color:var(--green);}
+.program-card.cashout{background:linear-gradient(135deg,#FFF5E6,#FFF0D6);border-color:var(--gold);}
+.program-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.program-card.purchase h3{color:#1E5FA8;}
+.program-card.streamline h3{color:var(--green);}
+.program-card.cashout h3{color:#A06B1A;}
+.program-sub{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;opacity:0.7;}
+.prog-list{display:flex;flex-direction:column;gap:8px;}
+.prog-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-mid);line-height:1.5;}
+.fico-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.fico-card{background:var(--white);border-radius:12px;padding:20px;text-align:center;border:2px solid #e8edf8;}
+.fico-card.tier1{border-color:#E85566;}
+.fico-card.tier2{border-color:var(--gold);}
+.fico-card.tier3{border-color:#4A9EFF;}
+.fico-card.tier4{border-color:var(--green);}
+.fico-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;margin-bottom:6px;}
+.fico-card.tier1 .fico-num{color:#E85566;}
+.fico-card.tier2 .fico-num{color:var(--gold);}
+.fico-card.tier3 .fico-num{color:#4A9EFF;}
+.fico-card.tier4 .fico-num{color:var(--green);}
+.fico-label{font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.fico-desc{font-size:11px;color:var(--text-mid);line-height:1.5;}
+.facts-table{width:100%;border-collapse:collapse;}
+.facts-table th{background:var(--navy);color:var(--white);padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.facts-table td{padding:11px 16px;border-bottom:1px solid #e8edf5;font-size:13px;color:var(--text-mid);line-height:1.5;}
+.facts-table tr:nth-child(even) td{background:var(--off-white);}
+.facts-table td:first-child{font-weight:700;color:var(--navy);}
+.facts-table{border-top:3px solid var(--green);}
+.advisor-section{background:linear-gradient(135deg,var(--navy),#0D2050);padding:56px 32px;}
+.advisor-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.advisor-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.advisor-title{font-size:13px;color:var(--gold-light);margin-bottom:20px;}
+.advisor-bio{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;}
+.advisor-contact{display:flex;flex-direction:column;gap:10px;}
+.advisor-contact a{color:var(--white);text-decoration:none;font-size:14px;font-weight:500;}
+.advisor-ctas{display:flex;flex-direction:column;gap:14px;}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);padding:16px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:16px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3);padding:14px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;}
+.nmls-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.nmls-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:5px 12px;font-size:10px;color:rgba(255,255,255,0.5);}
+.cta-section{background:linear-gradient(135deg,var(--green),var(--green-light));padding:72px 32px;text-align:center;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:900;color:var(--white);margin-bottom:12px;}
+.cta-section p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:var(--white);color:var(--green);padding:16px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.6);padding:14px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;}
+footer{background:#060e1a;padding:28px 32px;text-align:center;}
+footer p{font-size:11px;color:#3a4a5a;line-height:1.8;}
+footer a{color:#4a6a8a;text-decoration:none;}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.hero-inner,.advisor-inner,.program-grid,.feature-grid,.fico-grid{grid-template-columns:1fr;}nav{padding:12px 20px;}.section{padding:48px 20px;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <div class="nav-logo">The Burks Lending Group<br><span>empowered by NEXA Lending</span></div>
+  <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="nav-cta">Check My Eligibility →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span>🏠 FHA Home Loans · 500 Min FICO · Fast Closings</span></div>
+      <h1>Credit Challenged?<br>We Still Get You <em>Home.</em></h1>
+      <p class="hero-sub">FHA loans are built for real people in real situations. 500 minimum FICO. No FICO options available. 100% gift funds allowed. Purchase, streamline, and cash-out. If another lender told you no — it's time to talk to The Burks Lending Group.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">500</div><div class="hero-stat-label">Min FICO</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">3.5%</div><div class="hero-stat-label">Min Down</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">6%</div><div class="hero-stat-label">Seller Help</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Units Allowed</div></div>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">✅ 500 Min FICO</div>
+        <div class="hero-badge">✅ No FICO FHA Available</div>
+        <div class="hero-badge">✅ 100% Gift Funds Allowed</div>
+        <div class="hero-badge">✅ Manual Underwrites</div>
+        <div class="hero-badge">✅ Manufactured Homes</div>
+        <div class="hero-badge">✅ FHA DPA Available</div>
+        <div class="hero-badge">✅ Non-Occupant Co-Borrower</div>
+      </div>
+    </div>
+    <div class="form-card fade-up">
+      <div class="form-label">Free · No Obligation · No Hard Pull to Start</div>
+      <h2>Check Your FHA Eligibility</h2>
+      <p class="form-card-sub">Tell us about your situation — Frank will reach out personally within 24 hours with your options.</p>
+      <form id="leadForm">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="James"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Thompson"></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(615) 555-0100"></div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="james@email.com"></div>
+        <button type="button" class="form-submit" onclick="handleFormSubmit()">🏠 Check My FHA Eligibility →</button>
+      </form>
+      <div id="successState" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">🏠</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:8px;">You're One Step Closer!</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.6;">Frank will reach out personally within 24 hours with your FHA options.</p>
+        <p style="margin-top:12px"><a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here to start your application now →</a></p>
+      </div>
+      <p class="form-privacy">🔒 Your information is secure and never sold. <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </div>
+  </div>
+</section>
+<div class="gold-bar"></div>
+
+<section class="section white">
+  <div class="section-inner">
+    <div class="callout-box fade-up">
+      <h2>500 FICO. No FICO. <em>We Find the Path.</em></h2>
+      <p>Most lenders stop at 580. We go all the way down to 500 on approved eligible files and 550 on manual underwrites. No FICO FHA is also available. If you have credit challenges, a complex financial history, or have been turned away elsewhere — this is your program.</p>
+      <div class="callout-tags">
+        <div class="callout-tag">500 Min FICO</div>
+        <div class="callout-tag">No FICO FHA</div>
+        <div class="callout-tag">Manual Underwrites</div>
+        <div class="callout-tag">Expert Underwriting</div>
+        <div class="callout-tag">Fast Close</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">FICO Tiers</div>
+    <h2 class="section-title fade-up">Where Do You Fit?</h2>
+    <div class="fico-grid fade-up">
+      <div class="fico-card tier1">
+        <div class="fico-num">500</div>
+        <div class="fico-label">AUS Approved Eligible</div>
+        <div class="fico-desc">Purchase and Rate/Term. Max LTV 90%. DTI 31/43. 10% down required.</div>
+      </div>
+      <div class="fico-card tier2">
+        <div class="fico-num">550</div>
+        <div class="fico-label">Manual Underwrite</div>
+        <div class="fico-desc">Expert manual underwriting. VOR needed or 3 positive tradelines for 12 months. DTI 31/43.</div>
+      </div>
+      <div class="fico-card tier3">
+        <div class="fico-num">580</div>
+        <div class="fico-label">Full FHA Access</div>
+        <div class="fico-desc">96.5% LTV on purchase. 3.5% down. Streamline at 90% LTV. Cash-out at 80% LTV.</div>
+      </div>
+      <div class="fico-card tier4">
+        <div class="fico-num">600+</div>
+        <div class="fico-label">Maximum Options</div>
+        <div class="fico-desc">Streamline up to 97.75% LTV. All programs available. Best terms across the board.</div>
+      </div>
+    </div>
+    <div style="background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:12px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--text-mid);line-height:1.6;">
+      <strong style="color:var(--navy);">Frankly Speaking:</strong> No FICO FHA is also available for borrowers with no credit score at all. Don't count yourself out before calling. Frank will find the program that fits your situation — not the situation that fits the program. <strong style="color:var(--gold)">(615) 768-9424</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">FHA Programs</div>
+    <h2 class="section-title fade-up">Purchase, Streamline, and Cash-Out</h2>
+    <div class="program-grid fade-up">
+      <div class="program-card purchase">
+        <h3>🏠 FHA Purchase</h3>
+        <div class="program-sub">Get Into Your Home</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>500 FICO / 90% LTV (A/E)</span></div>
+          <div class="prog-item"><span>✅</span><span>550 FICO / Manual Underwrite</span></div>
+          <div class="prog-item"><span>✅</span><span>580 FICO / 96.5% LTV</span></div>
+          <div class="prog-item"><span>✅</span><span>No FICO FHA available</span></div>
+          <div class="prog-item"><span>✅</span><span>3.5% down — 100% gift funds allowed</span></div>
+          <div class="prog-item"><span>✅</span><span>6% seller concessions</span></div>
+          <div class="prog-item"><span>✅</span><span>FHA DPA available — no income limits</span></div>
+          <div class="prog-item"><span>✅</span><span>Non-occupant co-borrower allowed</span></div>
+          <div class="prog-item"><span>✅</span><span>2/1, 1/0, 3/2/1, 1/1 buydowns</span></div>
+          <div class="prog-item"><span>✅</span><span>ARM options available</span></div>
+        </div>
+      </div>
+      <div class="program-card streamline">
+        <h3>⚡ FHA Streamline</h3>
+        <div class="program-sub">Lower Your Rate Fast</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>580 FICO / 90% LTV</span></div>
+          <div class="prog-item"><span>✅</span><span>600 FICO / 97.75% LTV</span></div>
+          <div class="prog-item"><span>✅</span><span>No income documentation required</span></div>
+          <div class="prog-item"><span>✅</span><span>Soft credit pull on submission</span></div>
+          <div class="prog-item"><span>✅</span><span>Stalled opportunities converted fast</span></div>
+          <div class="prog-item"><span>✅</span><span>Fewer hurdles than full refinance</span></div>
+          <div class="prog-item"><span>✅</span><span>Manufactured homes eligible</span></div>
+          <div class="prog-item"><span>✅</span><span>0x30 lates in last 12 months required</span></div>
+        </div>
+      </div>
+      <div class="program-card cashout">
+        <h3>💰 FHA Cash-Out</h3>
+        <div class="program-sub">Access Your Equity</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>580 FICO / 80% LTV</span></div>
+          <div class="prog-item"><span>✅</span><span>Manual UW: 600 FICO / 75% LTV</span></div>
+          <div class="prog-item"><span>✅</span><span>Cash-out from 540 FICO</span></div>
+          <div class="prog-item"><span>✅</span><span>Expert manual underwriting</span></div>
+          <div class="prog-item"><span>✅</span><span>Pay off debt, renovate, invest</span></div>
+          <div class="prog-item"><span>✅</span><span>ARM options available</span></div>
+          <div class="prog-item"><span>✅</span><span>High balance eligible</span></div>
+          <div class="prog-item"><span>✅</span><span>Fast close — CTC and funding</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Key Features</div>
+    <h2 class="section-title fade-up">Built for Real Situations</h2>
+    <div class="feature-grid">
+      <div class="feature-card featured fade-up">
+        <div class="feature-tag">Lowest FICO</div>
+        <div class="feature-icon">💳</div>
+        <h3>500 FICO — No FICO FHA Available</h3>
+        <p>Most lenders stop at 580. We go to 500 on approved eligible files and offer No FICO FHA for borrowers with no credit score. Expert manual underwriting handles the complex files others decline.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:.1s">
+        <div class="feature-tag">Zero Out of Pocket</div>
+        <div class="feature-icon">🎁</div>
+        <h3>100% Gift Funds Allowed</h3>
+        <p>The entire 3.5% down payment can come from a family gift. Combined with seller concessions covering closing costs — qualified buyers can close with nothing out of their own savings.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:.2s">
+        <div class="feature-tag">Family Help</div>
+        <div class="feature-icon">👨‍👩‍👧</div>
+        <h3>Non-Occupant Co-Borrower</h3>
+        <p>A family member who will not live in the property can be added as a co-borrower to help the primary borrower qualify. A powerful tool for credit-challenged buyers with supportive family.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:.1s">
+        <div class="feature-tag">More Properties</div>
+        <div class="feature-icon">🏡</div>
+        <h3>Manufactured Homes Eligible</h3>
+        <p>Singlewide and doublewide manufactured homes eligible with FICO scores from 580. FHA-approved condos, PUDs, rural properties, and 1-4 unit properties all qualify.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:.2s">
+        <div class="feature-tag">Down Payment Help</div>
+        <div class="feature-icon">💵</div>
+        <h3>FHA DPA — No Income Limits</h3>
+        <p>Down Payment Assistance available on FHA loans with no income limits. Stack DPA with seller concessions and the path to homeownership requires little to nothing out of pocket.</p>
+      </div>
+      <div class="feature-card fade-up" style="transition-delay:.3s">
+        <div class="feature-tag">Rate Relief</div>
+        <div class="feature-icon">📉</div>
+        <h3>Multiple Buydown Options</h3>
+        <p>3/2/1, 2/1, 1/1, and 1/0 temporary rate buydowns available. Lower your rate in the early years of homeownership when cash flow matters most. ARM options also available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Quick Reference</div>
+    <h2 class="section-title fade-up">FHA Program At a Glance</h2>
+    <table class="facts-table fade-up">
+      <thead><tr><th>Feature</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Min FICO — Purchase</td><td>500 (A/E) · 550 Manual · 580 Full Access · No FICO FHA available</td></tr>
+        <tr><td>Max LTV — 500-579 FICO</td><td>90% LTV</td></tr>
+        <tr><td>Max LTV — 580+ FICO</td><td>96.5% LTV — 3.5% down</td></tr>
+        <tr><td>Down Payment</td><td>3.5% at 580+ FICO · 10% at 500-579 FICO</td></tr>
+        <tr><td>Gift Funds</td><td>100% of down payment can be gifted</td></tr>
+        <tr><td>Seller Concessions</td><td>Up to 6%</td></tr>
+        <tr><td>DTI — Sub 580</td><td>31% front / 43% back</td></tr>
+        <tr><td>FHA DPA</td><td>Available — no income limits</td></tr>
+        <tr><td>FHA Streamline FICO</td><td>580 / 90% LTV · 600 / 97.75% LTV</td></tr>
+        <tr><td>FHA Streamline Income Docs</td><td>Not required</td></tr>
+        <tr><td>FHA Cash-Out FICO</td><td>540+ · 580 / 80% LTV · Manual 600 / 75% LTV</td></tr>
+        <tr><td>Manual Underwrites</td><td>Allowed — VOR or 3 positive tradelines 12 months</td></tr>
+        <tr><td>Non-Occupant Co-Borrower</td><td>Allowed per FHA guidelines</td></tr>
+        <tr><td>Property Types</td><td>SFR, 2-4 Units, PUDs, Rural, Condos, Manufactured Homes</td></tr>
+        <tr><td>Buydowns</td><td>3/2/1, 2/1, 1/1, 1/0 available</td></tr>
+        <tr><td>ARM Options</td><td>Available</td></tr>
+        <tr><td>Loan Limits</td><td>Per FHA county limits — high balance eligible</td></tr>
+      </tbody>
+    </table>
+    <div style="background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:12px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--text-mid);line-height:1.6;">
+      <strong style="color:var(--navy);">Frankly Speaking:</strong> FHA has more flexibility than most buyers realize — and more flexibility than most lenders offer. If you've been turned away elsewhere, call Frank directly. The answer might surprise you. <strong style="color:var(--gold)">(615) 768-9424</strong>
+    </div>
+  </div>
+</section>
+
+<section class="advisor-section">
+  <div class="advisor-inner">
+    <div>
+      <div class="advisor-name">Frank Burks</div>
+      <div class="advisor-title">Certified Mortgage Advisor · NMLS #841644 · Branch NMLS #2064382</div>
+      <p class="advisor-bio">With 25 years in the mortgage business, we have built a reputation for getting deals done that other lenders walk away from. The Burks Lending Group, empowered by NEXA Lending, offers FHA programs that go all the way to 500 FICO — because everybody deserves a path to homeownership regardless of where their credit journey has taken them.</p>
+      <div class="advisor-contact">
+        <a href="tel:6157689424">📞 (615) 768-9424</a>
+        <a href="https://www.theburkslendinggroup.com" target="_blank">🌐 www.theburkslendinggroup.com</a>
+        <a href="https://calendly.com/fburks" target="_blank">📅 Book a Free Call</a>
+      </div>
+      <div class="nmls-badges">
+        <div class="nmls-badge">NMLS #841644</div>
+        <div class="nmls-badge">Branch NMLS #2064382</div>
+        <div class="nmls-badge">NEXA Lending NMLS #1660690</div>
+        <div class="nmls-badge">Equal Housing Lender</div>
+      </div>
+    </div>
+    <div class="advisor-ctas">
+      <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="btn-primary">🏠 Check My FHA Eligibility →</a>
+      <a href="https://calendly.com/fburks" target="_blank" class="btn-gold">📅 Book a Free Call</a>
+      <a href="tel:6157689424" class="btn-outline">📞 Call or Text (615) 768-9424</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Another Lender Said No. We Say Let's Talk.</h2>
+  <p>500 FICO. No FICO. Manual underwrites. Expert underwriting. Fast close. Everybody deserves a path.</p>
+  <div class="cta-btns">
+    <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="btn-white">🏠 Check My FHA Eligibility →</a>
+    <a href="https://calendly.com/fburks" target="_blank" class="btn-outline-white">📅 Book a Free Call</a>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2025 The Burks Lending Group · empowered by NEXA Lending · Smyrna, TN<br>
+    Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
+    NEXA Lending · NMLS #1660690 · Equal Housing Lender · 538 Johnstown Dr., Smyrna, TN 37167<br>
+    <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a><br>
+    FHA loans subject to FHA guidelines and county loan limits. All loans subject to credit approval. This is not a commitment to lend.
+  </p>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{const w=document.body.scrollTop||document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=(w/h)*100+'%';});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+function handleFormSubmit(){document.getElementById('leadForm').style.display='none';document.getElementById('successState').style.display='block';setTimeout(function(){window.open('https://www.theburkslendinggroup.com/home-purchase','_blank');},2000);}
+</script>
+</body>
+</html>

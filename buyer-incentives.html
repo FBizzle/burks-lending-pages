@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyer Incentives | The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --carolina: #4A9EFF;
+    --gold: #C8973A;
+    --gold-light: rgba(200,151,58,.12);
+    --gold-border: rgba(200,151,58,.3);
+    --white: #ffffff;
+    --off-white: #F7F8FA;
+    --text-muted: #6B7280;
+    --border: rgba(10,22,40,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px 48px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 680px;
+    animation: fadeUp .6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  .hdr {
+    background: var(--navy);
+    border-radius: 16px 16px 0 0;
+    padding: 36px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hdr::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gold);
+  }
+
+  .hdr-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--carolina);
+    margin-bottom: 10px;
+  }
+
+  .hdr-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .hdr-title span { color: var(--gold); }
+
+  .hdr-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .hdr-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hdr-badge {
+    background: rgba(255,255,255,.08);
+    border: .5px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,.8);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hdr-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── INCENTIVE HERO CARDS ── */
+  .incentives-strip {
+    background: var(--white);
+    border-left: .5px solid var(--border);
+    border-right: .5px solid var(--border);
+    padding: 28px 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .inc-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 22px 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp .6s ease both;
+  }
+
+  .inc-card:nth-child(1) { animation-delay: .1s; }
+  .inc-card:nth-child(2) { animation-delay: .2s; }
+
+  .inc-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(200,151,58,.08);
+  }
+
+  .inc-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .inc-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .inc-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,.5);
+    line-height: 1.55;
+  }
+
+  .inc-tag {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(200,151,58,.2);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 3px 10px;
+    letter-spacing: .03em;
+  }
+
+  /* ── PROGRAMS ── */
+  .programs-wrap {
+    background: var(--white);
+    border-left: .5px solid var(--border);
+    border-right: .5px solid var(--border);
+    padding: 0 36px 28px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--carolina);
+    margin-bottom: 14px;
+    padding-top: 24px;
+    border-top: .5px solid var(--border);
+  }
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .prog-card {
+    border: .5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    background: var(--off-white);
+    animation: fadeUp .5s ease both;
+  }
+
+  .prog-card:nth-child(1) { animation-delay: .15s; }
+  .prog-card:nth-child(2) { animation-delay: .22s; }
+  .prog-card:nth-child(3) { animation-delay: .29s; }
+  .prog-card:nth-child(4) { animation-delay: .36s; }
+
+  .prog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .prog-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .prog-badge {
+    font-size: 9px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 2px 8px;
+    letter-spacing: .03em;
+  }
+
+  .prog-badge-blue { background: rgba(74,158,255,.12); color: #185FA5; }
+  .prog-badge-green { background: rgba(99,153,34,.12); color: #3B6D11; }
+  .prog-badge-gold { background: var(--gold-light); color: #7a5a1e; }
+
+  .prog-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: .5px solid var(--border);
+  }
+
+  .prog-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .prog-key { color: var(--text-muted); }
+
+  .prog-val {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .prog-val-gold { color: var(--gold); font-weight: 500; }
+  .prog-val-blue { color: var(--carolina); font-weight: 500; }
+
+  /* ── HOW IT WORKS ── */
+  .how-wrap {
+    background: var(--white);
+    border-left: .5px solid var(--border);
+    border-right: .5px solid var(--border);
+    padding: 0 36px 28px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: .5px solid var(--border);
+    animation: fadeUp .5s ease both;
+  }
+
+  .step:last-child { border-bottom: none; }
+  .step:nth-child(1){animation-delay:.1s}
+  .step:nth-child(2){animation-delay:.18s}
+  .step:nth-child(3){animation-delay:.26s}
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-body {}
+  .step-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+  .step-desc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
+
+  /* ── CONTACT CTA ── */
+  .cta-wrap {
+    background: var(--navy);
+    border-radius: 0 0 16px 16px;
+    padding: 28px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .cta-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--carolina);
+    margin-bottom: 8px;
+  }
+
+  .cta-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.25;
+  }
+
+  .cta-headline span { color: var(--gold); }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cta-item {
+    background: rgba(255,255,255,.06);
+    border: .5px solid rgba(255,255,255,.1);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .cta-item-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--carolina);
+    margin-bottom: 4px;
+  }
+
+  .cta-item-val {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    transition: opacity .15s;
+    margin-bottom: 16px;
+  }
+
+  .cta-btn:hover { opacity: .88; }
+
+  .disclaimer {
+    font-size: 9px;
+    color: rgba(255,255,255,.3);
+    line-height: 1.6;
+    border-top: .5px solid rgba(255,255,255,.08);
+    padding-top: 14px;
+  }
+
+  @media (max-width: 500px) {
+    .incentives-strip,
+    .programs-wrap,
+    .how-wrap { padding-left: 20px; padding-right: 20px; }
+    .hdr, .cta-wrap { padding-left: 20px; padding-right: 20px; }
+    .hdr-title { font-size: 26px; }
+    .programs-grid, .cta-grid { grid-template-columns: 1fr; }
+    .incentives-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="hdr-eyebrow">The Burks Lending Group &bull; Powered by NEXA Mortgage</div>
+    <div class="hdr-title">Exclusive Buyer<br><span>Incentives.</span></div>
+    <div class="hdr-sub">With 25 years in the mortgage business, Frank Burks brings wholesale pricing and exclusive buyer incentives to every home purchase — conventional, FHA, VA, and USDA.</div>
+    <div class="hdr-badges">
+      <div class="hdr-badge"><div class="hdr-badge-dot"></div>Conventional</div>
+      <div class="hdr-badge"><div class="hdr-badge-dot"></div>FHA</div>
+      <div class="hdr-badge"><div class="hdr-badge-dot"></div>VA</div>
+      <div class="hdr-badge"><div class="hdr-badge-dot"></div>USDA</div>
+    </div>
+  </div>
+
+  <!-- INCENTIVE HERO CARDS -->
+  <div class="incentives-strip">
+    <div class="inc-card">
+      <div class="inc-number">1%</div>
+      <div class="inc-title">Lender Credit</div>
+      <div class="inc-desc">1% of the loan amount applied directly toward your closing costs at the closing table.</div>
+      <div class="inc-tag">All four programs</div>
+    </div>
+    <div class="inc-card">
+      <div class="inc-number">$600</div>
+      <div class="inc-title">Appraisal Credit</div>
+      <div class="inc-desc">Appraisal fee credited back to you at closing — money that stays in your pocket.</div>
+      <div class="inc-tag">Applied at closing*</div>
+    </div>
+  </div>
+
+  <!-- PROGRAMS -->
+  <div class="programs-wrap">
+    <div class="section-label">Incentives by loan program</div>
+    <div class="programs-grid">
+
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-name">Conventional</div>
+          <div class="prog-badge prog-badge-blue">3-20% down</div>
+        </div>
+        <div class="prog-row"><span class="prog-key">Lender credit</span><span class="prog-val-gold">1% of loan amount</span></div>
+        <div class="prog-row"><span class="prog-key">Appraisal</span><span class="prog-val-gold">Credit at closing*</span></div>
+        <div class="prog-row"><span class="prog-key">Min. credit score</span><span class="prog-val">620+</span></div>
+        <div class="prog-row"><span class="prog-key">PMI required</span><span class="prog-val">Below 20% down</span></div>
+        <div class="prog-row"><span class="prog-key">Wholesale rate</span><span class="prog-val-blue">Below retail</span></div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-name">FHA</div>
+          <div class="prog-badge prog-badge-gold">3.5% down</div>
+        </div>
+        <div class="prog-row"><span class="prog-key">Lender credit</span><span class="prog-val-gold">1% of loan amount</span></div>
+        <div class="prog-row"><span class="prog-key">Appraisal</span><span class="prog-val-gold">Credit at closing*</span></div>
+        <div class="prog-row"><span class="prog-key">Min. credit score</span><span class="prog-val">580+</span></div>
+        <div class="prog-row"><span class="prog-key">MIP required</span><span class="prog-val">Yes — monthly</span></div>
+        <div class="prog-row"><span class="prog-key">Wholesale rate</span><span class="prog-val-blue">Below retail</span></div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-name">VA Loan</div>
+          <div class="prog-badge prog-badge-green">0% down</div>
+        </div>
+        <div class="prog-row"><span class="prog-key">Lender credit</span><span class="prog-val-gold">1% of loan amount</span></div>
+        <div class="prog-row"><span class="prog-key">Appraisal</span><span class="prog-val-gold">Credit at closing*</span></div>
+        <div class="prog-row"><span class="prog-key">Eligibility</span><span class="prog-val">Veterans / Active duty</span></div>
+        <div class="prog-row"><span class="prog-key">PMI required</span><span class="prog-val">None</span></div>
+        <div class="prog-row"><span class="prog-key">Wholesale rate</span><span class="prog-val-blue">Below retail</span></div>
+      </div>
+
+      <div class="prog-card">
+        <div class="prog-header">
+          <div class="prog-name">USDA</div>
+          <div class="prog-badge prog-badge-green">0% down</div>
+        </div>
+        <div class="prog-row"><span class="prog-key">Lender credit</span><span class="prog-val-gold">1% of loan amount</span></div>
+        <div class="prog-row"><span class="prog-key">Appraisal</span><span class="prog-val-gold">Credit at closing*</span></div>
+        <div class="prog-row"><span class="prog-key">Area eligibility</span><span class="prog-val">USDA map required</span></div>
+        <div class="prog-row"><span class="prog-key">Income limit</span><span class="prog-val">115% area median</span></div>
+        <div class="prog-row"><span class="prog-key">Wholesale rate</span><span class="prog-val-blue">Below retail</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-wrap">
+    <div class="section-label">How to claim your incentives</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Get pre-approved with Frank</div>
+          <div class="step-desc">Book a free consultation at calendly.com/fburks or call (615) 768-9424. Pre-approval is free and typically completed within 24-48 hours.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Choose your home and lock your loan</div>
+          <div class="step-desc">Your 1% lender credit and appraisal credit are automatically applied when your loan is locked. No separate application or coupon needed.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Collect your credits at the closing table</div>
+          <div class="step-desc">Both credits appear on your Closing Disclosure — the 1% lender credit reduces your closing costs and the appraisal credit offsets the appraisal fee paid at closing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <div class="cta-eyebrow">Ready to get started?</div>
+    <div class="cta-headline">Everybody Deserves<br>a <span>Key.</span></div>
+    <div class="cta-grid">
+      <div class="cta-item">
+        <div class="cta-item-label">Call or Text</div>
+        <div class="cta-item-val">(615) 768-9424</div>
+      </div>
+      <div class="cta-item">
+        <div class="cta-item-label">Email</div>
+        <div class="cta-item-val">fburks@nexalending.com</div>
+      </div>
+      <div class="cta-item">
+        <div class="cta-item-label">Book a Consultation</div>
+        <div class="cta-item-val">calendly.com/fburks</div>
+      </div>
+      <div class="cta-item">
+        <div class="cta-item-label">Office</div>
+        <div class="cta-item-val">240 Mayfield Dr. Suite 208, Smyrna TN</div>
+      </div>
+    </div>
+    <a href="https://calendly.com/fburks" class="cta-btn">Book Your Free Consultation &rarr;</a>
+    <div class="disclaimer">* Appraisal credit applied at closing. Available on Conventional, FHA, VA, and USDA loan programs. Subject to loan approval and program eligibility. Lender credit of 1% of loan amount applied toward closing costs at settlement. Credits may not exceed actual closing costs. This is not a commitment to lend. All loan programs subject to underwriting approval, credit qualification, and property eligibility. Frank Burks | NMLS #841644 | The Burks Lending Group | Powered by NEXA Mortgage/Lending LLC | 240 Mayfield Dr., Suite 208, Smyrna, TN 37167 | Equal Housing Lender.</div>
+  </div>
+
+</div>
+</body>
+</html>

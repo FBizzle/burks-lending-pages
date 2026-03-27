@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA Home Loans · The Burks Lending Group · Smyrna, TN</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1628;--navy-mid:#0F2040;--navy-light:#132550;
+  --gold:#C8973A;--gold-light:#E8B455;--gold-pale:#FDF3E3;
+  --red:#B22234;--red-light:#D42B40;
+  --white:#FFFFFF;--off-white:#F7F5F0;--text-dark:#0A1628;
+  --text-mid:#4a5568;--text-light:#8a9ab5;
+  --green:#2D7D4F;--green-light:#E8F5EE;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--red),var(--gold));z-index:300;transition:width .1s;}
+nav{background:rgba(10,22,40,0.97);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(200,151,58,0.2);}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:15px;font-weight:700;line-height:1.2;}
+.nav-logo span{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--navy);font-size:12px;font-weight:700;padding:10px 22px;border-radius:4px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+
+/* HERO */
+.hero{background:linear-gradient(150deg,#060D1A 0%,#0A1628 50%,#0D1E35 100%);padding:80px 32px 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(178,34,52,0.12) 0%,transparent 50%),radial-gradient(ellipse at 15% 80%,rgba(200,151,58,0.08) 0%,transparent 45%);}
+.stars-bg{position:absolute;top:0;right:0;width:300px;height:300px;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='80'%3E⭐%3C/text%3E%3C/svg%3E");background-size:60px;z-index:0;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(178,34,52,0.15);border:1px solid rgba(178,34,52,0.3);border-radius:100px;padding:6px 16px;margin-bottom:20px;}
+.hero-eyebrow span{color:#E85566;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:16px;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:28px;max-width:520px;}
+.hero-stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
+.hero-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(200,151,58,0.2);border-radius:10px;padding:14px 20px;text-align:center;}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);line-height:1;}
+.hero-stat-label{font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.hero-badge{background:rgba(200,151,58,0.1);border:1px solid rgba(200,151,58,0.25);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.75);font-weight:500;}
+
+/* FORM */
+.form-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:0 24px 64px rgba(0,0,0,0.4);border:1px solid rgba(200,151,58,0.15);position:relative;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:16px 16px 0 0;}
+.form-label{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.form-card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.2;}
+.form-card-sub{font-size:13px;color:var(--text-mid);margin-bottom:22px;line-height:1.5;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;}
+.form-group input{width:100%;padding:11px 14px;border:1.5px solid #e0e8f0;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--off-white);transition:border-color .2s;}
+.form-group input:focus{outline:none;border-color:var(--gold);background:var(--white);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--red),var(--red-light));color:var(--white);border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s;text-transform:uppercase;}
+.form-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(178,34,52,0.4);}
+.form-privacy{font-size:11px;color:#9aa5b4;text-align:center;margin-top:12px;}
+.form-privacy a{color:var(--gold);text-decoration:none;}
+.gold-bar{height:5px;background:linear-gradient(90deg,var(--red),var(--gold),var(--red));}
+
+/* SECTIONS */
+.section{padding:64px 32px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section.white{background:var(--white);}
+.section.tinted{background:var(--off-white);}
+.section.dark{background:var(--navy);}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,38px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2;}
+.section-title.white-text{color:var(--white);}
+.section-desc{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:640px;margin-bottom:40px;}
+
+/* HONOR CALLOUT */
+.honor-box{background:linear-gradient(135deg,var(--navy),#0D1E35);border:2px solid var(--gold);border-radius:16px;padding:40px;text-align:center;position:relative;overflow:hidden;margin:32px 0;}
+.honor-box::before{content:'🎖️';position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:80px;opacity:0.05;}
+.honor-box h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--white);margin-bottom:12px;position:relative;z-index:1;}
+.honor-box h2 em{color:var(--gold);font-style:normal;}
+.honor-box p{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:600px;margin:0 auto;position:relative;z-index:1;}
+.honor-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1;}
+.honor-tag{background:rgba(200,151,58,0.15);border:1px solid rgba(200,151,58,0.3);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--white);}
+
+/* BENEFIT GRID */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.benefit-card{background:var(--white);border:1.5px solid #e8edf8;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s,box-shadow .2s;}
+.benefit-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(200,151,58,0.12);}
+.benefit-card.featured{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-color:var(--gold);}
+.benefit-icon{font-size:32px;margin-bottom:14px;}
+.benefit-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.benefit-card.featured h3{color:var(--white);}
+.benefit-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
+.benefit-card.featured p{color:rgba(255,255,255,0.65);}
+.benefit-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+
+/* PROGRAMS */
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.program-card{border-radius:14px;padding:28px;border:2px solid;}
+.program-card.purchase{background:linear-gradient(135deg,#EEF6FF,#E6F0FF);border-color:#4A9EFF;}
+.program-card.irrrl{background:linear-gradient(135deg,#EEF6F0,#E6F3EC);border-color:#2D7D4F;}
+.program-card.cashout{background:linear-gradient(135deg,#FFF5E6,#FFF0D6);border-color:var(--gold);}
+.program-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.program-card.purchase h3{color:#1E5FA8;}
+.program-card.irrrl h3{color:#2D7D4F;}
+.program-card.cashout h3{color:#A06B1A;}
+.program-sub{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;opacity:0.7;}
+.prog-list{display:flex;flex-direction:column;gap:8px;}
+.prog-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-mid);line-height:1.5;}
+
+/* COE STEPS */
+.coe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.coe-card{background:var(--white);border:1.5px solid #e8edf8;border-radius:14px;padding:24px;text-align:center;}
+.coe-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-light));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);margin:0 auto 16px;}
+.coe-card h3{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.coe-card p{font-size:12px;color:var(--text-mid);line-height:1.5;}
+
+/* EXEMPTION BOX */
+.exemption-box{background:linear-gradient(135deg,#FFF8E6,#FFF3D0);border:2px solid var(--gold);border-radius:16px;padding:32px;margin:32px 0;}
+.exemption-box h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:12px;}
+.exemption-list{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+.exemption-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-mid);line-height:1.6;}
+
+/* FACTS TABLE */
+.facts-table{width:100%;border-collapse:collapse;}
+.facts-table th{background:var(--navy);color:var(--white);padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.facts-table td{padding:11px 16px;border-bottom:1px solid #e8edf5;font-size:13px;color:var(--text-mid);line-height:1.5;}
+.facts-table tr:nth-child(even) td{background:var(--off-white);}
+.facts-table td:first-child{font-weight:700;color:var(--navy);}
+.facts-table{border-top:3px solid var(--red);}
+
+/* ADVISOR */
+.advisor-section{background:linear-gradient(135deg,var(--navy),#0D2050);padding:56px 32px;}
+.advisor-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.advisor-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.advisor-title{font-size:13px;color:var(--gold-light);margin-bottom:20px;}
+.advisor-bio{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;}
+.advisor-contact{display:flex;flex-direction:column;gap:10px;}
+.advisor-contact a{color:var(--white);text-decoration:none;font-size:14px;font-weight:500;}
+.advisor-ctas{display:flex;flex-direction:column;gap:14px;}
+.btn-primary{background:linear-gradient(135deg,var(--red),var(--red-light));color:var(--white);padding:16px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;letter-spacing:.05em;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:16px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3);padding:14px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;}
+.nmls-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.nmls-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:5px 12px;font-size:10px;color:rgba(255,255,255,0.5);}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--red),var(--red-light));padding:72px 32px;text-align:center;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:900;color:var(--white);margin-bottom:12px;}
+.cta-section p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:var(--white);color:var(--red);padding:16px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.06em;}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.6);padding:14px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;}
+
+footer{background:#060e1a;padding:28px 32px;text-align:center;}
+footer p{font-size:11px;color:#3a4a5a;line-height:1.8;}
+footer a{color:#4a6a8a;text-decoration:none;}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .hero-inner,.advisor-inner,.program-grid,.benefit-grid,.coe-grid{grid-template-columns:1fr;}
+  nav{padding:12px 20px;}
+  .section{padding:48px 20px;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <div class="nav-logo">The Burks Lending Group<br><span>empowered by NEXA Lending</span></div>
+  <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="nav-cta">Check My Eligibility →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="stars-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span>🎖️ VA Home Loans · Zero Down · Built for Those Who Served</span></div>
+      <h1>You Served This Country.<br>Now Let Us <em>Serve You.</em></h1>
+      <p class="hero-sub">The VA home loan benefit is one of the most powerful financial tools available to veterans, active military, and surviving spouses. Zero down payment. No PMI. Competitive rates. And benefits you've earned that most lenders don't fully explain.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">0%</div><div class="hero-stat-label">Down Payment</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">580</div><div class="hero-stat-label">Min FICO</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">$2M</div><div class="hero-stat-label">Max Loan</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">65%</div><div class="hero-stat-label">Max DTI</div></div>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">✅ Zero Down Payment</div>
+        <div class="hero-badge">✅ No PMI Ever</div>
+        <div class="hero-badge">✅ 580 Min FICO</div>
+        <div class="hero-badge">✅ Manual Underwrites Allowed</div>
+        <div class="hero-badge">✅ 100% LTV Purchase</div>
+        <div class="hero-badge">✅ Funding Fee Exemption Available</div>
+      </div>
+    </div>
+    <div class="form-card fade-up" id="get-started">
+      <div class="form-label">🎖️ For Veterans · Active Military · Surviving Spouses</div>
+      <h2>Check Your VA Eligibility</h2>
+      <p class="form-card-sub">Tell us about your situation — Frank will reach out personally within 24 hours.</p>
+      <form id="leadForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="James">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Thompson">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(615) 555-0100">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="james@email.com">
+        </div>
+        <button type="button" class="form-submit" onclick="handleFormSubmit()">🎖️ Check My VA Eligibility →</button>
+      </form>
+      <div id="successState" style="display:none;text-align:center;padding:20px 0;">
+        <div style="font-size:48px;margin-bottom:16px;">🎖️</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:8px;">Thank You for Your Service.</h3>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.6;">Frank will reach out personally within 24 hours to walk through your VA benefit options.</p>
+        <p style="margin-top:12px"><a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here to start your application now →</a></p>
+      </div>
+      <p class="form-privacy">🔒 Your information is secure and never sold. <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </div>
+  </div>
+</section>
+<div class="gold-bar"></div>
+
+<!-- HONOR CALLOUT -->
+<section class="section white">
+  <div class="section-inner">
+    <div class="honor-box fade-up">
+      <h2>You Earned This Benefit.<br><em>Use Every Bit of It.</em></h2>
+      <p>The VA loan guarantee is one of the most underutilized benefits in the military community. No down payment. No private mortgage insurance. Competitive rates. Flexible guidelines. And for qualifying disabled veterans — the funding fee is waived entirely. This is your benefit. Let's make sure you're getting all of it.</p>
+      <div class="honor-tags">
+        <div class="honor-tag">🎖️ Veterans</div>
+        <div class="honor-tag">🪖 Active Military</div>
+        <div class="honor-tag">🕊️ Surviving Spouses</div>
+        <div class="honor-tag">National Guard Eligible</div>
+        <div class="honor-tag">Reservists Eligible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY BENEFITS -->
+<section class="section tinted">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Why VA</div>
+    <h2 class="section-title fade-up">Benefits No Other Loan Program Matches</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card featured fade-up">
+        <div class="benefit-tag">Best Feature</div>
+        <div class="benefit-icon">🏠</div>
+        <h3>Zero Down Payment</h3>
+        <p>100% financing available on VA purchase loans. No down payment required. No PMI ever — saving veterans hundreds of dollars every month compared to conventional loans.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:.1s">
+        <div class="benefit-tag">580 Min FICO</div>
+        <div class="benefit-icon">💳</div>
+        <h3>Flexible Credit Guidelines</h3>
+        <p>580 minimum FICO score on purchase and rate-term refinance. Manual underwrites allowed — so a complex credit history doesn't automatically mean a declined application.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:.2s">
+        <div class="benefit-tag">No PMI</div>
+        <div class="benefit-icon">💰</div>
+        <h3>No Private Mortgage Insurance</h3>
+        <p>VA loans never require PMI regardless of down payment amount. On a $400,000 loan, this saves veterans $150-$300 per month compared to FHA or conventional loans with less than 20% down.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:.1s">
+        <div class="benefit-tag">65% DTI</div>
+        <div class="benefit-icon">📊</div>
+        <h3>Flexible Debt-to-Income</h3>
+        <p>DTI up to 65% with AUS approval — one of the most flexible standards in the mortgage industry. More veterans qualify who would be declined by conventional lenders.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:.2s">
+        <div class="benefit-tag">High Balance</div>
+        <div class="benefit-icon">🏦</div>
+        <h3>Loans Up to $2 Million</h3>
+        <p>Conforming and high balance loan amounts available up to $2,000,000. Veterans purchasing in higher-priced markets have full access to their benefit regardless of loan size.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:.3s">
+        <div class="benefit-tag">Rate Options</div>
+        <div class="benefit-icon">📅</div>
+        <h3>Flexible Loan Terms</h3>
+        <p>Fixed rates in 15, 20, 25, and 30-year terms. ARM options available. 2/1 and 1/0 temporary rate buydowns available — lower your rate in the early years of your loan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section white">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">VA Programs</div>
+    <h2 class="section-title fade-up">Purchase, Streamline, and Cash-Out</h2>
+    <div class="program-grid fade-up">
+      <div class="program-card purchase">
+        <h3>🏠 VA Purchase</h3>
+        <div class="program-sub">Buy a Home with Zero Down</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>100% LTV — zero down payment</span></div>
+          <div class="prog-item"><span>✅</span><span>580 minimum FICO score</span></div>
+          <div class="prog-item"><span>✅</span><span>No PMI — ever</span></div>
+          <div class="prog-item"><span>✅</span><span>DTI up to 65% with AUS approval</span></div>
+          <div class="prog-item"><span>✅</span><span>Manual underwrites allowed</span></div>
+          <div class="prog-item"><span>✅</span><span>1-4 units, condos, manufactured homes</span></div>
+          <div class="prog-item"><span>✅</span><span>2/1 and 1/0 buydowns available</span></div>
+          <div class="prog-item"><span>✅</span><span>Conforming and high balance to $2M</span></div>
+        </div>
+      </div>
+      <div class="program-card irrrl">
+        <h3>⚡ VA IRRRL Streamline</h3>
+        <div class="program-sub">Lower Your Rate Fast</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>Up to 110% LTV/CLTV</span></div>
+          <div class="prog-item"><span>✅</span><span>580 minimum FICO score</span></div>
+          <div class="prog-item"><span>✅</span><span>No appraisal option available</span></div>
+          <div class="prog-item"><span>✅</span><span>Minimal documentation required</span></div>
+          <div class="prog-item"><span>✅</span><span>Soft credit pull on submission</span></div>
+          <div class="prog-item"><span>✅</span><span>Primary, secondary and investment</span></div>
+          <div class="prog-item"><span>✅</span><span>Manufactured homes eligible</span></div>
+          <div class="prog-item"><span>✅</span><span>Fixed rates: 15/20/25/30-year</span></div>
+        </div>
+      </div>
+      <div class="program-card cashout">
+        <h3>💰 VA Cash-Out Refinance</h3>
+        <div class="program-sub">Access Your Equity</div>
+        <div class="prog-list">
+          <div class="prog-item"><span>✅</span><span>Up to 90% LTV cash-out</span></div>
+          <div class="prog-item"><span>✅</span><span>580 minimum FICO score</span></div>
+          <div class="prog-item"><span>✅</span><span>DTI up to 65% with AUS approval</span></div>
+          <div class="prog-item"><span>✅</span><span>Manual underwrites allowed</span></div>
+          <div class="prog-item"><span>✅</span><span>Pay off debt, renovate, invest</span></div>
+          <div class="prog-item"><span>✅</span><span>No PMI on cash-out loan</span></div>
+          <div class="prog-item"><span>✅</span><span>High balance loan amounts available</span></div>
+          <div class="prog-item"><span>✅</span><span>ARM options available</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:12px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--text-mid);line-height:1.6;">
+      <strong style="color:var(--navy);">Frankly Speaking:</strong> Not sure which program fits your situation? That's what I'm here for. A 15-minute call covers your options completely. Call or text Frank directly at <strong style="color:var(--gold)">(615) 768-9424</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDING FEE EXEMPTION -->
+<section class="section tinted">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Funding Fee Exemption</div>
+    <h2 class="section-title fade-up">Disabled Veterans — This Could Save You Thousands</h2>
+    <div class="exemption-box fade-up">
+      <h3>🎖️ VA Funding Fee Waiver for Qualifying Veterans</h3>
+      <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-top:8px;">The VA funding fee typically ranges from 1.25% to 3.3% of the loan amount — on a $400,000 loan, that's up to $13,200. Qualifying veterans may have this fee waived entirely.</p>
+      <div class="exemption-list">
+        <div class="exemption-item"><span>✅</span><span><strong>Service-connected disability:</strong> Veterans receiving VA compensation for a service-connected disability are exempt from the funding fee.</span></div>
+        <div class="exemption-item"><span>✅</span><span><strong>Disability rating pending:</strong> Veterans who have a pending disability claim at the time of closing may also qualify for the exemption.</span></div>
+        <div class="exemption-item"><span>✅</span><span><strong>Surviving spouses:</strong> Surviving spouses of veterans who died in service or from a service-connected disability are exempt.</span></div>
+        <div class="exemption-item"><span>✅</span><span><strong>Purple Heart recipients:</strong> Active duty service members who have received a Purple Heart and close before or on their discharge date are exempt.</span></div>
+      </div>
+      <p style="font-size:13px;color:var(--text-mid);margin-top:16px;font-style:italic;">Tell Frank about your disability status when you apply — this exemption can save thousands and must be confirmed before closing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COE -->
+<section class="section white">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Certificate of Eligibility</div>
+    <h2 class="section-title fade-up">How to Get Your COE — Faster Than You Think</h2>
+    <p class="section-desc fade-up">Your Certificate of Eligibility confirms your VA loan entitlement to the lender. Here's how to get it:</p>
+    <div class="coe-grid fade-up">
+      <div class="coe-card">
+        <div class="coe-num">1</div>
+        <h3>Let Frank Do It</h3>
+        <p>The fastest option. Frank can request your COE directly through VA's automated system during the loan process — often in minutes.</p>
+      </div>
+      <div class="coe-card">
+        <div class="coe-num">2</div>
+        <h3>VA eBenefits Portal</h3>
+        <p>Apply online at va.gov/housing-assistance/home-loans/request-coe-form-26-1880. Create an account and request digitally.</p>
+      </div>
+      <div class="coe-card">
+        <div class="coe-num">3</div>
+        <h3>By Mail</h3>
+        <p>Complete VA Form 26-1880 and mail to your Regional VA Loan Center. Takes longer — use online or lender-assisted options when possible.</p>
+      </div>
+      <div class="coe-card">
+        <div class="coe-num">4</div>
+        <h3>What You Need</h3>
+        <p>Veterans: DD-214. Active duty: Statement of service. National Guard/Reserves: Discharge or service records depending on activation history.</p>
+      </div>
+    </div>
+    <div style="background:#EEF6F0;border:1.5px solid var(--green);border-radius:12px;padding:20px 24px;margin-top:24px;font-size:13px;color:var(--text-mid);line-height:1.6;">
+      <strong style="color:var(--green);">Frankly Speaking:</strong> Don't let the COE process slow you down. In most cases Frank can pull your COE instantly through the VA system — no paperwork required on your end. Just get in touch and we'll handle it together.
+    </div>
+  </div>
+</section>
+
+<!-- QUICK FACTS -->
+<section class="section tinted">
+  <div class="section-inner">
+    <div class="eyebrow fade-up">Program At a Glance</div>
+    <h2 class="section-title fade-up">VA Loan Quick Reference</h2>
+    <table class="facts-table fade-up">
+      <thead><tr><th>Feature</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Down Payment</td><td>0% — 100% financing on purchase loans</td></tr>
+        <tr><td>Min FICO Score</td><td>580 on purchase and rate-term refinance</td></tr>
+        <tr><td>Max DTI</td><td>65% with AUS approval</td></tr>
+        <tr><td>PMI Required</td><td>Never — no private mortgage insurance on VA loans</td></tr>
+        <tr><td>Max Loan Amount</td><td>Conforming and high balance up to $2,000,000</td></tr>
+        <tr><td>Loan Terms</td><td>Fixed: 15, 20, 25, 30 years | ARM options available</td></tr>
+        <tr><td>Buydowns</td><td>2/1 and 1/0 temporary rate buydowns available</td></tr>
+        <tr><td>Property Types</td><td>1-4 Units, Primary Residence, Condos, Manufactured Homes</td></tr>
+        <tr><td>Manual Underwrites</td><td>Allowed — complex credit histories considered</td></tr>
+        <tr><td>VA Purchase LTV</td><td>100% LTV — zero down payment</td></tr>
+        <tr><td>VA IRRRL LTV</td><td>Up to 110% LTV/CLTV</td></tr>
+        <tr><td>VA IRRRL Appraisal</td><td>No appraisal option available — minimal docs</td></tr>
+        <tr><td>VA Cash-Out LTV</td><td>Up to 90% LTV</td></tr>
+        <tr><td>Funding Fee</td><td>May be waived for qualifying disabled veterans</td></tr>
+        <tr><td>Who Qualifies</td><td>Veterans, Active Military, National Guard, Reservists, Surviving Spouses</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ADVISOR -->
+<section class="advisor-section">
+  <div class="advisor-inner">
+    <div>
+      <div class="advisor-name">Frank Burks</div>
+      <div class="advisor-title">Certified Mortgage Advisor · NMLS #841644 · Branch NMLS #2064382</div>
+      <p class="advisor-bio">With 25 years in the mortgage business, we have built a reputation for getting deals done that other lenders walk away from. The Burks Lending Group, empowered by NEXA Lending, is committed to making sure every veteran, active service member, and surviving spouse gets every benefit they've earned — nothing left on the table.</p>
+      <div class="advisor-contact">
+        <a href="tel:6157689424">📞 (615) 768-9424</a>
+        <a href="https://www.theburkslendinggroup.com" target="_blank">🌐 www.theburkslendinggroup.com</a>
+        <a href="https://calendly.com/fburks" target="_blank">📅 Book a Free Call</a>
+      </div>
+      <div class="nmls-badges">
+        <div class="nmls-badge">NMLS #841644</div>
+        <div class="nmls-badge">Branch NMLS #2064382</div>
+        <div class="nmls-badge">NEXA Lending NMLS #1660690</div>
+        <div class="nmls-badge">Equal Housing Lender</div>
+      </div>
+    </div>
+    <div class="advisor-ctas">
+      <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="btn-primary">🎖️ Check My VA Eligibility →</a>
+      <a href="https://calendly.com/fburks" target="_blank" class="btn-gold">📅 Book a Free Call</a>
+      <a href="tel:6157689424" class="btn-outline">📞 Call or Text (615) 768-9424</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>You Served. Now It's Our Turn.</h2>
+  <p>Check your VA eligibility today. Zero down. No PMI. The benefit you've earned, fully explained and fully used.</p>
+  <div class="cta-btns">
+    <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="btn-white">🎖️ Check My VA Eligibility →</a>
+    <a href="https://calendly.com/fburks" target="_blank" class="btn-outline-white">📅 Book a Free Call</a>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2025 The Burks Lending Group · empowered by NEXA Lending · Smyrna, TN<br>
+    Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
+    NEXA Lending · NMLS #1660690 · Equal Housing Lender · 538 Johnstown Dr., Smyrna, TN 37167<br>
+    <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a><br>
+    <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a> · <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank">LinkedIn</a><br><br>
+    VA loans subject to eligibility requirements. This is not a commitment to lend. All loans subject to credit approval. Program availability and terms subject to change without notice.
+  </p>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const w=document.body.scrollTop||document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('progressBar').style.width=(w/h)*100+'%';
+});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+function handleFormSubmit(){
+  document.getElementById('leadForm').style.display='none';
+  document.getElementById('successState').style.display='block';
+  setTimeout(function(){
+    window.open('https://www.theburkslendinggroup.com/home-purchase','_blank');
+  },2000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Statement Loans | Self-Employed Home Financing | The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --navy-mid: #0f2040;
+  --carolina: #4A9EFF;
+  --gold: #C8973A;
+  --gold-light: #e8b558;
+  --white: #ffffff;
+  --text-muted: #8a9bbf;
+  --amber: #b86b1a;
+  --amber-light: #e08830;
+  --amber-glow: #f5a c52;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+/* HEADER */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,22,40,0.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,151,58,0.15);
+  padding: 14px 32px; display: flex; align-items: center; justify-content: space-between;
+}
+.header-brand { font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.2; }
+.header-brand span { color: var(--gold); }
+.header-cta {
+  background: var(--gold); color: var(--navy);
+  padding: 10px 22px; border-radius: 6px;
+  font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; transition: background 0.2s;
+}
+.header-cta:hover { background: var(--gold-light); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden; padding: 130px 32px 80px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 80% 40%, rgba(184,107,26,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 70% at 10% 80%, rgba(74,158,255,0.06) 0%, transparent 55%),
+    linear-gradient(155deg, #0A1628 0%, #0e1c32 55%, #0A1628 100%);
+}
+.hero-dots {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(200,151,58,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.hero-accent {
+  position: absolute; right: -120px; top: 50%; transform: translateY(-50%);
+  width: 580px; height: 580px; border-radius: 50%;
+  border: 1px solid rgba(200,151,58,0.1); pointer-events: none;
+}
+.hero-accent::before {
+  content: ''; position: absolute; inset: 60px; border-radius: 50%;
+  border: 1px solid rgba(200,151,58,0.07);
+}
+.hero-accent::after {
+  content: ''; position: absolute; inset: 130px; border-radius: 50%;
+  border: 1px solid rgba(74,158,255,0.07);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 720px; }
+.program-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(200,151,58,0.12); border: 1px solid rgba(200,151,58,0.35);
+  color: var(--gold-light); padding: 6px 14px; border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.program-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; color: var(--gold); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 900; line-height: 1.1; margin-bottom: 24px;
+}
+.hero h1 .gold { color: var(--gold); }
+.hero h1 .blue { color: var(--carolina); }
+
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.72);
+  line-height: 1.7; max-width: 580px; margin-bottom: 36px;
+}
+
+.hero-bullets { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+.hero-pill {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.11);
+  padding: 8px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+}
+.hero-pill.gold { background: rgba(200,151,58,0.12); border-color: rgba(200,151,58,0.3); color: var(--gold-light); }
+.hero-pill.blue { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.25); color: #7bc4ff; }
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--gold); color: var(--navy);
+  padding: 16px 32px; border-radius: 8px;
+  font-weight: 700; font-size: 1rem;
+  text-decoration: none; transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-secondary {
+  background: transparent; color: var(--white); padding: 16px 32px;
+  border-radius: 8px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.22);
+  transition: all 0.2s; display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+/* TRUST BAR */
+.trust-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 32px;
+  display: flex; justify-content: center; align-items: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+
+/* SHARED */
+.section { padding: 80px 32px; }
+.section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.section-sub { font-size: 1rem; color: rgba(255,255,255,0.62); line-height: 1.7; max-width: 560px; margin-bottom: 48px; }
+.section-center { text-align: center; }
+.section-center .section-sub { margin: 0 auto 48px; }
+.inner { max-width: 1100px; margin: 0 auto; }
+
+/* WHO IT SERVES */
+.who-section { background: linear-gradient(160deg,#0d1e38 0%,#0A1628 100%); border-top: 1px solid rgba(200,151,58,0.08); }
+.who-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; }
+.who-card {
+  background: rgba(200,151,58,0.06); border: 1px solid rgba(200,151,58,0.13);
+  border-radius: 12px; padding: 24px 20px; text-align: center; transition: all 0.2s;
+}
+.who-card:hover { background: rgba(200,151,58,0.1); border-color: rgba(200,151,58,0.28); }
+.who-icon { font-size: 2rem; margin-bottom: 12px; }
+.who-title { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+.who-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* KEY HIGHLIGHTS */
+.highlights-section { background: var(--navy); }
+.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; }
+.highlight-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 28px; transition: all 0.25s; position: relative; overflow: hidden;
+}
+.highlight-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+.highlight-card:hover { border-color: rgba(200,151,58,0.25); transform: translateY(-3px); }
+.hc-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.hc-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.hc-desc { font-size: 0.85rem; color: rgba(255,255,255,0.58); line-height: 1.6; }
+.hc-stat { font-family: 'Playfair Display',serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-top: 12px; }
+
+/* PROGRAM TIERS */
+.tiers-section { background: linear-gradient(160deg,#0d1e38 0%,#0A1628 100%); border-top: 1px solid rgba(200,151,58,0.08); }
+.tiers-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 24px; }
+.tier-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px; overflow: hidden; transition: all 0.25s;
+}
+.tier-card:hover { border-color: rgba(200,151,58,0.25); transform: translateY(-4px); }
+.tier-header {
+  padding: 22px 24px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.tier-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.tier-tag.gold { color: var(--gold-light); }
+.tier-tag.blue { color: var(--carolina); }
+.tier-title { font-family: 'Playfair Display',serif; font-size: 1.2rem; font-weight: 700; margin-top: 6px; }
+.tier-badge {
+  background: rgba(200,151,58,0.12); border: 1px solid rgba(200,151,58,0.25);
+  color: var(--gold-light); padding: 4px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 600;
+}
+.tier-stats { padding: 20px 24px; display: flex; flex-direction: column; gap: 11px; }
+.t-stat {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 11px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.875rem;
+}
+.t-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.t-stat .lbl { color: rgba(255,255,255,0.48); }
+.t-stat .val { font-weight: 600; }
+.t-stat .val.gold { color: var(--gold-light); }
+.t-stat .val.blue { color: var(--carolina); }
+.t-stat .val.green { color: #4cd9a0; }
+
+/* DOC OPTIONS */
+.doc-section { background: var(--navy); }
+.doc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; }
+.doc-card {
+  background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.12);
+  border-radius: 12px; padding: 24px; display: flex; gap: 14px; align-items: flex-start; transition: border-color 0.2s;
+}
+.doc-card:hover { border-color: rgba(74,158,255,0.28); }
+.doc-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.doc-text strong { display: block; font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; }
+.doc-text span { font-size: 0.82rem; color: rgba(255,255,255,0.54); line-height: 1.5; }
+
+/* QUALIFY */
+.qualify-section {
+  background: linear-gradient(160deg,#0d1e38 0%,#0A1628 100%);
+  border-top: 1px solid rgba(200,151,58,0.08);
+  border-bottom: 1px solid rgba(200,151,58,0.08);
+}
+.qualify-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; }
+.qualify-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; transition: border-color 0.2s;
+}
+.qualify-card:hover { border-color: rgba(200,151,58,0.3); }
+.qc-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.qc-text strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.qc-text span { font-size: 0.83rem; color: rgba(255,255,255,0.54); line-height: 1.5; }
+
+/* HOW IT WORKS */
+.how-section { background: var(--navy); }
+.steps { display: flex; flex-direction: column; gap: 0; max-width: 680px; margin: 0 auto; }
+.step { display: flex; gap: 24px; align-items: flex-start; padding-bottom: 40px; }
+.step:last-child { padding-bottom: 0; }
+.step-left { display: flex; flex-direction: column; align-items: center; }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(200,151,58,0.12); border: 2px solid rgba(200,151,58,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display',serif; font-weight: 700; font-size: 1rem; color: var(--gold); flex-shrink: 0;
+}
+.step-line { width: 2px; flex: 1; background: linear-gradient(to bottom,rgba(200,151,58,0.28),rgba(200,151,58,0.04)); margin-top: 8px; min-height: 40px; }
+.step:last-child .step-line { display: none; }
+.step-body { padding-top: 8px; }
+.step-body strong { display: block; font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.step-body p { font-size: 0.875rem; color: rgba(255,255,255,0.58); line-height: 1.6; }
+
+/* CALLOUT */
+.no-tax-callout {
+  background: rgba(200,151,58,0.08); border: 1px solid rgba(200,151,58,0.22);
+  border-radius: 14px; padding: 28px 32px; margin-top: 48px;
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.ntc-icon { font-size: 1.8rem; flex-shrink: 0; }
+.ntc-text strong { display: block; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--gold-light); }
+.ntc-text p { font-size: 0.88rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
+
+/* FORM */
+.form-section { background: var(--navy); }
+.form-wrapper {
+  max-width: 620px; margin: 0 auto;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px; padding: 48px;
+}
+@media(max-width:600px){ .form-wrapper{ padding:32px 24px; } }
+.form-header { text-align: center; margin-bottom: 36px; }
+.form-header h2 { font-family:'Playfair Display',serif; font-size:1.9rem; margin-bottom:10px; }
+.form-header p { font-size:0.9rem; color:rgba(255,255,255,0.52); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:540px){ .form-row{ grid-template-columns:1fr; } }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:0.8rem; font-weight:600; color:rgba(255,255,255,0.62); margin-bottom:7px; text-transform:uppercase; letter-spacing:0.5px; }
+.form-group input,.form-group select {
+  width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.11);
+  border-radius:8px; padding:13px 16px; color:var(--white); font-size:0.95rem;
+  font-family:'DM Sans',sans-serif; outline:none; transition:border-color 0.2s;
+}
+.form-group input:focus,.form-group select:focus { border-color:var(--gold); background:rgba(200,151,58,0.05); }
+.form-group select option { background:var(--navy-mid); color:var(--white); }
+.form-submit {
+  width:100%; background:var(--gold); color:var(--navy); border:none;
+  padding:16px; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer;
+  font-family:'DM Sans',sans-serif; transition:all 0.2s; margin-top:8px;
+}
+.form-submit:hover { background:var(--gold-light); transform:translateY(-1px); }
+.form-note { text-align:center; font-size:0.75rem; color:rgba(255,255,255,0.32); margin-top:14px; line-height:1.5; }
+
+/* FOOTER */
+footer { background:#060f1c; border-top:1px solid rgba(255,255,255,0.07); padding:40px 32px; text-align:center; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; margin-bottom:10px; }
+.footer-brand span { color:var(--gold); }
+.footer-info { font-size:0.78rem; color:rgba(255,255,255,0.28); line-height:1.7; max-width:700px; margin:0 auto; }
+.footer-info a { color:rgba(255,255,255,0.42); text-decoration:none; }
+
+/* MOBILE STICKY */
+.mobile-cta { display:none; position:fixed; bottom:0; left:0; right:0; z-index:999; background:var(--navy); border-top:1px solid rgba(200,151,58,0.25); padding:14px 24px; }
+.mobile-cta a { display:block; background:var(--gold); color:var(--navy); text-align:center; padding:14px; border-radius:8px; font-weight:700; font-size:0.95rem; text-decoration:none; }
+@media(max-width:640px){ .mobile-cta{ display:block; } body{ padding-bottom:80px; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-brand">The Burks Lending Group<br><span>empowered by NEXA Lending</span></div>
+  <a href="https://www.theburkslendinggroup.com/home-purchase" class="header-cta">Check My Eligibility</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <div class="program-badge">Bank Statement Loan Program</div>
+    <h1>
+      You Built Your Business.<br>
+      Now Buy Your <span class="gold">Home.</span><br>
+      <span class="blue">No Tax Returns Required.</span>
+    </h1>
+    <p class="hero-sub">
+      Self-employed buyers deserve a loan that works the way they work. 
+      Qualify using 12 or 24 months of bank statements — personal or business. 
+      No W-2s. No CPA letter. Just your income, your way.
+    </p>
+    <div class="hero-bullets">
+      <span class="hero-pill gold">✓ No Tax Returns Required</span>
+      <span class="hero-pill blue">✓ Up to 90% LTV</span>
+      <span class="hero-pill">✓ Loans to $4 Million</span>
+      <span class="hero-pill">✓ 620 Min. Credit Score</span>
+      <span class="hero-pill">✓ Personal or Business Statements</span>
+      <span class="hero-pill gold">✓ 100% Gift Funds Allowed</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://www.theburkslendinggroup.com/home-purchase" class="btn-primary">Check My Eligibility →</a>
+      <a href="tel:6157689424" class="btn-secondary">📞 (615) 768-9424</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">🏅 25 Years of Experience</div>
+  <div class="trust-item">📍 Serving Middle Tennessee</div>
+  <div class="trust-item">💰 Below-Market Wholesale Rates</div>
+  <div class="trust-item">🔑 Clear to Close Starts Here</div>
+</div>
+
+<!-- WHO IT SERVES -->
+<section class="section who-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Built For the Self-Employed</p>
+      <h2 class="section-title">Traditional Loans Weren't Built for You. This One Was.</h2>
+      <p class="section-sub">If your income doesn't fit neatly on a W-2, a conventional loan can make you feel like you don't qualify. The Bank Statement program was designed to fix that.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card"><div class="who-icon">🏗️</div><div class="who-title">Contractors & Tradespeople</div><div class="who-desc">Electricians, plumbers, builders — strong income, non-traditional docs.</div></div>
+      <div class="who-card"><div class="who-icon">👨‍💼</div><div class="who-title">Business Owners</div><div class="who-desc">LLCs, S-Corps, sole proprietors — qualify on business or personal deposits.</div></div>
+      <div class="who-card"><div class="who-icon">🚗</div><div class="who-title">Gig & 1099 Workers</div><div class="who-desc">Uber, DoorDash, freelancers — your deposits tell the real story.</div></div>
+      <div class="who-card"><div class="who-icon">💇</div><div class="who-title">Salon & Service Owners</div><div class="who-desc">Booth renters, stylists, spa owners — commission and cash income welcome.</div></div>
+      <div class="who-card"><div class="who-icon">🏠</div><div class="who-title">Real Estate Investors</div><div class="who-desc">Investors with complex returns — bank statements cut through the noise.</div></div>
+      <div class="who-card"><div class="who-icon">🩺</div><div class="who-title">Medical Professionals</div><div class="who-desc">Practice owners, locum physicians, independent providers.</div></div>
+      <div class="who-card"><div class="who-icon">⚖️</div><div class="who-title">Legal & Consulting Pros</div><div class="who-desc">Attorneys, consultants, coaches — project-based income qualifies.</div></div>
+      <div class="who-card"><div class="who-icon">📦</div><div class="who-title">E-Commerce & Online Business</div><div class="who-desc">Amazon sellers, Shopify owners, content creators — if it deposits, it counts.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY HIGHLIGHTS -->
+<section class="section highlights-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Program Highlights</p>
+      <h2 class="section-title">The Features That Make This Program Work</h2>
+      <p class="section-sub">Flexibility is the whole point. Here's what sets the Bank Statement program apart from anything a retail bank will offer you.</p>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="hc-icon">🏦</div>
+        <div class="hc-title">No Tax Returns Required</div>
+        <div class="hc-desc">Your write-offs shouldn't cost you your mortgage. We qualify you on deposits — not what the IRS sees.</div>
+        <div class="hc-stat">0 Returns</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">📈</div>
+        <div class="hc-title">Up to 90% LTV</div>
+        <div class="hc-desc">Put as little as 10% down on loan amounts up to $2M. 700+ FICO required for maximum LTV.</div>
+        <div class="hc-stat">90% LTV</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">💰</div>
+        <div class="hc-title">Loan Amounts to $4 Million</div>
+        <div class="hc-desc">Primary residences, second homes, and investment properties. Big income earners get big loan options.</div>
+        <div class="hc-stat">$4M Max</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">📊</div>
+        <div class="hc-title">Expense Factor as Low as 10%</div>
+        <div class="hc-desc">More of your deposits count as qualifying income. Automated bank statement analysis for fast turnaround.</div>
+        <div class="hc-stat">10% Ratio</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">🔄</div>
+        <div class="hc-title">12 or 24 Month Options</div>
+        <div class="hc-desc">Use the last 12 or 24 months of statements. Most programs accept 12 months — same rate on all doc types.</div>
+        <div class="hc-stat">12 or 24 Mo</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">💸</div>
+        <div class="hc-title">Cash-Out Refinance Available</div>
+        <div class="hc-desc">Up to 80% LTV on cash-out. Cash-out proceeds can even be used as reserves toward qualification.</div>
+        <div class="hc-stat">80% Cash-Out</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">🎁</div>
+        <div class="hc-title">100% Gift Funds Allowed</div>
+        <div class="hc-desc">Down payment can come entirely from gift funds — borrower must maintain their own reserves separately.</div>
+        <div class="hc-stat">100% Gift</div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-icon">⚡</div>
+        <div class="hc-title">Interest Only Available</div>
+        <div class="hc-desc">Maximize cash flow with interest-only payment options on qualifying loan scenarios.</div>
+        <div class="hc-stat">I/O Option</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM TIERS -->
+<section class="section tiers-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Program Options</p>
+      <h2 class="section-title">Multiple Tiers. One Goal.</h2>
+      <p class="section-sub">Different lenders, different sweet spots — we match you to the program that fits your credit, income, and loan size.</p>
+    </div>
+    <div class="tiers-grid">
+      <div class="tier-card">
+        <div class="tier-header">
+          <div>
+            <div class="tier-tag gold">Option A</div>
+            <div class="tier-title">High LTV Bank Statement</div>
+          </div>
+          <span class="tier-badge">To $4M</span>
+        </div>
+        <div class="tier-stats">
+          <div class="t-stat"><span class="lbl">Max LTV</span><span class="val gold">90% (700+ FICO)</span></div>
+          <div class="t-stat"><span class="lbl">Min FICO</span><span class="val">620</span></div>
+          <div class="t-stat"><span class="lbl">Max Loan Amount</span><span class="val">$4,000,000</span></div>
+          <div class="t-stat"><span class="lbl">Max DTI</span><span class="val">55%</span></div>
+          <div class="t-stat"><span class="lbl">Statement Period</span><span class="val">12 or 24 Months</span></div>
+          <div class="t-stat"><span class="lbl">Expense Ratio</span><span class="val green">As Low as 10%</span></div>
+          <div class="t-stat"><span class="lbl">Cash-Out LTV</span><span class="val">80%</span></div>
+          <div class="t-stat"><span class="lbl">Gift Funds</span><span class="val green">100% Allowed</span></div>
+          <div class="t-stat"><span class="lbl">First-Time Buyer</span><span class="val green">Allowed</span></div>
+          <div class="t-stat"><span class="lbl">Interest Only</span><span class="val green">Available</span></div>
+          <div class="t-stat"><span class="lbl">Statements Type</span><span class="val">Personal or Business</span></div>
+          <div class="t-stat"><span class="lbl">Asset Depletion</span><span class="val green">Layer In (60 Months)</span></div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-header">
+          <div>
+            <div class="tier-tag blue">Option B</div>
+            <div class="tier-title">No Mortgage Insurance</div>
+          </div>
+          <span class="tier-badge">To $4M</span>
+        </div>
+        <div class="tier-stats">
+          <div class="t-stat"><span class="lbl">Starting Rate</span><span class="val gold">From 7.75%*</span></div>
+          <div class="t-stat"><span class="lbl">Max LTV (Purchase)</span><span class="val gold">90% to $1.5M</span></div>
+          <div class="t-stat"><span class="lbl">Min FICO</span><span class="val">660</span></div>
+          <div class="t-stat"><span class="lbl">Max Loan Amount</span><span class="val">$4,000,000</span></div>
+          <div class="t-stat"><span class="lbl">Max DTI</span><span class="val">45%</span></div>
+          <div class="t-stat"><span class="lbl">Statement Period</span><span class="val">12 or 24 Months</span></div>
+          <div class="t-stat"><span class="lbl">Mortgage Insurance</span><span class="val green">None Required</span></div>
+          <div class="t-stat"><span class="lbl">Reserves</span><span class="val">6 Months Required</span></div>
+          <div class="t-stat"><span class="lbl">Doc Types</span><span class="val">Bank Stmt or Full Doc</span></div>
+          <div class="t-stat"><span class="lbl">1-Year Tax Return</span><span class="val green">Available Same Rate</span></div>
+          <div class="t-stat"><span class="lbl">Self-Employment</span><span class="val">Min 1 Year</span></div>
+          <div class="t-stat"><span class="lbl">No Tax Returns</span><span class="val green">✓ Not Required</span></div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-header">
+          <div>
+            <div class="tier-tag gold">Option C</div>
+            <div class="tier-title">Jumbo Bank Statement</div>
+          </div>
+          <span class="tier-badge">To $3.5M</span>
+        </div>
+        <div class="tier-stats">
+          <div class="t-stat"><span class="lbl">90% LTV</span><span class="val gold">Up to $3,000,000</span></div>
+          <div class="t-stat"><span class="lbl">75% LTV</span><span class="val gold">Up to $3,500,000</span></div>
+          <div class="t-stat"><span class="lbl">Min FICO</span><span class="val">680</span></div>
+          <div class="t-stat"><span class="lbl">Property Types</span><span class="val">Primary &amp; 2nd Home</span></div>
+          <div class="t-stat"><span class="lbl">CPA Letter</span><span class="val green">Not Required</span></div>
+          <div class="t-stat"><span class="lbl">Expense Factor</span><span class="val green">As Low as 15%</span></div>
+          <div class="t-stat"><span class="lbl">Turn Times</span><span class="val green">Fast!</span></div>
+          <div class="t-stat"><span class="lbl">Income Analysis</span><span class="val green">Within Hours</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOC OPTIONS -->
+<section class="section doc-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Income Documentation</p>
+      <h2 class="section-title">Qualify Your Way</h2>
+      <p class="section-sub">Multiple paths to qualification — pick the one that tells your income story best.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-icon">🏦</div>
+        <div class="doc-text"><strong>12-Month Bank Statements</strong><span>Most recent 12 months of personal or business deposits. Fastest path to qualification.</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📅</div>
+        <div class="doc-text"><strong>24-Month Bank Statements</strong><span>Two full years of statements for a stronger income average. Same rate as 12-month on select programs.</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📋</div>
+        <div class="doc-text"><strong>1-Year Tax Return</strong><span>Available on select programs at the same pricing as bank statement qualification.</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📄</div>
+        <div class="doc-text"><strong>1099 Documentation</strong><span>Independent contractors and gig workers can qualify using 1 or 2 years of 1099 income.</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">🏢</div>
+        <div class="doc-text"><strong>Business Bank Statements</strong><span>Use your business account deposits with the expense ratio applied — personal statements not required.</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">💼</div>
+        <div class="doc-text"><strong>Asset Depletion Income</strong><span>Layer in asset depletion over 60 months to supplement bank statement income for qualification.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFY CHECK -->
+<section class="section qualify-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Quick Eligibility Check</p>
+      <h2 class="section-title">Do You Check These Boxes?</h2>
+      <p class="section-sub">If most of these apply, there's a real path to closing on a Bank Statement loan.</p>
+    </div>
+    <div class="qualify-grid">
+      <div class="qualify-card"><div class="qc-icon">💼</div><div class="qc-text"><strong>Self-Employed or 1099</strong><span>At least 1 year of self-employment required. Must be in the same line of work or industry.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">📊</div><div class="qc-text"><strong>620+ Credit Score</strong><span>620 minimum on most programs. 700+ FICO required for maximum 90% LTV.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">🏦</div><div class="qc-text"><strong>12+ Months of Statements</strong><span>12 or 24 months of consistent deposits — personal or business account. Consistency matters.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">🏡</div><div class="qc-text"><strong>Primary, 2nd Home, or Investment</strong><span>All three property types are eligible depending on the program tier and LTV.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">💰</div><div class="qc-text"><strong>Reserves Available</strong><span>Most programs require 6 months reserves. Cash-out proceeds can count toward reserve requirements.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">📈</div><div class="qc-text"><strong>Consistent Deposit History</strong><span>Your deposits should tell a clean story. Large irregular deposits or unexplained gaps will need to be addressed.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">From Statements to Keys</h2>
+      <p class="section-sub">Here's exactly how the Bank Statement loan process works — faster than you think.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Connect &amp; Pull Credit</strong><p>We start with a quick conversation — your goals, your business structure, your credit score. No surprises, just a real picture of where you stand.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Submit Your Bank Statements</strong><p>Send us 12 or 24 months of personal or business bank statements. Our automated analysis turns around an income calculation within hours on most files.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>We Match You to the Right Program</strong><p>With multiple bank statement options available, we select the tier that gives you the best LTV, rate, and terms for your specific situation.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Get Pre-Approved &amp; Shop with Confidence</strong><p>Your pre-approval letter goes out and you shop knowing exactly what you can buy. We run below-market wholesale rates — so you're not leaving money on the table.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Close on Your Terms</strong><p>Fast turn times. No CPA letter chasing. No tax return drama. Just a clean close on the home you've worked hard to afford.</p></div>
+      </div>
+    </div>
+    <div class="no-tax-callout">
+      <div class="ntc-icon">💡</div>
+      <div class="ntc-text">
+        <strong>The Write-Off Problem — Solved</strong>
+        <p>Self-employed borrowers are often penalized by their own tax strategy. You write off expenses to minimize taxes — which also minimizes what lenders see as qualifying income. The Bank Statement program bypasses your tax returns entirely. Your deposits show your real earning power. That's the whole point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section form-section" id="apply">
+  <div class="inner">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h2>Check Your Eligibility</h2>
+        <p>60 seconds. No credit pull yet. Frank responds within 24 hours.</p>
+      </div>
+      <form action="https://www.theburkslendinggroup.com/home-purchase" method="GET">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="First" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Last" required></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(615) 000-0000" required></div>
+        <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        <div class="form-group">
+          <label>Business Type</label>
+          <select name="business_type">
+            <option value="" disabled selected>Select your situation</option>
+            <option>Sole Proprietor / Self-Employed</option>
+            <option>LLC Owner</option>
+            <option>S-Corp or C-Corp Owner</option>
+            <option>Independent Contractor / 1099</option>
+            <option>Real Estate Investor</option>
+            <option>Other Business Owner</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Credit Score</label>
+          <select name="credit_score" required>
+            <option value="" disabled selected>Select a range</option>
+            <option>760+</option>
+            <option>720–759</option>
+            <option>680–719</option>
+            <option>640–679</option>
+            <option>620–639</option>
+            <option>Below 620</option>
+            <option>Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Loan Purpose</label>
+          <select name="loan_purpose">
+            <option value="" disabled selected>Select one</option>
+            <option>Purchase — Primary Residence</option>
+            <option>Purchase — Second Home</option>
+            <option>Purchase — Investment Property</option>
+            <option>Cash-Out Refinance</option>
+            <option>Rate &amp; Term Refinance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Target Loan Amount</label>
+          <select name="loan_amount">
+            <option value="" disabled selected>Approximate range</option>
+            <option>Under $300,000</option>
+            <option>$300,000 – $500,000</option>
+            <option>$500,000 – $1,000,000</option>
+            <option>$1,000,000 – $2,000,000</option>
+            <option>$2,000,000+</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Check My Eligibility →</button>
+        <p class="form-note">By submitting, you consent to be contacted by The Burks Lending Group. Your information is never sold. Equal Housing Lender. Frank Burks NMLS #841644 | NEXA Lending NMLS #1660690. *Rates shown are for illustrative purposes and subject to change based on creditworthiness, LTV, and program guidelines. Not a commitment to lend.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">The Burks Lending Group · <span>empowered by NEXA Lending</span></div>
+  <p class="footer-info">
+    Frank Burks · NMLS #841644 · (615) 768-9424 · <a href="mailto:fburks@nexalending.com">fburks@nexalending.com</a><br>
+    240 Mayfield Dr., Suite 208, Smyrna, TN 37167<br><br>
+    Bank Statement loan programs are Non-QM products available through approved wholesale lending channels. Programs are not government-backed loans. Availability, rates, and terms subject to borrower eligibility, lender approval, and market conditions. Not available in all states. This is not a commitment to lend. Equal Housing Lender.
+  </p>
+</footer>
+
+<div class="mobile-cta"><a href="https://www.theburkslendinggroup.com/home-purchase">Check My Eligibility →</a></div>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+</script>
+</body>
+</html>

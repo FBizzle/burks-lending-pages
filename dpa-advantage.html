@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPA Advantage | Down Payment Assistance | The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --navy-mid: #0f2040;
+  --carolina: #4A9EFF;
+  --gold: #C8973A;
+  --gold-light: #e8b558;
+  --white: #ffffff;
+  --off-white: #f5f7fa;
+  --text-muted: #8a9bbf;
+  --blue: #1a5ebf;
+  --blue-light: #3a82e8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+/* HEADER */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,22,40,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74,158,255,0.12);
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header-brand { font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.2; }
+.header-brand span { color: var(--gold); }
+.header-cta {
+  background: var(--carolina);
+  color: var(--white);
+  padding: 10px 22px; border-radius: 6px;
+  font-weight: 600; font-size: 0.85rem;
+  text-decoration: none; transition: background 0.2s;
+}
+.header-cta:hover { background: var(--blue-light); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; overflow: hidden; padding: 130px 32px 80px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 85% 45%, rgba(26,94,191,0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 70% at 15% 85%, rgba(74,158,255,0.07) 0%, transparent 55%),
+    linear-gradient(155deg, #0A1628 0%, #0d1e38 60%, #0A1628 100%);
+}
+.hero-accent-ring {
+  position: absolute; right: -180px; top: 50%; transform: translateY(-50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 1px solid rgba(74,158,255,0.12); pointer-events: none;
+}
+.hero-accent-ring::before {
+  content: ''; position: absolute; inset: 50px; border-radius: 50%;
+  border: 1px solid rgba(200,151,58,0.1);
+}
+.hero-accent-ring::after {
+  content: ''; position: absolute; inset: 120px; border-radius: 50%;
+  border: 1px solid rgba(74,158,255,0.08);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 720px; }
+.program-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.3);
+  color: #7bc4ff; padding: 6px 14px; border-radius: 100px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 900; line-height: 1.1; margin-bottom: 24px;
+}
+.hero h1 .blue { color: var(--carolina); }
+.hero h1 .gold { color: var(--gold); }
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,0.75);
+  line-height: 1.7; max-width: 580px; margin-bottom: 36px;
+}
+.hero-bullets { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+.hero-pill {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+}
+.hero-pill.blue { background: rgba(74,158,255,0.12); border-color: rgba(74,158,255,0.3); color: #7bc4ff; }
+.hero-pill.gold { background: rgba(200,151,58,0.1); border-color: rgba(200,151,58,0.25); color: var(--gold-light); }
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--carolina); color: var(--white); padding: 16px 32px;
+  border-radius: 8px; font-weight: 700; font-size: 1rem;
+  text-decoration: none; transition: all 0.2s; display: inline-block;
+}
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); }
+.btn-secondary {
+  background: transparent; color: var(--white); padding: 16px 32px;
+  border-radius: 8px; font-weight: 600; font-size: 1rem;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.2s; display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+/* TRUST BAR */
+.trust-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 20px 32px;
+  display: flex; justify-content: center; align-items: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+
+/* SHARED */
+.section { padding: 80px 32px; }
+.section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.section-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 560px; margin-bottom: 48px; }
+.section-center { text-align: center; }
+.section-center .section-sub { margin: 0 auto 48px; }
+.inner { max-width: 1100px; margin: 0 auto; }
+
+/* WHO SERVES */
+.serves-section { background: linear-gradient(160deg, #0d1e38 0%, #0A1628 100%); border-top: 1px solid rgba(74,158,255,0.08); }
+.serves-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.serve-card {
+  background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.12);
+  border-radius: 12px; padding: 24px 20px; text-align: center; transition: all 0.2s;
+}
+.serve-card:hover { background: rgba(74,158,255,0.1); border-color: rgba(74,158,255,0.3); }
+.serve-icon { font-size: 2rem; margin-bottom: 12px; }
+.serve-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
+.serve-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* PROGRAM DETAILS */
+.details-section { background: var(--navy); }
+.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+@media(max-width:768px){ .details-grid { grid-template-columns: 1fr; } }
+
+.detail-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px; overflow: hidden;
+}
+.detail-card-header {
+  padding: 18px 24px;
+  display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.dc-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.dc-tag.two { color: var(--carolina); }
+.dc-tag.three { color: var(--gold-light); }
+.dc-title { font-weight: 700; font-size: 1rem; }
+.detail-stats { padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+.d-stat {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.875rem;
+}
+.d-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.d-stat .lbl { color: rgba(255,255,255,0.5); }
+.d-stat .val { font-weight: 600; }
+.d-stat .val.blue { color: var(--carolina); }
+.d-stat .val.gold { color: var(--gold-light); }
+
+/* QUALIFY */
+.qualify-section {
+  background: linear-gradient(160deg, #0d1e38 0%, #0A1628 100%);
+  border-top: 1px solid rgba(74,158,255,0.08);
+  border-bottom: 1px solid rgba(74,158,255,0.08);
+}
+.qualify-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.qualify-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 24px; display: flex; gap: 16px; align-items: flex-start; transition: border-color 0.2s;
+}
+.qualify-card:hover { border-color: rgba(74,158,255,0.3); }
+.qc-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.qc-text strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.qc-text span { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+/* HOW IT WORKS */
+.how-section { background: var(--navy); }
+.steps { display: flex; flex-direction: column; gap: 0; max-width: 680px; margin: 0 auto; }
+.step { display: flex; gap: 24px; align-items: flex-start; position: relative; padding-bottom: 40px; }
+.step:last-child { padding-bottom: 0; }
+.step-left { display: flex; flex-direction: column; align-items: center; }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(74,158,255,0.12); border: 2px solid rgba(74,158,255,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--carolina); flex-shrink: 0;
+}
+.step-line { width: 2px; flex: 1; background: linear-gradient(to bottom, rgba(74,158,255,0.25), rgba(74,158,255,0.04)); margin-top: 8px; min-height: 40px; }
+.step:last-child .step-line { display: none; }
+.step-body { padding-top: 8px; }
+.step-body strong { display: block; font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.step-body p { font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* COUNSELING CALLOUT */
+.counseling-callout {
+  background: rgba(200,151,58,0.07); border: 1px solid rgba(200,151,58,0.2);
+  border-radius: 12px; padding: 24px 28px; margin-top: 48px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.cc-icon { font-size: 1.6rem; flex-shrink: 0; }
+.cc-text strong { display: block; font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--gold-light); }
+.cc-text p { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* FORM */
+.form-section { background: var(--navy); }
+.form-wrapper {
+  max-width: 620px; margin: 0 auto;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 48px;
+}
+@media(max-width:600px){ .form-wrapper{ padding: 32px 24px; } }
+.form-header { text-align: center; margin-bottom: 36px; }
+.form-header h2 { font-family:'Playfair Display',serif; font-size:1.9rem; margin-bottom:10px; }
+.form-header p { font-size:0.9rem; color:rgba(255,255,255,0.55); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:540px){ .form-row{ grid-template-columns:1fr; } }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:0.8rem; font-weight:600; color:rgba(255,255,255,0.65); margin-bottom:7px; text-transform:uppercase; letter-spacing:0.5px; }
+.form-group input, .form-group select {
+  width:100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius:8px; padding:13px 16px; color:var(--white); font-size:0.95rem;
+  font-family:'DM Sans',sans-serif; outline:none; transition:border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--carolina); background: rgba(74,158,255,0.05); }
+.form-group select option { background:var(--navy-mid); color:var(--white); }
+.form-submit {
+  width:100%; background: var(--carolina); color:var(--white); border:none;
+  padding:16px; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer;
+  font-family:'DM Sans',sans-serif; transition:all 0.2s; margin-top:8px;
+}
+.form-submit:hover { background:var(--blue-light); transform:translateY(-1px); }
+.form-note { text-align:center; font-size:0.75rem; color:rgba(255,255,255,0.35); margin-top:14px; line-height:1.5; }
+
+/* FOOTER */
+footer { background: #060f1c; border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 32px; text-align: center; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--white); margin-bottom:10px; }
+.footer-brand span { color:var(--gold); }
+.footer-info { font-size:0.78rem; color:rgba(255,255,255,0.3); line-height:1.7; max-width:680px; margin:0 auto; }
+.footer-info a { color:rgba(255,255,255,0.45); text-decoration:none; }
+
+/* MOBILE STICKY */
+.mobile-cta { display:none; position:fixed; bottom:0; left:0; right:0; z-index:999; background:var(--navy); border-top:1px solid rgba(74,158,255,0.25); padding:14px 24px; }
+.mobile-cta a { display:block; background:var(--carolina); color:var(--white); text-align:center; padding:14px; border-radius:8px; font-weight:700; font-size:0.95rem; text-decoration:none; }
+@media(max-width:640px){ .mobile-cta{ display:block; } body { padding-bottom:80px; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-brand">The Burks Lending Group<br><span>empowered by NEXA Lending</span></div>
+  <a href="https://www.theburkslendinggroup.com/home-purchase" class="header-cta">Check My Eligibility</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-accent-ring"></div>
+  <div class="hero-content">
+    <div class="program-badge">FHA Down Payment Assistance Program</div>
+    <h1>
+      Up to <span class="blue">3.5%</span> Toward<br>
+      Your <span class="gold">Down Payment.</span><br>
+      Teachers. Heroes. Families.
+    </h1>
+    <p class="hero-sub">
+      The DPA Advantage program was built for the people who keep our communities running — 
+      first responders, educators, medical workers, military, and first-time buyers. 
+      Get 2% or 3.5% toward your down payment and close with less cash out of pocket.
+    </p>
+    <div class="hero-bullets">
+      <span class="hero-pill blue">✓ 2% or 3.5% Assistance</span>
+      <span class="hero-pill gold">✓ 620 Min. Credit Score</span>
+      <span class="hero-pill">✓ FHA 203(b) &amp; 203(k)</span>
+      <span class="hero-pill">✓ First Responders Welcome</span>
+      <span class="hero-pill">✓ 20, 25, or 30-Year Terms</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://www.theburkslendinggroup.com/home-purchase" class="btn-primary">Check My Eligibility →</a>
+      <a href="tel:6157689424" class="btn-secondary">📞 (615) 768-9424</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">🏅 25 Years of Experience</div>
+  <div class="trust-item">📍 Serving Middle Tennessee</div>
+  <div class="trust-item">💰 Below-Market Wholesale Rates</div>
+  <div class="trust-item">🔑 Clear to Close Starts Here</div>
+</div>
+
+<!-- WHO IT SERVES -->
+<section class="section serves-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Built For You</p>
+      <h2 class="section-title">This Program Was Designed for Community Heroes</h2>
+      <p class="section-sub">You serve your community every day. The DPA Advantage program was specifically designed with people like you in mind.</p>
+    </div>
+    <div class="serves-grid">
+      <div class="serve-card"><div class="serve-icon">🚒</div><div class="serve-title">First Responders</div><div class="serve-desc">Police officers, firefighters, EMTs, paramedics, and public safety officers.</div></div>
+      <div class="serve-card"><div class="serve-icon">🏫</div><div class="serve-title">Educators</div><div class="serve-desc">Teachers, school staff, administrators, and education professionals.</div></div>
+      <div class="serve-card"><div class="serve-icon">🏥</div><div class="serve-title">Medical Personnel</div><div class="serve-desc">Nurses, doctors, hospital workers, Red Cross staff, and health workers.</div></div>
+      <div class="serve-card"><div class="serve-icon">🎖️</div><div class="serve-title">Military</div><div class="serve-desc">Active duty, veterans, and military families serving our nation.</div></div>
+      <div class="serve-card"><div class="serve-icon">🏛️</div><div class="serve-title">Civil Servants</div><div class="serve-desc">Federal, state, and local government employees.</div></div>
+      <div class="serve-card"><div class="serve-icon">🏡</div><div class="serve-title">First-Time Buyers</div><div class="serve-desc">Anyone purchasing their primary home who hasn't owned in the last 3 years.</div></div>
+      <div class="serve-card"><div class="serve-icon">📍</div><div class="serve-title">Underserved Areas</div><div class="serve-desc">Buyers purchasing in designated underserved census tracts may also qualify.</div></div>
+      <div class="serve-card"><div class="serve-icon">👨‍👩‍👧</div><div class="serve-title">Income-Qualifying Buyers</div><div class="serve-desc">Buyers at or below 140% of state or county median income.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM DETAILS -->
+<section class="section details-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Program Options</p>
+      <h2 class="section-title">Two Assistance Levels. One Goal.</h2>
+      <p class="section-sub">Choose 2% or 3.5% down payment assistance — both on FHA loans with flexible term options and below-market wholesale rates.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <span class="dc-tag two">2% DPA</span>
+          <span class="dc-title">DPA Advantage — 2%</span>
+        </div>
+        <div class="detail-stats">
+          <div class="d-stat"><span class="lbl">Assistance Amount</span><span class="val blue">2% of Purchase Price</span></div>
+          <div class="d-stat"><span class="lbl">Min. Credit Score</span><span class="val">620 FICO</span></div>
+          <div class="d-stat"><span class="lbl">Loan Type</span><span class="val">FHA 203(b), Repair Escrow, 203(k)</span></div>
+          <div class="d-stat"><span class="lbl">Max LTV/CLTV</span><span class="val">96.50%</span></div>
+          <div class="d-stat"><span class="lbl">Eligible Terms</span><span class="val">20, 25, or 30-Year Fixed</span></div>
+          <div class="d-stat"><span class="lbl">AUS</span><span class="val">DU Approve/Eligible or Refer · LPA Accept or Refer</span></div>
+          <div class="d-stat"><span class="lbl">Max DTI</span><span class="val">AUS or FHA Manual Guidelines</span></div>
+          <div class="d-stat"><span class="lbl">Property Types</span><span class="val">1–4 Unit, Manufactured, FHA Condos, PUDs</span></div>
+        </div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <span class="dc-tag three">3.5% DPA</span>
+          <span class="dc-title">DPA Advantage — 3.5%</span>
+        </div>
+        <div class="detail-stats">
+          <div class="d-stat"><span class="lbl">Assistance Amount</span><span class="val gold">3.5% of Purchase Price</span></div>
+          <div class="d-stat"><span class="lbl">Min. Credit Score</span><span class="val">620 FICO</span></div>
+          <div class="d-stat"><span class="lbl">Loan Type</span><span class="val">FHA 203(b), Repair Escrow, 203(k)</span></div>
+          <div class="d-stat"><span class="lbl">Max LTV/CLTV</span><span class="val">96.50%</span></div>
+          <div class="d-stat"><span class="lbl">Eligible Terms</span><span class="val">20, 25, or 30-Year Fixed</span></div>
+          <div class="d-stat"><span class="lbl">AUS</span><span class="val">DU Approve/Eligible or Refer · LPA Accept or Refer</span></div>
+          <div class="d-stat"><span class="lbl">Max DTI</span><span class="val">AUS or FHA Manual Guidelines</span></div>
+          <div class="d-stat"><span class="lbl">Property Types</span><span class="val">1–4 Unit, Manufactured, FHA Condos, PUDs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFY CHECK -->
+<section class="section qualify-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">Eligibility Overview</p>
+      <h2 class="section-title">Check These Boxes?</h2>
+      <p class="section-sub">If these describe you, there's a real path to closing with the DPA Advantage program.</p>
+    </div>
+    <div class="qualify-grid">
+      <div class="qualify-card"><div class="qc-icon">📊</div><div class="qc-text"><strong>620+ Credit Score</strong><span>Minimum 620 FICO required for qualification. We'll pull your credit and walk you through where you stand.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">💵</div><div class="qc-text"><strong>Income at or Below 140% AMI</strong><span>Or you qualify through profession (first responder, educator, medical, military, civil servant) or as a first-time buyer.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">🏡</div><div class="qc-text"><strong>Primary Residence Purchase</strong><span>This program is for the home you'll live in — not investment or vacation properties.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">📋</div><div class="qc-text"><strong>Full Documentation Required</strong><span>All 6 points of information needed. No TBD submissions — we need a real property address to proceed.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">📘</div><div class="qc-text"><strong>Homebuyer Counseling</strong><span>A HUD-approved course is required. Up to $100 is credited back at closing to cover the cost.</span></div></div>
+      <div class="qualify-card"><div class="qc-icon">🌍</div><div class="qc-text"><strong>Tennessee Eligible</strong><span>Program is available in Tennessee. Geographic restrictions apply in WA, NY, WI (with conditions), and HI.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="inner">
+    <div class="section-center">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">From Application to Keys</h2>
+      <p class="section-sub">Here's exactly how the DPA Advantage program works from start to close.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Connect With Frank &amp; Pull Credit</strong><p>We review your full picture — credit score, income, profession, and goals — to confirm which assistance tier makes sense for you.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Determine Your Eligibility Path</strong><p>You qualify through income (≤140% AMI), profession (first responder, educator, medical, military, civil servant), first-time buyer status, or an underserved census tract location.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Complete Homebuyer Education</strong><p>A HUD-approved online course is required before closing. Choose your own provider. Up to $100 is credited back at closing — we've got you covered.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Identify Your Property</strong><p>Find the home. Full submissions require a property address — no TBD files on this program. Your Realtor and I work together to keep the deal tight.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">5</div><div class="step-line"></div></div>
+        <div class="step-body"><strong>Close With Assistance Applied</strong><p>Your 2% or 3.5% assistance is applied at closing, reducing the cash you bring to the table. You walk out a homeowner.</p></div>
+      </div>
+    </div>
+    <div class="counseling-callout">
+      <div class="cc-icon">💡</div>
+      <div class="cc-text">
+        <strong>Homebuyer Education Credit</strong>
+        <p>The DPA Advantage program requires a HUD-approved homebuyer education or pre-purchase counseling course. You pay for it upfront — and up to $100 is credited back to you at closing as a lender credit. Use Framework Homeownership or any HUD-approved provider of your choice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section form-section" id="apply">
+  <div class="inner">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h2>Check Your Eligibility</h2>
+        <p>60 seconds. No credit pull. Frank reaches out within 24 hours.</p>
+      </div>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="First" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Last" required></div>
+        </div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(615) 000-0000" required></div>
+        <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        <div class="form-group">
+          <label>Profession (if applicable)</label>
+          <select name="profession">
+            <option value="" disabled selected>Select one</option>
+            <option>First Responder (Police, Fire, EMT)</option>
+            <option>Educator / School Staff</option>
+            <option>Medical / Healthcare Worker</option>
+            <option>Military / Veteran</option>
+            <option>Civil Servant / Government</option>
+            <option>First-Time Homebuyer</option>
+            <option>Other / Not Listed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Credit Score</label>
+          <select name="credit_score" required>
+            <option value="" disabled selected>Select a range</option>
+            <option>760+</option>
+            <option>720–759</option>
+            <option>680–719</option>
+            <option>640–679</option>
+            <option>620–639</option>
+            <option>Below 620</option>
+            <option>Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Target Purchase Price</label>
+          <select name="purchase_price">
+            <option value="" disabled selected>Approximate range</option>
+            <option>Under $200,000</option>
+            <option>$200,000 – $300,000</option>
+            <option>$300,000 – $400,000</option>
+            <option>$400,000 – $500,000</option>
+            <option>$500,000+</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Check My Eligibility →</button>
+        <p class="form-note">By submitting, you consent to be contacted by The Burks Lending Group. Your information is never sold. Equal Housing Lender. Frank Burks NMLS #841644 | NEXA Lending NMLS #1660690.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">The Burks Lending Group · <span>empowered by NEXA Lending</span></div>
+  <p class="footer-info">
+    Frank Burks · NMLS #841644 · (615) 768-9424 · <a href="/cdn-cgi/l/email-protection#c3a5a1b6b1a8b083ada6bba2afa6ada7aaada4eda0acae"><span class="__cf_email__" data-cfemail="a5c3c7d0d7ced6e5cbc0ddc4c9c0cbc1cccbc28bc6cac8">[email&#160;protected]</span></a><br>
+    240 Mayfield Dr., Suite 208, Smyrna, TN 37167<br><br>
+    The DPA Advantage down payment assistance program is available through approved wholesale lending channels. Availability subject to borrower eligibility, program guidelines, and geographic restrictions. Tennessee eligible. Not available in Washington state. This is not a commitment to lend. Programs, rates, and guidelines subject to change without notice. Equal Housing Lender.
+  </p>
+</footer>
+
+<div class="mobile-cta"><a href="https://www.theburkslendinggroup.com/home-purchase">Check My DPA Eligibility →</a></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.querySelectorAll('a[href^="#"]').forEach

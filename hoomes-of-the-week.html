@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homes of the Week | The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1628;--gold:#C8973A;--carolina:#4A9EFF;--white:#fff;--off-white:#F7F8FA;--border:rgba(10,22,40,.1);--muted:#6B7280}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);min-height:100vh;padding:32px 16px 48px;display:flex;align-items:flex-start;justify-content:center}
+.page{width:100%;max-width:680px;animation:fadeUp .6s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hdr{background:var(--navy);border-radius:16px 16px 0 0;padding:32px 32px 28px;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold)}
+.hdr-eyebrow{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--carolina);margin-bottom:8px}
+.hdr-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:var(--white);line-height:1.15;margin-bottom:4px}
+.hdr-title span{color:var(--gold)}
+.hdr-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:20px;line-height:1.5}
+.type-tabs{display:flex;gap:0;background:rgba(255,255,255,.06);border-radius:8px;padding:4px;flex-wrap:wrap}
+.type-tab{padding:7px 14px;font-size:11px;font-weight:500;color:rgba(255,255,255,.5);cursor:pointer;border-radius:6px;transition:all .15s;white-space:nowrap}
+.type-tab.on{background:var(--gold);color:var(--navy)}
+.showcase{background:var(--white);border-left:.5px solid var(--border);border-right:.5px solid var(--border);padding:0}
+.prop-img{background:var(--navy);height:200px;display:flex;align-items:center;justify-content:center;position:relative}
+.prop-img-label{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em;text-transform:uppercase}
+.prop-type-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:600;border-radius:20px;padding:3px 12px}
+.frank-btn{position:absolute;top:14px;right:14px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;border-radius:20px;padding:5px 12px;cursor:pointer;text-decoration:none;letter-spacing:.02em;border:none;transition:opacity .15s}
+.frank-btn:hover{opacity:.85}
+.prop-body{padding:20px 24px}
+.prop-address{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:2px}
+.prop-city{font-size:12px;color:var(--muted);margin-bottom:10px}
+.prop-stats{display:flex;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+.prop-stat{font-size:11px;color:var(--muted)}
+.prop-stat span{font-weight:500;color:var(--navy)}
+.prop-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.incentives-box{background:rgba(200,151,58,.06);border:.5px solid rgba(200,151,58,.3);border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.inc-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:8px}
+.inc-row{font-size:12px;color:var(--muted);margin-bottom:4px;display:flex;align-items:flex-start;gap:6px}
+.inc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.financing-box{background:rgba(74,158,255,.05);border:.5px solid rgba(74,158,255,.2);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+.fin-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--carolina);margin-bottom:10px}
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fin-card{background:var(--white);border:.5px solid var(--border);border-radius:6px;padding:10px;text-align:center}
+.fin-loan{font-size:10px;color:var(--muted);margin-bottom:3px}
+.fin-payment{font-size:16px;font-weight:500;color:var(--navy)}
+.fin-detail{font-size:9px;color:var(--muted);margin-top:2px}
+.cta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cta-btn{flex:1;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:500;text-align:center;cursor:pointer;border:.5px solid var(--border);background:var(--off-white);color:var(--navy);text-decoration:none;min-width:120px;transition:opacity .15s}
+.cta-btn:hover{opacity:.8}
+.cta-btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.disclaimer{font-size:9px;color:var(--muted);line-height:1.55;padding-top:10px;border-top:.5px solid var(--border)}
+.footer{background:var(--navy);border-radius:0 0 16px 16px;padding:20px 32px;border-top:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-brand{font-size:11px;color:rgba(255,255,255,.5)}
+.footer-contact{font-size:11px;color:var(--carolina)}
+.submit-strip{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 16px;margin-top:12px;font-size:11px;color:rgba(255,255,255,.6);text-align:center}
+.submit-strip a{color:var(--gold);text-decoration:none}
+@media(max-width:480px){.fin-grid{grid-template-columns:1fr}.type-tab{font-size:10px;padding:6px 10px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hdr">
+  <div class="hdr-eyebrow">The Burks Lending Group &bull; empowered by NEXA Lending</div>
+  <div class="hdr-title">Homes of<br>the <span>Week.</span></div>
+  <div class="hdr-sub">Every Friday — featured listings across Middle Tennessee with full financing breakdowns and exclusive buyer incentives.</div>
+  <div class="type-tabs" id="type-tabs">
+    <div class="type-tab on" onclick="switchType('existing',this)">Existing Home</div>
+    <div class="type-tab" onclick="switchType('openhouse',this)">Open House</div>
+    <div class="type-tab" onclick="switchType('newconstruction',this)">New Construction</div>
+    <div class="type-tab" onclick="switchType('spec',this)">Spec / Move-In Ready</div>
+  </div>
+  <div class="submit-strip">Realtors &amp; Builders: <a href="mailto:fburks@nexalending.com">email your listing</a> &bull; DM <a href="https://instagram.com/theburkslendinggroup" target="_blank">@theburkslendinggroup</a> &bull; Submit at <a href="https://go.theburkslendinggroup.com" target="_blank">go.theburkslendinggroup.com</a> &bull; Deadline: Wednesday noon</div>
+</div>
+
+<div class="showcase" id="showcase"></div>
+
+<div class="footer">
+  <div class="footer-brand">Frank Burks | NMLS #841644 | The Burks Lending Group</div>
+  <div class="footer-contact">(615) 768-9424 | fburks@nexalending.com</div>
+</div>
+
+</div>
+<script>
+var props={
+  existing:{type:"Existing Home for Sale",typeColor:"rgba(74,158,255,.15)",typeText:"#185FA5",address:"142 Stonecrest Drive",city:"Smyrna, TN 37167",price:"$389,900",beds:4,baths:2.5,sqft:2180,desc:"A well-maintained 4-bedroom traditional in one of Smyrna's most established neighborhoods. Hardwood floors throughout the main level, updated kitchen with granite countertops, and a private backyard with covered patio.",sellerInc:["$6,000 seller concession toward buyer closing costs","Home warranty included — 1 year coverage","Pre-inspection completed — report available on request"],loans:{fha:{down:"3.5%",payment:"$2,480"},conv:{down:"5%",payment:"$2,390"},va:{down:"0%",payment:"$2,290"},usda:{down:"0%",payment:"$2,320"}}},
+  openhouse:{type:"Open House",typeColor:"rgba(99,153,34,.15)",typeText:"#3B6D11",address:"318 Harvest Mill Blvd",city:"Murfreesboro, TN 37129",price:"$424,500",beds:4,baths:3,sqft:2640,desc:"Don't miss this Sunday open house in the heart of Murfreesboro. This 4-bedroom craftsman features soaring 10-foot ceilings, a chef's kitchen with double ovens, and a spa-style primary suite.",sellerInc:["Open House: Sunday | 1-4pm","$5,000 closing cost assistance — offer expires April 15","Refrigerator and washer/dryer convey with the home"],loans:{fha:{down:"3.5%",payment:"$2,690"},conv:{down:"5%",payment:"$2,580"},va:{down:"0%",payment:"$2,490"},usda:{down:"0%",payment:"N/A"}}},
+  newconstruction:{type:"New Construction Community",typeColor:"rgba(200,151,58,.15)",typeText:"#8a6420",address:"The Reserve at Cedar Creek",city:"Lebanon, TN 37090",price:"From $369,900",beds:3,baths:2,sqft:1980,desc:"Introducing The Reserve at Cedar Creek — a master-planned community in Lebanon with 47 homesites and four thoughtfully designed floor plans. USDA-eligible location — zero down available.",sellerInc:["$10,000 builder incentive on select homesites — April only","Free appliance package included","Rate buydown available — ask sales team","Est. completion: 90-120 days from contract"],loans:{fha:{down:"3.5%",payment:"$2,350"},conv:{down:"5%",payment:"$2,260"},va:{down:"0%",payment:"$2,180"},usda:{down:"0%",payment:"$2,210"}}},
+  spec:{type:"Spec Home / Move-In Ready",typeColor:"rgba(212,83,126,.15)",typeText:"#993556",address:"7742 Traditions Way",city:"La Vergne, TN 37086",price:"$342,500",beds:3,baths:2,sqft:1820,desc:"Move-in ready spec home in La Vergne — completely finished, professionally staged, and ready to close in 30 days or less. Built by a local builder with a reputation for quality craftsmanship.",sellerInc:["Move-in ready — close in 30 days or less","$7,500 builder incentive applied at closing","Builder warranty: 1-yr workmanship, 2-yr mechanical, 10-yr structural"],loans:{fha:{down:"3.5%",payment:"$2,180"},conv:{down:"5%",payment:"$2,090"},va:{down:"0%",payment:"$2,010"},usda:{down:"0%",payment:"$2,040"}}}
+};
+
+function switchType(key,tab){
+  document.querySelectorAll('.type-tab').forEach(function(t){t.className='type-tab'});
+  tab.className='type-tab on';
+  render(key);
+}
+
+function render(key){
+  var d=props[key];
+  var html='<div class="prop-img">';
+  html+='<div class="prop-img-label">Property Photo</div>';
+  html+='<div class="prop-type-badge" style="background:'+d.typeColor+';color:'+d.typeText+'">'+d.type+'</div>';
+  html+='<a href="https://go.theburkslendinggroup.com/buyer-incentives" target="_blank" class="frank-btn">Frank\'s Incentives Inside</a>';
+  html+='</div>';
+  html+='<div class="prop-body">';
+  html+='<div class="prop-address">'+d.address+'</div>';
+  html+='<div class="prop-city">'+d.city+' &bull; '+d.price+'</div>';
+  html+='<div class="prop-stats">';
+  if(d.beds)html+='<div class="prop-stat"><span>'+d.beds+'</span> bed</div>';
+  if(d.baths)html+='<div class="prop-stat"><span>'+d.baths+'</span> bath</div>';
+  if(d.sqft)html+='<div class="prop-stat"><span>'+d.sqft.toLocaleString()+'</span> sqft</div>';
+  html+='</div>';
+  html+='<div class="prop-desc">'+d.desc+'</div>';
+  html+='<div class="incentives-box"><div class="inc-title">Seller / Builder Incentives</div>';
+  d.sellerInc.forEach(function(i){html+='<div class="inc-row"><div class="inc-dot"></div>'+i+'</div>'});
+  html+='</div>';
+  html+='<div class="financing-box"><div class="fin-title">Financing Options — Frank\'s 1% Lender Credit + Appraisal Credit at Closing* Included</div>';
+  html+='<div class="fin-grid">';
+  [{name:'FHA Loan',key:'fha'},{name:'Conventional',key:'conv'},{name:'VA Loan',key:'va'},{name:'USDA Loan',key:'usda'}].forEach(function(p){
+    var loan=d.loans[p.key];
+    html+='<div class="fin-card"><div class="fin-loan">'+p.name+'</div>';
+    html+='<div class="fin-payment">'+loan.payment+'</div>';
+    html+='<div class="fin-detail">'+loan.down+' down &bull; est. PITI</div></div>';
+  });
+  html+='</div></div>';
+  html+='<div class="cta-row">';
+  html+='<a href="https://calendly.com/fburks" target="_blank" class="cta-btn cta-btn-primary">Book a Consultation</a>';
+  html+='<a href="tel:6157689424" class="cta-btn">Call (615) 768-9424</a>';
+  html+='<a href="mailto:fburks@nexalending.com" class="cta-btn">Email Frank</a>';
+  html+='</div>';
+  html+='<div class="disclaimer">* Appraisal credit applied at closing. Available on Conventional, FHA, VA, and USDA programs. Subject to loan approval. Payment estimates include principal, interest, estimated property taxes, and homeowner\'s insurance. Actual payments may vary. This is not a commitment to lend. Frank Burks | NMLS #841644 | The Burks Lending Group | empowered by NEXA Lending | Equal Housing Lender.</div>';
+  html+='</div>';
+  document.getElementById('showcase').innerHTML=html;
+}
+
+render('existing');
+</script>
+</body>
+</html>

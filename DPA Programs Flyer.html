@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPA Programs — The Burks Lending Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-mid: #132C52;
+    --carolina: #1B6CB8;
+    --carolina-light: #2A87E0;
+    --gold: #C9961A;
+    --gold-light: #F0B929;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --text-dark: #0B1F3A;
+    --text-mid: #3A506B;
+    --text-light: #6B7E94;
+    --border: rgba(11,31,58,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 130px;
+  }
+
+  .header-left {
+    background: var(--gold);
+    width: 10px;
+    flex-shrink: 0;
+  }
+
+  .header-accent {
+    background: var(--carolina);
+    width: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-content {
+    flex: 1;
+    padding: 28px 36px 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-block h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .brand-block h1 span {
+    color: var(--gold-light);
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-weight: 400;
+  }
+
+  .header-tag {
+    text-align: right;
+  }
+
+  .header-tag .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1.2;
+  }
+
+  .header-tag .sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  /* Gold rule */
+  .gold-rule {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 40%, rgba(201,150,26,0.2) 100%);
+  }
+
+  /* Hero callout */
+  .hero-callout {
+    background: var(--navy-mid);
+    padding: 14px 36px 14px 36px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .callout-pill {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .callout-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .callout-text strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* Body */
+  .body {
+    padding: 24px 36px 18px;
+  }
+
+  /* Section header */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .section-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* Program cards grid */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .prog-card {
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .prog-card-header {
+    padding: 10px 12px 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .prog-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .prog-type-badge {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .prog-card-body {
+    background: var(--white);
+    padding: 10px 12px 10px;
+  }
+
+  .prog-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3.5px 0;
+    border-bottom: 0.5px solid rgba(11,31,58,0.06);
+    font-size: 11px;
+  }
+
+  .prog-stat-row:last-child { border-bottom: none; }
+
+  .stat-label {
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  .stat-val {
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: right;
+    font-size: 11px;
+  }
+
+  .stat-val.green { color: #0A6B3A; }
+  .stat-val.blue { color: var(--carolina); }
+  .stat-val.gold { color: #9A6E00; }
+
+  /* Color themes for cards */
+  .theme-navy .prog-card-header { background: var(--navy); }
+  .theme-carolina .prog-card-header { background: var(--carolina); }
+  .theme-gold .prog-card-header { background: #8B6914; }
+  .theme-teal .prog-card-header { background: #0E6E56; }
+  .theme-deep .prog-card-header { background: #1A3A5C; }
+  .theme-slate .prog-card-header { background: #374F6B; }
+
+  .type-grant { background: rgba(255,255,255,0.25); color: var(--white); }
+  .type-forgivable { background: rgba(255,255,255,0.22); color: var(--white); }
+  .type-repayable { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+
+  /* Score tier band */
+  .score-band {
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+  }
+
+  .score-band-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+
+  .score-tiers {
+    display: flex;
+    gap: 6px;
+  }
+
+  .score-tier {
+    flex: 1;
+    border-radius: 4px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+
+  .st-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .st-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .st-programs {
+    font-size: 9px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .tier-entry { background: #FFF3CD; border: 0.5px solid #F0C040; }
+  .tier-entry .st-score { color: #7A5500; }
+  .tier-entry .st-label { color: #9A6E00; }
+  .tier-entry .st-programs { color: #7A5500; }
+
+  .tier-core { background: #E8F0FB; border: 0.5px solid #B5CFF0; }
+  .tier-core .st-score { color: var(--navy); }
+  .tier-core .st-label { color: var(--carolina); }
+  .tier-core .st-programs { color: var(--text-mid); }
+
+  .tier-full { background: #E8F5EE; border: 0.5px solid #9FDCB8; }
+  .tier-full .st-score { color: #0A5C32; }
+  .tier-full .st-label { color: #0A6B3A; }
+  .tier-full .st-programs { color: #0A5C32; }
+
+  /* Key facts row */
+  .key-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .fact-box {
+    background: var(--navy);
+    border-radius: 5px;
+    padding: 11px 12px;
+    text-align: center;
+  }
+
+  .fact-box .fact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .fact-box .fact-label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  /* How it works */
+  .how-it-works {
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+  }
+
+  .how-steps {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  .how-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 8px;
+  }
+
+  .how-step::after {
+    content: '→';
+    position: absolute;
+    right: -4px;
+    top: 10px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .how-step:last-child::after { display: none; }
+
+  .step-circle {
+    width: 26px;
+    height: 26px;
+    background: var(--navy);
+    color: var(--gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+
+  .step-text {
+    font-size: 10px;
+    color: var(--text-mid);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  .step-text strong {
+    display: block;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 10.5px;
+    margin-bottom: 2px;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .footer-gold-bar {
+    width: 4px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .footer-content {
+    flex: 1;
+    padding: 16px 24px 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-contact {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2px;
+  }
+
+  .contact-val {
+    font-size: 12px;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .contact-val a {
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  .footer-motto {
+    text-align: right;
+  }
+
+  .motto-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .motto-nmls {
+    font-size: 9px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 3px;
+    letter-spacing: 0.06em;
+  }
+
+  .disclaimer {
+    padding: 8px 36px;
+    background: #F5F2EC;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .disclaimer p {
+    font-size: 7.5px;
+    color: var(--text-light);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { width: 100%; margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-left"></div>
+      <div class="header-accent"></div>
+      <div class="header-content">
+        <div class="brand-block">
+          <h1>The Burks<br><span>Lending Group</span></h1>
+          <div class="brand-sub">Empowered by NEXA Lending &nbsp;·&nbsp; NMLS #841644</div>
+        </div>
+        <div class="header-tag">
+          <div class="headline">Down Payment<br>Assistance Programs</div>
+          <div class="sub">Your complete guide to buying with less cash to close</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gold-rule"></div>
+
+  <!-- Hero callout -->
+  <div class="hero-callout">
+    <div class="callout-pill">Your Key Advantage</div>
+    <div class="callout-text">
+      Programs start at <strong>580 credit score</strong> with <strong>no income limits</strong> on most options. True grants available that are <strong>never repaid.</strong> Zero down payment possible. Get into your home with as little as <strong>$0 out of pocket.</strong>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <!-- Key facts -->
+    <div class="key-facts">
+      <div class="fact-box">
+        <div class="fact-num">580</div>
+        <div class="fact-label">Minimum credit score to qualify</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-num">5%</div>
+        <div class="fact-label">Maximum assistance available</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-num">$0</div>
+        <div class="fact-label">Down payment required on select programs</div>
+      </div>
+      <div class="fact-box">
+        <div class="fact-num">10+</div>
+        <div class="fact-label">Programs to match your situation</div>
+      </div>
+    </div>
+
+    <!-- Programs grid -->
+    <div class="section-header">
+      <div class="section-dot"></div>
+      <div class="section-title">Program Lineup</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="programs-grid">
+
+      <div class="prog-card theme-gold">
+        <div class="prog-card-header">
+          <div class="prog-name">Elevate Grant</div>
+          <div class="prog-type-badge type-grant">True Grant</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA or Conventional</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">Up to 3.5% (FHA) · 3% (Conv)</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val">640 FHA · 620 Conv</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Repayment</span>
+            <span class="stat-val green">NEVER — free money</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val">Per county AMI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-card theme-teal">
+        <div class="prog-card-header">
+          <div class="prog-name">SmartBuy Forgivable</div>
+          <div class="prog-type-badge type-forgivable">Forgivable</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA · USDA · HUD 184</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">3.5% or 5%</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val">640</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Forgiven after</span>
+            <span class="stat-val green">3 or 5 years on-time</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val green">None</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-card theme-carolina">
+        <div class="prog-card-header">
+          <div class="prog-name">Boost DPA</div>
+          <div class="prog-type-badge type-repayable">Repayable 2nd</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">3.5% or 5%</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val">640</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">2nd lien term</span>
+            <span class="stat-val">15-yr amortizing</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val green">None</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-card theme-navy">
+        <div class="prog-card-header">
+          <div class="prog-name">Legacy Builder</div>
+          <div class="prog-type-badge type-forgivable">Forgivable</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">3.5% or 5%</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val gold">580 AUS · 600 Manual</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Forgiven after</span>
+            <span class="stat-val green">36 on-time payments</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val green">None</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-card theme-deep">
+        <div class="prog-card-header">
+          <div class="prog-name">Giant FHA DPA</div>
+          <div class="prog-type-badge type-forgivable">Forgivable opt.</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">3.5% or 5%</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val gold">600 AUS · 660 Manual</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Forgiveness</span>
+            <span class="stat-val green">3yr · 5yr · 10yr options</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val green">None</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-card theme-slate">
+        <div class="prog-card-header">
+          <div class="prog-name">DPA Advantage<br><span style="font-size:10px;font-weight:400;opacity:0.75;">For Heroes &amp; Educators</span></div>
+          <div class="prog-type-badge type-repayable">Repayable 2nd</div>
+        </div>
+        <div class="prog-card-body">
+          <div class="prog-stat-row">
+            <span class="stat-label">Loan type</span>
+            <span class="stat-val blue">FHA</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Assistance</span>
+            <span class="stat-val green">2% or 3.5%</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Min FICO</span>
+            <span class="stat-val gold">620</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Who qualifies</span>
+            <span class="stat-val">1st responders, educators,<br>medical, military, civil servants</span>
+          </div>
+          <div class="prog-stat-row">
+            <span class="stat-label">Income limit</span>
+            <span class="stat-val">140% AMI (overrides avail.)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Score tier band -->
+    <div class="section-header">
+      <div class="section-dot"></div>
+      <div class="section-title">Which programs are available at your credit score?</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="score-band">
+      <div class="score-tiers">
+        <div class="score-tier tier-entry">
+          <div class="st-score">580+</div>
+          <div class="st-label">Entry tier</div>
+          <div class="st-programs">Legacy Builder<br>Aurora DPA</div>
+        </div>
+        <div class="score-tier tier-core">
+          <div class="st-score">600+</div>
+          <div class="st-label">Core tier</div>
+          <div class="st-programs">Giant FHA DPA<br>Plaza Combo<br>Kind Lending NHF<br>LoanLock Prime</div>
+        </div>
+        <div class="score-tier tier-core">
+          <div class="st-score">620+</div>
+          <div class="st-label">Expanded</div>
+          <div class="st-programs">DPA Advantage<br>Boost DPA<br>Elevate Grant Conv<br>LendingPros Pro</div>
+        </div>
+        <div class="score-tier tier-full">
+          <div class="st-score">640+</div>
+          <div class="st-label">Full arsenal</div>
+          <div class="st-programs">ALL programs open<br>True grants available<br>SmartBuy forgivable<br>Elevate Grant FHA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section-header">
+      <div class="section-dot"></div>
+      <div class="section-title">How it works — 4 steps to your key</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="how-it-works">
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-circle">1</div>
+          <div class="step-text">
+            <strong>Free consultation</strong>
+            We review your credit, income, and goals — no obligation
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-circle">2</div>
+          <div class="step-text">
+            <strong>Match your program</strong>
+            We select the DPA that covers the most with the best terms for you
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-circle">3</div>
+          <div class="step-text">
+            <strong>Get pre-approved</strong>
+            Same-day pre-approval so you can shop with confidence
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="step-circle">4</div>
+          <div class="step-text">
+            <strong>Close with your key</strong>
+            Move in — potentially with $0 down and $0 in closing costs
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-inner">
+      <div class="footer-gold-bar"></div>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <div class="contact-item">
+            <div class="contact-label">Frank Burks II — CMA</div>
+            <div class="contact-val">The Burks Lending Group</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <div class="contact-val">615.364.5700</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-val"><a href="mailto:fburks@nexalending.com">fburks@nexalending.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Address</div>
+            <div class="contact-val">240 Mayfield Dr., Suite 208 · Smyrna, TN 37167</div>
+          </div>
+        </div>
+        <div class="footer-motto">
+          <div class="motto-line">"Clear to Close Starts Here."</div>
+          <div class="motto-nmls">NMLS #841644 · Empowered by NEXA Lending LLC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <p>For informational purposes only. Not a commitment to lend. All loans subject to credit approval, underwriting, and program availability. Guidelines, rates, and terms subject to change without notice. DPA program availability varies by credit score, income, property location, and investor guidelines. Always verify current program requirements prior to application. Equal Housing Lender. The Burks Lending Group · Empowered by NEXA Lending LLC · NMLS #841644</p>
+  </div>
+
+</div>
+</body>
+</html>

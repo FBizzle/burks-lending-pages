@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green / Akins Family Reunion 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(160deg, #1a3a1a 0%, #0d1f0d 40%, #1a2a0a 100%);
+    min-height: 100vh; padding: 2rem 1rem;
+    font-family: 'Inter', sans-serif; color: #fff;
+    position: relative; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(ellipse at 30% 20%, rgba(200,151,58,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(200,151,58,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .header { text-align: center; margin-bottom: 1.5rem; position: relative; }
+  .family-name { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.5rem); color: #C8973A; letter-spacing: 2px; line-height: 1.1; text-shadow: 0 2px 20px rgba(200,151,58,0.3); }
+  .reunion-subtitle { font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: rgba(255,255,255,0.7); margin-top: 0.3rem; letter-spacing: 3px; text-transform: uppercase; }
+  .theme-line { font-style: italic; color: rgba(200,151,58,0.85); font-size: clamp(0.85rem, 2vw, 1rem); margin-top: 0.5rem; letter-spacing: 1px; }
+  .divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #C8973A, transparent); margin: 1rem auto; }
+  .tonight-card { background: rgba(200,151,58,0.1); border: 1px solid rgba(200,151,58,0.4); border-radius: 16px; padding: 1.5rem; text-align: center; max-width: 520px; margin: 0 auto 1rem; }
+  .tonight-label { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #C8973A; margin-bottom: 0.5rem; }
+  .tonight-title { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 4vw, 2rem); color: #fff; margin-bottom: 0.25rem; }
+  .tonight-venue { font-size: clamp(0.9rem, 2.5vw, 1.1rem); color: #C8973A; font-weight: 500; margin-bottom: 0.2rem; }
+  .tonight-detail { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 0.1rem; }
+  .badge { display: inline-block; background: rgba(200,151,58,0.2); border: 1px solid rgba(200,151,58,0.5); color: #C8973A; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; margin-top: 0.5rem; letter-spacing: 1px; }
+  .drinks-banner { max-width: 520px; margin: 0 auto 1.5rem; background: rgba(200,151,58,0.18); border: 2px solid #C8973A; border-radius: 14px; padding: 1.1rem 1.25rem; text-align: center; position: relative; overflow: hidden; }
+  .drinks-eyebrow { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(200,151,58,0.8); margin-bottom: 0.4rem; }
+  .drinks-headline { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 4.5vw, 2.1rem); color: #C8973A; line-height: 1.15; margin-bottom: 0.3rem; }
+  .drinks-sub { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .drinks-sub strong { color: #fff; }
+  .countdown-grid { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem auto; max-width: 420px; }
+  .cd-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,151,58,0.3); border-radius: 12px; padding: 1rem 0.75rem; min-width: 80px; text-align: center; flex: 1; }
+  .cd-number { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 2.8rem); color: #C8973A; line-height: 1; display: block; }
+  .cd-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+  .cd-divider { display: flex; align-items: center; color: rgba(200,151,58,0.5); font-size: 1.5rem; font-weight: 300; padding-bottom: 1.5rem; }
+  .itinerary-section { max-width: 520px; margin: 0 auto; }
+  .section-title { text-align: center; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(200,151,58,0.8); margin-bottom: 1rem; }
+  .day-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; }
+  .day-header { background: rgba(200,151,58,0.12); border-bottom: 1px solid rgba(200,151,58,0.2); padding: 0.6rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+  .day-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #C8973A; font-weight: 600; }
+  .day-theme { font-size: 0.75rem; color: rgba(255,255,255,0.5); font-style: italic; }
+  .day-events { padding: 0.75rem 1rem; }
+  .event-row { display: flex; gap: 0.75rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: flex-start; }
+  .event-row:last-child { border-bottom: none; }
+  .event-time { font-size: 0.75rem; color: #C8973A; font-weight: 600; min-width: 52px; padding-top: 1px; }
+  .event-text { font-size: 0.82rem; color: rgba(255,255,255,0.8); line-height: 1.4; }
+  .event-note { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; background: #4CAF50; border-radius: 50%; margin-right: 6px; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+  .parking-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,151,58,0.25); border-radius: 12px; max-width: 520px; margin: 0 auto 1rem; overflow: hidden; }
+  .parking-header { background: rgba(200,151,58,0.12); border-bottom: 1px solid rgba(200,151,58,0.2); padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .parking-header-text { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #C8973A; font-weight: 600; }
+  .parking-body { padding: 0.85rem 1rem; }
+  .valet-banner { background: rgba(200,151,58,0.15); border: 1px solid rgba(200,151,58,0.4); border-radius: 8px; padding: 0.7rem 1rem; margin-bottom: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+  .valet-left { font-size: 0.82rem; color: #fff; line-height: 1.5; }
+  .valet-left span { color: #C8973A; font-weight: 600; }
+  .valet-price-wrap { text-align: right; }
+  .valet-new { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #C8973A; line-height: 1; }
+  .valet-old { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-decoration: line-through; }
+  .parking-lot { display: flex; gap: 0.6rem; padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); align-items: flex-start; }
+  .parking-lot:last-child { border-bottom: none; }
+  .parking-num { font-size: 0.72rem; font-weight: 600; color: #C8973A; min-width: 18px; padding-top: 1px; }
+  .parking-info { font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .parking-info strong { color: #fff; font-weight: 500; }
+  .parking-sub { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 1px; }
+  .nearby-note { font-size: 0.75rem; color: rgba(200,151,58,0.7); margin-bottom: 0.6rem; font-style: italic; }
+  .footer-text { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 1.5rem; padding-bottom: 2rem; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="family-name">GREEN / AKINS</div>
+    <div class="family-name" style="font-size: clamp(1.2rem,3.5vw,2rem); color: #fff; letter-spacing: 4px;">FAMILY REUNION</div>
+    <div class="theme-line">"Rooted In Love, Growing In Legacy"</div>
+    <div class="reunion-subtitle">June 4 – 6, 2026 · Nashville, TN</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="tonight-card">
+    <div class="tonight-label"><span class="live-dot"></span>Starting tonight</div>
+    <div class="tonight-title">Thursday Meet &amp; Greet</div>
+    <div class="tonight-venue">Federales Tequila &amp; Taco Bar</div>
+    <div class="tonight-detail">The Gulch · 636 Division St, Nashville, TN 37203</div>
+    <div class="tonight-detail">Reserved: <strong style="color:#C8973A;">Campana Corner</strong></div>
+    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:0.6rem;">
+      <span class="badge">8:00 PM – 11:00 PM</span>
+      <span class="badge">21+</span>
+      <span class="badge">Good Food. Good Drinks.</span>
+    </div>
+  </div>
+
+  <div class="drinks-banner">
+    <div class="drinks-eyebrow">Special Announcement</div>
+    <div class="drinks-headline">First Round is on Frank!</div>
+    <div class="drinks-sub">That's right — <strong>the first round of drinks is covered</strong> when you walk through the door at Federales tonight. Pull up on your boy!! 🥃</div>
+  </div>
+
+  <div style="text-align:center; margin-bottom:0.75rem; font-size:0.78rem; color:rgba(255,255,255,0.5); letter-spacing:2px; text-transform:uppercase;">Counting down to kickoff</div>
+
+  <div class="countdown-grid">
+    <div class="cd-box"><span class="cd-number" id="cd-h">--</span><div class="cd-label">Hours</div></div>
+    <div class="cd-divider">:</div>
+    <div class="cd-box"><span class="cd-number" id="cd-m">--</span><div class="cd-label">Minutes</div></div>
+    <div class="cd-divider">:</div>
+    <div class="cd-box"><span class="cd-number" id="cd-s">--</span><div class="cd-label">Seconds</div></div>
+  </div>
+
+  <div class="parking-card">
+    <div class="parking-header">
+      <span style="font-size:16px; color:#C8973A;">P</span>
+      <span class="parking-header-text">Tonight's Parking Guide</span>
+    </div>
+    <div class="parking-body">
+      <div class="valet-banner">
+        <div class="valet-left">
+          <span>Valet · Thompson Hotel</span><br>
+          Discounted rate for our group<br>
+          Up to 3 hours · Tell them you're with Federales
+        </div>
+        <div class="valet-price-wrap">
+          <div class="valet-new">$8</div>
+          <div class="valet-old">Reg. $25</div>
+        </div>
+      </div>
+      <div class="nearby-note">Nearby lots &amp; garages — many offer the first hour free</div>
+      <div class="parking-lot">
+        <div class="parking-num">1.</div>
+        <div>
+          <div class="parking-info"><strong>PMC Parking · 706 7th Ave S</strong></div>
+          <div class="parking-sub">Directly behind Federales · Paid public lot · Pay via QR code or text-to-pay · Limited availability</div>
+        </div>
+      </div>
+      <div class="parking-lot">
+        <div class="parking-num">2.</div>
+        <div>
+          <div class="parking-info"><strong>Parking MGT · 803 Division St</strong></div>
+          <div class="parking-sub">4 min walk · In The Crossroads at the Gulch building · Pay at entrance</div>
+        </div>
+      </div>
+      <div class="parking-lot">
+        <div class="parking-num">3.</div>
+        <div>
+          <div class="parking-info"><strong>Metropolis Parking · 810 Old Division St</strong></div>
+          <div class="parking-sub">4 min walk · In the Modera building</div>
+        </div>
+      </div>
+      <div class="parking-lot">
+        <div class="parking-num">4.</div>
+        <div>
+          <div class="parking-info"><strong>Metropolis Parking · 750 Paseo Pl</strong></div>
+          <div class="parking-sub">4 min walk · In the Prima building</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itinerary-section">
+    <div class="section-title">Full Weekend Itinerary</div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-label">Thursday · June 4</span>
+        <span class="day-theme">Arrival &amp; Kickoff</span>
+      </div>
+      <div class="day-events">
+        <div class="event-row">
+          <div class="event-time">3:00 PM</div>
+          <div>
+            <div class="event-text">Arrival &amp; Hotel Check-In</div>
+            <div class="event-note">Booking link in the family chat page</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">8:00 PM</div>
+          <div>
+            <div class="event-text">Meet &amp; Greet · Federales Tequila &amp; Taco Bar</div>
+            <div class="event-note">Campana Corner · The Gulch · 21+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-label">Friday · June 5</span>
+        <span class="day-theme">Explore &amp; Family Time</span>
+      </div>
+      <div class="day-events">
+        <div class="event-row">
+          <div class="event-time">9:00 AM</div>
+          <div>
+            <div class="event-text">Free time — explore Nashville or relax</div>
+            <div class="event-note">Broadway, Gulch, Germantown, East Nashville — the city is yours</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">7:00 PM</div>
+          <div>
+            <div class="event-text">Kickin' It with the Fam at QB's</div>
+            <div class="event-note">Family gathering · good food · even better company</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-label">Saturday · June 6</span>
+        <span class="day-theme">Family. Fun. Bragging Rights.</span>
+      </div>
+      <div class="day-events">
+        <div class="event-row">
+          <div class="event-time">9:00 AM</div>
+          <div>
+            <div class="event-text">Inaugural Green/Akins Golf Scramble</div>
+            <div class="event-note">Smyrna National Golf Course · Tee Time 9:00 AM · 9 holes · Winner Take All · $13 green fee + $8 cart or $4 pull cart</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">2:00 PM</div>
+          <div>
+            <div class="event-text">Family Picnic</div>
+            <div class="event-note">Food, fun, and family memories in the making</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">8:00 PM</div>
+          <div>
+            <div class="event-text">After Party</div>
+            <div class="event-note">Location TBD — stay tuned</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-text">Good Family. Good Times. Unforgettable Weekend. 🤎</div>
+
+<script>
+  function updateCountdown() {
+    const now = new Date();
+    const target = new Date();
+    target.setHours(20, 0, 0, 0);
+    let diff = target - now;
+    const hEl = document.getElementById('cd-h');
+    const mEl = document.getElementById('cd-m');
+    const sEl = document.getElementById('cd-s');
+    if (diff <= 0) {
+      hEl.textContent = '00'; mEl.textContent = '00'; sEl.textContent = '00';
+      document.querySelector('.tonight-label').innerHTML = '<span class="live-dot"></span>It\'s time — LET\'S GO!!';
+      return;
+    }
+    const h = Math.floor(diff / (1000 * 60 * 60));
+    diff -= h * 1000 * 60 * 60;
+    const m = Math.floor(diff / (1000 * 60));
+    diff -= m * 1000 * 60;
+    const s = Math.floor(diff / 1000);
+    hEl.textContent = String(h).padStart(2, '0');
+    mEl.textContent = String(m).padStart(2, '0');
+    sEl.textContent = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>

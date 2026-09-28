@@ -2,1069 +2,349 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free DPA Guide — The Burks Lending Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Down Payment Assistance Check | The Burks Lending Group</title>
+<meta name="description" content="See which Middle Tennessee down payment assistance programs you may qualify for. About 60 seconds, no credit pull.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  SETUP (3 things before you deploy):
+  1. Formspree: done (xdekyeaa).
+  2. NEXA NMLS: done (#1660690).
+  3. Paste your Meta Pixel and Google Analytics snippets right above </head>.
+  The thank-you page file must be named dpa-thank-you.html and sit in the same folder.
+-->
 <style>
-  :root {
-    --navy: #0B1F3A;
-    --navy-mid: #132C52;
-    --carolina: #1B6CB8;
-    --carolina-light: #2A87E0;
-    --gold: #C9961A;
-    --gold-light: #F0B929;
-    --cream: #FAF7F2;
-    --white: #FFFFFF;
-    --success: #0A6B3A;
-    --border: rgba(11,31,58,0.12);
-    --text-light: #6B7E94;
-    --text-mid: #3A506B;
+  :root{
+    --navy:#0A1628; --navy-2:#13243f; --gold:#C8973A; --gold-2:#b3832b;
+    --blue:#4A9EFF; --white:#FFFFFF; --ink:#16213a; --muted:#5b6780;
+    --line:#e3e7ef; --bg:#f5f7fb; --ok:#1f9d63;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  header{background:var(--navy);color:var(--white)}
+  .bar{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .brand .key{width:34px;height:34px;border-radius:8px;background:var(--gold);display:grid;place-items:center}
+  .brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
+  .call{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
+  .call:hover{background:rgba(255,255,255,.16)}
+  .hero{background:var(--navy);padding:24px 16px 56px;margin-bottom:32px}
+  .wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .pitch{color:var(--white);padding-top:18px}
+  .eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
+  h1{font-family:Fraunces,Georgia,serif;font-size:44px;line-height:1.08;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{font-size:18px;color:#d3dbea;max-width:460px;margin-bottom:22px}
+  .ticks{list-style:none;display:grid;gap:10px;color:#e8edf6}
+  .ticks li{display:flex;gap:10px;align-items:flex-start}
+  .ticks svg{flex:none;margin-top:3px}
+  .card{background:var(--white);border-radius:18px;box-shadow:0 24px 60px rgba(10,22,40,.22);padding:28px;position:relative}
+  .progress{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
+  .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:999px;transition:width .45s ease}
+  .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px}
+  .step{display:none;animation:in .35s ease}
+  .step.active{display:block}
+  @keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+  .q{font-family:Fraunces,Georgia,serif;font-size:24px;line-height:1.2;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .opts{display:grid;gap:10px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opt{appearance:none;border:2px solid var(--line);background:var(--white);border-radius:12px;padding:14px 16px;text-align:left;font:600 16px Inter,sans-serif;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .15s,background .15s,transform .1s}
+  .opt:hover{border-color:var(--blue);background:#f3f8ff}
+  .opt:active{transform:scale(.99)}
+  .opt.picked{border-color:var(--ok);background:#effaf4}
+  .opt .chk{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+  .opt.picked .chk{background:var(--ok);border-color:var(--ok)}
+  label.f{display:block;font-weight:600;font-size:14px;margin:12px 0 6px}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;font:500 17px Inter,sans-serif;color:var(--ink);outline:none;transition:border-color .15s}
+  input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(74,158,255,.15)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .err{color:#c0392b;font-size:14px;margin-top:8px;min-height:20px}
+  .cta{width:100%;margin-top:14px;appearance:none;border:0;border-radius:12px;background:var(--gold);color:var(--navy);font:700 18px Inter,sans-serif;padding:16px;cursor:pointer;box-shadow:0 8px 20px rgba(200,151,58,.35);transition:background .15s,transform .1s}
+  .cta:hover{background:var(--gold-2)}
+  .cta:disabled{opacity:.6;cursor:wait}
+  .back{appearance:none;background:none;border:0;color:var(--muted);font:600 14px Inter,sans-serif;cursor:pointer;margin-top:14px;padding:4px 0}
+  .back:hover{color:var(--ink)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.45}
+  .consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--navy)}
+  .lock{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .trust{max-width:1080px;margin:0 auto;padding:8px 16px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;color:var(--navy)}
+  .stat span{font-size:14px;color:var(--muted)}
+  .programs{max-width:1080px;margin:0 auto;padding:0 16px 48px;text-align:center}
+  .programs h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin-bottom:6px}
+  .programs p{color:var(--muted);margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .chips span{background:var(--navy);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
+  footer{background:var(--navy);color:#aeb9cd;font-size:12.5px;line-height:1.6}
+  footer .in{max-width:1080px;margin:0 auto;padding:24px 16px;display:grid;gap:10px}
+  footer .eho{display:flex;gap:8px;align-items:center;color:var(--white);font-weight:600}
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;gap:18px}
+    .hero{padding-bottom:28px;margin-bottom:0}
+    h1{font-size:34px}
+    .sub{font-size:16px}
+    .ticks{display:none}
+    .trust{grid-template-columns:1fr;padding-top:24px}
+  }
+  @media (max-width:420px){
+    .card{padding:20px}
+    .opts.two{grid-template-columns:1fr}
+    .row2{grid-template-columns:1fr}
+    .call .num{display:none}
   }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    min-height: 100vh;
-  }
-
-  /* ── TOP BAR ── */
-  .topbar {
-    background: var(--gold);
-    padding: 8px 24px;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--navy);
-    letter-spacing: 0.04em;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--navy);
-    padding: 52px 24px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; left: -60px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(201,150,26,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; right: -40px;
-    width: 280px; height: 280px;
-    background: radial-gradient(circle, rgba(27,108,184,0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    display: inline-block;
-    background: rgba(201,150,26,0.18);
-    border: 0.5px solid rgba(201,150,26,0.45);
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 2px;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 5vw, 48px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--white);
-    max-width: 680px;
-    margin: 0 auto 16px;
-  }
-
-  .hero h1 em {
-    color: var(--gold-light);
-    font-style: normal;
-  }
-
-  .hero-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.65);
-    font-weight: 300;
-    max-width: 520px;
-    margin: 0 auto 32px;
-    line-height: 1.6;
-  }
-
-  /* proof chips */
-  .proof-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-
-  .proof-chip {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background: rgba(255,255,255,0.07);
-    border: 0.5px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
-    font-weight: 400;
-  }
-
-  .proof-chip .dot {
-    width: 6px; height: 6px;
-    background: var(--gold-light);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  /* ── MAIN LAYOUT ── */
-  .main {
-    max-width: 1020px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 32px;
-    align-items: start;
-  }
-
-  @media (max-width: 760px) {
-    .main { grid-template-columns: 1fr; }
-    .form-col { order: -1; }
-  }
-
-  /* ── LEFT CONTENT ── */
-  .content-col { padding-top: 8px; }
-
-  .section-hed {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .section-hed::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: rgba(255,255,255,0.12);
-  }
-
-  /* what's inside */
-  .inside-box {
-    background: rgba(255,255,255,0.04);
-    border: 0.5px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 22px 24px;
-    margin-bottom: 24px;
-  }
-
-  .inside-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 9px 0;
-    border-bottom: 0.5px solid rgba(255,255,255,0.07);
-  }
-
-  .inside-item:last-child { border-bottom: none; }
-
-  .inside-icon {
-    width: 28px; height: 28px;
-    background: rgba(201,150,26,0.15);
-    border: 0.5px solid rgba(201,150,26,0.3);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .inside-text .it {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-
-  .inside-text .id {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.4;
-  }
-
-  /* programs preview */
-  .programs-preview {
-    margin-bottom: 24px;
-  }
-
-  .prog-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    background: rgba(255,255,255,0.04);
-    border: 0.5px solid rgba(255,255,255,0.08);
-  }
-
-  .prog-row-left { display: flex; align-items: center; gap: 10px; }
-
-  .prog-score-badge {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 3px;
-    white-space: nowrap;
-    min-width: 42px;
-    text-align: center;
-  }
-
-  .score-580 { background: rgba(240,185,41,0.2); color: var(--gold-light); border: 0.5px solid rgba(240,185,41,0.35); }
-  .score-600 { background: rgba(27,108,184,0.2); color: #7BBEF5; border: 0.5px solid rgba(27,108,184,0.35); }
-  .score-620 { background: rgba(27,108,184,0.25); color: #9DD0FF; border: 0.5px solid rgba(27,108,184,0.4); }
-  .score-640 { background: rgba(10,107,58,0.2); color: #5FDFA0; border: 0.5px solid rgba(10,107,58,0.35); }
-
-  .prog-name-text {
-    font-size: 13px;
-    color: rgba(255,255,255,0.85);
-    font-weight: 400;
-  }
-
-  .prog-amount {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gold-light);
-    white-space: nowrap;
-  }
-
-  .prog-tag {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 2px;
-  }
-
-  .tag-grant { background: rgba(10,107,58,0.25); color: #5FDFA0; }
-  .tag-forgiv { background: rgba(27,108,184,0.25); color: #9DD0FF; }
-  .tag-repay { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); }
-
-  /* testimonial */
-  .testimonial {
-    background: rgba(201,150,26,0.08);
-    border-left: 3px solid var(--gold);
-    border-radius: 0 8px 8px 0;
-    padding: 16px 18px;
-    margin-bottom: 24px;
-  }
-
-  .testimonial p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.6;
-    margin-bottom: 8px;
-  }
-
-  .testimonial .attr {
-    font-size: 11px;
-    color: var(--gold);
-    font-weight: 500;
-    letter-spacing: 0.04em;
-  }
-
-  /* frank bio */
-  .frank-bio {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px;
-    background: rgba(255,255,255,0.04);
-    border: 0.5px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-  }
-
-  .frank-avatar {
-    width: 52px; height: 52px;
-    background: var(--navy-mid);
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gold-light);
-    flex-shrink: 0;
-  }
-
-  .frank-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-
-  .frank-title {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 4px;
-  }
-
-  .frank-stats {
-    font-size: 11px;
-    color: var(--gold);
-    font-weight: 500;
-  }
-
-  /* ── FORM CARD ── */
-  .form-col { position: sticky; top: 20px; }
-
-  .form-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  }
-
-  .form-card-header {
-    background: var(--navy-mid);
-    padding: 20px 24px 16px;
-    text-align: center;
-    border-bottom: 2px solid var(--gold);
-  }
-
-  .form-card-header .fch-eyebrow {
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-
-  .form-card-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.2;
-  }
-
-  .form-card-header .fch-sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.55);
-    margin-top: 6px;
-    font-weight: 300;
-  }
-
-  .form-body {
-    padding: 22px 24px 24px;
-    background: var(--white);
-  }
-
-  /* progress */
-  .progress-bar {
-    height: 3px;
-    background: #E8ECF2;
-    border-radius: 2px;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--carolina), var(--gold));
-    border-radius: 2px;
-    transition: width 0.4s ease;
-    width: 0%;
-  }
-
-  .step-counter {
-    font-size: 11px;
-    color: var(--text-light);
-    margin-bottom: 14px;
-    font-weight: 400;
-  }
-
-  /* form steps */
-  .form-step { display: none; }
-  .form-step.active { display: block; }
-
-  .field-group { margin-bottom: 14px; }
-
-  .field-group label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 5px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  }
-
-  .field-group input,
-  .field-group select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #D4DCE8;
-    border-radius: 6px;
-    font-size: 14px;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--navy);
-    background: #F7F9FC;
-    outline: none;
-    transition: border-color 0.2s;
-    appearance: none;
-  }
-
-  .field-group input:focus,
-  .field-group select:focus {
-    border-color: var(--carolina);
-    background: var(--white);
-  }
-
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-  /* radio options */
-  .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .radio-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 9px 12px;
-    border: 1px solid #D4DCE8;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s;
-    background: #F7F9FC;
-  }
-
-  .radio-option:hover { border-color: var(--carolina); background: var(--white); }
-  .radio-option.selected { border-color: var(--carolina); background: rgba(27,108,184,0.06); }
-
-  .radio-option input { display: none; }
-
-  .radio-dot {
-    width: 16px; height: 16px;
-    border: 2px solid #C0CEDE;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.15s;
-  }
-
-  .radio-option.selected .radio-dot {
-    border-color: var(--carolina);
-    background: var(--carolina);
-  }
-
-  .radio-option.selected .radio-dot::after {
-    content: '';
-    width: 5px; height: 5px;
-    background: white;
-    border-radius: 50%;
-  }
-
-  .radio-label {
-    font-size: 13px;
-    color: var(--navy);
-    font-weight: 400;
-  }
-
-  /* buttons */
-  .btn-next {
-    width: 100%;
-    padding: 13px;
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    margin-top: 16px;
-    transition: background 0.2s, transform 0.1s;
-    letter-spacing: 0.02em;
-  }
-
-  .btn-next:hover { background: var(--navy-mid); }
-  .btn-next:active { transform: scale(0.99); }
-
-  .btn-submit {
-    width: 100%;
-    padding: 14px;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 7px;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    margin-top: 16px;
-    transition: background 0.2s, transform 0.1s;
-    letter-spacing: 0.01em;
-  }
-
-  .btn-submit:hover { background: var(--gold-light); }
-  .btn-submit:active { transform: scale(0.99); }
-
-  .btn-back {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: underline;
-    display: block;
-    text-align: center;
-    width: 100%;
-    padding: 4px 0;
-  }
-
-  /* success state */
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 10px 0 4px;
-  }
-
-  .success-icon {
-    width: 56px; height: 56px;
-    background: rgba(10,107,58,0.12);
-    border: 2px solid rgba(10,107,58,0.4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-size: 22px;
-  }
-
-  .form-success h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-
-  .form-success p {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-
-  .download-btn {
-    display: inline-block;
-    background: var(--navy);
-    color: var(--white);
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    transition: background 0.2s;
-  }
-
-  .download-btn:hover { background: var(--navy-mid); }
-
-  .success-note {
-    font-size: 11px;
-    color: var(--text-light);
-  }
-
-  /* form footer */
-  .form-footer-note {
-    margin-top: 14px;
-    font-size: 10px;
-    color: var(--text-light);
-    text-align: center;
-    line-height: 1.5;
-    padding: 0 4px;
-  }
-
-  /* ── BOTTOM STRIP ── */
-  .bottom-strip {
-    background: rgba(0,0,0,0.3);
-    border-top: 0.5px solid rgba(255,255,255,0.08);
-    padding: 14px 24px;
-    text-align: center;
-    font-size: 11px;
-    color: rgba(255,255,255,0.3);
-  }
-
-  .bottom-strip a { color: rgba(255,255,255,0.45); text-decoration: none; }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  🔑 &nbsp;Limited time: Free Down Payment Assistance Guide — Middle Tennessee's most complete DPA breakdown
-</div>
-
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-eyebrow">Free Resource · The Burks Lending Group</div>
-  <h1>You Might Already Qualify<br>for a <em>Free Down Payment</em></h1>
-  <p class="hero-sub">Most renters in Middle Tennessee don't know programs exist that cover their entire down payment — some are true grants that never need to be paid back. Get the complete guide, free.</p>
-  <div class="proof-row">
-    <div class="proof-chip"><div class="dot"></div>Starts at 580 credit score</div>
-    <div class="proof-chip"><div class="dot"></div>No income limits on most programs</div>
-    <div class="proof-chip"><div class="dot"></div>True grants available — never repaid</div>
-    <div class="proof-chip"><div class="dot"></div>$0 down payment possible</div>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div class="key" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="2.4" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>
+      </div>
+      <div>The Burks Lending Group<small>Everybody Deserves a Key</small></div>
+    </div>
+    <a class="call" href="tel:+16153645700">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="num">615.364.5700</span><span aria-hidden="true" style="display:none">Call</span>
+    </a>
   </div>
-  <div style="margin-top:24px;">
-    <a href="#form-anchor" onclick="document.querySelector('.form-card').scrollIntoView({behavior:'smooth'});return false;" style="display:inline-block;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:14px 36px;border-radius:6px;text-decoration:none;letter-spacing:0.01em;box-shadow:0 4px 20px rgba(201,150,26,0.35);">🔑 Get My Free DPA Guide</a>
-    <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:10px;">Takes 60 seconds · No obligation · Instant access</div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pitch">
+      <span class="eyebrow">Middle Tennessee Homebuyers</span>
+      <h1>Your down payment might already be <em>waiting on you.</em></h1>
+      <p class="sub">Answer a few quick questions and see which of our five assistance programs could help you buy in Smyrna, Murfreesboro, Nashville and beyond.</p>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 60 seconds, tap to answer</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>A real advisor reviews your answers, not a call center</li>
+      </ul>
+    </div>
+
+    <div class="card" id="card">
+      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+      <div class="meta"><span id="count">Question 1 of 14</span><span id="cheer">Let's go</span></div>
+
+      <form id="dpa" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div id="steps"></div>
+      </form>
+
+      <div class="lock">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        Secure and private. We never sell your information.
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- Main -->
-<div class="main">
+<section class="trust" aria-label="Why The Burks Lending Group">
+  <div class="stat"><b>25 years</b><span>helping Tennessee families buy homes</span></div>
+  <div class="stat"><b>200+</b><span>lending partners shopping your loan</span></div>
+  <div class="stat"><b>$150M+</b><span>in mortgage loans funded</span></div>
+</section>
 
-  <!-- Left content -->
-  <div class="content-col">
+<section class="programs">
+  <h2>Five programs. One advisor in your corner.</h2>
+  <p>Your answers help us match you to the right fit.</p>
+  <div class="chips"><span>SmartBuy</span><span>DPA Advantage</span><span>Boost DPA</span><span>Elevate Grant</span><span>Aurora DPA</span></div>
+</section>
 
-    <div class="section-hed">What's inside the free guide</div>
-
-    <div class="inside-box">
-      <div class="inside-item">
-        <div class="inside-icon">📋</div>
-        <div class="inside-text">
-          <div class="it">Every DPA program available to you</div>
-          <div class="id">Full breakdown of 10+ programs with amounts, terms, and who qualifies — no fluff, no filler</div>
-        </div>
-      </div>
-      <div class="inside-item">
-        <div class="inside-icon">🎯</div>
-        <div class="inside-text">
-          <div class="it">Credit score tier map</div>
-          <div class="id">See exactly which programs open up at 580 / 600 / 620 / 640 — find your tier instantly</div>
-        </div>
-      </div>
-      <div class="inside-item">
-        <div class="inside-icon">💰</div>
-        <div class="inside-text">
-          <div class="it">Grant vs. forgivable vs. repayable — explained</div>
-          <div class="id">Know the difference and which one saves you the most money long-term</div>
-        </div>
-      </div>
-      <div class="inside-item">
-        <div class="inside-icon">🏠</div>
-        <div class="inside-text">
-          <div class="it">Real payment scenarios for Middle Tennessee</div>
-          <div class="id">See what a $295K Smyrna home actually costs monthly with DPA stacked</div>
-        </div>
-      </div>
-      <div class="inside-item">
-        <div class="inside-icon">📞</div>
-        <div class="inside-text">
-          <div class="it">Next steps + same-day pre-approval</div>
-          <div class="id">Know exactly what to bring and how fast you can get a pre-approval in hand</div>
-        </div>
-      </div>
+<footer>
+  <div class="in">
+    <div class="eho">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v10H3z"/><path d="M8 14h8M8 17h8"/></svg>
+      Equal Housing Opportunity
     </div>
-
-    <div class="section-hed">Program snapshot</div>
-
-    <div class="programs-preview">
-      <div class="prog-row">
-        <div class="prog-row-left">
-          <div class="prog-score-badge score-580">580+</div>
-          <div class="prog-name-text">Legacy Builder</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div class="prog-amount">Up to 5%</div>
-          <div class="prog-tag tag-forgiv">Forgivable</div>
-        </div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-row-left">
-          <div class="prog-score-badge score-600">600+</div>
-          <div class="prog-name-text">Giant FHA DPA</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div class="prog-amount">Up to 5%</div>
-          <div class="prog-tag tag-forgiv">3–10yr Forgiv.</div>
-        </div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-row-left">
-          <div class="prog-score-badge score-620">620+</div>
-          <div class="prog-name-text">DPA Advantage · Boost DPA</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div class="prog-amount">Up to 5%</div>
-          <div class="prog-tag tag-repay">Repayable</div>
-        </div>
-      </div>
-      <div class="prog-row">
-        <div class="prog-row-left">
-          <div class="prog-score-badge score-640">640+</div>
-          <div class="prog-name-text">Elevate Grant · SmartBuy</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div class="prog-amount">Up to 5%</div>
-          <div class="prog-tag tag-grant">True Grant</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonial">
-      <p>"I thought I needed to save for two more years. Frank showed me a program that covered my entire down payment. We closed in 34 days."</p>
-      <div class="attr">— First-time buyer, Smyrna, TN · 2024</div>
-    </div>
-
-    <div class="frank-bio">
-      <div class="frank-avatar">FB</div>
-      <div>
-        <div class="frank-name">Frank Burks II, CMA</div>
-        <div class="frank-title">Certified Mortgage Advisor · The Burks Lending Group · NMLS #841644</div>
-        <div class="frank-stats">25 years experience · Smyrna, TN · Serving Middle Tennessee</div>
-      </div>
-    </div>
-
-  </div><!-- /content-col -->
-
-  <!-- Form -->
-  <div class="form-col">
-    <div class="form-card">
-      <div class="form-card-header">
-        <div class="fch-eyebrow">Free Instant Access</div>
-        <h2>Get Your Free<br>DPA Guide Now</h2>
-        <div class="fch-sub">Takes 60 seconds · No obligation · Sent immediately</div>
-      </div>
-      <div class="form-body">
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="step-counter" id="stepCounter">Step 1 of 4</div>
-
-        <!-- Step 1: Contact -->
-        <div class="form-step active" id="step1">
-          <div class="field-row">
-            <div class="field-group">
-              <label>First Name</label>
-              <input type="text" id="firstName" placeholder="First name">
-            </div>
-            <div class="field-group">
-              <label>Last Name</label>
-              <input type="text" id="lastName" placeholder="Last name">
-            </div>
-          </div>
-          <div class="field-group">
-            <label>Email Address</label>
-            <input type="email" id="email" placeholder="your@email.com">
-          </div>
-          <div class="field-group">
-            <label>Phone Number</label>
-            <input type="tel" id="phone" placeholder="(615) 000-0000">
-          </div>
-          <button class="btn-next" onclick="nextStep(1)">Continue →</button>
-        </div>
-
-        <!-- Step 2: Credit + Purchase -->
-        <div class="form-step" id="step2">
-          <div class="field-group">
-            <label>Estimated credit score range</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="credit" value="below580">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Below 580</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="credit" value="580-619">
-                <div class="radio-dot"></div>
-                <span class="radio-label">580 – 619</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="credit" value="620-639">
-                <div class="radio-dot"></div>
-                <span class="radio-label">620 – 639</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="credit" value="640-679">
-                <div class="radio-dot"></div>
-                <span class="radio-label">640 – 679</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="credit" value="680+">
-                <div class="radio-dot"></div>
-                <span class="radio-label">680 or above</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="credit" value="unknown">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Not sure</span>
-              </label>
-            </div>
-          </div>
-          <button class="btn-next" onclick="nextStep(2)">Continue →</button>
-          <button class="btn-back" onclick="prevStep(2)">← Back</button>
-        </div>
-
-        <!-- Step 3: Situation -->
-        <div class="form-step" id="step3">
-          <div class="field-group">
-            <label>When are you looking to buy?</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="timeline" value="asap">
-                <div class="radio-dot"></div>
-                <span class="radio-label">As soon as possible</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timeline" value="3months">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Within 3 months</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timeline" value="6months">
-                <div class="radio-dot"></div>
-                <span class="radio-label">3 – 6 months</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timeline" value="year">
-                <div class="radio-dot"></div>
-                <span class="radio-label">6 – 12 months</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="timeline" value="exploring">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Just exploring right now</span>
-              </label>
-            </div>
-          </div>
-          <button class="btn-next" onclick="nextStep(3)">Continue →</button>
-          <button class="btn-back" onclick="prevStep(3)">← Back</button>
-        </div>
-
-        <!-- Step 4: Income + situation -->
-        <div class="form-step" id="step4">
-          <div class="field-group">
-            <label>Annual household income (approximate)</label>
-            <select id="income">
-              <option value="">Select range</option>
-              <option>Under $40,000</option>
-              <option>$40,000 – $59,999</option>
-              <option>$60,000 – $79,999</option>
-              <option>$80,000 – $99,999</option>
-              <option>$100,000 – $124,999</option>
-              <option>$125,000+</option>
-              <option>Prefer not to say</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label>Current living situation</label>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="situation" value="renting">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Currently renting</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="family">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Living with family</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="selling">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Selling a home to buy</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="situation" value="own">
-                <div class="radio-dot"></div>
-                <span class="radio-label">Already own, buying another</span>
-              </label>
-            </div>
-          </div>
-          <button class="btn-next" onclick="nextStep(4)">Continue →</button>
-          <button class="btn-back" onclick="prevStep(4)">← Back</button>
-        </div>
-
-        <!-- Step 5: Realtor -->
-        <div class="form-step" id="step5">
-          <div class="field-group">
-            <label>Are you currently working with a Realtor?</label>
-            <select id="realtorStatus">
-              <option value="">Select an option</option>
-              <option value="yes">Yes, I have a Realtor</option>
-              <option value="no">No, I don't have a Realtor yet</option>
-            </select>
-          </div>
-          <button class="btn-submit" onclick="submitForm()">🔑 Send Me the Free Guide</button>
-          <button class="btn-back" onclick="prevStep(5)">← Back</button>
-        </div>
-
-        <!-- Success -->
-        <div class="form-success" id="formSuccess">
-          <div class="success-icon">✓</div>
-          <h3>You're all set!</h3>
-          <p>Your free Down Payment Assistance Guide is ready. Frank will also reach out within <strong>1 business day</strong> to walk you through your options personally.</p>
-          <a href="/dpa/guide.html" class="download-btn" target="_blank">📄 Download Your Free Guide</a>
-          <p class="success-note">Check your email — a copy is on its way to your inbox.</p>
-        </div>
-
-        <div class="form-footer-note" id="formFooter">
-          🔒 Your information is private and never sold. By submitting you agree to be contacted by Frank Burks II, NMLS #841644. Empowered by NEXA Lending LLC.
-        </div>
-
-      </div><!-- /form-body -->
-    </div><!-- /form-card -->
-  </div><!-- /form-col -->
-
-</div><!-- /main -->
-
-<div class="bottom-strip">
-  The Burks Lending Group · Empowered by NEXA Lending LLC · NMLS #841644 · 240 Mayfield Dr., Suite 208, Smyrna, TN 37167 · 615.364.5700 · <a href="mailto:fburks@nexalending.com">fburks@nexalending.com</a>
-  <br><br>
-  For informational purposes only. Not a commitment to lend. All loans subject to credit and underwriting approval. DPA program availability subject to change. Equal Housing Lender.
-</div>
+    <div>Frank Burks II, Certified Mortgage Advisor, NMLS #841644. The Burks Lending Group empowered by NEXA Lending, NMLS #1660690. Smyrna, TN 37167. 615.364.5700. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</div>
+    <div>This is not a commitment to lend. Program availability depends on income, credit, property location, and program funding at the time of application. Terms and guidelines are subject to change without notice.</div>
+  </div>
+</footer>
 
 <script>
-  let currentStep = 1;
-  const totalSteps = 5;
+(function(){
+  var FORMSPREE_ENDPOINT = "https://formspree.io/f/xdekyeaa";
+  var THANK_YOU_URL = "dpa-thank-you.html";
 
-  function updateProgress() {
-    const pct = ((currentStep - 1) / totalSteps) * 100;
-    document.getElementById('progressFill').style.width = pct + '%';
-    document.getElementById('stepCounter').textContent = 'Step ' + currentStep + ' of ' + totalSteps;
-  }
+  var steps = [
+    {id:"zip", type:"zip", q:"Where are you hoping to buy?", hint:"Just the zip code. Close is fine if you're still deciding."},
+    {id:"first_time", q:"Have you owned a home in the last 3 years?", hint:"If not, you may count as a first-time buyer even if you owned before.", opts:["No, this would be my first","I owned one more than 3 years ago","Yes, I own now or recently"]},
+    {id:"price", q:"What price range are you shopping?", two:true, opts:["Under $250K","$250K to $350K","$350K to $450K","$450K+"]},
+    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. We won't pull credit here.", opts:["Excellent (720+)","Good (680 to 719)","Fair (640 to 679)","Building (600 to 639)","Under 600 or not sure"]},
+    {id:"savings", q:"How much have you saved toward buying?", two:true, opts:["Little to nothing","Under $5K","$5K to $15K","$15K+"]},
+    {id:"household", q:"How many people live in your household?", hint:"Some programs set income limits by household size.", two:true, opts:["1","2","3 to 4","5+"]},
+    {id:"income", q:"Total yearly household income?", hint:"Everyone who'll be on the loan, before taxes.", two:true, opts:["Under $60K","$60K to $90K","$90K to $120K","$120K+"]},
+    {id:"work", q:"How do you earn your income?", opts:["W-2 employee","Self-employed or 1099","Retired or fixed income","A mix of these"]},
+    {id:"military", q:"Have you served in the military?", opts:["Yes, veteran or active duty","Surviving spouse of a veteran","No"]},
+    {id:"living", q:"Where are you living right now?", opts:["Renting","Living with family","I own my home","Something else"]},
+    {id:"sell_first", q:"Will you need to sell your current home before you buy?", hint:"No wrong answer. It just helps us plan your timing.", when:function(){ return answers.living==="I own my home"; }, opts:["Yes, I'll need to sell first","Maybe, still deciding","No, I'll keep it or rent it out"]},
+    {id:"timeline", q:"When would you like to move?", two:true, opts:["ASAP","3 to 6 months","6 to 12 months","Just exploring"]},
+    {id:"agent", q:"Are you working with a real estate agent?", opts:["Yes, I have an agent","No, I'd love an introduction","No, not yet"]},
+    {id:"name", type:"name", q:"Nice work. Who are we helping?", hint:"Almost there. Two more quick things."},
+    {id:"contact", type:"contact", q:"Where should we send your results?", hint:"Frank Burks II will personally review your answers."}
+  ];
 
-  function nextStep(from) {
-    document.getElementById('step' + from).classList.remove('active');
-    currentStep = from + 1;
-    document.getElementById('step' + currentStep).classList.add('active');
-    updateProgress();
-    document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  var cheers = ["Let's go","Easy start","Nice","Rolling now","You're doing great","Halfway home","Keep it up","Looking good","Almost there","So close","Last stretch","Home stretch","Final lap","One more"];
+  var answers = {};
+  var current = 0;
+  var holder = document.getElementById("steps");
+  var bar = document.getElementById("bar");
+  var count = document.getElementById("count");
+  var cheer = document.getElementById("cheer");
 
-  function prevStep(from) {
-    document.getElementById('step' + from).classList.remove('active');
-    currentStep = from - 1;
-    document.getElementById('step' + currentStep).classList.add('active');
-    updateProgress();
-  }
+  // Keep campaign tracking with the lead
+  var params = new URLSearchParams(location.search);
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"].forEach(function(k){ if(params.get(k)) answers[k]=params.get(k); });
 
-  async function submitForm() {
-    const btn = document.querySelector('.btn-submit');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+  function el(tag, attrs, html){ var e=document.createElement(tag); for(var k in (attrs||{})) e.setAttribute(k, attrs[k]); if(html!=null) e.innerHTML=html; return e; }
 
-    // Collect all form data
-    const data = {
-      firstName:   document.getElementById('firstName').value.trim(),
-      lastName:    document.getElementById('lastName').value.trim(),
-      email:       document.getElementById('email').value.trim(),
-      phone:       document.getElementById('phone').value.trim(),
-      credit:      document.querySelector('input[name="credit"]:checked')?.value || '',
-      timeline:    document.querySelector('input[name="timeline"]:checked')?.value || '',
-      income:      document.getElementById('income').value,
-      situation:   document.querySelector('input[name="situation"]:checked')?.value || '',
-      realtorStatus: document.getElementById('realtorStatus').value,
-      source:      'DPA Guide Lead Magnet',
-      _subject:    'New DPA Guide Lead — ' + (document.getElementById('firstName').value || 'Unknown'),
-    };
+  steps.forEach(function(s, i){
+    var box = el("div", {"class":"step","data-i":i});
+    box.appendChild(el("h2", {"class":"q"}, s.q));
+    if(s.hint) box.appendChild(el("p", {"class":"hint"}, s.hint));
 
-    try {
-      // ⚠️  Replace YOUR_FORMSPREE_ID with your actual Formspree form ID
-      // Get yours free at https://formspree.io — takes 2 minutes
-      // Leads flow: Formspree → Zapier → Zeitro CRM (see README for setup)
-      const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
+    if(s.opts){
+      var grid = el("div", {"class":"opts"+(s.two?" two":""), role:"group", "aria-label":s.q});
+      s.opts.forEach(function(o){
+        var b = el("button", {type:"button","class":"opt"}, "<span>"+o+"</span><span class='chk'><svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='4'><path d='M20 6L9 17l-5-5'/></svg></span>");
+        b.addEventListener("click", function(){
+          grid.querySelectorAll(".opt").forEach(function(x){x.classList.remove("picked")});
+          b.classList.add("picked");
+          answers[s.id] = o;
+          setTimeout(next, 260);
+        });
+        grid.appendChild(b);
       });
-
-      if (res.ok) {
-        showSuccess();
-      } else {
-        // Still show success to user — log error silently
-        console.error('Formspree error:', await res.text());
-        showSuccess();
-      }
-    } catch (err) {
-      console.error('Submit error:', err);
-      showSuccess(); // Don't punish the user for network issues
+      box.appendChild(grid);
     }
-  }
 
-  function showSuccess() {
-    for (let i = 1; i <= totalSteps; i++) {
-      const s = document.getElementById('step' + i);
-      if (s) s.classList.remove('active');
-    }
-    document.getElementById('progressFill').style.width = '100%';
-    document.getElementById('stepCounter').style.display = 'none';
-    document.getElementById('formFooter').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
-
-  // Radio option visual selection
-  document.querySelectorAll('.radio-option').forEach(option => {
-    option.addEventListener('click', function() {
-      const name = this.querySelector('input').name;
-      document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
-        input.closest('.radio-option').classList.remove('selected');
+    if(s.type==="zip"){
+      box.appendChild(el("label", {"class":"f","for":"zip"}, "Zip code"));
+      box.appendChild(el("input", {type:"text",id:"zip",inputmode:"numeric",maxlength:"5",autocomplete:"postal-code",placeholder:"37167"}));
+      box.appendChild(el("div", {"class":"err",id:"err-zip"}));
+      var go = el("button", {type:"button","class":"cta"}, "See My Options &rarr;");
+      go.addEventListener("click", function(){
+        var z = document.getElementById("zip").value.trim();
+        if(!/^\d{5}$/.test(z)){ document.getElementById("err-zip").textContent="Please enter a 5-digit zip code."; return; }
+        document.getElementById("err-zip").textContent="";
+        answers.zip = z; next();
       });
-      this.classList.add('selected');
-      this.querySelector('input').checked = true;
-    });
+      box.appendChild(go);
+    }
+
+    if(s.type==="name"){
+      var r = el("div", {"class":"row2"});
+      var a = el("div"); a.appendChild(el("label",{"class":"f","for":"first"},"First name")); a.appendChild(el("input",{type:"text",id:"first",autocomplete:"given-name"}));
+      var b2 = el("div"); b2.appendChild(el("label",{"class":"f","for":"last"},"Last name")); b2.appendChild(el("input",{type:"text",id:"last",autocomplete:"family-name"}));
+      r.appendChild(a); r.appendChild(b2); box.appendChild(r);
+      box.appendChild(el("div", {"class":"err",id:"err-name"}));
+      var go2 = el("button", {type:"button","class":"cta"}, "Keep Going &rarr;");
+      go2.addEventListener("click", function(){
+        var f=document.getElementById("first").value.trim(), l=document.getElementById("last").value.trim();
+        if(!f || !l){ document.getElementById("err-name").textContent="First and last name, please."; return; }
+        document.getElementById("err-name").textContent="";
+        answers.first_name=f; answers.last_name=l; next();
+      });
+      box.appendChild(go2);
+    }
+
+    if(s.type==="contact"){
+      box.appendChild(el("label",{"class":"f","for":"email"},"Email"));
+      box.appendChild(el("input",{type:"email",id:"email",autocomplete:"email",placeholder:"you@email.com"}));
+      box.appendChild(el("label",{"class":"f","for":"phone"},"Mobile phone"));
+      box.appendChild(el("input",{type:"tel",id:"phone",autocomplete:"tel",inputmode:"tel",placeholder:"(615) 555-0123"}));
+      var c = el("label",{"class":"consent"});
+      c.appendChild(el("input",{type:"checkbox",id:"consent"}));
+      c.appendChild(el("span",null,"I agree that Frank Burks II and The Burks Lending Group may call, text, or email me about my home loan options at the number and email above, including by automated means. Consent isn't required to buy anything. If I asked for an agent introduction, I agree Frank may share my contact information with one trusted local real estate agent who may contact me. Message and data rates may apply. Reply STOP to opt out."));
+      box.appendChild(c);
+      box.appendChild(el("div", {"class":"err",id:"err-contact"}));
+      var sub = el("button", {type:"submit","class":"cta",id:"submit"}, "Show Me My Programs");
+      box.appendChild(sub);
+    }
+
+    if(i>0){
+      var back = el("button", {type:"button","class":"back"}, "&larr; Back");
+      back.addEventListener("click", prev);
+      box.appendChild(back);
+    }
+    holder.appendChild(box);
   });
 
-  // Phone formatting
-  document.getElementById('phone').addEventListener('input', function(e) {
-    let v = e.target.value.replace(/\D/g, '');
-    if (v.length >= 6) v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6,10);
-    else if (v.length >= 3) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
-    e.target.value = v;
+  function active(i){ var s=steps[i]; return !s.when || s.when(); }
+  function show(i){
+    document.querySelectorAll(".step").forEach(function(s){ s.classList.toggle("active", +s.getAttribute("data-i")===i); });
+    var total=0, pos=0;
+    for(var k=0;k<steps.length;k++){ if(active(k)){ total++; if(k<=i) pos++; } }
+    var pct = Math.round(((pos-1)/total)*100);
+    bar.style.width = Math.max(pct,4)+"%";
+    count.textContent = "Question "+pos+" of "+total;
+    cheer.textContent = cheers[Math.min(pos-1, cheers.length-1)] || "";
+    var activeInput = document.querySelector(".step.active input[type=text], .step.active input[type=email]");
+    if(activeInput && window.innerWidth>860) setTimeout(function(){ activeInput.focus(); }, 60);
+  }
+  function next(){
+    var n=current+1; while(n<steps.length && !active(n)) n++;
+    if(n<steps.length){ current=n; show(current); if(window.innerWidth<=860) document.getElementById("card").scrollIntoView({behavior:"smooth",block:"start"}); }
+  }
+  function prev(){
+    var p=current-1; while(p>0 && !active(p)) p--;
+    if(p>=0){ current=p; show(current); }
+  }
+
+  // Enter key advances text steps
+  document.getElementById("dpa").addEventListener("keydown", function(e){
+    if(e.key==="Enter" && e.target.tagName==="INPUT" && e.target.type!=="checkbox"){
+      var btn = document.querySelector(".step.active .cta");
+      if(btn && btn.type==="button"){ e.preventDefault(); btn.click(); }
+    }
   });
 
-  updateProgress();
+  document.getElementById("dpa").addEventListener("submit", function(e){
+    e.preventDefault();
+    var em=document.getElementById("email").value.trim();
+    var ph=document.getElementById("phone").value.replace(/\D/g,"");
+    var ok=document.getElementById("consent").checked;
+    var err=document.getElementById("err-contact");
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ err.textContent="That email doesn't look quite right."; return; }
+    if(ph.length<10){ err.textContent="Please enter a 10-digit phone number."; return; }
+    if(!ok){ err.textContent="Please check the box so we can reach you with your results."; return; }
+    err.textContent="";
+    answers.email=em; answers.phone=ph; answers.consent="Yes";
+    steps.forEach(function(s,k){ if(!active(k)) delete answers[s.id]; });
+    if(answers.sell_first && answers.sell_first.indexOf("No")!==0) answers.possible_seller="Yes";
+    answers.lead_source="DPA Multi-Step Qualifier"; answers.page=location.href.split("?")[0];
+    answers._subject="New DPA lead: "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
+    answers._gotcha=document.querySelector("input[name=_gotcha]").value;
+
+    var btn=document.getElementById("submit"); btn.disabled=true; btn.textContent="Sending...";
+    bar.style.width="100%";
+
+    function done(){
+      try{ sessionStorage.setItem("blg_first", answers.first_name); sessionStorage.setItem("blg_mil", answers.military||""); sessionStorage.setItem("blg_agent", answers.agent||""); }catch(x){}
+      if(window.fbq){ try{ fbq("track","Lead",{content_name:"DPA Qualifier"}); }catch(x){} }
+      if(window.gtag){ try{ gtag("event","generate_lead",{form:"dpa_qualifier"}); }catch(x){} }
+      location.href = THANK_YOU_URL;
+    }
+
+    if(FORMSPREE_ENDPOINT.indexOf("YOUR_FORM_ID")>-1){
+      console.warn("Demo mode: add your Formspree ID to send leads. Answers:", answers);
+      setTimeout(done, 600); return;
+    }
+    fetch(FORMSPREE_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(answers)})
+      .then(function(r){ if(r.ok) done(); else throw new Error(r.status); })
+      .catch(function(){ btn.disabled=false; btn.textContent="Show Me My Programs"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
+  });
+
+  show(0);
+})();
 </script>
 </body>
 </html>

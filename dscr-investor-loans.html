@@ -2,528 +2,349 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSCR Investor Loans | No Tax Returns | No Income Verification | The Burks Lending Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSCR Investor Loans | Middle Tennessee | The Burks Lending Group</title>
+<meta name="description" content="Qualify for your next Middle Tennessee rental on the property's rent, not your paycheck. About 60 seconds, no credit pull.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  SETUP (3 things before you deploy):
+  1. Formspree: done (xdekyeaa).
+  2. NEXA NMLS: done (#1660690).
+  3. Paste your Meta Pixel and Google Analytics snippets right above </head>.
+  The thank-you page file must be named dpa-thank-you.html and sit in the same folder.
+-->
 <style>
-:root{
-  --navy:#060F1E;--navy-mid:#0A1628;--navy-light:#0F2040;
-  --blue:#1E6FD9;--blue-light:#4A9EFF;--blue-pale:#EEF4FF;
-  --gold:#C8973A;--gold-light:#E8B455;--gold-pale:#FDF3E3;
-  --white:#FFFFFF;--off-white:#F4F7FF;--text-dark:#060F1E;
-  --text-mid:#3a4a6a;--text-light:#7a8aaa;
-  --green:#1E7A4A;--green-light:#E6F5EE;
-  --red:#C0392B;--red-light:#FDECEA;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text-dark);}
-
-/* PROGRESS BAR */
-.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-light));z-index:300;transition:width .1s;}
-
-/* NAV */
-nav{background:rgba(6,15,30,0.97);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(74,158,255,0.15);}
-.nav-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:15px;font-weight:700;line-height:1.2;}
-.nav-logo span{color:var(--blue-light);}
-.nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:var(--white);font-size:12px;font-weight:700;padding:10px 22px;border-radius:4px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:opacity .2s;}
-.nav-cta:hover{opacity:.9;}
-
-/* HERO */
-.hero{background:linear-gradient(145deg,var(--navy) 0%,#0A1A35 60%,#0D2050 100%);padding:80px 32px 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(30,111,217,0.18) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(200,151,58,0.08) 0%,transparent 45%);}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,158,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,158,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
-.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;position:relative;z-index:2;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(30,111,217,0.15);border:1px solid rgba(74,158,255,0.3);border-radius:100px;padding:6px 16px;margin-bottom:20px;}
-.hero-eyebrow span{color:var(--blue-light);font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,54px);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:16px;}
-.hero h1 em{color:var(--blue-light);font-style:normal;}
-.hero h1 strong{color:var(--gold);font-style:normal;}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:28px;max-width:520px;}
-.hero-stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px;}
-.hero-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(74,158,255,0.2);border-radius:10px;padding:14px 20px;text-align:center;}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--blue-light);line-height:1;}
-.hero-stat-label{font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;}
-.hero-badge{background:rgba(30,111,217,0.12);border:1px solid rgba(74,158,255,0.2);border-radius:6px;padding:6px 12px;font-size:11px;color:rgba(255,255,255,0.7);font-weight:500;}
-
-/* FORM CARD */
-.form-card{background:var(--white);border-radius:16px;padding:32px;box-shadow:0 24px 64px rgba(0,0,0,0.4);border:1px solid rgba(74,158,255,0.15);position:relative;}
-.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-light));border-radius:16px 16px 0 0;}
-.form-label{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--blue);text-transform:uppercase;margin-bottom:6px;}
-.form-card h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.2;}
-.form-card-sub{font-size:13px;color:var(--text-mid);margin-bottom:22px;line-height:1.5;}
-.form-group{margin-bottom:14px;}
-.form-group label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);margin-bottom:5px;letter-spacing:.04em;text-transform:uppercase;}
-.form-group input,.form-group select{width:100%;padding:11px 14px;border:1.5px solid #e0e8f0;border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--off-white);transition:border-color .2s;}
-.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--blue);background:var(--white);}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.form-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--blue),var(--blue-light));color:var(--white);border:none;border-radius:8px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer;transition:transform .15s,box-shadow .15s;text-transform:uppercase;}
-.form-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(30,111,217,0.4);}
-.form-privacy{font-size:11px;color:#9aa5b4;text-align:center;margin-top:12px;}
-.form-privacy a{color:var(--blue);text-decoration:none;}
-.success-state{display:none;text-align:center;padding:20px 0;}
-.success-icon{font-size:48px;margin-bottom:16px;}
-.success-state h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin-bottom:8px;}
-.success-state p{font-size:14px;color:var(--text-mid);line-height:1.6;}
-.gold-bar{height:5px;background:linear-gradient(90deg,var(--blue),var(--blue-light));}
-
-/* SECTIONS */
-.section{padding:64px 32px;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section.dark{background:var(--navy-mid);}
-.section.white{background:var(--white);}
-.section.tinted{background:var(--off-white);}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--blue);text-transform:uppercase;margin-bottom:10px;}
-.eyebrow.gold{color:var(--gold);}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,38px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.2;}
-.section-title.white{color:var(--white);}
-.section-desc{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:640px;margin-bottom:40px;}
-.section-desc.white{color:rgba(255,255,255,0.65);}
-
-/* DIFFERENTIATOR CARDS */
-.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.diff-card{background:var(--white);border:1.5px solid #e8edf8;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s,box-shadow .2s;}
-.diff-card:hover{border-color:var(--blue-light);transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,111,217,0.12);}
-.diff-card.featured{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-color:var(--blue);box-shadow:0 8px 32px rgba(30,111,217,0.25);}
-.diff-icon{font-size:32px;margin-bottom:14px;}
-.diff-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;}
-.diff-card.featured h3{color:var(--white);}
-.diff-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
-.diff-card.featured p{color:rgba(255,255,255,0.65);}
-.diff-tag{display:inline-block;background:var(--blue-pale);color:var(--blue);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
-.diff-tag.gold{background:var(--gold-pale);color:var(--gold);}
-
-/* PROGRAM COMPARISON */
-.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px;}
-.program-card{background:var(--white);border:1.5px solid #e8edf8;border-radius:14px;padding:24px;transition:border-color .2s;}
-.program-card:hover{border-color:var(--blue-light);}
-.program-card.featured{border-color:var(--gold);background:linear-gradient(135deg,#FFFDF7,#FDF3E3);}
-.program-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.program-name{font-size:13px;font-weight:700;color:var(--navy);}
-.program-badge{font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase;letter-spacing:.08em;}
-.program-badge.star{background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold);}
-.program-badge.blue{background:var(--blue-pale);color:var(--blue);border:1px solid var(--blue);}
-.program-specs{display:flex;flex-direction:column;gap:8px;}
-.program-spec{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0f4ff;}
-.program-spec:last-child{border-bottom:none;}
-.spec-label{font-size:11px;color:var(--text-light);font-weight:500;}
-.spec-value{font-size:12px;color:var(--navy);font-weight:700;}
-.spec-value.green{color:var(--green);}
-.spec-value.blue{color:var(--blue);}
-
-/* NO SEASONING CALLOUT */
-.callout-box{background:linear-gradient(135deg,var(--navy),#0D2050);border:2px solid var(--blue-light);border-radius:16px;padding:40px;text-align:center;position:relative;overflow:hidden;margin:32px 0;}
-.callout-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(74,158,255,0.15) 0%,transparent 60%);}
-.callout-box h2{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--white);margin-bottom:12px;position:relative;z-index:1;}
-.callout-box h2 em{color:var(--blue-light);font-style:normal;}
-.callout-box p{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:600px;margin:0 auto;position:relative;z-index:1;}
-.callout-tags{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative;z-index:1;}
-.callout-tag{background:rgba(74,158,255,0.15);border:1px solid rgba(74,158,255,0.3);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--white);}
-
-/* WHO THIS IS FOR */
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-.who-card{border-radius:14px;padding:32px;border:1.5px solid #e8edf8;}
-.who-card.investor{background:linear-gradient(135deg,var(--navy),var(--navy-light));border-color:var(--blue);}
-.who-card.realtor{background:var(--white);}
-.who-card h3{font-size:18px;font-weight:700;margin-bottom:16px;}
-.who-card.investor h3{color:var(--white);}
-.who-card.realtor h3{color:var(--navy);}
-.who-list{display:flex;flex-direction:column;gap:10px;}
-.who-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;}
-.who-card.investor .who-item{color:rgba(255,255,255,0.8);}
-.who-card.realtor .who-item{color:var(--text-mid);}
-.who-check{font-size:14px;flex-shrink:0;margin-top:1px;}
-
-/* QUICK FACTS TABLE */
-.facts-table{width:100%;border-collapse:collapse;}
-.facts-table th{background:var(--navy);color:var(--white);padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
-.facts-table td{padding:11px 16px;border-bottom:1px solid #e8edf5;font-size:13px;color:var(--text-mid);line-height:1.5;}
-.facts-table tr:nth-child(even) td{background:var(--off-white);}
-.facts-table td:first-child{font-weight:700;color:var(--navy);}
-.facts-table{border-top:3px solid var(--blue);}
-
-/* ADVISOR BIO */
-.advisor-section{background:linear-gradient(135deg,var(--navy),#0D2050);padding:56px 32px;}
-.advisor-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-.advisor-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:4px;}
-.advisor-title{font-size:13px;color:var(--blue-light);margin-bottom:20px;font-weight:500;}
-.advisor-bio{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;}
-.advisor-contact{display:flex;flex-direction:column;gap:10px;}
-.advisor-contact a{display:flex;align-items:center;gap:10px;color:var(--white);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-.advisor-contact a:hover{color:var(--blue-light);}
-.advisor-ctas{display:flex;flex-direction:column;gap:14px;}
-.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-light));color:var(--white);padding:16px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;text-align:center;letter-spacing:.05em;transition:transform .15s,box-shadow .15s;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,111,217,0.4);}
-.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3);padding:14px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;transition:border-color .2s;}
-.btn-outline:hover{border-color:var(--white);}
-.nmls-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
-.nmls-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:5px 12px;font-size:10px;color:rgba(255,255,255,0.5);font-weight:500;}
-
-/* CTA SECTION */
-.cta-section{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);padding:72px 32px;text-align:center;}
-.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:900;color:var(--white);margin-bottom:12px;}
-.cta-section p{font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-white{background:var(--white);color:var(--blue);padding:16px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.06em;transition:transform .15s,box-shadow .15s;}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
-.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.5);padding:14px 32px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.06em;}
-
-/* FOOTER */
-footer{background:#030810;padding:28px 32px;text-align:center;}
-footer p{font-size:11px;color:#2a3a5a;line-height:1.8;}
-footer a{color:#3a5a8a;text-decoration:none;}
-
-/* ANIMATIONS */
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;}
-  .diff-grid{grid-template-columns:1fr;}
-  .program-grid{grid-template-columns:1fr;}
-  .who-grid{grid-template-columns:1fr;}
-  .advisor-inner{grid-template-columns:1fr;}
-  .form-row{grid-template-columns:1fr;}
-  nav{padding:12px 20px;}
-  .section{padding:48px 20px;}
-}
+  :root{
+    --navy:#0A1628; --navy-2:#13243f; --gold:#C8973A; --gold-2:#b3832b;
+    --blue:#4A9EFF; --white:#FFFFFF; --ink:#16213a; --muted:#5b6780;
+    --line:#e3e7ef; --bg:#f5f7fb; --ok:#1f9d63;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  header{background:var(--navy);color:var(--white)}
+  .bar{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .brand .key{width:34px;height:34px;border-radius:8px;background:var(--gold);display:grid;place-items:center}
+  .brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
+  .call{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
+  .call:hover{background:rgba(255,255,255,.16)}
+  .hero{background:var(--navy);padding:24px 16px 56px;margin-bottom:32px}
+  .wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .pitch{color:var(--white);padding-top:18px}
+  .eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
+  h1{font-family:Fraunces,Georgia,serif;font-size:44px;line-height:1.08;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .sub{font-size:18px;color:#d3dbea;max-width:460px;margin-bottom:22px}
+  .ticks{list-style:none;display:grid;gap:10px;color:#e8edf6}
+  .ticks li{display:flex;gap:10px;align-items:flex-start}
+  .ticks svg{flex:none;margin-top:3px}
+  .card{background:var(--white);border-radius:18px;box-shadow:0 24px 60px rgba(10,22,40,.22);padding:28px;position:relative}
+  .progress{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
+  .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:999px;transition:width .45s ease}
+  .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px}
+  .step{display:none;animation:in .35s ease}
+  .step.active{display:block}
+  @keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+  .q{font-family:Fraunces,Georgia,serif;font-size:24px;line-height:1.2;margin-bottom:6px}
+  .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
+  .opts{display:grid;gap:10px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opt{appearance:none;border:2px solid var(--line);background:var(--white);border-radius:12px;padding:14px 16px;text-align:left;font:600 16px Inter,sans-serif;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .15s,background .15s,transform .1s}
+  .opt:hover{border-color:var(--blue);background:#f3f8ff}
+  .opt:active{transform:scale(.99)}
+  .opt.picked{border-color:var(--ok);background:#effaf4}
+  .opt .chk{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+  .opt.picked .chk{background:var(--ok);border-color:var(--ok)}
+  label.f{display:block;font-weight:600;font-size:14px;margin:12px 0 6px}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;font:500 17px Inter,sans-serif;color:var(--ink);outline:none;transition:border-color .15s}
+  input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(74,158,255,.15)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .err{color:#c0392b;font-size:14px;margin-top:8px;min-height:20px}
+  .cta{width:100%;margin-top:14px;appearance:none;border:0;border-radius:12px;background:var(--gold);color:var(--navy);font:700 18px Inter,sans-serif;padding:16px;cursor:pointer;box-shadow:0 8px 20px rgba(200,151,58,.35);transition:background .15s,transform .1s}
+  .cta:hover{background:var(--gold-2)}
+  .cta:disabled{opacity:.6;cursor:wait}
+  .back{appearance:none;background:none;border:0;color:var(--muted);font:600 14px Inter,sans-serif;cursor:pointer;margin-top:14px;padding:4px 0}
+  .back:hover{color:var(--ink)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.45}
+  .consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--navy)}
+  .lock{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13px;color:var(--muted);margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .trust{max-width:1080px;margin:0 auto;padding:8px 16px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;color:var(--navy)}
+  .stat span{font-size:14px;color:var(--muted)}
+  .programs{max-width:1080px;margin:0 auto;padding:0 16px 48px;text-align:center}
+  .programs h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin-bottom:6px}
+  .programs p{color:var(--muted);margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .chips span{background:var(--navy);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
+  footer{background:var(--navy);color:#aeb9cd;font-size:12.5px;line-height:1.6}
+  footer .in{max-width:1080px;margin:0 auto;padding:24px 16px;display:grid;gap:10px}
+  footer .eho{display:flex;gap:8px;align-items:center;color:var(--white);font-weight:600}
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;gap:18px}
+    .hero{padding-bottom:28px;margin-bottom:0}
+    h1{font-size:34px}
+    .sub{font-size:16px}
+    .ticks{display:none}
+    .trust{grid-template-columns:1fr;padding-top:24px}
+  }
+  @media (max-width:420px){
+    .card{padding:20px}
+    .opts.two{grid-template-columns:1fr}
+    .row2{grid-template-columns:1fr}
+    .call .num{display:none}
+  }
 </style>
 </head>
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div class="key" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="2.4" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>
+      </div>
+      <div>The Burks Lending Group<small>Everybody Deserves a Key</small></div>
+    </div>
+    <a class="call" href="tel:+16153645700">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="num">615.364.5700</span><span aria-hidden="true" style="display:none">Call</span>
+    </a>
+  </div>
+</header>
 
-<nav>
-  <div class="nav-logo">The Burks Lending Group<br><span>empowered by NEXA Lending</span></div>
-  <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="nav-cta">Get Pre-Approved →</a>
-</nav>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow"><span>📊 DSCR Investor Loans · No Income Verification · No Tax Returns</span></div>
-      <h1>Your Rental's Cash Flow<br>IS Your <em>Qualification.</em><br><strong>No Tax Returns.</strong></h1>
-      <p class="hero-sub">Stop letting W-2 requirements and tax return headaches kill your next investment. DSCR loans qualify on the property's income — not yours. No DTI. No employment verification. No limits on your portfolio.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">85%</div><div class="hero-stat-label">Max LTV</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">$3.5M</div><div class="hero-stat-label">Max Loan</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">620</div><div class="hero-stat-label">Min FICO</div></div>
-        <div class="hero-stat"><div class="hero-stat-num">0.75</div><div class="hero-stat-label">Min DSCR</div></div>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge">✅ No Tax Returns</div>
-        <div class="hero-badge">✅ No Income Verification</div>
-        <div class="hero-badge">✅ No DTI</div>
-        <div class="hero-badge">✅ LLC / Entity Vesting</div>
-        <div class="hero-badge">✅ STR Income Accepted</div>
-        <div class="hero-badge">✅ No Seasoning on Cash-Out</div>
-      </div>
+  <div class="wrap">
+    <div class="pitch">
+      <span class="eyebrow">Middle Tennessee Real Estate Investors</span>
+      <h1>Let the rent <em>do the qualifying.</em></h1>
+      <p class="sub">No tax returns. No W-2s. Answer a few quick questions and see how a DSCR loan could help you grow your rental portfolio across Middle Tennessee.</p>
+      <ul class="ticks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 60 seconds, tap to answer</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>200+ lending partners to match your deal, not one bank's box</li>
+      </ul>
     </div>
-    <div class="form-card fade-up" id="get-started">
-      <div class="form-label">Free · No Obligation</div>
-      <h2>Run Your DSCR Numbers</h2>
-      <p class="form-card-sub">Tell us about your investment scenario — Frank will reach out personally within 24 hours.</p>
-      <form id="leadForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Marcus">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Johnson">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="(615) 555-0100">
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="investor@email.com">
-        </div>
-        <button type="button" class="form-submit" onclick="handleFormSubmit()">Check My Eligibility — It's Free →</button>
+
+    <div class="card" id="card">
+      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+      <div class="meta"><span id="count">Question 1 of 14</span><span id="cheer">Let's go</span></div>
+
+      <form id="dpa" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div id="steps"></div>
       </form>
-      <div class="success-state" id="successState" style="display:none">
-        <div class="success-icon">📊</div>
-        <h3>You're One Step Closer!</h3>
-        <p>Frank will reach out personally within 24 hours to run your DSCR numbers.</p>
-        <p style="margin-top:12px"><a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="color:var(--blue);font-weight:700;font-size:13px">Click here to start your application now →</a></p>
-      </div>
-      <p class="form-privacy">🔒 Your information is private. No spam, ever. <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
-    </div>
-  </div>
-</section>
-<div class="gold-bar"></div>
 
-<!-- NO SEASONING CALLOUT -->
-<section class="section white">
-  <div class="section-inner">
-    <div class="callout-box fade-up">
-      <h2>Pull Cash Out <em>Day One.</em><br>No Seasoning. No Waiting.</h2>
-      <p>Most lenders make you wait 6 to 12 months before you can do a cash-out refinance on an investment property. With TrailBlazer DSCR, there is zero seasoning required. Buy a property, force appreciation, and pull your equity out immediately. That is how serious investors scale.</p>
-      <div class="callout-tags">
-        <div class="callout-tag">⚡ Cash-Out Refi Day One</div>
-        <div class="callout-tag">🔄 No Ownership Seasoning</div>
-        <div class="callout-tag">📈 Scale Faster</div>
-        <div class="callout-tag">💰 Unlimited Cash-Out at LTV Under 65%</div>
+      <div class="lock">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        Secure and private. We never sell your information.
       </div>
     </div>
   </div>
 </section>
 
-<!-- KEY DIFFERENTIATORS -->
-<section class="section tinted">
-  <div class="section-inner">
-    <div class="eyebrow fade-up">Why DSCR With The Burks Lending Group</div>
-    <h2 class="section-title fade-up">The Features That Actually Matter to Investors</h2>
-    <div class="diff-grid">
-      <div class="diff-card featured fade-up">
-        <div class="diff-tag gold">Top Feature</div>
-        <div class="diff-icon">🏗️</div>
-        <h3>Up to 85% LTV on Purchases</h3>
-        <p>Put less money down and keep more capital working in your portfolio. Up to 85% LTV on purchases up to $1.5M with a 740 FICO score through our flagship program.</p>
-      </div>
-      <div class="diff-card fade-up" style="transition-delay:.1s">
-        <div class="diff-tag">No Income Docs</div>
-        <div class="diff-icon">📄</div>
-        <h3>Zero Income Verification</h3>
-        <p>No W-2s. No tax returns. No pay stubs. No 4506-C. Qualification is based entirely on the subject property's debt service coverage ratio.</p>
-      </div>
-      <div class="diff-card fade-up" style="transition-delay:.2s">
-        <div class="diff-tag">STR Friendly</div>
-        <div class="diff-icon">🏖️</div>
-        <h3>Short-Term Rental Income Accepted</h3>
-        <p>Airbnb and VRBO income counts. AirDNA gross revenue calculations accepted on select programs. Build your short-term rental portfolio without the traditional income barriers.</p>
-      </div>
-      <div class="diff-card fade-up" style="transition-delay:.1s">
-        <div class="diff-tag">Entity Friendly</div>
-        <div class="diff-icon">🏢</div>
-        <h3>LLC and Entity Vesting Allowed</h3>
-        <p>Vest title in your LLC, partnership, or corporation. Business purpose lending available. Protect your personal assets while building your real estate portfolio.</p>
-      </div>
-      <div class="diff-card fade-up" style="transition-delay:.2s">
-        <div class="diff-tag">Sub-1.00 DSCR</div>
-        <div class="diff-icon">📊</div>
-        <h3>Sub-1.00 DSCR Options Available</h3>
-        <p>Property not breaking even yet? DSCR as low as 0.75 available on select programs with LTV adjustments. Don't let a tight DSCR stop a good deal.</p>
-      </div>
-      <div class="diff-card fade-up" style="transition-delay:.3s">
-        <div class="diff-tag">Flexible Terms</div>
-        <div class="diff-icon">📅</div>
-        <h3>30 and 40-Year Terms With I/O Options</h3>
-        <p>Maximize cash flow with interest-only options and 40-year amortization. Structure your payment to fit your investment strategy — not the other way around.</p>
-      </div>
-    </div>
-  </div>
+<section class="trust" aria-label="Why The Burks Lending Group">
+  <div class="stat"><b>25 years</b><span>helping Tennessee families buy homes</span></div>
+  <div class="stat"><b>200+</b><span>lending partners, so one &ldquo;no&rdquo; never locks the door</span></div>
+  <div class="stat"><b>$150M+</b><span>in mortgage loans funded</span></div>
 </section>
 
-<!-- PROGRAM COMPARISON -->
-<section class="section white">
-  <div class="section-inner">
-    <div class="eyebrow fade-up">Program Lineup</div>
-    <h2 class="section-title fade-up">Multiple Programs. One Expert to Navigate Them All.</h2>
-    <p class="section-desc fade-up">We have access to six DSCR programs covering 1-4 unit residential and 5-8 unit properties. Every scenario is different — Frank will match your deal to the right program.</p>
-    <div class="program-grid">
-      <div class="program-card featured fade-up">
-        <div class="program-card-header">
-          <div class="program-name">TrailBlazer DSCR</div>
-          <div class="program-badge star">★ Flagship</div>
-        </div>
-        <div class="program-specs">
-          <div class="program-spec"><span class="spec-label">Max LTV</span><span class="spec-value green">85% (740 FICO)</span></div>
-          <div class="program-spec"><span class="spec-label">Max Loan</span><span class="spec-value">$3,000,000</span></div>
-          <div class="program-spec"><span class="spec-label">Min FICO</span><span class="spec-value">660</span></div>
-          <div class="program-spec"><span class="spec-label">Min DSCR</span><span class="spec-value green">0.75</span></div>
-          <div class="program-spec"><span class="spec-label">Cash-Out Seasoning</span><span class="spec-value green">None Required</span></div>
-          <div class="program-spec"><span class="spec-label">STR Income</span><span class="spec-value green">Yes</span></div>
-          <div class="program-spec"><span class="spec-label">LLC Vesting</span><span class="spec-value green">Yes</span></div>
-          <div class="program-spec"><span class="spec-label">40-Year Term</span><span class="spec-value green">Yes</span></div>
-          <div class="program-spec"><span class="spec-label">Interest Only</span><span class="spec-value green">Yes</span></div>
-        </div>
-      </div>
-      <div class="program-card fade-up" style="transition-delay:.1s">
-        <div class="program-card-header">
-          <div class="program-name">5-8 Unit Residential</div>
-          <div class="program-badge blue">Multi-Unit</div>
-        </div>
-        <div class="program-specs">
-          <div class="program-spec"><span class="spec-label">Property Type</span><span class="spec-value blue">5-8 Unit Residential</span></div>
-          <div class="program-spec"><span class="spec-label">Max Loan</span><span class="spec-value">$3,000,000</span></div>
-          <div class="program-spec"><span class="spec-label">Min FICO</span><span class="spec-value">680</span></div>
-          <div class="program-spec"><span class="spec-label">Min DSCR</span><span class="spec-value">1.00</span></div>
-          <div class="program-spec"><span class="spec-label">Max LTV Purchase</span><span class="spec-value">75%</span></div>
-          <div class="program-spec"><span class="spec-label">Loan Terms</span><span class="spec-value">15, 30-Yr Fixed + I/O</span></div>
-          <div class="program-spec"><span class="spec-label">Investor Experience</span><span class="spec-value">Required (1yr/3yrs)</span></div>
-          <div class="program-spec"><span class="spec-label">Seller Concessions</span><span class="spec-value">Up to 6%</span></div>
-        </div>
-      </div>
-      <div class="program-card fade-up" style="transition-delay:.2s">
-        <div class="program-card-header">
-          <div class="program-name">Platinum DSCR</div>
-          <div class="program-badge blue">1-4 Unit</div>
-        </div>
-        <div class="program-specs">
-          <div class="program-spec"><span class="spec-label">Max LTV</span><span class="spec-value">80% (700 FICO)</span></div>
-          <div class="program-spec"><span class="spec-label">Max Loan</span><span class="spec-value">$2,500,000</span></div>
-          <div class="program-spec"><span class="spec-label">Min DSCR</span><span class="spec-value">0.75</span></div>
-          <div class="program-spec"><span class="spec-label">Min FICO</span><span class="spec-value">620</span></div>
-          <div class="program-spec"><span class="spec-label">First-Time Investor</span><span class="spec-value green">Yes (with restriction)</span></div>
-          <div class="program-spec"><span class="spec-label">Foreign National</span><span class="spec-value green">Yes</span></div>
-          <div class="program-spec"><span class="spec-label">Loan Terms</span><span class="spec-value">30-Yr Fixed, ARM, I/O</span></div>
-        </div>
-      </div>
-      <div class="program-card fade-up" style="transition-delay:.3s">
-        <div class="program-card-header">
-          <div class="program-name">Gold DSCR</div>
-          <div class="program-badge blue">1-4 Unit</div>
-        </div>
-        <div class="program-specs">
-          <div class="program-spec"><span class="spec-label">Max LTV</span><span class="spec-value">80% (700 FICO)</span></div>
-          <div class="program-spec"><span class="spec-label">Max Loan</span><span class="spec-value">Up to $3,000,000</span></div>
-          <div class="program-spec"><span class="spec-label">Min DSCR</span><span class="spec-value">0.75 - 1.00</span></div>
-          <div class="program-spec"><span class="spec-label">Min FICO</span><span class="spec-value">640</span></div>
-          <div class="program-spec"><span class="spec-label">Loan Terms</span><span class="spec-value">30-Yr Fixed, ARM, I/O</span></div>
-          <div class="program-spec"><span class="spec-label">LLC Vesting</span><span class="spec-value green">Yes (51%+ ownership)</span></div>
-          <div class="program-spec"><span class="spec-label">Cash-Out Max LTV</span><span class="spec-value">75%</span></div>
-        </div>
-      </div>
-    </div>
-    <div style="background:var(--blue-pale);border:1.5px solid var(--blue-light);border-radius:12px;padding:20px 24px;font-size:13px;color:var(--text-mid);line-height:1.6;">
-      <strong style="color:var(--navy);">Frankly Speaking:</strong> Every deal is different. DSCR pricing, LTV, and program availability all depend on your specific scenario — property type, FICO, loan amount, DSCR ratio, and market. Call or text Frank directly to run your numbers before you make a move. <strong style="color:var(--blue)">(615) 768-9424</strong>
-    </div>
-  </div>
-</section>
-
-<!-- QUICK FACTS TABLE -->
-<section class="section tinted">
-  <div class="section-inner">
-    <div class="eyebrow fade-up">Platinum DSCRt a Glance</div>
-    <h2 class="section-title fade-up">DSCR Loan Quick Reference</h2>
-    <table class="facts-table fade-up">
-      <thead><tr><th>Feature</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Property Types</td><td>1-4 Unit Investment, 5-8 Unit Residential, Condos (Warrantable and Non-Warrantable), Condotels, PUD, Leasehold</td></tr>
-        <tr><td>Loan Purpose</td><td>Purchase, Rate/Term Refinance, Cash-Out Refinance</td></tr>
-        <tr><td>Loan Terms</td><td>15, 30, and 40-Year Fixed | 5/6 and 7/6 ARM | Interest-Only Options Available</td></tr>
-        <tr><td>Min Loan Amount</td><td>$75,000 (varies by program)</td></tr>
-        <tr><td>Max Loan Amount</td><td>Up to $3,500,000 depending on program and scenario</td></tr>
-        <tr><td>Min FICO Score</td><td>620 minimum (varies by program and LTV)</td></tr>
-        <tr><td>Max LTV Purchase</td><td>Up to 85% (740 FICO, loan up to $1.5M, DSCR 1.00+)</td></tr>
-        <tr><td>Max LTV Cash-Out</td><td>Up to 75% (DSCR 1.00+)</td></tr>
-        <tr><td>Min DSCR</td><td>0.75 on select programs (with LTV restrictions)</td></tr>
-        <tr><td>Cash-Out Seasoning</td><td>None required on RoundHouse TrailBlazer program</td></tr>
-        <tr><td>Income Verification</td><td>Not required on any program</td></tr>
-        <tr><td>Tax Returns</td><td>Not required on any program</td></tr>
-        <tr><td>DTI Calculation</td><td>Not used — qualification based on DSCR only</td></tr>
-        <tr><td>LLC/Entity Vesting</td><td>Allowed on most programs</td></tr>
-        <tr><td>Short-Term Rentals</td><td>Accepted on select programs (AirDNA calculation)</td></tr>
-        <tr><td>Seller Concessions</td><td>Up to 6%</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- WHO THIS IS FOR -->
-<section class="section white">
-  <div class="section-inner">
-    <div class="eyebrow fade-up">Who This Is For</div>
-    <h2 class="section-title fade-up">Built for Investors and the Agents Who Work With Them</h2>
-    <div class="who-grid fade-up">
-      <div class="who-card investor">
-        <h3>🏠 For Real Estate Investors</h3>
-        <div class="who-list">
-          <div class="who-item"><span class="who-check">✅</span><span>You own or want to buy 1-4 unit rental properties</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You are self-employed or your tax returns don't reflect your true income</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You want to scale your portfolio without DTI restrictions</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You operate under an LLC or entity</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You want to pull equity out immediately after purchase</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You own short-term rental properties</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You are a first-time investor ready to build wealth through real estate</span></div>
-        </div>
-      </div>
-      <div class="who-card realtor">
-        <h3>🤝 For Real Estate Agents</h3>
-        <div class="who-list">
-          <div class="who-item"><span class="who-check">✅</span><span>Your investor buyers keep getting denied by traditional lenders</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You work with self-employed or high-net-worth investors</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You want a lending partner who can close investor deals other lenders can't</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You are building an investor-focused real estate business</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You want to co-market DSCR financing to your investor client base</span></div>
-          <div class="who-item"><span class="who-check">✅</span><span>You need a lender who understands investment property deals inside and out</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ADVISOR BIO -->
-<section class="advisor-section">
-  <div class="advisor-inner">
-    <div>
-      <div class="advisor-name">Frank Burks</div>
-      <div class="advisor-title">Certified Mortgage Advisor · NMLS #841644 · Branch NMLS #2064382</div>
-      <p class="advisor-bio">With 25 years in the mortgage business, we have built a reputation for getting deals done that other lenders walk away from. The Burks Lending Group, empowered by NEXA Lending, gives our team access to a deep bench of DSCR programs built specifically for investors who are serious about building wealth through real estate.</p>
-      <div class="advisor-contact">
-        <a href="tel:6157689424">📞 (615) 768-9424</a>
-        <a href="https://www.theburkslendinggroup.com" target="_blank">🌐 www.theburkslendinggroup.com</a>
-        <a href="https://calendly.com/fburks" target="_blank">📅 Book a Strategy Call</a>
-      </div>
-      <div class="nmls-badges">
-        <div class="nmls-badge">NMLS #841644</div>
-        <div class="nmls-badge">Branch NMLS #2064382</div>
-        <div class="nmls-badge">NEXA Lending NMLS #1660690</div>
-        <div class="nmls-badge">Equal Housing Lender</div>
-      </div>
-    </div>
-    <div class="advisor-ctas">
-      <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="btn-primary">🏠 Start My Application →</a>
-      <a href="https://calendly.com/fburks" target="_blank" class="btn-outline">📅 Book a Free Strategy Call</a>
-      <a href="tel:6157689424" class="btn-outline">📞 Call or Text (615) 768-9424</a>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta-section">
-  <h2>Your Next Deal Starts Here.</h2>
-  <p>Let Frank run your DSCR numbers and find the right program for your investment scenario. No obligation. Just real answers.</p>
-  <div class="cta-btns">
-    <a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" class="btn-white">🏠 Check My Eligibility →</a>
-    <a href="https://calendly.com/fburks" target="_blank" class="btn-outline-white">📅 Book a Strategy Call</a>
-  </div>
+<section class="programs">
+  <h2>Built for investors who build.</h2>
+  <p>Your answers help us run the numbers and match your deal to the right partner.</p>
+  <div class="chips"><span>No tax returns</span><span>Qualify on rental income</span><span>LLC-friendly</span><span>Short-term rentals considered</span></div>
 </section>
 
 <footer>
-  <p>
-    © 2025 The Burks Lending Group · empowered by NEXA Lending · Smyrna, TN<br>
-    Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
-    NEXA Lending · NMLS #1660690 · Equal Housing Lender · 538 Johnstown Dr., Smyrna, TN 37167<br>
-    <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Disclosures</a> · <a href="https://nmlsconsumeraccess.org" target="_blank">NMLS Consumer Access</a><br>
-    <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a> · <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank">LinkedIn</a><br><br>
-    This is not a commitment to lend. All loans subject to credit approval. DSCR loan programs are for investment properties only and are not available for primary residence. Program availability and terms subject to change without notice. Guidelines subject to change without notice. For mortgage professional use — not for consumer distribution of rate sheets or matrices.
-  </p>
+  <div class="in">
+    <div class="eho">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v10H3z"/><path d="M8 14h8M8 17h8"/></svg>
+      Equal Housing Opportunity
+    </div>
+    <div>Frank Burks II, Certified Mortgage Advisor, NMLS #841644. The Burks Lending Group empowered by NEXA Lending, NMLS #1660690. Smyrna, TN 37167. 615.364.5700. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</div>
+    <div>This is not a commitment to lend. Program availability depends on income, credit, property location, and program funding at the time of application. Terms and guidelines are subject to change without notice.</div>
+  </div>
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{
-  const w=document.body.scrollTop||document.documentElement.scrollTop;
-  const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-  document.getElementById('progressBar').style.width=(w/h)*100+'%';
-});
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+(function(){
+  var FORMSPREE_ENDPOINT = "https://formspree.io/f/xdekyeaa";
+  var THANK_YOU_URL = "dscr-thank-you.html";
 
-function handleFormSubmit(){
-  document.getElementById('leadForm').style.display='none';
-  document.getElementById('successState').style.display='block';
-  setTimeout(function(){
-    window.open('https://www.theburkslendinggroup.com/home-purchase','_blank');
-  },2000);
-}
+  var steps = [
+    {id:"goal", q:"What's the move?", hint:"Tap one. It takes about 60 seconds from here.", opts:["Buy a rental","Refinance a rental","Cash out of a rental"]},
+    {id:"zip", type:"zip", q:"Where's the property, or where are you looking?", hint:"Just the zip code. Close is fine."},
+    {id:"property_type", q:"What kind of property?", opts:["Single-family home","2 to 4 units","Condo or townhome","Short-term rental (Airbnb, VRBO)"]},
+    {id:"price", q:"What price range are you looking at?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $450K","$450K to $650K","$650K+"]},
+    {id:"value", q:"About what's the property worth today?", when:function(){ return answers.goal!=="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $450K","$450K to $650K","$650K+"]},
+    {id:"balance", q:"About how much do you owe on it?", when:function(){ return answers.goal!=="Buy a rental"; }, two:true, opts:["It's paid off","Under $150K","$150K to $300K","$300K+"]},
+    {id:"rent", q:"What does it rent for, or what should it rent for, per month?", hint:"Your best estimate. This is the number that qualifies you.", two:true, opts:["Under $1,500","$1,500 to $2,200","$2,200 to $3,000","$3,000+"]},
+    {id:"experience", q:"How many rental properties do you own now?", opts:["This would be my first","1 to 3","4 to 10","More than 10"]},
+    {id:"funds", q:"How much cash could you put toward this deal?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $50K","$50K to $100K","$100K to $200K","$200K+"]},
+    {id:"entity", q:"Whose name is the property in, or going in?", opts:["My own name","An LLC or business","Not sure yet"]},
+    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. We won't pull credit here.", opts:["Excellent (740+)","Good (700 to 739)","Fair (660 to 699)","Under 660 or not sure"]},
+    {id:"timeline", q:"When do you want to close?", two:true, opts:["ASAP","Within 60 days","2 to 6 months","Just running numbers"]},
+    {id:"agent", q:"Are you working with a real estate agent?", when:function(){ return answers.goal==="Buy a rental"; }, opts:["Yes, I have an agent","No, I'd love an introduction","No, not yet"]},
+    {id:"name", type:"name", q:"Nice work. Who are we helping?", hint:"Almost there. Two more quick things."},
+    {id:"contact", type:"contact", q:"Where should we send your numbers?", hint:"Frank Burks II will personally review your deal."}
+  ];
+
+  var cheers = ["Let's go","Easy start","Nice","Rolling now","You're doing great","Halfway home","Keep it up","Looking good","Almost there","So close","Last stretch","Home stretch","Final lap","One more"];
+  var answers = {};
+  var current = 0;
+  var holder = document.getElementById("steps");
+  var bar = document.getElementById("bar");
+  var count = document.getElementById("count");
+  var cheer = document.getElementById("cheer");
+
+  // Keep campaign tracking with the lead
+  var params = new URLSearchParams(location.search);
+  ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"].forEach(function(k){ if(params.get(k)) answers[k]=params.get(k); });
+
+  function el(tag, attrs, html){ var e=document.createElement(tag); for(var k in (attrs||{})) e.setAttribute(k, attrs[k]); if(html!=null) e.innerHTML=html; return e; }
+
+  steps.forEach(function(s, i){
+    var box = el("div", {"class":"step","data-i":i});
+    box.appendChild(el("h2", {"class":"q"}, s.q));
+    if(s.hint) box.appendChild(el("p", {"class":"hint"}, s.hint));
+
+    if(s.opts){
+      var grid = el("div", {"class":"opts"+(s.two?" two":""), role:"group", "aria-label":s.q});
+      s.opts.forEach(function(o){
+        var b = el("button", {type:"button","class":"opt"}, "<span>"+o+"</span><span class='chk'><svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='4'><path d='M20 6L9 17l-5-5'/></svg></span>");
+        b.addEventListener("click", function(){
+          grid.querySelectorAll(".opt").forEach(function(x){x.classList.remove("picked")});
+          b.classList.add("picked");
+          answers[s.id] = o;
+          setTimeout(next, 260);
+        });
+        grid.appendChild(b);
+      });
+      box.appendChild(grid);
+    }
+
+    if(s.type==="zip"){
+      box.appendChild(el("label", {"class":"f","for":"zip"}, "Zip code"));
+      box.appendChild(el("input", {type:"text",id:"zip",inputmode:"numeric",maxlength:"5",autocomplete:"postal-code",placeholder:"37167"}));
+      box.appendChild(el("div", {"class":"err",id:"err-zip"}));
+      var go = el("button", {type:"button","class":"cta"}, "See My Options &rarr;");
+      go.addEventListener("click", function(){
+        var z = document.getElementById("zip").value.trim();
+        if(!/^\d{5}$/.test(z)){ document.getElementById("err-zip").textContent="Please enter a 5-digit zip code."; return; }
+        document.getElementById("err-zip").textContent="";
+        answers.zip = z; next();
+      });
+      box.appendChild(go);
+    }
+
+    if(s.type==="name"){
+      var r = el("div", {"class":"row2"});
+      var a = el("div"); a.appendChild(el("label",{"class":"f","for":"first"},"First name")); a.appendChild(el("input",{type:"text",id:"first",autocomplete:"given-name"}));
+      var b2 = el("div"); b2.appendChild(el("label",{"class":"f","for":"last"},"Last name")); b2.appendChild(el("input",{type:"text",id:"last",autocomplete:"family-name"}));
+      r.appendChild(a); r.appendChild(b2); box.appendChild(r);
+      box.appendChild(el("div", {"class":"err",id:"err-name"}));
+      var go2 = el("button", {type:"button","class":"cta"}, "Keep Going &rarr;");
+      go2.addEventListener("click", function(){
+        var f=document.getElementById("first").value.trim(), l=document.getElementById("last").value.trim();
+        if(!f || !l){ document.getElementById("err-name").textContent="First and last name, please."; return; }
+        document.getElementById("err-name").textContent="";
+        answers.first_name=f; answers.last_name=l; next();
+      });
+      box.appendChild(go2);
+    }
+
+    if(s.type==="contact"){
+      box.appendChild(el("label",{"class":"f","for":"email"},"Email"));
+      box.appendChild(el("input",{type:"email",id:"email",autocomplete:"email",placeholder:"you@email.com"}));
+      box.appendChild(el("label",{"class":"f","for":"phone"},"Mobile phone"));
+      box.appendChild(el("input",{type:"tel",id:"phone",autocomplete:"tel",inputmode:"tel",placeholder:"(615) 555-0123"}));
+      var c = el("label",{"class":"consent"});
+      c.appendChild(el("input",{type:"checkbox",id:"consent"}));
+      c.appendChild(el("span",null,"I agree that Frank Burks II and The Burks Lending Group may call, text, or email me about my home loan options at the number and email above, including by automated means. Consent isn't required to buy anything. If I asked for an agent introduction, I agree Frank may share my contact information with one trusted local real estate agent who may contact me. Message and data rates may apply. Reply STOP to opt out."));
+      box.appendChild(c);
+      box.appendChild(el("div", {"class":"err",id:"err-contact"}));
+      var sub = el("button", {type:"submit","class":"cta",id:"submit"}, "Run My Numbers");
+      box.appendChild(sub);
+    }
+
+    if(i>0){
+      var back = el("button", {type:"button","class":"back"}, "&larr; Back");
+      back.addEventListener("click", prev);
+      box.appendChild(back);
+    }
+    holder.appendChild(box);
+  });
+
+  function active(i){ var s=steps[i]; return !s.when || s.when(); }
+  function show(i){
+    document.querySelectorAll(".step").forEach(function(s){ s.classList.toggle("active", +s.getAttribute("data-i")===i); });
+    var total=0, pos=0;
+    for(var k=0;k<steps.length;k++){ if(active(k)){ total++; if(k<=i) pos++; } }
+    var pct = Math.round(((pos-1)/total)*100);
+    bar.style.width = Math.max(pct,4)+"%";
+    count.textContent = "Question "+pos+" of "+total;
+    cheer.textContent = cheers[Math.min(pos-1, cheers.length-1)] || "";
+    var activeInput = document.querySelector(".step.active input[type=text], .step.active input[type=email]");
+    if(activeInput && window.innerWidth>860) setTimeout(function(){ activeInput.focus(); }, 60);
+  }
+  function next(){
+    var n=current+1; while(n<steps.length && !active(n)) n++;
+    if(n<steps.length){ current=n; show(current); if(window.innerWidth<=860) document.getElementById("card").scrollIntoView({behavior:"smooth",block:"start"}); }
+  }
+  function prev(){
+    var p=current-1; while(p>0 && !active(p)) p--;
+    if(p>=0){ current=p; show(current); }
+  }
+
+  // Enter key advances text steps
+  document.getElementById("dpa").addEventListener("keydown", function(e){
+    if(e.key==="Enter" && e.target.tagName==="INPUT" && e.target.type!=="checkbox"){
+      var btn = document.querySelector(".step.active .cta");
+      if(btn && btn.type==="button"){ e.preventDefault(); btn.click(); }
+    }
+  });
+
+  document.getElementById("dpa").addEventListener("submit", function(e){
+    e.preventDefault();
+    var em=document.getElementById("email").value.trim();
+    var ph=document.getElementById("phone").value.replace(/\D/g,"");
+    var ok=document.getElementById("consent").checked;
+    var err=document.getElementById("err-contact");
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){ err.textContent="That email doesn't look quite right."; return; }
+    if(ph.length<10){ err.textContent="Please enter a 10-digit phone number."; return; }
+    if(!ok){ err.textContent="Please check the box so we can reach you with your results."; return; }
+    err.textContent="";
+    answers.email=em; answers.phone=ph; answers.consent="Yes";
+    steps.forEach(function(s,k){ if(!active(k)) delete answers[s.id]; });
+    if(answers.sell_first && answers.sell_first.indexOf("No")!==0) answers.possible_seller="Yes";
+    answers.lead_source="DSCR Multi-Step Qualifier"; answers.page=location.href.split("?")[0];
+    answers._subject="New DSCR lead ("+(answers.goal||"")+"): "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
+    answers._gotcha=document.querySelector("input[name=_gotcha]").value;
+
+    var btn=document.getElementById("submit"); btn.disabled=true; btn.textContent="Sending...";
+    bar.style.width="100%";
+
+    function done(){
+      try{ sessionStorage.setItem("blg_first", answers.first_name); sessionStorage.setItem("blg_mil", answers.military||""); sessionStorage.setItem("blg_agent", answers.agent||""); }catch(x){}
+      if(window.fbq){ try{ fbq("track","Lead",{content_name:"DSCR Qualifier"}); }catch(x){} }
+      if(window.gtag){ try{ gtag("event","generate_lead",{form:"dscr_qualifier"}); }catch(x){} }
+      location.href = THANK_YOU_URL;
+    }
+
+    if(FORMSPREE_ENDPOINT.indexOf("YOUR_FORM_ID")>-1){
+      console.warn("Demo mode: add your Formspree ID to send leads. Answers:", answers);
+      setTimeout(done, 600); return;
+    }
+    fetch(FORMSPREE_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(answers)})
+      .then(function(r){ if(r.ok) done(); else throw new Error(r.status); })
+      .catch(function(){ btn.disabled=false; btn.textContent="Show Me My Programs"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
+  });
+
+  show(0);
+})();
 </script>
 </body>
 </html>

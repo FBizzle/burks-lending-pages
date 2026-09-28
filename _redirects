@@ -1,82 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>30 Days. Everybody Deserves a Key. | The Burks Lending Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0A1628;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;padding:20px}
-.page{width:100%;max-width:480px}
-.gold-bar{height:4px;background:#C8973A;border-radius:2px 2px 0 0}
-.container{background:#0A1628;border:.5px solid rgba(200,151,58,.3);border-top:none;border-radius:0 0 16px 16px;padding:36px 32px 32px;text-align:center}
-.eyebrow{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#4A9EFF;margin-bottom:16px}
-.headline{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:6px}
-.headline span{color:#C8973A}
-.sub{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:28px;line-height:1.6}
-.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
-.unit{background:rgba(255,255,255,.05);border:.5px solid rgba(200,151,58,.2);border-radius:10px;padding:16px 8px 12px}
-.num{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:#C8973A;line-height:1;margin-bottom:6px}
-.label{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.divider{height:.5px;background:rgba(255,255,255,.08);margin-bottom:24px}
-.series-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;text-align:left}
-.week-card{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 12px}
-.week-label{font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#C8973A;margin-bottom:3px}
-.week-topic{font-size:11px;color:rgba(255,255,255,.7);line-height:1.4}
-.cta{background:#C8973A;color:#0A1628;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;border:none;border-radius:8px;padding:14px 28px;cursor:pointer;width:100%;margin-bottom:14px;letter-spacing:.02em;text-decoration:none;display:block}
-.cta:hover{opacity:.9}
-.handle{font-size:10px;color:rgba(255,255,255,.25);letter-spacing:.06em;text-transform:uppercase}
-</style>
-</head>
-<body>
-<div class="page">
-  <div class="gold-bar"></div>
-  <div class="container">
-    <div class="eyebrow">The Burks Lending Group &bull; Free Series</div>
-    <div class="headline">30 Days.<br><span>Everybody Deserves</span><br><span>a Key.</span></div>
-    <div class="sub" id="sub-text">The free homebuyer education series kicks off April 6th.<br>Every day in April — one real lesson about buying a home.</div>
-    <div class="clock">
-      <div class="unit"><div class="num" id="days">--</div><div class="label">Days</div></div>
-      <div class="unit"><div class="num" id="hours">--</div><div class="label">Hours</div></div>
-      <div class="unit"><div class="num" id="mins">--</div><div class="label">Minutes</div></div>
-      <div class="unit"><div class="num" id="secs">--</div><div class="label">Seconds</div></div>
-    </div>
-    <div class="divider"></div>
-    <div class="series-grid">
-      <div class="week-card"><div class="week-label">Week 1</div><div class="week-topic">Mortgage Basics</div></div>
-      <div class="week-card"><div class="week-label">Week 2</div><div class="week-topic">The Buying Process</div></div>
-      <div class="week-card"><div class="week-label">Week 3</div><div class="week-topic">Financial Preparation</div></div>
-      <div class="week-card"><div class="week-label">Week 4</div><div class="week-topic">Real Wins &amp; Real Talk</div></div>
-    </div>
-    <a href="https://calendly.com/fburks" target="_blank" class="cta">Book a Free Consultation Before Day 1</a>
-    <div class="handle">@theburkslendinggroup &bull; (615) 768-9424</div>
-  </div>
-</div>
-<script>
-var launch = new Date('April 6, 2026 07:00:00').getTime();
-function tick(){
-  var now = new Date().getTime();
-  var diff = launch - now;
-  if(diff <= 0){
-    document.getElementById('days').textContent='00';
-    document.getElementById('hours').textContent='00';
-    document.getElementById('mins').textContent='00';
-    document.getElementById('secs').textContent='00';
-    document.getElementById('sub-text').innerHTML='The series is LIVE! Follow along every day in April. &#128477;';
-    return;
-  }
-  var d = Math.floor(diff/(1000*60*60*24));
-  var h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  var m = Math.floor((diff%(1000*60*60))/(1000*60));
-  var s = Math.floor((diff%(1000*60))/1000);
-  document.getElementById('days').textContent=String(d).padStart(2,'0');
-  document.getElementById('hours').textContent=String(h).padStart(2,'0');
-  document.getElementById('mins').textContent=String(m).padStart(2,'0');
-  document.getElementById('secs').textContent=String(s).padStart(2,'0');
-}
-tick();
-setInterval(tick,1000);
-</script>
-</body>
-</html>
+# Old DPA program pages now send visitors to the DPA qualifier
+/dpa-advantage.html        /dpa.html                  301!
+/dpa-advantage             /dpa.html                  301!
+/orion-elevate-grant.html  /dpa.html                  301!
+/orion-elevate-grant       /dpa.html                  301!
+/boost-aurora-dpa.html     /dpa.html                  301!
+/boost-aurora-dpa          /dpa.html                  301!
+
+# Short addresses for ads, QR codes, and social posts
+/dpa                       /dpa.html                  200
+/usda                      /usda-home-loans.html      200
+/va                        /va-home-loans.html        200
+/fha                       /fha-home-loans.html       200
+/dscr                      /dscr-investor-loans.html  200
+/homes-of-the-week         /homes-of-the-week.html    200

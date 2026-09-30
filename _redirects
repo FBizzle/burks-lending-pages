@@ -13,3 +13,12 @@
 /fha                       /fha-home-loans.html       200
 /dscr                      /dscr-investor-loans.html  200
 /homes-of-the-week         /homes-of-the-week.html    200
+/itin                      /itin-home-loans.html      200
+/construction              /construction.html         200
+/build                     /construction.html         200
+
+# Older pages that no longer capture leads send visitors to the current DPA page
+/dpa-home-loans.html       /dpa.html                  301!
+/dpa-home-loans            /dpa.html                  301!
+/DPA_Campaign.html         /dpa.html                  301!
+/DPA_Campaign              /dpa.html                  301!

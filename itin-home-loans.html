@@ -287,7 +287,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">The Burks Lending Group <span>empowered by NEXA Lending</span></div>
-  <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="nav-cta">Check My Eligibility →</a>
+  <a href="https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/" target="_blank" class="nav-cta">Check My Eligibility →</a>
 </nav>
 
 <!-- HERO -->
@@ -300,7 +300,7 @@
         <span>ITIN Non-QM · No SSN Required</span>
       </div>
       <h1>You Have an ITIN.<br><em>You Can Own a Home.</em></h1>
-      <p class="hero-sub">No Social Security Number required. No citizenship requirement. ITIN borrowers qualify for up to 85% LTV with multiple income documentation options — full doc, bank statements, P&L, and more.</p>
+      <p class="hero-sub">No Social Security Number required. No citizenship requirement. ITIN borrowers qualify for up to 85% LTV with multiple income documentation options, full doc, bank statements, P&L, and more.</p>
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-num">$2M</div>
@@ -326,17 +326,21 @@
     <div class="form-card">
       <div class="form-card-label">Free Eligibility Review</div>
       <h2>Your ITIN Is Your Key<br>to Homeownership.</h2>
-      <p class="form-card-sub">Tell us about your situation and we'll show you exactly which ITIN program fits.</p>
-      <form id="leadForm">
+      <p class="form-card-sub">Tell me about your situation and we'll show you exactly which ITIN program fits.</p>
+      <form id="leadForm" name="itin-lead" action="https://formspree.io/f/xdekyeaa" method="POST" onsubmit="return handleFormSubmit(event)">
+        <input type="hidden" name="_subject" value="New ITIN lead from go.theburkslendinggroup.com">
+        <input type="hidden" name="source_page" value="go.theburkslendinggroup.com/itin-home-loans">
+        <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
-          <div class="form-group"><label>First Name</label><input type="text" placeholder="First" required /></div>
-          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last" required /></div>
+          <div class="form-group"><label>First Name</label><input name="first_name" required type="text" placeholder="First" required /></div>
+          <div class="form-group"><label>Last Name</label><input name="last_name" type="text" placeholder="Last" required /></div>
         </div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(615) 000-0000" required /></div>
-        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com" required /></div>
+        <div class="form-group"><label>Phone Number</label><input name="phone" required type="tel" placeholder="(615) 000-0000" required /></div>
+        <div class="form-group"><label>Email Address</label><input name="email" required type="email" placeholder="you@email.com" required /></div>
         <div class="form-group">
           <label>Property Type</label>
-          <select>
+          <select name="property_type">
             <option value="">Select type...</option>
             <option>Primary Residence</option>
             <option>Second Home</option>
@@ -345,7 +349,7 @@
         </div>
         <div class="form-group">
           <label>Income Documentation</label>
-          <select>
+          <select name="income_documentation">
             <option value="">How do you document income?</option>
             <option>Full Doc (W-2 / Pay Stubs)</option>
             <option>Bank Statements (12 or 24 months)</option>
@@ -355,14 +359,14 @@
             <option>Not Sure</option>
           </select>
         </div>
-        <button type="submit" class="form-submit" onclick="window.open('https://www.theburkslendinggroup.com/home-purchase','_blank')">Check My Eligibility →</button>
+        <button type="submit" class="form-submit">Check My Eligibility →</button>
         <p class="form-privacy">Your information is private. <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
       </form>
       <div class="success-state" id="successState">
         <div class="success-icon">🏡</div>
         <h3>You're On Your Way!</h3>
         <p>You're being taken to your application now. Frank Burks will also reach out personally within 24 hours.</p>
-        <p style="margin-top:12px"><a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here if you are not redirected →</a></p>
+        <p style="margin-top:12px"><a href="https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here if you are not redirected →</a></p>
       </div>
     </div>
   </div>
@@ -390,7 +394,7 @@
       <div class="who-card fade-up" style="transition-delay:.1s">
         <div class="who-icon">🏖️</div>
         <h3>Second Home Buyers</h3>
-        <p>ITIN borrowers can purchase second homes — a program feature most lenders simply don't offer.</p>
+        <p>ITIN borrowers can purchase second homes, a program feature most lenders simply don't offer.</p>
       </div>
       <div class="who-card fade-up" style="transition-delay:.2s">
         <div class="who-icon">📈</div>
@@ -406,7 +410,7 @@
   <div class="section-inner">
     <div class="section-eyebrow">Program Details</div>
     <h2 class="section-title" style="color:var(--white); white-space:nowrap">The Numbers That <em style="color:var(--gold)">Make It Real</em></h2>
-    <p class="section-sub">Every detail of our ITIN Non-QM program — straightforward and clear.</p>
+    <p class="section-sub">Every detail of our ITIN Non-QM program, straightforward and clear.</p>
     <div class="program-grid">
       <div class="program-card fade-up">
         <div class="program-card-icon">💰</div>
@@ -470,12 +474,12 @@
   <div class="section-inner">
     <div class="section-eyebrow">The Process</div>
     <h2 class="section-title" style="white-space:nowrap">Four Steps from Here to Home</h2>
-    <p class="section-sub">A clear, guided process — no surprises, no runaround.</p>
+    <p class="section-sub">A clear, guided process, no surprises, no runaround.</p>
     <div class="steps-grid">
       <div class="step fade-up">
         <div class="step-num">1</div>
         <h3>Check Your Eligibility</h3>
-        <p>Submit your info and we review your ITIN, credit, and income situation — completely free.</p>
+        <p>Submit your info and we review your ITIN, credit, and income situation, completely free.</p>
       </div>
       <div class="step fade-up" style="transition-delay:.1s">
         <div class="step-num">2</div>
@@ -501,13 +505,13 @@
   <div class="section-inner">
     <div class="section-eyebrow">Do You Qualify?</div>
     <h2 class="section-title" style="white-space:nowrap">What You Need to Know Before You Apply</h2>
-    <p class="section-sub">Clear eligibility guidelines — no surprises on either end.</p>
+    <p class="section-sub">Clear eligibility guidelines, no surprises on either end.</p>
     <div class="qual-grid">
       <div class="qual-card yes fade-up">
         <div class="qual-badge yes">✓ ELIGIBLE</div>
         <div class="qual-card-icon">🪪</div>
         <h3>ITIN Number Holders</h3>
-        <p>If you have an active Individual Taxpayer Identification Number, you qualify to apply. No SSN required — period.</p>
+        <p>If you have an active Individual Taxpayer Identification Number, you qualify to apply. No SSN required, period.</p>
       </div>
       <div class="qual-card yes fade-up" style="transition-delay:.1s">
         <div class="qual-badge yes">✓ ELIGIBLE</div>
@@ -531,7 +535,7 @@
         <div class="qual-badge no">✗ NOT ELIGIBLE</div>
         <div class="qual-card-icon">🇺🇸</div>
         <h3>U.S. Citizens & Permanent Residents</h3>
-        <p>This program is specifically for ITIN borrowers. U.S. citizens and permanent residents have other great programs available — let's find yours.</p>
+        <p>This program is specifically for ITIN borrowers. U.S. citizens and permanent residents have other great programs available, let's find yours.</p>
       </div>
       <div class="qual-card no fade-up" style="transition-delay:.5s">
         <div class="qual-badge no">✗ NOT ELIGIBLE</div>
@@ -561,12 +565,12 @@
       </div>
       <div class="bio-visual">
         <div class="bio-initials">FB</div>
-        <div class="bio-name">Frank Burks · NMLS #841644</div>
+        <div class="bio-name">Frank Burks II · NMLS #841644</div>
         <div class="bio-title-text">Certified Mortgage Advisor · NEXA Lending</div>
         <div class="bio-company">The Burks Lending Group · empowered by NEXA Lending</div>
         <div class="bio-company" style="margin-top:4px">Branch NMLS #2064382</div>
         <div class="bio-divider"></div>
-        <div class="bio-phone">Questions? Call or text us directly:<br><a href="tel:+16157689424">(615) 768-9424</a></div>
+        <div class="bio-phone">Questions? Call or text us directly:<br><a href="tel:+16153645700">(615) 364-5700</a></div>
         <div class="bio-social">
           <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a>
@@ -582,9 +586,9 @@
 <section class="bottom-cta">
   <div class="section-inner">
     <h2>Your ITIN Is Your Path<br>to Homeownership.</h2>
-    <p>You've earned this. Let's make it official. Get pre-approved or book a call with Frank today.</p>
+    <p>You've earned this. Let's make it official. Get pre-approved or book a call with me today.</p>
     <div class="bottom-cta-btns">
-      <a href="https://www.theburkslendinggroup.com/home-purchase" target="_blank" class="btn-dark">🏠 Check My Eligibility →</a>
+      <a href="https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/" target="_blank" class="btn-dark">🏠 Check My Eligibility →</a>
       <a href="https://calendly.com/fburks" target="_blank" class="btn-outline">📅 Book a Free Call</a>
     </div>
   </div>
@@ -593,8 +597,8 @@
 <!-- FOOTER -->
 <footer>
   <p>
-    © 2025 The Burks Lending Group · Empowered by NEXA Lending · Smyrna, TN<br>
-    Frank Burks · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
+    © 2026 The Burks Lending Group · Empowered by NEXA Lending · Smyrna, TN<br>
+    Frank Burks II · NMLS #841644 · Branch NMLS #2064382 · Certified Mortgage Advisor<br>
     NEXA Lending · NMLS #1660690 · Equal Housing Lender<br>
     <a href="https://nexamortgage.com/privacy-policy/" target="_blank">Privacy Policy</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Licensing Info</a> · <a href="https://nexamortgage.com/disclaimer/" target="_blank">Disclosures</a><br>
     <a href="https://www.instagram.com/mtgman365/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/mrclear2close" target="_blank">Facebook</a> · <a href="https://www.linkedin.com/in/frank-burks-ii-25155914/" target="_blank">LinkedIn</a><br><br>
@@ -605,7 +609,7 @@
 <!-- STICKY -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">Your ITIN qualifies. Let's get started.</div>
-  <button class="sticky-cta-btn" onclick="window.open('https://www.theburkslendinggroup.com/home-purchase','_blank')">Check My Eligibility →</button>
+  <button class="sticky-cta-btn" onclick="window.open('https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/','_blank')">Check My Eligibility →</button>
 </div>
 
 <script>
@@ -618,9 +622,25 @@
     this.style.display = 'none';
     document.getElementById('successState').style.display = 'block';
     setTimeout(function() {
-      window.open('https://www.theburkslendinggroup.com/home-purchase', '_blank');
+      window.open('https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/', '_blank');
     }, 1500);
   });
 </script>
+
+<script>
+/* Lead capture: sends every form to Formspree (emails the lead to you), then shows the thank-you. */
+function handleFormSubmit(e){
+  if(e&&e.preventDefault)e.preventDefault();
+  var f=document.getElementById('leadForm');
+  if(f.reportValidity&&!f.reportValidity())return false;
+  var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.style.opacity='.6';}
+  function done(){f.style.display='none';var s=document.getElementById('successState');if(s)s.style.display='block';}
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+    .then(function(r){ if(r.ok){done();} else { f.onsubmit=null; f.submit(); } })
+    .catch(function(){ f.onsubmit=null; f.submit(); });
+  return false;
+}
+</script>
+<script>(function(){var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){var el=document.querySelector('input[name='+k+']');if(el&&q.get(k))el.value=q.get(k);});})();</script>
 </body>
 </html>

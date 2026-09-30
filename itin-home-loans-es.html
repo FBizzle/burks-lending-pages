@@ -367,9 +367,9 @@
       </form>
       <div class="success-state" id="successState">
         <div class="success-icon">🏡</div>
-        <h3>You're On Your Way!</h3>
-        <p>You're being taken to your application now. Frank Burks will also reach out personally within 24 hours.</p>
-        <p style="margin-top:12px"><a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Click here if you are not redirected →</a></p>
+        <h3>¡Va en camino!</h3>
+        <p>Recibí su información. Me comunicaré con usted personalmente dentro de 24 horas para revisar sus opciones. ¿Listo para avanzar más rápido? Comience su solicitud segura abajo.</p>
+        <p style="margin-top:12px"><a href="https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415" target="_blank" style="color:var(--gold);font-weight:700;font-size:13px">Solicitud Segura →</a></p>
       </div>
     </div>
   </div>
@@ -624,14 +624,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  document.getElementById('leadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('successState').style.display = 'block';
-    setTimeout(function() {
-      window.open('https://prod.lendingpad.com/nexa/pos#/?loid=2163a7a5-7e6b-4746-b70c-6a813eec8415', '_blank');
-    }, 1500);
-  });
 </script>
 
 <script>

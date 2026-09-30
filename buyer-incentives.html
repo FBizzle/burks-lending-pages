@@ -414,6 +414,24 @@
     .programs-grid, .cta-grid { grid-template-columns: 1fr; }
     .incentives-strip { grid-template-columns: 1fr; }
   }
+
+  /* LEAD FORM */
+  .lead-wrap{background:var(--white);padding:28px 36px 30px;border-top:1px solid #E5E7EB}
+  .lead-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .lead-sub{font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.6}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lf-group{margin-bottom:12px}
+  .lf-group label{display:block;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px}
+  .lf-group input,.lf-group select{width:100%;padding:11px 12px;border:1px solid #D9DEE7;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--navy);background:var(--off-white)}
+  .lf-group input:focus,.lf-group select:focus{outline:2px solid var(--carolina);outline-offset:1px;background:#fff}
+  .lf-submit{width:100%;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;margin-top:4px}
+  .lf-submit:hover{opacity:.9}
+  .lf-privacy{font-size:11px;color:var(--text-muted);margin-top:10px;text-align:center}
+  .lf-success{display:none;text-align:center;padding:10px 0}
+  .lf-success h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);margin:6px 0}
+  .lf-success p{font-size:14px;color:var(--text-muted);line-height:1.6}
+  .lf-success a{color:var(--gold);font-weight:500}
+  @media(max-width:560px){.lead-wrap{padding:24px 20px}.lf-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -424,7 +442,7 @@
   <div class="hdr">
     <div class="hdr-eyebrow">The Burks Lending Group &bull; empowered by NEXA Lending</div>
     <div class="hdr-title">Exclusive Buyer<br><span>Incentives.</span></div>
-    <div class="hdr-sub">With 25 years in the mortgage business, our team brings wholesale pricing and exclusive buyer incentives to every home purchase — Conventional, FHA, VA, and USDA.</div>
+    <div class="hdr-sub">With 25 years in the mortgage business, our team brings wholesale pricing and exclusive buyer incentives to every home purchase: Conventional, FHA, VA, and USDA.</div>
     <div class="hdr-badges">
       <div class="hdr-badge"><div class="hdr-badge-dot"></div>Conventional</div>
       <div class="hdr-badge"><div class="hdr-badge-dot"></div>FHA</div>
@@ -444,7 +462,7 @@
     <div class="inc-card">
       <div class="inc-number">$600</div>
       <div class="inc-title">Appraisal Credit</div>
-      <div class="inc-desc">Appraisal fee credited back to you at closing — money that stays in your pocket.</div>
+      <div class="inc-desc">Appraisal fee credited back to you at closing. Money that stays in your pocket.</div>
       <div class="inc-tag">Applied at closing*</div>
     </div>
   </div>
@@ -474,7 +492,7 @@
         <div class="prog-row"><span class="prog-key">Lender credit</span><span class="prog-val-gold">1% of loan amount</span></div>
         <div class="prog-row"><span class="prog-key">Appraisal</span><span class="prog-val-gold">Credit at closing*</span></div>
         <div class="prog-row"><span class="prog-key">Min. credit score</span><span class="prog-val">580+</span></div>
-        <div class="prog-row"><span class="prog-key">MIP required</span><span class="prog-val">Yes — monthly</span></div>
+        <div class="prog-row"><span class="prog-key">MIP required</span><span class="prog-val">Yes, monthly</span></div>
         <div class="prog-row"><span class="prog-key">Wholesale rate</span><span class="prog-val-blue">Below retail</span></div>
       </div>
 
@@ -513,7 +531,7 @@
         <div class="step-num">1</div>
         <div class="step-body">
           <div class="step-title">Get Pre-Approved</div>
-          <div class="step-desc">Book a free consultation at calendly.com/fburks or call (615) 768-9424. Pre-approval is free and typically completed within 24-48 hours.</div>
+          <div class="step-desc">Book a free consultation at calendly.com/fburks-nexalending or call (615) 364-5700. Pre-approval is free and typically completed within 24-48 hours.</div>
         </div>
       </div>
       <div class="step">
@@ -527,9 +545,41 @@
         <div class="step-num">3</div>
         <div class="step-body">
           <div class="step-title">Collect your credits at the closing table</div>
-          <div class="step-desc">Both credits appear on your Closing Disclosure — the 1% lender credit reduces your closing costs and the appraisal credit offsets the appraisal fee paid at closing.</div>
+          <div class="step-desc">Both credits appear on your Closing Disclosure. The 1% lender credit reduces your closing costs and the appraisal credit offsets the appraisal fee paid at closing.</div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- LEAD FORM -->
+  <div class="lead-wrap" id="claim">
+    <div class="lead-title">Claim your credits</div>
+    <div class="lead-sub">Tell me a little about your plans and I'll reach out personally within 24 hours to show you what the credits look like on your purchase.</div>
+    <form id="leadForm" name="buyer-incentives-lead" action="https://formspree.io/f/xdekyeaa" method="POST" onsubmit="return handleFormSubmit(event)">
+      <input type="hidden" name="_subject" value="New Buyer Incentives lead from go.theburkslendinggroup.com">
+      <input type="hidden" name="source_page" value="go.theburkslendinggroup.com/buyer-incentives">
+      <input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="lf-row">
+        <div class="lf-group"><label for="bi-fn">First Name</label><input id="bi-fn" name="first_name" type="text" required autocomplete="given-name"></div>
+        <div class="lf-group"><label for="bi-ln">Last Name</label><input id="bi-ln" name="last_name" type="text" autocomplete="family-name"></div>
+      </div>
+      <div class="lf-row">
+        <div class="lf-group"><label for="bi-ph">Phone</label><input id="bi-ph" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="lf-group"><label for="bi-em">Email</label><input id="bi-em" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="lf-row">
+        <div class="lf-group"><label for="bi-lt">Loan type</label><select id="bi-lt" name="loan_type"><option>Not sure yet</option><option>Conventional</option><option>FHA</option><option>VA</option><option>USDA</option></select></div>
+        <div class="lf-group"><label for="bi-tl">When are you buying?</label><select id="bi-tl" name="timeline"><option>Ready now</option><option>1 to 3 months</option><option>3 to 6 months</option><option>Just exploring</option></select></div>
+      </div>
+      <div class="lf-group"><label for="bi-ag">Working with a Realtor?</label><select id="bi-ag" name="has_realtor"><option>Not yet</option><option>Yes</option></select></div>
+      <button type="submit" class="lf-submit">See My Credits &rarr;</button>
+      <div class="lf-privacy">Your information stays private and is never sold.</div>
+    </form>
+    <div class="lf-success" id="successState">
+      <div style="font-size:40px">🔑</div>
+      <h3>Got it. Your credits are waiting.</h3>
+      <p>I'll reach out personally within 24 hours. Ready to move faster? <a href="https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/" target="_blank" rel="noopener">Start your Secure Application</a>.</p>
     </div>
   </div>
 
@@ -543,7 +593,7 @@
     <div class="cta-grid">
       <div class="cta-item">
         <div class="cta-item-label">Call or Text</div>
-        <div class="cta-item-val">(615) 768-9424</div>
+        <div class="cta-item-val">(615) 364-5700</div>
       </div>
       <div class="cta-item">
         <div class="cta-item-label">Email</div>
@@ -551,9 +601,23 @@
       </div>
     </div>
     <a href="https://calendly.com/fburks-nexalending/" class="cta-btn">Book Your Free Consultation &rarr;</a>
-    <div class="disclaimer">This is not an offer to enter into an agreement. This is not a commitment to make a loan. Not all customers will qualify. Information, rates and programs are subject to change without prior notice. All products are subject to credit and property approval. All approvals are subject to underwriting guidelines. Not all products are available in all states or for all dollar amounts. Other restrictions and limitations may apply. VA loans subject to individual VA Entitlement amounts and eligibility, qualifying factors such as income and credit standards, and property limits. NEXA Lending, LLC is not affiliated with any government agencies. These materials are not from VA, HUD or FHA, and were not approved by VA, HUD or FHA, or any other government agency. Copyright &copy; 2020 NEXA Mortgage, LLC NMLS#1660690. AZMB#0944059. 5559 S. Sossaman Rd., Bldg. 1, Suite 101 Mesa, AZ 85212, 602-344-9333. www.NEXALending.com NEXA Lending, LLC is an Equal Housing Lender. All rights reserved.</div>
+    <div class="disclaimer">This is not an offer to enter into an agreement. This is not a commitment to make a loan. Not all customers will qualify. Information, rates and programs are subject to change without prior notice. All products are subject to credit and property approval. All approvals are subject to underwriting guidelines. Not all products are available in all states or for all dollar amounts. Other restrictions and limitations may apply. VA loans subject to individual VA Entitlement amounts and eligibility, qualifying factors such as income and credit standards, and property limits. NEXA Lending, LLC is not affiliated with any government agencies. These materials are not from VA, HUD or FHA, and were not approved by VA, HUD or FHA, or any other government agency. Copyright &copy; 2026 NEXA Lending NMLS#1660690. AZMB#0944059. 5559 S. Sossaman Rd., Bldg. 1, Suite 101 Mesa, AZ 85212, 602-344-9333. www.NEXALending.com NEXA Lending, LLC is an Equal Housing Lender. All rights reserved.</div>
   </div>
 
 </div>
+<script>
+function handleFormSubmit(e){
+  if(e&&e.preventDefault)e.preventDefault();
+  var f=document.getElementById('leadForm');
+  if(f.reportValidity&&!f.reportValidity())return false;
+  var btn=f.querySelector('button[type=submit]'); if(btn){btn.disabled=true;btn.style.opacity='.6';}
+  function done(){f.style.display='none';document.getElementById('successState').style.display='block';}
+  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+    .then(function(r){ if(r.ok){done();} else { f.onsubmit=null; f.submit(); } })
+    .catch(function(){ f.onsubmit=null; f.submit(); });
+  return false;
+}
+(function(){var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){var el=document.querySelector('input[name='+k+']');if(el&&q.get(k))el.value=q.get(k);});})();
+</script>
 </body>
 </html>

@@ -16,6 +16,8 @@
 /itin                      /itin-home-loans.html      200
 /construction              /construction.html         200
 /build                     /construction.html         200
+/homebuyer-guide           /Complete%20First-Time%20Homebuyer%20Guide%20v2.html  200
+/guide                     /Complete%20First-Time%20Homebuyer%20Guide%20v2.html  200
 
 # Older pages that no longer capture leads send visitors to the current DPA page
 /dpa-home-loans.html       /dpa.html                  301!

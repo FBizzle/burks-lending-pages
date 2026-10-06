@@ -19,6 +19,8 @@
 /construction              /construction.html         200
 /build                     /construction.html         200
 /homebuyer-guide           /guide.html                200
+/bank-statement            /bank-statement.html       200
+/self-employed             /bank-statement.html       200
 
 # Older pages that no longer capture leads send visitors to the current DPA page
 /dpa-home-loans.html       /dpa.html                  301!

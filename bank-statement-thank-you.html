@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're In | The Burks Lending Group</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  SETUP:
+  1. VIDEO: replace the .video-slot div with your YouTube embed once you record the 60-second welcome video.
+  2. Booking link: done (calendly.com/fburks-nexalending).
+  3. REVIEWS: paste two REAL Google reviews from DPA borrowers into the review cards (first name + last initial, month closed).
+     Never publish made-up reviews.
+  4. Paste Meta Pixel + Google Analytics above </head>.
+-->
+<style>
+  :root{--navy:#0A1628;--gold:#C8973A;--gold-2:#b3832b;--blue:#4A9EFF;--white:#fff;--ink:#16213a;--muted:#5b6780;--line:#e3e7ef;--bg:#f5f7fb;--ok:#1f9d63}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  header{background:var(--navy);color:var(--white)}
+  .bar{max-width:980px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .brand{font-weight:700}.brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
+  .call{color:var(--white);text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
+  .hero{background:var(--navy);color:var(--white);text-align:center;padding:36px 16px 90px}
+  .badge{width:64px;height:64px;border-radius:50%;background:var(--ok);display:grid;place-items:center;margin:0 auto 16px;animation:pop .5s ease}
+  @keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+  h1{font-family:Fraunces,Georgia,serif;font-size:40px;line-height:1.1;margin-bottom:10px}
+  h1 em{font-style:normal;color:var(--gold)}
+  .hero p{color:#d3dbea;font-size:18px;max-width:560px;margin:0 auto}
+  main{max-width:980px;margin:-60px auto 0;padding:0 16px 48px;display:grid;gap:20px}
+  .card{background:var(--white);border-radius:18px;box-shadow:0 18px 50px rgba(10,22,40,.12);padding:26px}
+  h2{font-family:Fraunces,Georgia,serif;font-size:24px;margin-bottom:12px}
+  .video-slot{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,#13243f,#0A1628);display:grid;place-items:center;color:#b9c4d8;text-align:center;padding:20px}
+  .video-slot .play{width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 10px}
+  .grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+  ol.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+  ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:700;display:grid;place-items:center}
+  ol.steps b{display:block}
+  ol.steps span{color:var(--muted);font-size:15px}
+  .btn{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:15px;font-weight:700;font-size:17px;margin-top:12px}
+  .btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(200,151,58,.3)}
+  .btn.gold:hover{background:var(--gold-2)}
+  .btn.navy{background:var(--navy);color:var(--white)}
+  .btn.ghost{border:2px solid var(--navy);color:var(--navy)}
+  .note{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+  .reviews{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .review{border:1px dashed #c9d2e2;border-radius:14px;padding:18px;background:#fbfcfe}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:6px}
+  .review p{font-style:italic;color:var(--muted)}
+  .review small{display:block;margin-top:8px;font-weight:600;color:var(--ink);font-style:normal}
+  .extras{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .extra{border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+  .extra:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .extra b{display:block;margin-bottom:4px}
+  .extra span{font-size:14px;color:var(--muted)}
+  .flag{display:none;background:#fff8ea;border:1px solid #f0d9ac;border-radius:12px;padding:14px 16px;font-size:15px}
+  .flag.show{display:block}
+  .bookmark{text-align:center;color:var(--muted);font-size:14px}
+  footer{background:var(--navy);color:#aeb9cd;font-size:12.5px}
+  footer .in{max-width:980px;margin:0 auto;padding:22px 16px;display:grid;gap:8px}
+  footer b{color:var(--white)}
+  @media (max-width:760px){
+    h1{font-size:30px}.hero p{font-size:16px}
+    .grid2,.reviews,.extras{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">The Burks Lending Group<small>Everybody Deserves a Key</small></div>
+    <a class="call" href="tel:+16153645700">615.364.5700</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2"><path d="M20 6L9 17l-5-5"/></svg></div>
+  <h1><span id="hi">You're in.</span> <em>The door just got closer.</em></h1>
+  <p>Got it. I'll reach out to you personally, usually the same business day. Keep your phone close.</p>
+</section>
+
+<main>
+
+  <div class="flag" id="flag-mil"><b>Thank you for your service.</b> Since you've served, I'll also check whether your VA benefit could work alongside your self-employed income.</div>
+  <div class="flag" id="flag-agent"><b>Need an agent?</b> You asked for an introduction. We'll connect you with a trusted Middle Tennessee agent who knows these programs inside and out.</div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>What happens next</h2>
+      <ol class="steps">
+        <li><div><b>We call or text you</b><span>A quick 10-minute chat to confirm a few details. No pressure, no pitch.</span></div></li>
+        <li><div><b>I find your best path</b><span>I check a regular loan first, then bank statement and other self-employed options, and show you how they compare.</span></div></li>
+        <li><div><b>You get your numbers</b><span>Estimated payment, cash to close, and the exact statements and documents to gather, in plain English.</span></div></li>
+        <li><div><b>Pre-approval and house hunting</b><span>With a strong pre-approval, you shop with confidence.</span></div></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Skip the wait</h2>
+      <a class="btn gold" href="https://calendly.com/fburks-nexalending" target="_blank" rel="noopener">Pick a Time to Talk</a>
+      <p class="note">Choose a time that works for you.</p>
+      <a class="btn ghost" href="https://prod.lendingpad.com/nexa/2163a7a5-7e6b-4746-b70c-6a813eec8415/pos#/" target="_blank" rel="noopener">Secure Application</a>
+      <p class="note">Ready now? Start your full application securely.</p>
+      <a class="btn ghost" href="tel:+16153645700">Call 615.364.5700</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>While you wait</h2>
+    <div class="extras">
+      <a class="extra" href="/homes-of-the-week.html"><b>Homes of the Week</b><span>Fresh Middle Tennessee listings, handpicked every week.</span></a>
+      <a class="extra" href="https://www.theburkslendinggroup.com/blog/bank-statement-loan-requirements-tennessee"><b>The Self-Employed Checklist</b><span>What lenders ask for and how they read your deposits.</span></a>
+    </div>
+  </div>
+
+  <p class="bookmark">Tip: bookmark this page. It's yours to come back to anytime.</p>
+</main>
+
+<footer>
+  <div class="in">
+    <div><b>Equal Housing Opportunity.</b> Frank Burks II, Certified Mortgage Advisor, NMLS #841644. The Burks Lending Group empowered by NEXA Lending, NMLS #1660690. Smyrna, TN 37167.</div>
+    <div>This is not a commitment to lend. All loans subject to credit approval, program guidelines, and funding availability.</div>
+  </div>
+</footer>
+
+<script>
+  try{
+    var n = sessionStorage.getItem("blg_first");
+    if(n){ document.getElementById("hi").textContent = "You're in, " + n.replace(/[<>]/g,"") + "."; }
+    var m = sessionStorage.getItem("blg_mil") || "";
+    if(m.indexOf("Yes")===0 || m.indexOf("Surviving")===0) document.getElementById("flag-mil").classList.add("show");
+    var a = sessionStorage.getItem("blg_agent") || "";
+    if(a.indexOf("introduction")>-1) document.getElementById("flag-agent").classList.add("show");
+  }catch(e){}
+</script>
+</body>
+</html>

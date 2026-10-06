@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FHA Home Loans | Middle Tennessee | The Burks Lending Group</title>
-<meta name="description" content="See if an FHA loan could get you into a Middle Tennessee home, even if your credit isn't perfect. About 2 minutes, no credit pull.">
+<title>Bank Statement Home Loans for Self-Employed Buyers | Middle Tennessee | The Burks Lending Group</title>
+<meta name="description" content="Self-employed in Middle Tennessee? See if you can qualify for a home loan on your bank statements instead of your tax returns. About 2 minutes, no credit pull.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!--
@@ -12,7 +12,7 @@
   1. Formspree: done (xdekyeaa).
   2. NEXA NMLS: done (#1660690).
   3. Paste your Meta Pixel and Google Analytics snippets right above </head>.
-  The thank-you page file must be named dpa-thank-you.html and sit in the same folder.
+  The thank-you page file must be named bank-statement-thank-you.html and sit in the same folder.
 -->
 <style>
   :root{
@@ -119,19 +119,19 @@
 <section class="hero">
   <div class="wrap">
     <div class="pitch">
-      <span class="eyebrow">Middle Tennessee Homebuyers</span>
-      <h1>Credit not perfect? <em>Your door isn&rsquo;t closed.</em></h1>
-      <p class="sub">Answer a few quick questions and see if an FHA loan could get you home in Smyrna, Murfreesboro, Nashville and beyond. Flexible credit, family gifts welcome, and down payment help may stack right on top.</p>
+      <span class="eyebrow">Self-Employed in Middle Tennessee</span>
+      <h1>Your business makes money. <em>Let your deposits prove it.</em></h1>
+      <p class="sub">Write-offs are smart business, but they can make a tax return look thin. Answer a few quick questions and I&rsquo;ll see if a bank statement loan, or a regular loan, could get you home in Smyrna, Murfreesboro, Nashville and beyond.</p>
       <ul class="ticks">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 2 minutes, tap to answer</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>A real advisor reviews your answers, not a call center</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>I review every answer myself, not a call center</li>
       </ul>
     </div>
 
     <div class="card" id="card">
       <div class="progress" aria-hidden="true"><span id="bar"></span></div>
-      <div class="meta"><span id="count">Question 1 of 14</span><span id="cheer">Let's go</span></div>
+      <div class="meta"><span id="count">Question 1 of 15</span><span id="cheer">Let's go</span></div>
 
       <form id="dpa" novalidate>
         <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
@@ -153,9 +153,9 @@
 </section>
 
 <section class="programs">
-  <h2>Built for real life, not perfect credit.</h2>
-  <p>Your answers help us see how FHA fits, and whether down payment help can pair with it.</p>
-  <div class="chips"><span>Flexible credit guidelines</span><span>Family gifts welcome</span><span>Pairs with down payment help</span><span>Seller can help with closing costs</span></div>
+  <h2>Built for people who sign the front of the check.</h2>
+  <p>Business owners, 1099 contractors, freelancers and gig workers. Your answers help me see which path fits your file best.</p>
+  <div class="chips"><span>12 or 24 months of statements</span><span>Personal or business accounts</span><span>CPA letter or P&amp;L options</span><span>Regular loans checked too</span></div>
 </section>
 
 <footer>
@@ -172,25 +172,24 @@
 <script>
 (function(){
   var FORMSPREE_ENDPOINT = "https://formspree.io/f/xdekyeaa";
-  var THANK_YOU_URL = "fha-thank-you.html";
+  var THANK_YOU_URL = "bank-statement-thank-you.html";
 
   var steps = [
     {id:"zip", type:"zip", q:"Where are you hoping to buy?", hint:"Just the zip code. Close is fine if you're still deciding."},
-    {id:"first_time", q:"Have you owned a home in the last 3 years?", hint:"If not, you may count as a first-time buyer even if you owned before.", opts:["No, this would be my first","I owned one more than 3 years ago","Yes, I own now or recently"]},
+    {id:"purpose", q:"What are you looking to do?", opts:["Buy a home to live in","Buy an investment property","Refinance a home I own"]},
+    {id:"business_type", q:"How do you earn your income?", opts:["I own a business or LLC","1099 contractor","Freelance or gig work","A mix of W-2 and self-employed"]},
+    {id:"years", q:"How long have you been self-employed?", hint:"Most programs look for about two years, but tell me where you are.", two:true, opts:["Under 1 year","1 to 2 years","2 to 5 years","5+ years"]},
+    {id:"deposits", q:"Where does your business income get deposited?", hint:"Both can work. It helps me know which statements to look at.", opts:["A business account","A personal account","Both"]},
+    {id:"records", q:"Which records could you pull together?", hint:"Pick the one you have most ready.", opts:["12 to 24 months of bank statements","Two years of tax returns","A CPA letter or profit and loss","Not sure yet"]},
     {id:"living", q:"Where are you living right now?", opts:["Renting","Living with family","I own my home","Something else"]},
-    {id:"sell_first", q:"Will you need to sell your current home before you buy?", hint:"No wrong answer. It just helps us plan your timing.", when:function(){ return answers.living==="I own my home"; }, opts:["Yes, I'll need to sell first","Maybe, still deciding","No, I'll keep it or rent it out"]},
-    {id:"price", q:"What price range are you looking at?", two:true, opts:["Under $250K","$250K to $350K","$350K to $450K","$450K+"]},
-    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. We won't pull credit here.", opts:["Good (680+)","Fair (620 to 679)","Building (580 to 619)","Under 580","Not sure"]},
-    {id:"credit_events", q:"Any of these in the last few years?", hint:"No judgment. FHA has clear timelines after these, and we'll tell you exactly where you stand.", opts:["None of these","Collections or late payments","Bankruptcy","Foreclosure or short sale"]},
-    {id:"savings", q:"How much have you saved toward buying?", two:true, opts:["Little to nothing","Under $5K","$5K to $15K","$15K+"]},
-    {id:"gift", q:"Could family help with part of your down payment?", hint:"FHA welcomes gifts from family.", opts:["Yes","Maybe","No"]},
-    {id:"income", q:"Total yearly household income?", hint:"Everyone who'll be on the loan, before taxes.", two:true, opts:["Under $60K","$60K to $90K","$90K to $120K","$120K+"]},
-    {id:"work", q:"How do you earn your income?", opts:["W-2 employee","Self-employed or 1099","Retired or fixed income","A mix of these"]},
-    {id:"military", q:"Have you served in the military?", hint:"If so, we'll compare FHA with your VA benefit too.", opts:["Yes, veteran or active duty","Surviving spouse of a veteran","No"]},
+    {id:"sell_first", q:"Will you need to sell your current home before you buy?", hint:"No wrong answer. It just helps us plan your timing.", when:function(){ return answers.living==="I own my home" && answers.purpose!=="Refinance a home I own"; }, opts:["Yes, I'll need to sell first","Maybe, still deciding","No, I'll keep it or rent it out"]},
+    {id:"price", q:"What price range are you looking at?", hint:"For a refinance, give me your home's rough value.", two:true, opts:["Under $300K","$300K to $450K","$450K to $650K","$650K+"]},
+    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. I won't pull credit here.", opts:["Good (700+)","Fair (660 to 699)","Building (620 to 659)","Under 620","Not sure"]},
+    {id:"savings", q:"How much do you have set aside for a down payment and reserves?", two:true, opts:["Under $25K","$25K to $50K","$50K to $100K","$100K+"]},
     {id:"timeline", q:"When would you like to move?", two:true, opts:["ASAP","3 to 6 months","6 to 12 months","Just exploring"]},
-    {id:"agent", q:"Are you working with a real estate agent?", opts:["Yes, I have an agent","No, I'd love an introduction","No, not yet"]},
-    {id:"name", type:"name", q:"Nice work. Who are we helping?", hint:"Almost there. Two more quick things."},
-    {id:"contact", type:"contact", q:"Where should we send your results?", hint:"I'll personally review your answers."}
+    {id:"agent", q:"Are you working with a real estate agent?", when:function(){ return answers.purpose!=="Refinance a home I own"; }, opts:["Yes, I have an agent","No, I'd love an introduction","No, not yet"]},
+    {id:"name", type:"name", q:"Nice work. Who am I helping?", hint:"Almost there. Two more quick things."},
+    {id:"contact", type:"contact", q:"Where should I reach you?", hint:"I'll personally review your answers. Please don't type account numbers here."}
   ];
 
   var cheers = ["Let's go","Easy start","Nice","Rolling now","You're doing great","Halfway home","Keep it up","Looking good","Almost there","So close","Last stretch","Home stretch","Final lap","One more"];
@@ -321,8 +320,8 @@
     answers.email=em; answers.phone=ph; answers.consent="Yes";
     steps.forEach(function(s,k){ if(!active(k)) delete answers[s.id]; });
     if(answers.sell_first && answers.sell_first.indexOf("No")!==0) answers.possible_seller="Yes";
-    answers.lead_source="FHA Multi-Step Qualifier"; answers.page=location.href.split("?")[0];
-    answers._subject="New FHA lead: "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
+    answers.lead_source="Bank Statement Qualifier"; answers.page=location.href.split("?")[0];
+    answers._subject="New Bank Statement lead: "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
     answers._gotcha=document.querySelector("input[name=_gotcha]").value;
 
     var btn=document.getElementById("submit"); btn.disabled=true; btn.textContent="Sending...";
@@ -330,8 +329,8 @@
 
     function done(){
       try{ sessionStorage.setItem("blg_first", answers.first_name); sessionStorage.setItem("blg_mil", answers.military||""); sessionStorage.setItem("blg_agent", answers.agent||""); }catch(x){}
-      if(window.fbq){ try{ fbq("track","Lead",{content_name:"FHA Qualifier"}); }catch(x){} }
-      if(window.gtag){ try{ gtag("event","generate_lead",{form:"fha_qualifier"}); }catch(x){} }
+      if(window.fbq){ try{ fbq("track","Lead",{content_name:"Bank Statement Qualifier"}); }catch(x){} }
+      if(window.gtag){ try{ gtag("event","generate_lead",{form:"bank_statement_qualifier"}); }catch(x){} }
       location.href = THANK_YOU_URL;
     }
 

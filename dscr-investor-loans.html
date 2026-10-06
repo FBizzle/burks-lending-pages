@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DSCR Investor Loans | Middle Tennessee | The Burks Lending Group</title>
-<meta name="description" content="Qualify for your next Middle Tennessee rental on the property's rent, not your paycheck. About 60 seconds, no credit pull.">
+<meta name="description" content="Qualify for your next Middle Tennessee rental on the property's rent, not your paycheck. About 2 minutes, no credit pull.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!--
@@ -123,7 +123,7 @@
       <h1>Let the rent <em>do the qualifying.</em></h1>
       <p class="sub">No tax returns. No W-2s. Answer a few quick questions and see how a DSCR loan could help you grow your rental portfolio across Middle Tennessee.</p>
       <ul class="ticks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 60 seconds, tap to answer</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 2 minutes, tap to answer</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>200+ lending partners to match your deal, not one bank's box</li>
       </ul>
@@ -340,7 +340,7 @@
     }
     fetch(FORMSPREE_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(answers)})
       .then(function(r){ if(r.ok) done(); else throw new Error(r.status); })
-      .catch(function(){ btn.disabled=false; btn.textContent="Show Me My Programs"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
+      .catch(function(){ btn.disabled=false; btn.textContent="Request My Review"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
   });
 
   show(0);

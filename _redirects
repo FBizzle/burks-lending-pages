@@ -26,4 +26,11 @@
 /dpa-home-loans.html       /dpa.html                  301!
 /dpa-home-loans            /dpa.html                  301!
 /DPA_Campaign.html         /dpa.html                  301!
-/DPA_Campaign              /dpa.html                  301!
+/DPA_Campaign              /dpa.html                  301
+# Old bank statement page sends visitors to the current one
+/bank-statement-loans.html  /bank-statement.html       301!
+/bank-statement-loans       /bank-statement.html       301!
+
+# Short addresses for the build-to-rent investor lane
+/build-to-rent              /dscr-construction.html    200
+/dscr-build                 /dscr-construction.html    200

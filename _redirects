@@ -35,15 +35,15 @@
 /build-to-rent              /dscr-construction.html    200
 /dscr-build                 /dscr-construction.html    200
 
-# Short links for Facebook and LinkedIn posts (forward to the matching headline)
-/rental85              /dscr-investor-loans.html?p=rental&utm_source=facebook    302
-/dscr-options          /dscr-investor-loans.html?p=options&utm_source=facebook   302
-/dscr620               /dscr-investor-loans.html?p=credit&utm_source=facebook    302
-/doors                 /dscr-investor-loans.html?p=doors&utm_source=facebook     302
-/investor              /dscr-investor-loans.html?utm_source=facebook             302
-/build-selfemployed    /dscr-construction.html?p=selfemp&utm_source=facebook     302
-/build-family          /dscr-construction.html?p=gift&utm_source=facebook        302
-/build-airbnb          /dscr-construction.html?p=str&utm_source=facebook         302
-/build-land            /dscr-construction.html?p=land&utm_source=facebook        302
-/build-fourplex        /dscr-construction.html?p=units&utm_source=facebook       302
-/build-once            /dscr-construction.html?p=build&utm_source=facebook       302
+# Short links for Facebook and LinkedIn posts (page reads the address and shows the matching headline)
+/rental85              /dscr-investor-loans.html    200
+/dscr-options          /dscr-investor-loans.html    200
+/dscr620               /dscr-investor-loans.html    200
+/doors                 /dscr-investor-loans.html    200
+/investor              /dscr-investor-loans.html    200
+/build-selfemployed    /dscr-construction.html      200
+/build-family          /dscr-construction.html      200
+/build-airbnb          /dscr-construction.html      200
+/build-land            /dscr-construction.html      200
+/build-fourplex        /dscr-construction.html      200
+/build-once            /dscr-construction.html      200

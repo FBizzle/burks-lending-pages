@@ -256,7 +256,11 @@
   };
   var preset = {};
   var qs = new URLSearchParams(location.search);
-  var campaign = (qs.get("p") || location.hash.replace("#","") || "").toLowerCase();
+  // Short links (served directly so Facebook sees the preview card): path -> program
+  var SHORT = {"/rental85":"rental","/dscr-options":"options","/dscr620":"credit","/doors":"doors","/investor":""};
+  var shortPath = location.pathname.replace(/\/+$/,"").toLowerCase();
+  var fromShort = SHORT.hasOwnProperty(shortPath);
+  var campaign = (qs.get("p") || (fromShort ? SHORT[shortPath] : "") || location.hash.replace("#","") || "").toLowerCase();
   function highlightCard(k){ document.querySelectorAll(".pcard").forEach(function(c){ c.classList.toggle("on", c.id==="card-"+k); }); }
   function setCampaign(k, swapHero){
     var v = VARIANTS[k]; if(!v) return;
@@ -300,6 +304,7 @@
   // Keep campaign tracking with the lead
   var params = new URLSearchParams(location.search);
   ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","ref"].forEach(function(k){ if(params.get(k)) answers[k]=params.get(k); });
+  if(fromShort && !answers.utm_source) answers.utm_source = "facebook";
 
   function el(tag, attrs, html){ var e=document.createElement(tag); for(var k in (attrs||{})) e.setAttribute(k, attrs[k]); if(html!=null) e.innerHTML=html; return e; }
 

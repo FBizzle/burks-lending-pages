@@ -408,7 +408,11 @@ footer a{color:#8fb8ff;text-decoration:none}
   };
 
   var q = new URLSearchParams(location.search);
-  var key = (q.get("p") || location.hash.replace("#","") || "").toLowerCase();
+  // Short links (served directly so Facebook sees the preview card): path -> variant
+  var SHORT = {"/build-selfemployed":"selfemp","/build-family":"gift","/build-airbnb":"str","/build-land":"land","/build-fourplex":"units","/build-once":"build"};
+  var shortPath = location.pathname.replace(/\/+$/,"").toLowerCase();
+  var fromShort = SHORT.hasOwnProperty(shortPath);
+  var key = (q.get("p") || (fromShort ? SHORT[shortPath] : "") || location.hash.replace("#","") || "").toLowerCase();
   var form = document.getElementById("leadForm");
 
   function setSelect(id, val){ var s=document.getElementById(id); if(!s||!val) return; for(var i=0;i<s.options.length;i++){ if(s.options[i].value===val){ s.selectedIndex=i; return; } } }
@@ -427,6 +431,7 @@ footer a{color:#8fb8ff;text-decoration:none}
   if(VARIANTS[key]) apply(key, false);
 
   ["utm_source","utm_medium","utm_campaign","utm_content"].forEach(function(k){ var el=form.querySelector("input[name="+k+"]"); if(el && q.get(k)) el.value=q.get(k); });
+  if(fromShort){ var us=form.querySelector("input[name=utm_source]"); if(us && !us.value) us.value="facebook"; }
   document.getElementById("f-page").value = location.href.split("?")[0];
 
   document.querySelectorAll(".lane button").forEach(function(b){

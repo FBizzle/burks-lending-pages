@@ -9,11 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!--
   SETUP:
-  1. VIDEO: replace the .video-slot div with your YouTube embed once you record the 60-second welcome video.
-  2. Booking link: done (calendly.com/fburks-nexalending).
-  3. REVIEWS: paste two REAL Google reviews from DPA borrowers into the review cards (first name + last initial, month closed).
-     Never publish made-up reviews.
-  4. Paste Meta Pixel + Google Analytics above </head>.
+  1. Booking link: done (calendly.com/fburks-nexalending).
+  2. Paste Meta Pixel + Google Analytics above </head>.
+  3. Optional later: add a short welcome video or two REAL investor reviews. Never publish made-up reviews.
 -->
 <style>
   :root{--navy:#0A1628;--gold:#C8973A;--gold-2:#b3832b;--blue:#4A9EFF;--white:#fff;--ink:#16213a;--muted:#5b6780;--line:#e3e7ef;--bg:#f5f7fb;--ok:#1f9d63}
@@ -84,7 +82,6 @@
 
 <main>
 
-  <div class="flag" id="flag-mil"><b>Thank you for your service.</b> Since you've served, we'll also look at VA options. Many veterans can buy with zero down, and some DPA programs pair well with it.</div>
   <div class="flag" id="flag-agent"><b>Need an agent?</b> You asked for an introduction. We'll connect you with a trusted Middle Tennessee agent who works with investors.</div>
 
   <div class="grid2">
@@ -110,6 +107,7 @@
   <div class="card">
     <h2>While you wait</h2>
     <div class="extras">
+      <a class="extra" href="dscr-construction.html?p=build&utm_source=dscr-thank-you"><b>Building a Rental?</b><span>One closing for the build and the long-term loan, qualified on future rent.</span></a>
       <a class="extra" href="/homes-of-the-week.html"><b>Homes of the Week</b><span>Fresh Middle Tennessee listings, handpicked every week.</span></a>
       <a class="extra" href="/bank-statement-loans.html"><b>Self-Employed?</b><span>Bank statement loans for your own home, qualified on deposits.</span></a>
     </div>
@@ -129,8 +127,6 @@
   try{
     var n = sessionStorage.getItem("blg_first");
     if(n){ document.getElementById("hi").textContent = "You're in, " + n.replace(/[<>]/g,"") + "."; }
-    var m = sessionStorage.getItem("blg_mil") || "";
-    if(m.indexOf("Yes")===0 || m.indexOf("Surviving")===0) document.getElementById("flag-mil").classList.add("show");
     var a = sessionStorage.getItem("blg_agent") || "";
     if(a.indexOf("introduction")>-1) document.getElementById("flag-agent").classList.add("show");
   }catch(e){}

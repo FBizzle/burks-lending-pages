@@ -12,7 +12,14 @@
   1. Formspree: done (xdekyeaa).
   2. NEXA NMLS: done (#1660690).
   3. Paste your Meta Pixel and Google Analytics snippets right above </head>.
-  The thank-you page file must be named dpa-thank-you.html and sit in the same folder.
+  The thank-you page file must be named dscr-thank-you.html and sit in the same folder.
+
+  CAMPAIGN LINKS: add ?p= to the URL so the headline matches the post that sent them.
+    ?p=rental   Rental purchases up to 85%
+    ?p=options  Low-DSCR, no-ratio, asset-assisted
+    ?p=credit   Credit down to 620
+    ?p=doors    5 to 8 units
+  No ?p= shows the general headline. The program shows up in every lead as "campaign".
 -->
 <style>
   :root{
@@ -80,6 +87,21 @@
   .programs p{color:var(--muted);margin-bottom:18px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
   .chips span{background:var(--navy);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
+  .progs{max-width:1080px;margin:0 auto;padding:0 16px 48px}
+  .progs h2{font-family:Fraunces,Georgia,serif;font-size:26px;text-align:center;margin-bottom:6px}
+  .progs > p{color:var(--muted);text-align:center;margin-bottom:22px}
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .pcard{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;scroll-margin-top:16px}
+  .pcard.on{border:2px solid var(--gold);box-shadow:0 12px 30px rgba(200,151,58,.18)}
+  .pcard .tag{font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold-2);margin-bottom:6px}
+  .pcard h3{font-family:Fraunces,Georgia,serif;font-size:21px;line-height:1.2;margin-bottom:8px}
+  .pcard p{color:var(--muted);font-size:15px;margin-bottom:12px}
+  .pcard ul{list-style:none;display:grid;gap:6px;margin-bottom:14px;flex:1}
+  .pcard li{font-size:14.5px;display:flex;gap:8px}
+  .pcard li::before{content:"\2713";color:var(--gold);font-weight:700}
+  .pcard .fine{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-bottom:12px}
+  .pcard button{appearance:none;border:0;border-radius:10px;background:var(--navy);color:var(--white);font:700 15px Inter,sans-serif;padding:12px;cursor:pointer}
+  .pcard button:hover{background:var(--navy-2)}
   footer{background:var(--navy);color:#aeb9cd;font-size:12.5px;line-height:1.6}
   footer .in{max-width:1080px;margin:0 auto;padding:24px 16px;display:grid;gap:10px}
   footer .eho{display:flex;gap:8px;align-items:center;color:var(--white);font-weight:600}
@@ -90,6 +112,7 @@
     .sub{font-size:16px}
     .ticks{display:none}
     .trust{grid-template-columns:1fr;padding-top:24px}
+    .pgrid{grid-template-columns:1fr}
   }
   @media (max-width:420px){
     .card{padding:20px}
@@ -119,9 +142,9 @@
 <section class="hero">
   <div class="wrap">
     <div class="pitch">
-      <span class="eyebrow">Middle Tennessee Real Estate Investors</span>
-      <h1>Let the rent <em>do the qualifying.</em></h1>
-      <p class="sub">No tax returns. No W-2s. Answer a few quick questions and see how a DSCR loan could help you grow your rental portfolio across Middle Tennessee.</p>
+      <span class="eyebrow" id="h-eyebrow">Middle Tennessee Real Estate Investors</span>
+      <h1 id="h-title">Let the rent <em>do the qualifying.</em></h1>
+      <p class="sub" id="h-sub">No tax returns. No W-2s. Answer a few quick questions and see how a DSCR loan could help you grow your rental portfolio across Middle Tennessee.</p>
       <ul class="ticks">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 2 minutes, tap to answer</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
@@ -152,10 +175,50 @@
   <div class="stat"><b>$150M+</b><span>in mortgage loans funded</span></div>
 </section>
 
+<section class="progs" id="programs" aria-label="DSCR programs">
+  <h2>Four ways in. One conversation.</h2>
+  <p>Each program has its own rules. Tap the one that sounds like your deal and I'll run your numbers on it.</p>
+  <div class="pgrid">
+    <div class="pcard" id="card-rental">
+      <div class="tag">Rental purchases</div>
+      <h3>20% down isn't the only door.</h3>
+      <p>Keep more cash for repairs, vacancy and your next deal.</p>
+      <ul><li>Up to 85% purchase financing</li><li>720+ credit for the 85% tier</li><li>Loans $100K to $1.5M</li><li>1.20 DSCR when financing goes above 80%</li></ul>
+      <div class="fine">First-time investors cap at 80% on this option. A bigger loan means a bigger payment, so I'll run 80% and 85% side by side.</div>
+      <button type="button" data-p="rental">Run my 80 vs. 85</button>
+    </div>
+    <div class="pcard" id="card-options">
+      <div class="tag">Low DSCR &middot; No ratio &middot; Asset-assisted</div>
+      <h3>Rent missed the formula? There's more than one.</h3>
+      <p>One lender's rule isn't every lender's rule.</p>
+      <ul><li>Low-DSCR options as low as 0.75</li><li>No-ratio up to 75% through $1M at 740+</li><li>Asset-assisted: 0.75 to 0.99 bridged to 1.15</li></ul>
+      <div class="fine">Three separate programs with their own rules; they can't be combined. A new program can change the approval, not the rent, so we'll plan for any gap.</div>
+      <button type="button" data-p="options">Find my path</button>
+    </div>
+    <div class="pcard" id="card-credit">
+      <div class="tag">Credit flexibility</div>
+      <h3>Your score is a chapter. Not the whole book.</h3>
+      <p>DSCR financing that considers scores down to 620.</p>
+      <ul><li>Loans $100K to $1M</li><li>Up to 70% purchase or rate-and-term</li><li>Up to 65% cash-out</li><li>1.00 DSCR minimum</li></ul>
+      <div class="fine">A lower score usually means more cash in. I'll show you buying now next to building your credit first.</div>
+      <button type="button" data-p="credit">See both roads</button>
+    </div>
+    <div class="pcard" id="card-doors">
+      <div class="tag">5 to 8 units</div>
+      <h3>More doors. Real rent checks.</h3>
+      <p>Dedicated financing for experienced investors.</p>
+      <ul><li>Loans $250K to $3M, 1.00 DSCR minimum</li><li>Up to 75% purchase at 700+ (through $1.5M)</li><li>Purchase, rate-and-term or cash-out</li><li>15 or 30-year fixed, or 30-year with 10 years interest-only</li></ul>
+      <div class="fine">Requires 1+ year owning and managing income property in the last 3 years. Vacant units count at 75% of market rent, max two vacant.</div>
+      <button type="button" data-p="doors">Run my rent roll</button>
+    </div>
+  </div>
+</section>
+
 <section class="programs">
   <h2>Built for investors who build.</h2>
   <p>Your answers help us run the numbers and match your deal to the right partner.</p>
   <div class="chips"><span>No tax returns</span><span>Qualify on rental income</span><span>LLC-friendly</span><span>Short-term rentals considered</span></div>
+  <p style="margin-top:18px">Building a rental from the ground up? <a href="dscr-construction.html?p=build&utm_source=dscr-page" style="color:var(--navy);font-weight:700">See the build-to-rent lane &rarr;</a></p>
 </section>
 
 <footer>
@@ -165,7 +228,7 @@
       Equal Housing Opportunity
     </div>
     <div>Frank Burks II, Certified Mortgage Advisor, NMLS #841644. The Burks Lending Group empowered by NEXA Lending, NMLS #1660690. Smyrna, TN 37167. 615.364.5700. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</div>
-    <div>This is not a commitment to lend. Program availability depends on income, credit, property location, and program funding at the time of application. Terms and guidelines are subject to change without notice.</div>
+    <div>Business-purpose investment property financing. This is not a commitment to lend. Terms shown reflect specific qualifying tiers and are subject to underwriting and current availability. Credit, DSCR, reserve, investor-experience, loan-size and property restrictions apply. Separate programs cannot be combined. Interest-only payments exclude principal during the interest-only period, and payments rise when amortization begins. Closing costs and reserves are additional. Examples are illustrative, not offers. Terms and guidelines are subject to change without notice. Not a guarantee of approval or investment performance.</div>
   </div>
 </footer>
 
@@ -174,18 +237,42 @@
   var FORMSPREE_ENDPOINT = "https://formspree.io/f/xdekyeaa";
   var THANK_YOU_URL = "dscr-thank-you.html";
 
+  // Hook-matched headlines: ?p=rental | options | credit | doors
+  var VARIANTS = {
+    rental:{eyebrow:"Rental Purchases · Up to 85% Financing", title:"20% down isn't <em>the only door.</em>", sub:"For qualifying investors, DSCR financing goes up to 85% on a rental purchase. Answer a few quick questions and I'll run 80% and 85% side by side on your deal: cash to close, payment and what's left in your pocket."},
+    options:{eyebrow:"Low DSCR · No Ratio · Asset-Assisted", title:"Rent missed the formula? <em>There's more than one.</em>", sub:"One lender's rule isn't every lender's rule. Tell me about the property and I'll show you which path fits, and whether the deal can carry itself once you're through the door."},
+    credit:{eyebrow:"DSCR Financing · Scores Down to 620", title:"Your score is a chapter. <em>Not the whole book.</em>", sub:"For qualifying investors, DSCR financing considers scores down to 620, with the rent doing the qualifying. Answer a few quick questions and see buying now next to building your credit first."},
+    doors:{eyebrow:"5 to 8 Unit Residential · Experienced Investors", title:"More doors. <em>Real rent checks.</em>", sub:"Dedicated DSCR financing for 5 to 8 unit buildings. Tell me about the property and I'll run the numbers on the rent roll that exists today, not the one in the brochure.", property_type:"5 to 8 units"}
+  };
+  var preset = {};
+  var qs = new URLSearchParams(location.search);
+  var campaign = (qs.get("p") || location.hash.replace("#","") || "").toLowerCase();
+  function highlightCard(k){ document.querySelectorAll(".pcard").forEach(function(c){ c.classList.toggle("on", c.id==="card-"+k); }); }
+  function setCampaign(k, swapHero){
+    var v = VARIANTS[k]; if(!v) return;
+    campaign = k;
+    if(swapHero){
+      document.getElementById("h-eyebrow").textContent = v.eyebrow;
+      document.getElementById("h-title").innerHTML = v.title;
+      document.getElementById("h-sub").textContent = v.sub;
+    }
+    preset = v.property_type ? {property_type:v.property_type} : {};
+    highlightCard(k);
+  }
+  if(VARIANTS[campaign]) setCampaign(campaign, true); else campaign = "";
+
   var steps = [
     {id:"goal", q:"What's the move?", hint:"Tap one. It takes about 60 seconds from here.", opts:["Buy a rental","Refinance a rental","Cash out of a rental"]},
     {id:"zip", type:"zip", q:"Where's the property, or where are you looking?", hint:"Just the zip code. Close is fine."},
-    {id:"property_type", q:"What kind of property?", opts:["Single-family home","2 to 4 units","Condo or townhome","Short-term rental (Airbnb, VRBO)"]},
-    {id:"price", q:"What price range are you looking at?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $450K","$450K to $650K","$650K+"]},
-    {id:"value", q:"About what's the property worth today?", when:function(){ return answers.goal!=="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $450K","$450K to $650K","$650K+"]},
+    {id:"property_type", q:"What kind of property?", when:function(){ return !preset.property_type; }, opts:["Single-family home","2 to 4 units","5 to 8 units","Condo or townhome","Short-term rental (Airbnb, VRBO)"]},
+    {id:"price", q:"What price range are you looking at?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $500K","$500K to $1M","$1M to $2M","$2M+"]},
+    {id:"value", q:"About what's the property worth today?", when:function(){ return answers.goal!=="Buy a rental"; }, two:true, opts:["Under $300K","$300K to $500K","$500K to $1M","$1M to $2M","$2M+"]},
     {id:"balance", q:"About how much do you owe on it?", when:function(){ return answers.goal!=="Buy a rental"; }, two:true, opts:["It's paid off","Under $150K","$150K to $300K","$300K+"]},
     {id:"rent", q:"What does it rent for, or what should it rent for, per month?", hint:"Your best estimate. This is the number that qualifies you.", two:true, opts:["Under $1,500","$1,500 to $2,200","$2,200 to $3,000","$3,000+"]},
     {id:"experience", q:"How many rental properties do you own now?", opts:["This would be my first","1 to 3","4 to 10","More than 10"]},
-    {id:"funds", q:"How much cash could you put toward this deal?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $50K","$50K to $100K","$100K to $200K","$200K+"]},
+    {id:"funds", q:"How much cash could you put toward this deal?", when:function(){ return answers.goal==="Buy a rental"; }, two:true, opts:["Under $50K","$50K to $100K","$100K to $250K","$250K+"]},
     {id:"entity", q:"Whose name is the property in, or going in?", opts:["My own name","An LLC or business","Not sure yet"]},
-    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. We won't pull credit here.", opts:["Excellent (740+)","Good (700 to 739)","Fair (660 to 699)","Under 660 or not sure"]},
+    {id:"credit", q:"Ballpark, how's your credit?", hint:"Your best guess works. We won't pull credit here.", opts:["Excellent (740+)","Good (700 to 739)","Fair (660 to 699)","Rebuilding (620 to 659)","Under 620 or not sure"]},
     {id:"timeline", q:"When do you want to close?", two:true, opts:["ASAP","Within 60 days","2 to 6 months","Just running numbers"]},
     {id:"agent", q:"Are you working with a real estate agent?", when:function(){ return answers.goal==="Buy a rental"; }, opts:["Yes, I have an agent","No, I'd love an introduction","No, not yet"]},
     {id:"name", type:"name", q:"Nice work. Who are we helping?", hint:"Almost there. Two more quick things."},
@@ -263,7 +350,7 @@
       box.appendChild(el("input",{type:"tel",id:"phone",autocomplete:"tel",inputmode:"tel",placeholder:"(615) 555-0123"}));
       var c = el("label",{"class":"consent"});
       c.appendChild(el("input",{type:"checkbox",id:"consent"}));
-      c.appendChild(el("span",null,"I agree that Frank Burks II and The Burks Lending Group may call, text, or email me about my home loan options at the number and email above, including by automated means. Consent isn't required to buy anything. If I asked for an agent introduction, I agree Frank may share my contact information with one trusted local real estate agent who may contact me. Message and data rates may apply. Reply STOP to opt out."));
+      c.appendChild(el("span",null,"I agree that Frank Burks II and The Burks Lending Group may call, text, or email me about my loan options at the number and email above, including by automated means. Consent isn't required to buy anything. If I asked for an agent introduction, I agree Frank may share my contact information with one trusted local real estate agent who may contact me. Message and data rates may apply. Reply STOP to opt out."));
       box.appendChild(c);
       box.appendChild(el("div", {"class":"err",id:"err-contact"}));
       var sub = el("button", {type:"submit","class":"cta",id:"submit"}, "Run My Numbers");
@@ -319,18 +406,19 @@
     err.textContent="";
     answers.email=em; answers.phone=ph; answers.consent="Yes";
     steps.forEach(function(s,k){ if(!active(k)) delete answers[s.id]; });
-    if(answers.sell_first && answers.sell_first.indexOf("No")!==0) answers.possible_seller="Yes";
+    for(var pk in preset) answers[pk]=preset[pk];
+    answers.campaign = campaign || "general";
     answers.lead_source="DSCR Multi-Step Qualifier"; answers.page=location.href.split("?")[0];
-    answers._subject="New DSCR lead ("+(answers.goal||"")+"): "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
+    answers._subject="New DSCR lead ["+answers.campaign+"] ("+(answers.goal||"")+"): "+answers.first_name+" "+answers.last_name+" ("+answers.zip+")";
     answers._gotcha=document.querySelector("input[name=_gotcha]").value;
 
     var btn=document.getElementById("submit"); btn.disabled=true; btn.textContent="Sending...";
     bar.style.width="100%";
 
     function done(){
-      try{ sessionStorage.setItem("blg_first", answers.first_name); sessionStorage.setItem("blg_mil", answers.military||""); sessionStorage.setItem("blg_agent", answers.agent||""); }catch(x){}
-      if(window.fbq){ try{ fbq("track","Lead",{content_name:"DSCR Qualifier"}); }catch(x){} }
-      if(window.gtag){ try{ gtag("event","generate_lead",{form:"dscr_qualifier"}); }catch(x){} }
+      try{ sessionStorage.setItem("blg_first", answers.first_name); sessionStorage.setItem("blg_agent", answers.agent||""); sessionStorage.setItem("blg_campaign", answers.campaign); }catch(x){}
+      if(window.fbq){ try{ fbq("track","Lead",{content_name:"DSCR Qualifier", content_category:answers.campaign}); }catch(x){} }
+      if(window.gtag){ try{ gtag("event","generate_lead",{form:"dscr_qualifier", campaign:answers.campaign}); }catch(x){} }
       location.href = THANK_YOU_URL;
     }
 
@@ -340,7 +428,16 @@
     }
     fetch(FORMSPREE_ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"}, body:JSON.stringify(answers)})
       .then(function(r){ if(r.ok) done(); else throw new Error(r.status); })
-      .catch(function(){ btn.disabled=false; btn.textContent="Request My Review"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
+      .catch(function(){ btn.disabled=false; btn.textContent="Run My Numbers"; err.textContent="Something hiccuped on our end. Please try again or call 615.364.5700."; });
+  });
+
+  // Program card buttons: tag the lead, keep the headline, jump to the qualifier
+  document.querySelectorAll(".pcard button").forEach(function(b){
+    b.addEventListener("click", function(){
+      setCampaign(b.getAttribute("data-p"), false);
+      show(current);
+      document.getElementById("card").scrollIntoView({behavior:"smooth", block:"start"});
+    });
   });
 
   show(0);

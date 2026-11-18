@@ -227,7 +227,8 @@
   .bio-cred-text { font-size: 14px; color: rgba(255,255,255,0.7); }
   .bio-cred-text strong { color: var(--white); }
   .bio-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,151,58,0.25); border-radius: 16px; padding: 40px; text-align: center; }
-  .bio-initials { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--navy); margin: 0 auto 20px; }
+  .bio-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; border: 3px solid var(--gold); display: block; margin: 0 auto 20px; }
+.bio-initials { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--navy); margin: 0 auto 20px; }
   .bio-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--white); }
   .bio-title-text { font-size: 13px; color: var(--gold); margin-top: 4px; }
   .bio-company { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 6px; }
@@ -570,7 +571,7 @@
         </div>
       </div>
       <div class="bio-visual">
-        <div class="bio-initials">FB</div>
+        <img class="bio-photo" src="frank-burks.jpg" alt="Frank Burks II" width="120" height="120">
         <div class="bio-name">Frank Burks II · NMLS #841644</div>
         <div class="bio-title-text">Certified Mortgage Advisor · NEXA Lending</div>
         <div class="bio-company">The Burks Lending Group · empowered by NEXA Lending</div>

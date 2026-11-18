@@ -279,13 +279,11 @@ footer p{color:rgba(255,255,255,.55);max-width:900px;margin:0 auto}footer a{colo
     <div class="hero-content">
       <div class="hero-eyebrow"><span>Rate Reality Check · Middle Tennessee</span></div>
       <h1>Headlines Aren't Your Rate.<br><em>Your Numbers Are.</em></h1>
-      <p class="hero-sub">The news runs one number built on a picture-perfect borrower. Your rate depends on your down payment, your credit, and the program that fits you. Here's what I priced for a real buyer on a $350,000 home this week, and I'll run yours for free.</p>
-      <div class="rate-cards">
-        <div class="rate-card"><div class="p">USDA</div><div class="r">6.375%</div><div class="a">6.824% APR</div><div class="d">0% down</div></div>
-        <div class="rate-card"><div class="p">VA</div><div class="r">6.500%</div><div class="a">6.706% APR</div><div class="d">0% down</div></div>
-        <div class="rate-card"><div class="p">FHA</div><div class="r">6.500%</div><div class="a">7.249% APR</div><div class="d">3.5% down</div></div>
+      <p class="hero-sub">The news runs one number built on a picture-perfect borrower. Your rate depends on your down payment, your credit, and the program that fits you. Here's what I priced for a real buyer on a $400,000 home this week, and I'll run yours for free.</p>
+      <div class="rate-cards" id="rateCards">
+        <div class="rate-card"><div class="p">Today's rates</div><div class="r" style="font-size:22px">Call me</div><div class="a">615.364.5700</div><div class="d">Updated every business day</div></div>
       </div>
-      <p class="asof">Priced 9/30/2026 at 8:19 AM CT with zero points. Full assumptions below. Rates change daily.</p>
+      <p class="asof" id="rateAsof">Loading today's pricing&hellip;</p>
       <div class="hero-badges">
         <div class="hero-badge">✅ 200+ lending partners</div>
         <div class="hero-badge">✅ FHA, VA, USDA, Conventional, Non-QM</div>
@@ -339,19 +337,16 @@ footer p{color:rgba(255,255,255,.55);max-width:900px;margin:0 auto}footer a{colo
   <div class="section-inner">
     <div class="section-eyebrow">This Week's Rate Reality Check</div>
     <h2 class="section-title">Same Home. Same Buyer. Four Programs.</h2>
-    <p class="lead-p">I priced one real-world scenario across my lending partners: a $350,000 home, a 30-year fixed, a 30-day lock, and zero points. Every one came with a lender credit back to the buyer.</p>
+    <p class="lead-p">I priced one real-world scenario across my lending partners: a $400,000 home, a 30-year fixed, and a 30-day lock.</p>
     <div class="table-wrap" style="margin-top:22px">
       <table class="rtable">
         <thead><tr><th>Program</th><th>Down payment</th><th>Rate</th><th>APR</th><th>Principal &amp; interest</th></tr></thead>
-        <tbody>
-          <tr><td>USDA</td><td>0%</td><td>6.375%</td><td class="apr">6.824%</td><td>$2,205/mo</td></tr>
-          <tr><td>VA</td><td>0%</td><td>6.500%</td><td class="apr">6.706%</td><td>$2,260/mo</td></tr>
-          <tr><td>FHA</td><td>3.5%</td><td>6.500%</td><td class="apr">7.249%</td><td>$2,172/mo</td></tr>
-          <tr><td>Conventional</td><td>5%</td><td>7.250%</td><td class="apr">8.007%</td><td>$2,268/mo</td></tr>
+        <tbody id="rateRows">
+          <tr><td colspan="5">Loading today&rsquo;s pricing&hellip; or call 615.364.5700.</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="fine">Rates as of 9/30/2026 at 8:19 AM CT, subject to change without notice. Examples assume a $350,000 purchase of a primary single-family home in Middle Tennessee, 680 credit score, 30-year fixed with 360 monthly payments, 30-day lock, and no discount points. USDA: 0% down, $353,500 loan including the guarantee fee. VA: 0% down, $357,525 loan including the funding fee. FHA: 3.5% down, $343,661 loan including upfront mortgage insurance. Conventional: 5% down, $332,500 loan. Payments shown are principal and interest only; taxes, homeowners insurance, and mortgage insurance will increase the payment. Lender credit amounts vary by program. Your rate depends on your credit, down payment, property, and program eligibility.</p>
+    <p class="fine" id="rateFine">Rates change daily and are subject to change without notice. Examples assume a $400,000 purchase of a primary single-family home in Middle Tennessee with a 30-year fixed loan. Payments shown are principal and interest only; taxes, homeowners insurance, and mortgage insurance will increase the payment. Your rate depends on your credit, down payment, property, and program eligibility.</p>
   </div>
 </section>
 
@@ -433,6 +428,98 @@ window.addEventListener('scroll',function(){var w=document.body.scrollTop||docum
 var obs=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
 document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
 (function(){var q=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign'].forEach(function(k){var el=document.querySelector('input[name='+k+']');if(el&&q.get(k))el.value=q.get(k);});})();
+</script>
+<script>
+/* Live rates: reads what Frank posts in the Partner Hub (Admin > Rates) and
+   prices the same $400,000 home with each program. Expired posts never show. */
+(function(){
+  var FEED = "https://partners.theburkslendinggroup.com/api/public-rates";
+  var PRICE = 400000;
+  var ORDER = ["usda","va","fha","conventional"];
+  var NAMES = {usda:"USDA", va:"VA", fha:"FHA", conventional:"Conventional"};
+
+  function key(name){
+    var n = String(name||"").toLowerCase();
+    if (n.indexOf("fha") > -1) return "fha";
+    if (/\bva\b/.test(n)) return "va";
+    if (n.indexOf("usda") > -1) return "usda";
+    if (n.indexOf("conventional") > -1) return "conventional";
+    return null;
+  }
+  // Loan amount for the $400K example, including each program's upfront fee.
+  function loanFor(k, downPct){
+    var base = PRICE * (1 - downPct/100);
+    if (k === "usda") return { amt: base * 1.01, note: "including the 1% guarantee fee" };
+    if (k === "fha") return { amt: base * 1.0175, note: "including 1.75% upfront mortgage insurance" };
+    if (k === "va") {
+      var fee = downPct >= 10 ? 1.25 : downPct >= 5 ? 1.5 : 2.15;
+      return { amt: base * (1 + fee/100), note: "including the " + fee + "% funding fee (first use)" };
+    }
+    return { amt: base, note: "" };
+  }
+  function pi(amt, ratePct, years){
+    var r = ratePct/100/12, n = years*12;
+    return r === 0 ? amt/n : amt * r / (1 - Math.pow(1 + r, -n));
+  }
+  var money = function(v){ return "$" + Math.round(v).toLocaleString("en-US"); };
+  var pct = function(v, d){ return Number(v).toFixed(d == null ? 3 : d) + "%"; };
+  var downTxt = function(v){ return (+v % 1 ? (+v).toFixed(1) : String(+v)) + "%"; };
+  function when(iso){
+    var d = new Date(iso);
+    return d.toLocaleDateString("en-US",{month:"numeric",day:"numeric",year:"numeric",timeZone:"America/Chicago"}) +
+      " at " + d.toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/Chicago"}) + " CT";
+  }
+  function pointsTxt(p){ p = +p; return p === 0 ? "zero points" : p < 0 ? Math.abs(p).toFixed(3) + "% lender credit" : p.toFixed(3) + " points"; }
+
+  function fallback(){
+    document.getElementById("rateAsof").textContent = "Today's pricing is being updated. Call 615.364.5700 and I'll run your numbers now.";
+    document.getElementById("rateRows").innerHTML = '<tr><td colspan="5">Today&rsquo;s pricing is being updated. Call <a href="tel:+16153645700">615.364.5700</a> and I&rsquo;ll run your numbers.</td></tr>';
+  }
+
+  fetch(FEED, {headers:{Accept:"application/json"}})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(data){
+      var now = Date.now(), pick = {};
+      (data.rates || []).forEach(function(x){
+        var k = key(x.program_name);
+        if (!k || +x.term_years !== 30 || new Date(x.expires_at).getTime() <= now) return;
+        if (!pick[k] || new Date(x.effective_at) > new Date(pick[k].effective_at)) pick[k] = x;
+      });
+      var list = ORDER.filter(function(k){ return pick[k]; }).map(function(k){
+        var x = pick[k], down = +x.down_payment_percent, loan = loanFor(k, down);
+        return { k:k, x:x, down:down, loan:loan, pay: pi(loan.amt, +x.interest_rate, 30) };
+      });
+      if (!list.length) return fallback();
+
+      document.getElementById("rateCards").innerHTML = list.slice(0,3).map(function(o){
+        return '<div class="rate-card"><div class="p">' + NAMES[o.k] + '</div><div class="r">' + pct(o.x.interest_rate) +
+          '</div><div class="a">' + pct(o.x.apr) + ' APR</div><div class="d">' + downTxt(o.down) + ' down</div></div>';
+      }).join("");
+
+      document.getElementById("rateRows").innerHTML = list.map(function(o){
+        return "<tr><td>" + NAMES[o.k] + "</td><td>" + downTxt(o.down) + "</td><td>" + pct(o.x.interest_rate) +
+          '</td><td class="apr">' + pct(o.x.apr) + "</td><td>" + money(o.pay) + "/mo</td></tr>";
+      }).join("");
+
+      var newest = list.map(function(o){ return o.x.effective_at; }).sort().pop();
+      var scores = list.map(function(o){ return o.x.minimum_credit_score; }).filter(function(v,i,a){ return v && a.indexOf(v) === i; });
+      var locks = list.map(function(o){ return o.x.lock_period_days; }).filter(function(v,i,a){ return v && a.indexOf(v) === i; });
+      var pts = list.map(function(o){ return pointsTxt(o.x.points); }).filter(function(v,i,a){ return a.indexOf(v) === i; });
+
+      document.getElementById("rateAsof").textContent = "Priced " + when(newest) + (pts.length === 1 ? " with " + pts[0] : "") + ". Full assumptions below. Rates change daily.";
+
+      var details = list.map(function(o){
+        return NAMES[o.k] + ": " + downTxt(o.down) + " down, " + money(o.loan.amt) + " loan" + (o.loan.note ? " " + o.loan.note : "") +
+          (pts.length > 1 ? ", " + pointsTxt(o.x.points) : "") + ".";
+      }).join(" ");
+      document.getElementById("rateFine").textContent =
+        "Rates as of " + when(newest) + ", subject to change without notice. Examples assume a $400,000 purchase of a primary single-family home in Middle Tennessee" +
+        (scores.length === 1 ? ", " + scores[0] + " credit score" : "") + ", 30-year fixed with 360 monthly payments" +
+        (locks.length === 1 ? ", " + locks[0] + "-day lock" : "") + (pts.length === 1 ? ", " + pts[0] : "") + ". " + details +
+        " Payments shown are principal and interest only; taxes, homeowners insurance, and mortgage insurance will increase the payment. Your rate depends on your credit, down payment, property, and program eligibility.";
+    })
+    .catch(fallback);
+})();
 </script>
 <script>
 /* Lead capture: sends the form to Formspree (emails the lead to you), then shows the thank-you. */

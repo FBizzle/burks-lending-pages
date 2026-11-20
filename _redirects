@@ -48,3 +48,9 @@
 /build-land            /dscr-construction.html      200
 /build-fourplex        /dscr-construction.html      200
 /build-once            /dscr-construction.html      200
+
+# Home equity page: new address without the lender's name
+/axen-home-equity.html      /home-equity.html          301!
+/axen-home-equity           /home-equity.html          301!
+/heloc                      /home-equity.html          200
+/home-equity                /home-equity.html          200

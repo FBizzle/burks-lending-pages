@@ -6,7 +6,7 @@
 <title>You're In | The Burks Lending Group</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
 <!--
   SETUP:
   1. VIDEO: replace the .video-slot div with your YouTube embed once you record the 60-second welcome video.
@@ -16,34 +16,34 @@
   4. Paste Meta Pixel + Google Analytics above </head>.
 -->
 <style>
-  :root{--navy:#0A1628;--gold:#C8973A;--gold-2:#b3832b;--blue:#4A9EFF;--white:#fff;--ink:#16213a;--muted:#5b6780;--line:#e3e7ef;--bg:#f5f7fb;--ok:#1f9d63}
+  :root{--navy:#14104A;--gold:#00B4F5;--gold-2:#0280C0;--blue:#0280C0;--white:#fff;--ink:#14104A;--muted:#535D7E;--line:#d9e7f2;--bg:#f5fbff;--ok:#12A150}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
-  header{background:var(--navy);color:var(--white)}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  header{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white)}
   .bar{max-width:980px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
   .brand{font-weight:700}.brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
   .call{color:var(--white);text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
-  .hero{background:var(--navy);color:var(--white);text-align:center;padding:36px 16px 90px}
+  .hero{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white);text-align:center;padding:36px 16px 90px}
   .badge{width:64px;height:64px;border-radius:50%;background:var(--ok);display:grid;place-items:center;margin:0 auto 16px;animation:pop .5s ease}
   @keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
-  h1{font-family:Fraunces,Georgia,serif;font-size:40px;line-height:1.1;margin-bottom:10px}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:40px;line-height:1.1;margin-bottom:10px}
   h1 em{font-style:normal;color:var(--gold)}
   .hero p{color:#d3dbea;font-size:18px;max-width:560px;margin:0 auto}
   main{max-width:980px;margin:-60px auto 0;padding:0 16px 48px;display:grid;gap:20px}
-  .card{background:var(--white);border-radius:18px;box-shadow:0 18px 50px rgba(10,22,40,.12);padding:26px}
-  h2{font-family:Fraunces,Georgia,serif;font-size:24px;margin-bottom:12px}
-  .video-slot{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,#13243f,#0A1628);display:grid;place-items:center;color:#b9c4d8;text-align:center;padding:20px}
+  .card{background:var(--white);border-radius:18px;box-shadow:0 18px 50px rgba(20,16,74,.12);padding:26px}
+  h2{font-family:'Playfair Display',Georgia,serif;font-size:24px;margin-bottom:12px}
+  .video-slot{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);display:grid;place-items:center;color:#b9c4d8;text-align:center;padding:20px}
   .video-slot .play{width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;margin:0 auto 10px}
   .grid2{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
   ol.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
   ol.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
-  ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:700;display:grid;place-items:center}
+  ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--gold);font-weight:700;display:grid;place-items:center}
   ol.steps b{display:block}
   ol.steps span{color:var(--muted);font-size:15px}
   .btn{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:15px;font-weight:700;font-size:17px;margin-top:12px}
-  .btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(200,151,58,.3)}
+  .btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(0,180,245,.3)}
   .btn.gold:hover{background:var(--gold-2)}
-  .btn.navy{background:var(--navy);color:var(--white)}
+  .btn.navy{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white)}
   .btn.ghost{border:2px solid var(--navy);color:var(--navy)}
   .note{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
   .reviews{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -59,13 +59,24 @@
   .flag{display:none;background:#fff8ea;border:1px solid #f0d9ac;border-radius:12px;padding:14px 16px;font-size:15px}
   .flag.show{display:block}
   .bookmark{text-align:center;color:var(--muted);font-size:14px}
-  footer{background:var(--navy);color:#aeb9cd;font-size:12.5px}
+  footer{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:#aeb9cd;font-size:12.5px}
   footer .in{max-width:980px;margin:0 auto;padding:22px 16px;display:grid;gap:8px}
   footer b{color:var(--white)}
   @media (max-width:760px){
     h1{font-size:30px}.hero p{font-size:16px}
     .grid2,.reviews,.extras{grid-template-columns:1fr}
   }
+</style>
+<style id="brand-bright">
+/* Website look: bright brand gradient heroes, light italic accents */
+.hero,header.hero,section.hero{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%) !important;}
+.hero::before,.hero-grid,.hero-dots{opacity:.35;}
+.hero h1 em,.hero-h1 em,header h1 em,.hero h1 strong,.hero h1 span{color:#E0F7FF !important;font-style:italic;}
+.hero-stat-num,.hero-eyebrow span,.hero .eyebrow{color:#E0F7FF !important;}
+.hero-eyebrow-dot{background:#E0F7FF !important;}
+.hero-sub,.hero p,.hero-stat-label{color:rgba(255,255,255,.9) !important;}
+.hero-badge,.hero-stat{background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.3) !important;color:#fff !important;}
+nav,.nav,.topbar,.site-nav{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%) !important;}
 </style>
 </head>
 <body>

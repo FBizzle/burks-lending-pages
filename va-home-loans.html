@@ -6,7 +6,7 @@
 <title>VA Home Loans | Middle Tennessee | The Burks Lending Group</title>
 <meta name="description" content="See how your VA home loan benefit could help you buy or refinance in Middle Tennessee. About 2 minutes, no credit pull.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
 <!--
   SETUP (3 things before you deploy):
   1. Formspree: done (xdekyeaa).
@@ -16,38 +16,38 @@
 -->
 <style>
   :root{
-    --navy:#0A1628; --navy-2:#13243f; --gold:#C8973A; --gold-2:#b3832b;
-    --blue:#4A9EFF; --white:#FFFFFF; --ink:#16213a; --muted:#5b6780;
-    --line:#e3e7ef; --bg:#f5f7fb; --ok:#1f9d63;
+    --navy:#14104A; --navy-2:#1d1866; --gold:#00B4F5; --gold-2:#0280C0;
+    --blue:#0280C0; --white:#FFFFFF; --ink:#14104A; --muted:#535D7E;
+    --line:#d9e7f2; --bg:#f5fbff; --ok:#12A150;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  header{background:var(--navy);color:var(--white)}
+  header{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white)}
   .bar{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
   .brand .key{width:34px;height:34px;border-radius:8px;background:var(--gold);display:grid;place-items:center}
   .brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
   .call{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
   .call:hover{background:rgba(255,255,255,.16)}
-  .hero{background:var(--navy);padding:24px 16px 56px;margin-bottom:32px}
+  .hero{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);padding:24px 16px 56px;margin-bottom:32px}
   .wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
   .pitch{color:var(--white);padding-top:18px}
   .eyebrow{display:inline-block;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px}
-  h1{font-family:Fraunces,Georgia,serif;font-size:44px;line-height:1.08;margin-bottom:16px}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:44px;line-height:1.08;margin-bottom:16px}
   h1 em{font-style:normal;color:var(--gold)}
   .sub{font-size:18px;color:#d3dbea;max-width:460px;margin-bottom:22px}
   .ticks{list-style:none;display:grid;gap:10px;color:#e8edf6}
   .ticks li{display:flex;gap:10px;align-items:flex-start}
   .ticks svg{flex:none;margin-top:3px}
-  .card{background:var(--white);border-radius:18px;box-shadow:0 24px 60px rgba(10,22,40,.22);padding:28px;position:relative}
+  .card{background:var(--white);border-radius:18px;box-shadow:0 24px 60px rgba(20,16,74,.22);padding:28px;position:relative}
   .progress{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:8px}
   .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:999px;transition:width .45s ease}
   .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:18px}
   .step{display:none;animation:in .35s ease}
   .step.active{display:block}
   @keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
-  .q{font-family:Fraunces,Georgia,serif;font-size:24px;line-height:1.2;margin-bottom:6px}
+  .q{font-family:'Playfair Display',Georgia,serif;font-size:24px;line-height:1.2;margin-bottom:6px}
   .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
   .opts{display:grid;gap:10px}
   .opts.two{grid-template-columns:1fr 1fr}
@@ -62,7 +62,7 @@
   input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(74,158,255,.15)}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .err{color:#c0392b;font-size:14px;margin-top:8px;min-height:20px}
-  .cta{width:100%;margin-top:14px;appearance:none;border:0;border-radius:12px;background:var(--gold);color:var(--navy);font:700 18px Inter,sans-serif;padding:16px;cursor:pointer;box-shadow:0 8px 20px rgba(200,151,58,.35);transition:background .15s,transform .1s}
+  .cta{width:100%;margin-top:14px;appearance:none;border:0;border-radius:12px;background:var(--gold);color:var(--navy);font:700 18px Inter,sans-serif;padding:16px;cursor:pointer;box-shadow:0 8px 20px rgba(0,180,245,.35);transition:background .15s,transform .1s}
   .cta:hover{background:var(--gold-2)}
   .cta:disabled{opacity:.6;cursor:wait}
   .back{appearance:none;background:none;border:0;color:var(--muted);font:600 14px Inter,sans-serif;cursor:pointer;margin-top:14px;padding:4px 0}
@@ -73,50 +73,50 @@
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   .trust{max-width:1080px;margin:0 auto;padding:8px 16px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
-  .stat b{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;color:var(--navy)}
+  .stat b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:30px;color:var(--navy)}
   .stat span{font-size:14px;color:var(--muted)}
   .programs{max-width:1080px;margin:0 auto;padding:0 16px 48px;text-align:center}
-  .programs h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin-bottom:6px}
+  .programs h2{font-family:'Playfair Display',Georgia,serif;font-size:26px;margin-bottom:6px}
   .programs p{color:var(--muted);margin-bottom:18px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .chips span{background:var(--navy);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
-  footer{background:var(--navy);color:#aeb9cd;font-size:12.5px;line-height:1.6}
+  .chips span{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px}
+  footer{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:#aeb9cd;font-size:12.5px;line-height:1.6}
   footer .in{max-width:1080px;margin:0 auto;padding:24px 16px;display:grid;gap:10px}
   footer .eho{display:flex;gap:8px;align-items:center;color:var(--white);font-weight:600}
   /* Refresh: advisor, reviews, how it works */
-  .hero{position:relative;overflow:hidden;background:radial-gradient(900px 420px at 85% -10%,rgba(200,151,58,.18),transparent 60%),radial-gradient(700px 380px at -10% 110%,rgba(74,158,255,.12),transparent 60%),var(--navy)}
+  .hero{position:relative;overflow:hidden;background:radial-gradient(900px 420px at 85% -10%,rgba(0,180,245,.18),transparent 60%),radial-gradient(700px 380px at -10% 110%,rgba(74,158,255,.12),transparent 60%),var(--navy)}
   .advisor-mini{display:flex;align-items:center;gap:14px;margin-top:26px;padding:12px 16px 12px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:440px}
   .advisor-mini img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:2px solid var(--gold);flex:none}
   .advisor-mini b{display:block;color:var(--white);font-size:15px}
   .advisor-mini span{display:block;color:#b9c4d8;font-size:13px}
   .section{max-width:1080px;margin:0 auto;padding:56px 16px}
-  .section h2{font-family:Fraunces,Georgia,serif;font-size:32px;line-height:1.15;margin-bottom:8px}
+  .section h2{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1.15;margin-bottom:8px}
   .section .lead{color:var(--muted);font-size:17px;max-width:620px}
   .kicker{display:inline-block;color:var(--gold-2);font-weight:700;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px}
   .how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;counter-reset:how}
   .how div{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
-  .how div::before{counter-increment:how;content:counter(how);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold);font:700 16px Fraunces,Georgia,serif;margin-bottom:14px}
+  .how div::before{counter-increment:how;content:counter(how);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--gold);font:700 16px Fraunces,Georgia,serif;margin-bottom:14px}
   .how h3{font-size:17px;margin-bottom:6px}
   .how p{color:var(--muted);font-size:15px}
   .meet{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .meet .section{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center}
   .portrait{position:relative}
-  .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:20px;box-shadow:0 24px 50px rgba(10,22,40,.18);display:block}
-  .portrait .tag{position:absolute;left:16px;bottom:16px;background:var(--navy);color:var(--white);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.35;box-shadow:0 10px 24px rgba(10,22,40,.3)}
+  .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:20px;box-shadow:0 24px 50px rgba(20,16,74,.18);display:block}
+  .portrait .tag{position:absolute;left:16px;bottom:16px;background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.35;box-shadow:0 10px 24px rgba(20,16,74,.3)}
   .portrait .tag b{display:block;color:var(--gold);font-size:14px}
   .meet p.bio{color:#33405a;font-size:16.5px;margin:14px 0 22px}
   .review{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:20px 22px}
   .review .stars{color:#f5b83d;font-size:18px;letter-spacing:2px}
-  .review blockquote{font-family:Fraunces,Georgia,serif;font-size:19px;line-height:1.45;color:var(--ink);margin:8px 0 12px}
+  .review blockquote{font-family:'Playfair Display',Georgia,serif;font-size:19px;line-height:1.45;color:var(--ink);margin:8px 0 12px}
   .review cite{font-style:normal;font-size:14px;color:var(--muted)}
   .review cite b{color:var(--ink)}
-  .closer{background:var(--navy);color:var(--white);text-align:center}
+  .closer{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white);text-align:center}
   .closer .section{padding:56px 16px}
   .closer h2{color:var(--white)}
   .closer p{color:#d3dbea;margin:0 auto 22px;max-width:520px}
   .closer .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-block;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:12px}
-  .btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(200,151,58,.35)}
+  .btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 20px rgba(0,180,245,.35)}
   .btn.gold:hover{background:var(--gold-2)}
   .btn.ghost{border:2px solid rgba(255,255,255,.25);color:var(--white)}
   .btn.ghost:hover{border-color:var(--white)}
@@ -129,7 +129,7 @@
     .section{padding:40px 16px}
     .section h2{font-size:26px}
     body{padding-bottom:68px}
-    .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:14px;border-radius:14px;box-shadow:0 10px 30px rgba(10,22,40,.35)}
+    .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;padding:14px;border-radius:14px;box-shadow:0 10px 30px rgba(20,16,74,.35)}
   }
   @media (max-width:860px){
     .wrap{grid-template-columns:1fr;gap:18px}
@@ -146,6 +146,17 @@
     .call .num{display:none}
   }
 </style>
+<style id="brand-bright">
+/* Website look: bright brand gradient heroes, light italic accents */
+.hero,header.hero,section.hero{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%) !important;}
+.hero::before,.hero-grid,.hero-dots{opacity:.35;}
+.hero h1 em,.hero-h1 em,header h1 em,.hero h1 strong,.hero h1 span{color:#E0F7FF !important;font-style:italic;}
+.hero-stat-num,.hero-eyebrow span,.hero .eyebrow{color:#E0F7FF !important;}
+.hero-eyebrow-dot{background:#E0F7FF !important;}
+.hero-sub,.hero p,.hero-stat-label{color:rgba(255,255,255,.9) !important;}
+.hero-badge,.hero-stat{background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.3) !important;color:#fff !important;}
+nav,.nav,.topbar,.site-nav{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%) !important;}
+</style>
 </head>
 <body>
 
@@ -153,7 +164,7 @@
   <div class="bar">
     <div class="brand">
       <div class="key" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="2.4" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14104A" stroke-width="2.4" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg>
       </div>
       <div>The Burks Lending Group<small>Everybody Deserves a Key</small></div>
     </div>
@@ -171,9 +182,9 @@
       <h1>You earned this benefit. <em>Let&rsquo;s put it to work.</em></h1>
       <p class="sub">Answer a few quick questions and see how your VA home loan benefit could help you buy or refinance in Smyrna, Murfreesboro, Nashville and beyond.</p>
       <ul class="ticks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 2 minutes, tap to answer</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>A real advisor reviews your answers, not a call center</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A150" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>About 2 minutes, tap to answer</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A150" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No credit pull to check your options</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A150" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>A real advisor reviews your answers, not a call center</li>
       </ul>
       <div class="advisor-mini">
         <img src="frank-burks.jpg" alt="Frank Burks II" width="58" height="58">
@@ -203,7 +214,7 @@
 
 <section class="trust" aria-label="Why The Burks Lending Group">
   <div class="stat"><b>25 years</b><span>helping Tennessee families buy homes</span></div>
-  <div class="stat"><b>200+</b><span>lending partners, so one &ldquo;no&rdquo; never locks the door</span></div>
+  <div class="stat"><b>250+</b><span>lending partners, so one &ldquo;no&rdquo; never locks the door</span></div>
   <div class="stat"><b>$150M+</b><span>in mortgage loans funded</span></div>
 </section>
 
@@ -228,7 +239,7 @@
     <div>
       <span class="kicker">Meet your advisor</span>
       <h2 id="meet-h">You won't get passed to a call center.</h2>
-      <p class="bio">I've spent 25 years helping Tennessee families buy homes. With 200+ lending partners, when one says no, I keep looking. You'll have my direct number from your first question to closing day.</p>
+      <p class="bio">I've spent 25 years helping Tennessee families buy homes. With 250+ lending partners, when one says no, I keep looking. You'll have my direct number from your first question to closing day.</p>
       <div class="review">
         <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>&ldquo;Frank was great. His communication was awesome and he did everything he said he would do, when he said he would do it.&rdquo;</blockquote>

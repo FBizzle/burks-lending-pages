@@ -24,7 +24,7 @@
   .brand small{display:block;font-weight:500;font-size:12px;color:#b9c4d8}
   .call{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08);padding:9px 14px;border-radius:999px;white-space:nowrap}
   .hero{background:linear-gradient(120deg,#0273AD 0%,#0280C0 55%,#0E8A4D 100%);color:var(--white);text-align:center;padding:34px 16px 44px}
-  .week{display:inline-block;background:rgba(0,180,245,.15);color:var(--gold);font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
+  .week{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px}
   h1{font-family:'Playfair Display',Georgia,serif;font-size:42px;line-height:1.1;margin-bottom:10px}
   h1 em{font-style:normal;color:var(--gold)}
   .hero p{color:#d3dbea;font-size:18px;max-width:640px;margin:0 auto}
@@ -241,24 +241,13 @@ nav,.nav,.topbar,.site-nav{background:linear-gradient(120deg,#0273AD 0%,#0280C0 
    openHouse: leave "" if none, or write it like "Sat 10/4, 1 to 3 PM"
    photos:    up to 5, like ["biraj-1.jpg","biraj-2.jpg"]. The first one is the cover. Use [] for none.
    ===================================================================== */
-var WEEK = "Week of October 9, 2026";
+var WEEK = "Week of November 27, 2026";
 var HOMES = [
-  {type:"resale", address:"1313 Mirage St", city:"Murfreesboro, TN 37129", price:409900, beds:3, baths:2, sqft:1663,
-   photos:["https://images.homes.com/listings/112/6677440515-205924732/1313-mirage-st-murfreesboro-tn-buildingphoto-2.jpg","https://images.homes.com/listings/112/3777440515-205924732/1313-mirage-st-murfreesboro-tn-buildingphoto-7.jpg","https://images.homes.com/listings/112/5928440515-205924732/1313-mirage-st-murfreesboro-tn-buildingphoto-13.jpg","https://images.homes.com/listings/112/3138440515-205924732/1313-mirage-st-murfreesboro-tn-buildingphoto-23.jpg","https://images.homes.com/listings/112/5338440515-205924732/1313-mirage-st-murfreesboro-tn-buildingphoto-30.jpg"], openHouse:"", incentive:"",
-   highlights:["Single-level living in Creeksbend, built in 2019","Fenced 0.41-acre backyard with a covered patio and additional patio space","Open kitchen with white cabinetry, stainless steel appliances, and a breakfast bar","Primary suite with double vanities and a walk-in shower; two-car garage"],
-   courtesy:"Mabry Realty, LLC", link:""},
-  {type:"new", address:"208 Harper Grace Ct, Lot 20", city:"Smyrna, TN 37167", price:434990, beds:4, baths:3, sqft:2404,
-   photos:["harper-1.jpg","harper-2.jpg","harper-3.jpg","harper-4.jpg"], openHouse:"", incentive:"",
-   highlights:["Brand-new build in gated Kingfield","First-floor guest suite plus a private study","Upstairs loft and a covered patio","Builder rendering shown; floor plans and site map in the gallery"],
-   courtesy:"Century Communities", link:""},
-  {type:"resale", address:"9028 Macbeth Dr", city:"Smyrna, TN 37167", price:419900, beds:3, baths:2, sqft:1625,
-   photos:["macbeth-1.jpg","macbeth-2.jpg","macbeth-3.jpg","macbeth-4.jpg","macbeth-5.jpg"], openHouse:"", incentive:"",
-   highlights:["All brick with new flooring and high ceilings","Private wooded backyard with a storage shed","All appliances stay, washer and dryer too, and no HOA"],
-   courtesy:"Zach Taylor Real Estate", link:""},
-  {type:"condo", address:"6633 Hanworth Trace", city:"Smyrna, TN 37167", price:309900, beds:3, baths:2.5, sqft:1468,
-   photos:["hanworth-1.jpg","hanworth-2.jpg","hanworth-3.jpg","hanworth-4.jpg","hanworth-5.jpg"], openHouse:"", incentive:"",
-   highlights:["Built in 2022, like-new and move-in ready","Parking for 4 plus a one-car garage","HOA covers lawn care and trash; splash pad and playground nearby"],
-   courtesy:"Epique Realty", link:""}
+  {"type":"resale","address":"511 Mountain View Ct","city":"Smyrna, TN 37167","price":519500,"beds":3,"baths":2.5,"sqft":2730,"photos":["mountain-view-1.jpg","mountain-view-2.jpg","mountain-view-3.jpg","mountain-view-4.jpg","mountain-view-5.jpg"],"openHouse":"","incentive":"Seller concessions offered, plus an allowance for new carpet","highlights":["End-of-cul-de-sac privacy on 0.44 wooded acres, with no HOA","Soaring foyer, hardwood floors, custom trim, and a gas fireplace","Upstairs bonus room and an owner's suite with a custom bath","New HVAC in June 2026 and a new composite deck"],"courtesy":"Zach Taylor Real Estate","link":""},
+  {"type":"new","address":"431 Generosity Way, Lot 282","city":"Smyrna, TN 37167","price":470000,"beds":4,"baths":2.5,"sqft":2202,"photos":["generosity-1.jpg","generosity-2.jpg","generosity-3.jpg","generosity-4.jpg","generosity-5.jpg"],"openHouse":"","incentive":"Seller pays $14,000 toward buyer closing costs, and you can use your own lender","highlights":["New construction with the primary suite on the main floor","Granite counters, custom cabinets, and stainless appliances, refrigerator included","Vaulted great room, covered porch, and James Hardie exterior","Photos show a previously built home, not this exact home"],"courtesy":"Georgia Evans Realty, LLC","link":""},
+  {"type":"resale","address":"416 Adeline Dr","city":"Smyrna, TN 37167","price":389999,"beds":3,"baths":2,"sqft":1527,"photos":["adeline-1.jpg","adeline-2.jpg","adeline-3.jpg","adeline-4.jpg","adeline-5.jpg"],"openHouse":"","incentive":"","highlights":["One-owner, all-brick, one-level home with a split-bedroom layout","Landscaped 0.33-acre yard with an irrigation system","Hardwood floors, a fireplace, and no HOA","Near Sharp Springs Park, Smyrna Golf Course, and Percy Priest Lake"],"courtesy":"Cadence Real Estate","link":""},
+  {"type":"resale","address":"204 Mapleview St","city":"Smyrna, TN 37167","price":359000,"beds":4,"baths":2,"sqft":1525,"photos":["mapleview-1.jpg","mapleview-2.jpg","mapleview-3.jpg","mapleview-4.jpg","mapleview-5.jpg"],"openHouse":"","incentive":"Seller offering a 1-year home warranty","highlights":["All-brick, one-level home with a new roof, flooring, and paint","Updated kitchen and bathrooms","Covered deck over a fenced, nearly half-acre yard","Use it as 4 bedrooms or 3 plus a bonus room, with no HOA"],"courtesy":"Crye-Leike, Inc., REALTORS","link":""},
+  {"type":"resale","address":"102 Hickory Pl","city":"Smyrna, TN 37167","price":350000,"beds":3,"baths":1.5,"sqft":1487,"photos":["hickory-1.jpg","hickory-2.jpg","hickory-3.jpg","hickory-4.jpg","hickory-5.jpg"],"openHouse":"","incentive":"","highlights":["Renovated all-brick ranch on a 0.39-acre corner lot","Hardwood and tile floors, new HVAC, and a 2023 water heater","Flex room off the kitchen for an office, playroom, or second living area","Mature trees and no HOA"],"courtesy":"Parks Auction & Realty","link":""}
 ];
 /* ======================= END OF WEEKLY SECTION ======================= */
 
